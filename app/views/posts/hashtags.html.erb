@@ -31,7 +31,9 @@ Only in navbar<br>
 <br>
 <br>
 <br>
-
+<% if params[:name].present? %>
+  <p><span class="hashtag-through">#<%= params[:name] %></span></p>
+<% end %>
 <table>
   <thead>
     <tr>

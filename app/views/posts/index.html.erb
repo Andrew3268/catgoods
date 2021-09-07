@@ -2,7 +2,23 @@
 <br>
 <br>
 <br>
+<% if current_user %>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to 'Sign up', new_user_registration_path %>
+  <%= link_to "Sign in", new_user_session_path %>
+<% end %>
+
+<% if current_user && current_user.admin %>
+  <p>I am Admin</p>
+<% end %>
+
+
+<br>
+<br>
+<br>
 All Categories<br>
+<p><a href="/">All</a></p>
 <% Category.all.each do |cat| %>
   <%= link_to cat.name, posts_path(category: cat.name) %>
 <% end %>

@@ -51,19 +51,19 @@
               <% if @post.review_count.present? %>
                 <% if @post.star_4_5.present? %>
                   <img class="star_4_5" src="<%=asset_path 'star_4_5.png' %>" />
-                  <em><%= @post.review_count %> +개의 상품평</em>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% elsif @post.star_4.present? %>
                   <img class="star_4" src="<%=asset_path 'star_4.png' %>" />
-                  <em><%= @post.review_count %> +개의 상품평</em>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% elsif @post.star_3_5.present? %>
                   <img class="star_3_5" src="<%=asset_path 'star_3_5.png' %>" />
-                  <em><%= @post.review_count %> +개의 상품평</em>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% elsif @post.star_3.present? %>
                   <img class="star_3" src="<%=asset_path 'star_3.png' %>" />
-                  <em><%= @post.review_count %> +개의 상품평</em>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% elsif %>
                   <img class="star_5" src="<%=asset_path 'star_5.png' %>" />
-                  <em><%= @post.review_count %> +개의 상품평</em>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% end %>
               <% end %>
             </div>

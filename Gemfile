@@ -36,6 +36,16 @@ gem 'jbuilder', '~> 2.7'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
+gem 'capistrano', '~> 3.11'
+gem 'capistrano-rails', '~> 1.4'
+gem 'capistrano-passenger', '~> 0.2.0'
+gem 'capistrano-rbenv', '~> 2.1', '>= 2.1.4'
+gem 'pg'
+gem 'ed25519', '~> 1.2'
+gem 'bcrypt_pbkdf', '~> 1'
+gem 'irb', require: false
+
+
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 

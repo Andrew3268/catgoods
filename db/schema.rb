@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 2021_09_07_123726) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "category_id", null: false
+    t.integer "category_id"
     t.string "title"
     t.string "link"
     t.string "image"

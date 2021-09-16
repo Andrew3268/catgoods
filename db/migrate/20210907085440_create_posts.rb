@@ -2,7 +2,7 @@ class CreatePosts < ActiveRecord::Migration[6.1]
   def change
     create_table :posts do |t|
       t.integer :user_id
-      t.references :category, null: false, foreign_key: true
+      t.references :category, index: true, foreign_key: true
       t.string :title
       t.string :link
       t.string :image

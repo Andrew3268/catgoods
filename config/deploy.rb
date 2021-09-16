@@ -3,6 +3,7 @@ lock "~> 3.16.0"
 
 set :application, "catgoods"
 set :repo_url, "git@github.com:Andrew3268/catgoods.git"
+set :passenger_restart_with_touch, true
 
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"

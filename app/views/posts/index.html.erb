@@ -1,61 +1,52 @@
-<h1>Posts | <%= link_to "New Category", new_category_path %></h1>
-<br>
-<br>
-<br>
-<% if current_user %>
-  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% else %>
-  <%= link_to 'Sign up', new_user_registration_path %>
-  <%= link_to "Sign in", new_user_session_path %>
-<% end %>
+<div class="wrap">
+  <div class="index_wrap">
+    <%= render '/posts/header' %>
+  
+    <%= render '/posts/navigation' %>
+  
+    <section class="title">
+      <div class="hero">
+        <div class="holder"></div>
+      </div>
 
-<% if current_user && current_user.admin %>
-  <p>I am Admin</p>
-<% end %>
+      <h1>Gift for cat lover</h1>
+      <p>고양이를 좋아하는 사람들을 위한 선물 아이디어!!</p>
+    </section>
+
+   
+    <section class="productlists">
+      <% @posts.each do |post| %>
+        <article class="card clearfix">
+          <div class="card-inner">
+            <span class="card-pin"></span>
+            <div class="card-image">
+              <!-- <img src="<%= post.image %>" /> -->
+              <a href="/posts/<%= post.id %>"><img src="<%= post.image %>" alt="<%= post.title %>" title="<%= post.title %>" /></a>
+            </div>
+            <div class="card-content">
+              <div class="card-meta">
+                <span class="card-meta-number">
+                  <span><%= post.source %></span>
+                  <% if current_user && current_user.admin %>
+                    <div class="admin_controller">
+                      <span><%= link_to 'Edit', edit_post_path(post) %></span>
+                      <span><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+                    </div>
+                  <% end %>
+                </span>
+              </div>
+              <p class="card-title"><%= link_to post.title, post %></p>
+              <p class="card-title"><span><%= number_to_currency(post.is_price, locale: :kr) %>원</span></p>
+            </div>
+          </div>
+        </article>
+      <% end %>
+    </section>
 
 
-<br>
-<br>
-<br>
-All Categories<br>
-<p><a href="/">All</a></p>
-<% Category.all.each do |cat| %>
-  <%= link_to cat.name, posts_path(category: cat.name) %>
-<% end %>
-<hr>
-Only in navbar<br>
-<% Category.where(display_in_navbar: true).each do |cat| %>
-  <%= link_to cat.name, posts_path(category: cat.name) %>
-<% end %>
+  </div>
+</div>
 
-<br>
-<br>
-<br>
+<%= javascript_pack_tag 'search_modal' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Category</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= render_with_hashtags(post.hashtag) %></td>
-        <td><%= post.category_id %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>

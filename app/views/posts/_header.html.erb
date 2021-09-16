@@ -1,0 +1,72 @@
+<header class="header">
+
+  <button class="search_btn">
+    <div class="header-logo">
+        <div>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+  </button>
+
+  <!-- modal -->
+  <div class="modal-overlay">
+    <div class="modal">
+      
+      <a class="close-modal">
+        <svg viewBox="0 0 20 20">
+          <path fill="#000000" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+        </svg>
+      </a><!-- close modal -->
+
+      <div class="modal-content">
+        
+        <p>Find the best gift for cat lover :)</p>
+        <span>Search the best deals & promotion codes</span>
+        <section class="search clearfix">
+          <div class="search-inner search_inner_modal">
+            <button class="search-button">
+              <i class="ai-search"></i>
+            </button>
+            <%= form_for "",url: posts_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
+            <% end %> 
+          </div>
+        </section><br/>
+
+        <div class="sub_menu clearfix">
+          <%= render 'posts/tag_menu' %>
+        </div>
+
+      </div><!-- modal-content -->
+    </div><!-- modal -->
+  </div><!-- overlay -->
+
+  <div class="header-title">
+    <a href="/"><em>Jelly</em><em>Jelly</em><em>Jelly</em><em>Jelly</em></a>
+  </div>
+
+   <section class="search search_pc">
+      <div class="search-inner">
+        <button class="search-button">
+          <i class="ai-search"></i>
+        </button>
+        <%= form_for "",url: posts_path, role: "search", method: :get do %>
+          <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
+        <% end %> 
+      </div>
+   </section>
+  
+</header>
+
+
+
+
+
+
+
+
+
+  

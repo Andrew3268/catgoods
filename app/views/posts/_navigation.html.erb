@@ -1,0 +1,32 @@
+<nav class="navigation nav_pc">
+  <a href="/" class="navigation-item">Home</a>
+  <% Category.all.each do |cat| %>
+    <%= link_to cat.name, posts_path(category: cat.name), :class => "navigation-item" %>
+  <% end %>
+  <% if current_user && current_user.admin %>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "navigation-item" %>
+    <%= link_to 'New Post', new_post_path, :class => "navigation-item" %>
+    <%= link_to "New Category", new_category_path, :class => "navigation-item" %>
+  <% else %>
+    <%= link_to 'Sign up', new_user_registration_path, :class => "navigation-item" %>
+    <%= link_to "Sign in", new_user_session_path, :class => "navigation-item" %>
+  <% end %>
+</nav>
+
+<nav class="navigation nav_mobile">
+  <div class="dummy-viewport">
+    <div class="horizontal-menu">
+      <ul class="horizontal-menu-items">
+        <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">Home</a></li>
+        <% Category.all.each do |cat| %>
+          <li class="horizontal-menu-item"><%= link_to cat.name, posts_path(category: cat.name), :class => "navigation-item horizontal-menu-link" %></li>
+        <% end %>
+        <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
+        <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
+        <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+

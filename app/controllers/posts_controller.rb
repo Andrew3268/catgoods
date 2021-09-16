@@ -6,10 +6,15 @@ class PostsController < ApplicationController
   def index
     if params.has_key?(:category)
       @category = Category.find_by_name(params[:category])
-      @posts = Post.where(category: @category)
+      @posts = Post.where(category: @category).order("created_at DESC")
     else
-      @posts = Post.all
+      @posts = Post.all.order("created_at DESC")
     end  
+
+    if params[:search]
+      @search_term = params[:search]
+      @posts = @posts.search_by(@search_term)
+    end
   end
 
   # GET /posts/1 or /posts/1.json
@@ -76,7 +81,7 @@ class PostsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def post_params
       params.require(:post).permit(:title, :link, :category_id, :image, :source, :hashtag, :rating, :review_count, 
-                                   :is_price, :was_price, :pct, :description)
+                                   :is_price, :was_price, :pct, :description, :key_word, :star_5, :star_4_5, :star_4, :star_3_5, :star_3)
     end
 end
 

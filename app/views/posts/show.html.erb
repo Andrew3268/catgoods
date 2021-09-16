@@ -1,17 +1,95 @@
-<p>
-  <strong>Title:</strong>
-  <%= @post.title %>
-</p>
+<div class="wrap"> 
+    <div class="index_wrap show_index">
+      <div class="show_header_m">
+        <%= render '/posts/header_show' %>
+      </div>
+      <nav class="navigation show_nav">
+        <div class="dummy-viewport">
+          <div class="horizontal-menu">
+            <ul class="horizontal-menu-items">
+              <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">Home</a></li>
+              <% Category.all.each do |cat| %>
+                <li class="horizontal-menu-item"><%= link_to cat.name, posts_path(category: cat.name), :class => "navigation-item horizontal-menu-link" %></li>
+              <% end %>
+              <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
+              <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
+              <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
+              <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
+              <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
+              <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
 
-<p>
-  <strong>Body:</strong>
-  <%= @post.hashtag %>
-</p>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-<p>
-  <strong>Category:</strong>
-  <%= @post.category.name %>
-</p>
+      <div class="show_card clearfix">
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+        <article class="card">
+          <div class="card-inner">
+            <span class="card-pin"></span>
+            <div class="card-image">
+              <img src="<%= @post.image %>" alt="<%= @post.title %>">
+            </div>
+          </div>
+
+          <% if current_user && current_user.admin %>  
+            <div class="admin_manage">
+              <%= link_to 'Edit', edit_post_path(@post) %> |
+              <%= link_to 'Back', posts_path %> | 
+              Category: <%= @post.category.name %>
+            </div>
+          <% end %>
+        </article>
+    
+        <div class="inner_section">
+          <div class="inner clearfix">
+            <em>by <%= @post.source %></em>
+            <h2><%= @post.title %></h2>
+
+            <div class="star_rating">
+              <% if @post.review_count.present? %>
+                <% if @post.star_4_5.present? %>
+                  <img class="star_4_5" src="<%=asset_path 'star_4_5.png' %>" />
+                  <em><%= @post.review_count %> +개의 상품평</em>
+                <% elsif @post.star_4.present? %>
+                  <img class="star_4" src="<%=asset_path 'star_4.png' %>" />
+                  <em><%= @post.review_count %> +개의 상품평</em>
+                <% elsif @post.star_3_5.present? %>
+                  <img class="star_3_5" src="<%=asset_path 'star_3_5.png' %>" />
+                  <em><%= @post.review_count %> +개의 상품평</em>
+                <% elsif @post.star_3.present? %>
+                  <img class="star_3" src="<%=asset_path 'star_3.png' %>" />
+                  <em><%= @post.review_count %> +개의 상품평</em>
+                <% elsif %>
+                  <img class="star_5" src="<%=asset_path 'star_5.png' %>" />
+                  <em><%= @post.review_count %> +개의 상품평</em>
+                <% end %>
+              <% end %>
+            </div>
+            
+            <!-- <p>별점: 4/5, 리뷰 수: 100+ 개</p> -->
+            <p class="is_price"><%= number_to_currency(@post.is_price, locale: :kr) %>원</p>
+            <p class="hashtag">관련 해시태그 :: <%= render_with_hashtags(@post.hashtag) %></p>
+          </div>
+
+          <div class="btn menu clearfix">
+            <div class="menu-inner">
+              <a href="/" class="menu-item">뒤로가기</a>
+              <a href="#" class="menu-item active">사러가기</a>
+            </div>
+          </div>
+      </div>
+    
+    </div><!-- show card -->
+    <div class="notice clearfix">
+        <ul>
+          <li>가격과 평점이 다른가요? <a href="#n">[자세히 보기]</a></li>
+          <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아니며 쿠팡 파트너스 활동을 통해 일정의 수수료를 지급받아요.</li>
+        </ul>
+      </div>
+  </div><!-- show_wrap -->
+</div><!-- wrap -->
+
+<%= javascript_pack_tag 'search_modal' %>
+

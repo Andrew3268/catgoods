@@ -3,6 +3,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_and_belongs_to_many :tags
 
+  validates :is_price, presence: true
+
   after_create do
     post = Post.find_by(id: self.id)
     hashtags = self.hashtag.scan(/[#＃][a-z|A-Z|가-힣|0-9|\w]+/)
@@ -21,4 +23,9 @@ class Post < ApplicationRecord
         post.tags << tag
     end
   end
+
+  def self.search_by(search_term)
+    where("LOWER(title) LIKE :search_term OR LOWER(spare_01) LIKE :search_term", search_term: "%#{search_term.downcase}%")
+  end 
+
 end

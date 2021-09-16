@@ -10,6 +10,12 @@ class CreatePosts < ActiveRecord::Migration[6.1]
       t.string :hashtag
       t.string :rating
       t.string :review_count
+      t.string :key_word
+      t.string :star_5
+      t.string :star_4_5
+      t.string :star_4
+      t.string :star_3_5
+      t.string :star_3
       t.decimal :is_price
       t.decimal :was_price
       t.decimal :pct

@@ -8,9 +8,6 @@
           <div class="horizontal-menu">
             <ul class="horizontal-menu-items">
               <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">Home</a></li>
-              <% Category.all.each do |cat| %>
-                <li class="horizontal-menu-item"><%= link_to cat.name, posts_path(category: cat.name), :class => "navigation-item horizontal-menu-link" %></li>
-              <% end %>
               <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
               <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
               <li class="horizontal-menu-item"><a href="/" class="horizontal-menu-link">category111111</a></li>
@@ -37,7 +34,6 @@
             <div class="admin_manage">
               <%= link_to 'Edit', edit_post_path(@post) %> |
               <%= link_to 'Back', posts_path %> | 
-              Category: <%= @post.category.name %>
             </div>
           <% end %>
         </article>

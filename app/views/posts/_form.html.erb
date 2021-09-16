@@ -3,7 +3,6 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.association :category, label: "카테고리" %>
       <%= f.input :title, label: "상품 이름" %>
       <%= f.input :image, label: "상품 이미지" %>
       <!-- <%= f.input :description, label: "상품 설명" %> -->

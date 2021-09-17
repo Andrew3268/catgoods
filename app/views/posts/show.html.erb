@@ -22,21 +22,9 @@
 
       <div class="show_card clearfix">
 
-        <article class="card">
-          <div class="card-inner">
-            <span class="card-pin"></span>
-            <div class="card-image">
-              <img src="<%= @post.image %>" alt="<%= @post.title %>">
-            </div>
-          </div>
-
-          <% if current_user && current_user.admin %>  
-            <div class="admin_manage">
-              <%= link_to 'Edit', edit_post_path(@post) %> |
-              <%= link_to 'Back', posts_path %> | 
-            </div>
-          <% end %>
-        </article>
+        <div class="image_box">
+          <img src="<%= @post.image %>" alt="<%= @post.title %>" title="<%= @post.title %>" />
+        </div>
     
         <div class="inner_section">
           <div class="inner clearfix">
@@ -75,13 +63,18 @@
               <a href="#" class="menu-item active">사러가기</a>
             </div>
           </div>
-      </div>
+      </div><!-- inner -->
     
     </div><!-- show card -->
     <div class="notice clearfix">
         <ul>
           <li>가격과 평점이 다른가요? <a href="#n">[자세히 보기]</a></li>
           <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아니며 쿠팡 파트너스 활동을 통해 일정의 수수료를 지급받아요.</li>
+          <% if current_user && current_user.admin %>
+            <div class="admin_controller">
+              <li><%= link_to 'Edit', edit_post_path(@post) %>| <%= link_to 'Destroy', @post, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+            </div>
+          <% end %>
         </ul>
       </div>
   </div><!-- show_wrap -->

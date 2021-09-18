@@ -36,10 +36,10 @@
 .navigation{margin-top:2rem;padding-bottom:.75rem;border-bottom:1px solid var(--c-gray-900);}
 .navigation-item{font-size:1.125rem;display:inline-block;padding:0 .5rem;text-decoration:none;color:inherit;position:relative;z-index:1;font-weight:500}
 .navigation-item.active{font-weight:800}
-/*.navigation-item.active:before{background-color:var(--c-yellow-500)}*/
-/*.navigation-item:before{content:"";display:block;position:absolute;width:100%;height:14px;background-color:transparent;z-index:-1;bottom:-2px;left:0;transition:.15s ease}*/
+.navigation-item.active:before{background-color:var(--c-yellow-500)}
+.navigation-item:before{content:"";display:block;position:absolute;width:100%;height:14px;background-color:transparent;z-index:-1;bottom:-2px;left:0;transition:.15s ease}
 .navigation-item+.navigation-item{margin-left:1.25rem}
-/*.navigation-item:focus,.navigation-item:hover:before{background-color:var(--c-yellow-500)}*/
+.navigation-item:focus,.navigation-item:hover:before{background-color:var(--c-yellow-500)}
 /* Navebar only display on Moblie */
 .nav_mobile{display:none;}
 .horizontal-menu{overflow:hidden;height:44px;padding:4px 0}
@@ -60,7 +60,7 @@
 .title h1{font-size:2rem;font-weight:700}
 .title p{font-size:1.5rem;color:var(--c-gray-500);margin-top:-10px;}
 .title .hashtag_indicator{}
-.title .hashtag_indicator span{font-size:30px;}
+.title .hashtag_indicator span{font-size:30px;border-bottom:3px solid #f9bc73;box-shadow:inset 0 -15px 0 #f9bc73;}
 .search{position:relative;z-index:1;transition:.15s ease}
 .search:focus-within,.search:hover{transform:translatey(-2px)}
 .search-inner{display:flex;align-items:center;border:2px solid var(--c-gray-900);border-radius:15px;height:48px;font-size:1rem;width:100%;background-color:#fff;position:relative;margin-top:10px}
@@ -85,7 +85,7 @@
 .card_box:after{content:"";display:block;position:absolute;z-index:-1;width:95%;height:100%;bottom:-9px;left:calc(50% - 47.5%);border-radius:20px;border:2px solid var(--c-gray-900);background-color:var(--c-yellow-300)}
 .card_box .image_box{position:relative;width:100%;height:200px;}
 .card_box .image_box img{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:80%;height:80%;object-fit:contain;}
-.card_box .inner{}
+.card_box .inner em{color:#ccc;}
 .card_box .inner .admin_controller{display:inline-block;}
 .card_box .inner .p_title{word-break:break-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
 
@@ -95,23 +95,17 @@
 .menu-item.active,.menu-item:focus,.menu-item:hover{border-color:var(--c-gray-900);background-color:var(--c-yellow-500);color:var(--c-gray-900)}*,:focus{outline:0}
 
 
-
-
 @media screen and (max-width:640px){
   .title h1{font-size:1.7rem;}
   .title p{font-size:1.2rem;}
-  .index_wrap{padding:1rem;}
+  .index_wrap{padding:10px;}
   .nav_pc{display:none;}
   .nav_mobile{display:block;margin:0;padding:0;}
   .search_pc{display:none;}
-  .productlists .card{width:48%;}
-  .card-meta-number{font-size:13px;}
-  .card-inner{height:230px;}
-  .card-title{font-size:13px;}
-  .card-image img{width:60%;}
-  .card-content{margin-top:20px;}
-
-  .card_box{width:48%;}
+  .card_box{width:48%;padding:12px;}
+  .card_box .image_box{height:150px;}
+  .card_box .image_box img{width:90%;height:90%;}
+  .card_box .inner{margin-top:10px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
@@ -198,6 +192,7 @@
 @media screen and (min-width:641px) and (max-width:1199px){
  .modal-overlay .modal .modal-content{margin-top:0;height:500px;} 
 }
+
 
 
 

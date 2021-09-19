@@ -1,5 +1,8 @@
 class Post < ApplicationRecord
 
+  extend FriendlyId
+  friendly_id :spare_01, use: :slugged
+
   belongs_to :user
   has_and_belongs_to_many :tags
 
@@ -27,5 +30,7 @@ class Post < ApplicationRecord
   def self.search_by(search_term)
     where("LOWER(title) LIKE :search_term OR LOWER(spare_01) LIKE :search_term", search_term: "%#{search_term.downcase}%")
   end 
+
+  
 
 end

@@ -21,7 +21,7 @@
       <% @posts.each do |post| %>
       <div class="card_box">
         <div class="image_box">
-          <a href="/posts/<%= post.id %>"><img src="<%= post.image %>" alt="<%= post.title %>" title="<%= post.title %>" /></a>
+          <%= link_to image_tag(post.image, alt: post.title, title: post.title), post %>
         </div>
         <div class="inner">
           <em>by <%= post.source %></em>
@@ -45,22 +45,3 @@
 </div>
 
 <%= javascript_pack_tag 'search_modal' %>
-
-<script type="text/javascript">
-  var marker = document.querySelector('#marker');
-    var item = document.querySelectorAll('nav a');
-    
-    
-    function indicator(e) {
-      marker.style.left = e.offsetLeft + 'px';
-      marker.style.width = e.offsetWidth + 'px';
-    }
-    
-    item.forEach(link => {
-      link.addEventListener("click", (e) => { 
-        indicator(e.target);      
-      })
-    })
-
-</script>
-

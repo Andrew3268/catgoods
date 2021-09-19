@@ -9,7 +9,7 @@
         <div class="hero-overlay">
           <h1>Bubbles</h1>
         </div>
-        <img src="<%=asset_path 'hero.jpg'%>"" alt="bubbles from surf" class="hero-image">
+        <img src="<%=asset_path 'cat_hero.png'%>"" alt="bubbles from surf" class="hero-image">
       </div>
       <h1>Gift for cat lover</h1>
       <p>고양이를 좋아하는 사람들을 위한 선물 아이디어!!</p>
@@ -36,7 +36,7 @@
             </div>
           <% end %>
           <p class="p_title"><%= link_to post.title, post %></p>
-          <p><span><%= number_to_currency(post.is_price, locale: :kr) %>원</span></p>
+          <p class="p_price"><span><%= number_to_currency(post.is_price, locale: :kr) %>원</span></p>
         </div>
       </div>
       <% end %>

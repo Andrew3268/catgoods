@@ -30,6 +30,11 @@
 .header-logo{display:flex;justify-content:center;align-items:center;width:48px;height:48px;background-color:var(--c-blue-300);border:2px solid var(--c-gray-900);border-radius:15px}
 .header-logo div{display:flex;flex-wrap:wrap;width:24px;height:24px}
 .header-logo span{display:block;width:12px;height:12px;border:2px solid var(--c-gray-900);background-color:var(--c-yellow-500);border-radius:50%}
+.header-title{}
+.header-title em:nth-child(1){color:#e75469;}
+.header-title em:nth-child(2){color:#e3746b;}
+.header-title em:nth-child(3){color:#ec93a7;}
+.header-title em:nth-child(4){color:#facdd7;}
 
 
 /* Navbar Section */
@@ -88,6 +93,7 @@
 .card_box .inner em{color:#ccc;}
 .card_box .inner .admin_controller{display:inline-block;}
 .card_box .inner .p_title{word-break:break-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
+.card_box .inner .p_price{font-size:25px;}
 
 .menu-inner{margin:2rem 2.5% 0 2.5%;border-radius:15px;border:2px solid var(--c-gray-900);justify-content:space-between;padding:.75rem;background-color:var(--c-blue-500);position:relative}
 .menu-inner:after{content:"";display:block;position:absolute;z-index:-1;width:95%;height:100%;bottom:-9px;left:calc(50% - 47.5%);border-radius:20px;border:2px solid var(--c-gray-900);background-color:var(--c-gray-100)}

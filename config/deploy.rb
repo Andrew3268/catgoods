@@ -5,6 +5,23 @@ set :application, "catgoods"
 set :repo_url, "git@github.com:Andrew3268/catgoods.git"
 set :passenger_restart_with_touch, true
 
+set :sitemap_roles, :web # default
+
+after 'deploy:restart', 'deploy:sitemap'
+
+namespace :deploy do
+ desc 'Generate sitemap'
+ task :sitemap do
+   on roles(:app) do
+     within release_path do
+       execute :bundle, :exec, :rake, 'sitemap:create RAILS_ENV=production'
+       execute :bundle, :exec, :rake, 'sitemap:refresh RAILS_ENV=production'
+     end
+   end
+ end
+end
+
+
 # Deploy to the user's home directory
 set :deploy_to, "/home/deploy/#{fetch :application}"
 

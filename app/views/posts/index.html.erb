@@ -24,7 +24,11 @@
           <%= link_to image_tag(post.image, alt: post.title, title: post.title), post %>
         </div>
         <div class="inner">
-          <em>by <%= post.source %></em>
+          <% if post.source.present? %>
+            <em>by <%= post.source %></em>
+          <% else %>
+            <em>by 쿠팡</em>
+          <% end %>
           <% if current_user && current_user.admin %>
             <div class="admin_controller">
               <span><%= link_to 'Edit', edit_post_path(post) %></span>

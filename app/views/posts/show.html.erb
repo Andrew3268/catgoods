@@ -28,7 +28,11 @@
     
         <div class="inner_section">
           <div class="inner clearfix">
-            <em>by <%= @post.source %></em>
+            <% if @post.source.present? %>
+              <em>by <%= @post.source %></em>
+            <% else %>
+              <em>by 쿠팡</em>
+            <% end %>
             <h2><%= @post.title %></h2>
 
             <div class="star_rating">

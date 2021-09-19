@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   
   root 'posts#index'
+  resources :sitemap, :only => :index
+  get 'sitemap.xml', :controller => "sitemap", :action => "xml"
+  
   devise_for :users
   resources :categories
   resources :posts

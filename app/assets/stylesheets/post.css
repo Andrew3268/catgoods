@@ -98,11 +98,11 @@
 @media screen and (max-width:640px){
   .title h1{font-size:1.7rem;}
   .title p{font-size:1.2rem;}
-  .index_wrap{padding:10px;}
+  .index_wrap{padding:10px;border:none;box-shadow:none;margin-top:20px;}
   .nav_pc{display:none;}
   .nav_mobile{display:block;margin:0;padding:0;}
   .search_pc{display:none;}
-  .card_box{width:48%;padding:12px;}
+  .card_box{width:48%;padding:12px;margin-bottom:15px;}
   .card_box .image_box{height:150px;}
   .card_box .image_box img{width:90%;height:90%;}
   .card_box .inner{margin-top:10px;}
@@ -110,6 +110,7 @@
 
 @media screen and (min-width:641px) and (max-width:1199px){
   .productlists .card{width:31%;}
+  .card_box{width:31%;margin-bottom:20px;}
 
 }
 

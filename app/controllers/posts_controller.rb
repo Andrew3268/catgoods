@@ -6,9 +6,9 @@ class PostsController < ApplicationController
   def index
     if params.has_key?(:category)
       @category = Category.find_by_name(params[:category])
-      @posts = Post.where(category: @category).order("created_at DESC")
+      @pagy, @posts = pagy(@posts = Post.where(category: @category).order("created_at DESC"), items: 40)
     else
-      @posts = Post.all.order("created_at DESC")
+      @pagy, @posts = pagy(@posts = Post.all.order("created_at DESC"), items: 40)
     end  
 
     if params[:search]
@@ -19,11 +19,30 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    set_meta_tags title: @post.title,
+                  site: 'JellyJellyJellyJelly',
+                  revierse: true,
+                  description: @post.title,
+                  keywords: @post.key_word,
+                  twitter: {
+                    card: "summary",
+                    site: "@JellyJellyJellyJelly",
+                    title: @post.title,
+                    description: @post.description,
+                    image: @post.image
+                  },
+                  og: {
+                    title: @post.title,
+                    description: @post.description,
+                    type: 'website',
+                    url: post_url(@post),
+                    image: @post.image
+                  }
   end
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
-    @posts = tag.posts.order("created_at DESC")
+    @pagy, @posts = pagy(@posts = tag.posts.order("created_at DESC"), items: 40)
   end
 
   # GET /posts/new

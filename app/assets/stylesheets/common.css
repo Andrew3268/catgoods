@@ -46,4 +46,10 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 
 
 
+/* pagination */
+.pagination{margin-top:20px;}
+.pagination span{font-size:25px;margin-left:10px;}
+.pagination span.active{background:#a8dee2;padding:5px 10px;border-radius:10px;}
+
+
 

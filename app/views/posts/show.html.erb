@@ -57,7 +57,13 @@
             </div>
             
             <!-- <p>별점: 4/5, 리뷰 수: 100+ 개</p> -->
+            <% goods_pct = 0 %>
+            <% goods_pct =  (@post.was_price.to_f - @post.is_price.to_f) / @post.was_price.to_f * 100 %>
             <p class="is_price"><%= number_to_currency(@post.is_price, locale: :kr) %>원</p>
+            <% if @post.was_price.present? %>
+              <em class="was_price"><%= number_to_currency(@post.was_price, locale: :kr) %>원</em>
+              <em class="pct"> ( <%= number_to_percentage(goods_pct, precision: 0) %> off )</em>
+            <% end %>
             <p class="hashtag">관련 해시태그 :: <%= render_with_hashtags(@post.hashtag) %></p>
           </div>
 
@@ -65,7 +71,13 @@
             <div class="menu-inner">
               <a href="/" class="menu-item">뒤로가기</a>
               <a href="#" class="menu-item active">사러가기</a>
+              <% if @post.was_price.present? %>
+               <div class="sale_cat">
+                 <img src="<%=asset_path 'sale.png'%>"" alt="">
+               </div>
+              <% end %>
             </div>
+
           </div>
       </div><!-- inner -->
     

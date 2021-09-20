@@ -36,10 +36,9 @@
             </div>
           <% end %>
           <p class="p_title"><%= link_to post.title, post %></p>
-          
-            <% goods_pct = 0 %>
-            <% goods_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
-            <p class="p_price"><span><%= number_to_currency(post.is_price, locale: :kr) %>원</span></p>
+          <% goods_pct = 0 %>
+          <% goods_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
+          <p class="p_price"><span><%= number_to_currency(post.is_price, locale: :kr) %>원</span></p>
           <% if post.was_price.present? %>
             <em class="was_price"><%= number_to_currency(post.was_price, locale: :kr) %>원</em>
             <em class="pct"> ( <%= number_to_percentage(goods_pct, precision: 0) %> off )</em>

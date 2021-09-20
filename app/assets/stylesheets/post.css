@@ -83,7 +83,7 @@
 .search-input:-ms-input-placeholder{font-weight:600;color:var(--c-gray-900);-ms-transition:.15s ease;transition:.15s ease}
 .search-input::placeholder{font-weight:600;color:var(--c-gray-900);transition:.15s ease}
 
-.productlists{margin-top:35px;}
+.productlists{margin-top:50px;}
 .currently-playing{padding:1rem .5rem}
 .card_box{float:left;width:23%;margin:1% 1% 5% 1%;border:2px solid;border-radius:20px;padding:15px;position:relative;background:#fff;}
 .card_box:after{content:"";display:block;position:absolute;z-index:-1;width:95%;height:100%;bottom:-9px;left:calc(50% - 47.5%);border-radius:20px;border:2px solid var(--c-gray-900);background-color:var(--c-yellow-300)}
@@ -100,9 +100,9 @@
 
 
 @media screen and (max-width:640px){
-  .productlists{margin-top:45px;}
+  /*.productlists{margin-top:45px;}*/
   .title h1{font-size:1.7rem;}
-  .title p{font-size:1.2rem;}
+  .title p{font-size:1.1rem;}
   .index_wrap{padding:10px;border:none;box-shadow:none;margin-top:20px;}
   .nav_pc{display:none;}
   .nav_mobile{display:block;margin:0;padding:0;}
@@ -112,13 +112,18 @@
   .card_box .image_box img{width:90%;height:90%;}
   .card_box .inner{margin-top:10px;}
   .card_box .inner .p_price{display:block;}
-  .card_box .sale_cat{top:-41px;}
+  .card_box .sale_cat{top:-34px;}
+  .card_box .sale_cat img{width:150px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){
+  .header{grid-template-columns: 0.5fr 2fr 2fr;}
+  /*.productlists{margin-top:50px;}*/
   .productlists .card{width:31%;}
   .card_box{width:31%;margin-bottom:20px;height:320px;margin-bottom:60px;}
   .card_box .inner .p_price{display:block;}
+  .nav_pc{display:none;}
+  .nav_mobile{display:block;margin:0;padding:0;}
 
 }
 
@@ -162,7 +167,7 @@
   .show_index .show_card .card{float:none;width:100%;}
   .show_index .show_card .image_box{float:none;width:100%;}
   .show_index .show_card .inner_section{float:none;width:100%;margin:30px 0 0 0;height:auto;}
-  .menu-inner{margin:3rem 0;}
+  .menu-inner{margin:4rem 0 0 0;}
   .show_index .show_card .inner_section .btn{position:relative;}
   .show_index .show_card .inner_section .btn .sale_cat{position:absolute;top:-48px;}
 }

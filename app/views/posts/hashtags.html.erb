@@ -12,28 +12,7 @@
       </div>
     </section>
    
-    <section class="productlists clearfix">
-
-      <% @posts.each do |post| %>
-      <div class="card_box">
-        <div class="image_box">
-          <%= link_to image_tag(post.image, alt: post.title, title: post.title), post %>
-        </div>
-        <div class="inner">
-          <em>by <%= post.source %></em>
-          <% if current_user && current_user.admin %>
-            <div class="admin_controller">
-              <span><%= link_to 'Edit', edit_post_path(post) %></span>
-              <span><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-            </div>
-          <% end %>
-          <p class="p_title"><%= link_to post.title, post %></p>
-          <p><span><%= number_to_currency(post.is_price, locale: :kr) %>원</span></p>
-        </div>
-      </div>
-      <% end %>
-
-    </section>
+    <%= render 'posts/index_section' %>
     <%= raw pagy_nav(@pagy) %>
     
   </div>

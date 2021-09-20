@@ -9,7 +9,7 @@
         <div class="hero-overlay">
           <h1>Bubbles</h1>
         </div>
-        <img src="<%=asset_path 'cat_hero.png'%>"" alt="bubbles from surf" class="hero-image">
+        <img src="<%=asset_path 'cat_hero.png'%>"" alt="gift for cat lover" class="hero-image">
       </div>
       <h1>Gift for cat lover</h1>
       <p>고양이를 좋아하는 사람들을 위한 선물 아이디어!!</p>
@@ -36,8 +36,21 @@
             </div>
           <% end %>
           <p class="p_title"><%= link_to post.title, post %></p>
-          <p class="p_price"><span><%= number_to_currency(post.is_price, locale: :kr) %>원</span></p>
+          
+            <% goods_pct = 0 %>
+            <% goods_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
+            <p class="p_price"><span><%= number_to_currency(post.is_price, locale: :kr) %>원</span></p>
+          <% if post.was_price.present? %>
+            <em class="was_price"><%= number_to_currency(post.was_price, locale: :kr) %>원</em>
+            <em class="pct"> ( <%= number_to_percentage(goods_pct, precision: 0) %> off )</em>
+          <% end %>
         </div>
+
+        <% if post.was_price.present? %>
+          <div class="sale_cat">
+            <img src="<%=asset_path 'sale.png'%>"" alt="">
+          </div>
+        <% end %>
       </div>
       <% end %>
 

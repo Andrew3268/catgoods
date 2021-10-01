@@ -28,7 +28,7 @@ class Post < ApplicationRecord
   end
 
   def self.search_by(search_term)
-    where("LOWER(title) LIKE :search_term OR LOWER(key_word) LIKE :search_term", search_term: "%#{search_term.downcase}%")
+    where("LOWER(title) LIKE :search_term OR LOWER(hashtag) LIKE :search_term", search_term: "%#{search_term.downcase}%")
   end 
 
   

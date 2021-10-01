@@ -8,10 +8,10 @@
   <a href="/posts/hashtag/bath" class="navigation-item">Bath</a>
   <a href="/posts/hashtag/ofiice" class="navigation-item">Ofiice</a>
   <a href="/posts/hashtag/for_fun" class="navigation-item">For_fun</a>
+  <a href="/hubs/about_us" class="navigation-item">About Us</a>
   <% if current_user && current_user.admin %>
     <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "navigation-item" %>
     <%= link_to 'New Post', new_post_path, :class => "navigation-item" %>
-    <%= link_to "New Category", new_category_path, :class => "navigation-item" %>
   <% else %>
     <%= link_to 'Sign up', new_user_registration_path, :class => "navigation-item" %>
     <%= link_to "Sign in", new_user_session_path, :class => "navigation-item" %>

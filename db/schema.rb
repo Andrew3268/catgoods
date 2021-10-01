@@ -12,15 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2021_09_19_050024) do
 
-  create_table "categories", force: :cascade do |t|
-    t.integer "user_id"
-    t.string "name"
-    t.text "discription"
-    t.boolean "display_in_navbar", default: true
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
     t.integer "sluggable_id", null: false
@@ -34,7 +25,6 @@ ActiveRecord::Schema.define(version: 2021_09_19_050024) do
 
   create_table "posts", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "category_id"
     t.string "title"
     t.string "link"
     t.string "image"
@@ -93,7 +83,6 @@ ActiveRecord::Schema.define(version: 2021_09_19_050024) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
-    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["slug"], name: "index_posts_on_slug", unique: true
   end
 
@@ -125,7 +114,6 @@ ActiveRecord::Schema.define(version: 2021_09_19_050024) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "posts", "categories"
   add_foreign_key "posts_tags", "posts"
   add_foreign_key "posts_tags", "tags"
 end

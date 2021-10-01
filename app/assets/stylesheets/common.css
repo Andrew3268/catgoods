@@ -53,3 +53,38 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 
 
 
+/*About Us*/
+.about_us{width:1000px;margin:120px auto 0 auto;font-family: 'Montserrat', sans-serif;}
+.about_us .sections{margin-bottom:50px;border-bottom:1px solid #ccc;padding-bottom:10px;}
+.about_us h2{margin-bottom:15px;color:#000;background:#fff;padding:7px 10px;border-radius:10px;display:inline-block;}
+.about_us h3{padding:0 10px;margin-bottom:5px;}
+.about_us p{margin-bottom:30px;line-height:25px;}
+.about_us .headline{font-size:150px;font-weight:bold;margin-bottom:-20px;}
+.about_us .headline em a{font-size:15px;color:#000;}
+.about_us .mission{}
+.about_us .mission .under_head{margin-bottom:55px;}
+.about_us .mission .what_is .left, .about_us .mission .what_is .right{}
+.about_us .mission p span{font-size:50px;font-weight:bold;}
+.about_us .works .works_box{float:left;width:31.33%;margin:15px 1% 0 1%;text-align:center;}
+.about_us .bodyline{font-size:40px;font-weight:bold;}
+.about_us .qna p{padding:0 20px;}
+
+
+@media screen and (max-width:640px){
+  .about_us{width:100%;margin-top:30px;}
+  .about_us .sections{margin:30px 0;padding:25px;}
+  .about_us .headline{font-size:65px;margin-bottom:3px;}
+  .about_us .headline em a{font-size:10px;}
+  .about_us h2{font-size:15px;}
+  .about_us h3{padding:0;}
+  .about_us p{margin-bottom:20px;}
+  .about_us .mission .under_head{margin-bottom:30px;}
+  .about_us .mission .left,
+  .about_us .mission .right{float:none;width:100%;margin:0;}
+  .about_us .qna p{padding:0;}
+  .about_us .qna a{width:100%;font-size:19px;display:block;margin:0;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .about_us{width:100%;margin-top:120px;}
+}

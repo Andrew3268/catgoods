@@ -8,7 +8,8 @@ class PostsController < ApplicationController
       @category = Category.find_by_name(params[:category])
       @pagy, @posts = pagy(@posts = Post.where(category: @category).order("created_at DESC"), items: 40)
     else
-      @pagy, @posts = pagy(@posts = Post.all.order("created_at DESC"), items: 40)
+      @pagy, @posts = pagy(Post.all.order("created_at DESC"), items: 40)
+      # @pagy, @posts = pagy(Post.offset(rand(Post.count)), items: 40)
     end  
 
     if params[:search]
@@ -101,7 +102,7 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :link, :category_id, :image, :source, :hashtag, :rating, :review_count, 
                                    :is_price, :was_price, :pct, :description, :key_word, :star_5, :star_4_5, :star_4, :star_3_5, :star_3,
-                                   :spare_01)
+                                   :spare_01, :spare_56)
     end
 end
 

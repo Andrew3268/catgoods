@@ -20,7 +20,7 @@
 .hero{position:relative}
 .hero-overlay{text-align:center;position:absolute;text-transform:uppercase;z-index:0;width:100%}
 .hero-overlay h1{font-size:6vw;transform:translateY(10vw);color:#fff;letter-spacing:.45rem;font-weight:700}
-.hero-image{display:block;z-index:-1;margin-left:auto;margin-right:auto;width:100%;height:300px;object-fit:cover;border-radius:20px}
+.hero-image{display:block;z-index:-1;margin-left:auto;margin-right:auto;width:100%;height:400px;object-fit:cover;border-radius:20px}
 
 @media screen and (max-width:640px){
   .hero-image{height:210px;}
@@ -93,8 +93,8 @@
 .card_box .inner .admin_controller{display:inline-block;}
 .card_box .inner .p_title{word-break:break-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
 .card_box .inner .p_price{font-size:25px;display:inline-block;}
-.card_box .sale_cat{position:absolute;top:-45px;left:5px;}
-.card_box .sale_cat img{width:200px;}
+.card_box .sale_cat{position:absolute;top:-35px;left:5px;}
+.card_box .sale_cat img{width:150px;}
 
 
 
@@ -137,9 +137,10 @@
 .show_index .show_card .image_box img{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:80%;height:80%;object-fit:contain;}
 
 .show_index .show_card .inner_section{float:left;width:45%;text-align:center;margin-left:5%;height:350px;position:relative;}
-.show_index .show_card .inner_section .inner{padding:0 2.5%;margin-top:30px;}
+.show_index .show_card .inner_section .inner{padding:0 2.5%;margin-top:10px;}
 .show_index .show_card .inner_section .inner h2{margin-bottom:5px;}
 .show_index .show_card .inner_section .inner p{font-size:17px;}
+.show_index .show_card .inner_section .inner p.hashtag a{background:var(--c-yellow-500);padding:3px 7px;border-radius:15px;font-size:15px;display:inline-block;margin-bottom:5px;}
 .show_index .show_card .inner_section .inner .is_price{font-size:25px;}
 .show_index .show_card .inner_section .inner .hashtag{}
 .show_index .show_card .inner_section .inner em{color:#ccc;}
@@ -147,6 +148,7 @@
 .show_index .show_card .inner_section .inner .star_rating img{height:17px;vertical-align:sub;display:inline-block;}
 .show_index .show_card .inner_section .inner .star_rating em{vertical-align:middle;}
 .show_index .show_card .inner_section .btn{position:absolute;bottom:0;width:100%;}
+
 
 .show_index .notice{color:#ccc;margin:5%;border-top:1px solid;padding-top:10px;font-size:12px;}
 .show_index .notice ul{margin-left:20px;}

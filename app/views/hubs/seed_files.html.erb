@@ -1,0 +1,58 @@
+<div class="wrap" style="padding:20px;">
+  <% @posts.each do |post| %>
+    <p style='margin:20px 0;'>Post.create(
+        user_id: 1, 
+
+        <!-- 이미지 -->
+        image: '<%= post.image %>', 
+
+        <!-- 상품이름 -->
+        title: '<%= post.title %>', 
+
+        <!-- Friendly_Id -->
+        spare_01: '<%= post.spare_01 %>', 
+
+        <!-- 샹품 URL -->
+        link: '<%= post.link %>', 
+
+        <!-- 판매사이트 -->
+        <% if post.source.present? %>
+          source: '<%= post.source %>'
+        <% else %>
+          source: '쿠팡'
+        <% end %>, 
+
+        <!-- 해시태그 -->
+        hashtag: '<%= post.hashtag %>', 
+
+        <!-- 현재 가격 -->
+        is_price: '<%= post.is_price %>', 
+
+        <!-- 세일전 가격 -->
+        <% if post.was_price.present? %>
+          was_price: '<%= post.was_price %>'
+        <% else %>
+          was_price: ' '
+        <% end %>, 
+
+        <!-- 할인율 --><!-- 
+        <% if post.was_price.present? %>
+          <% goods_pct = 0 %>
+          <% goods_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
+          pct: '<%= goods_pct %>'
+        <% else %>
+          pct: ' '
+        <% end %>, -->
+        
+        <!-- 별점 --> 
+        <% if post.spare_56.present? %>
+          spare_56: '<%= post.spare_56 %>'
+        <% else %>
+          spare_56: ' '
+        <% end %> )
+      </p>
+
+
+
+  <% end %>
+</div>

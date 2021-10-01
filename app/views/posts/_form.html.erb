@@ -3,25 +3,27 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
     <div class="form-inputs">
-      <%= f.input :title, label: "상품 이름" %>
-      <%= f.input :spare_01, label: "Friendly_id" %>
       <%= f.input :image, label: "상품 이미지" %>
+      <%= f.input :title, label: "상품 이름" %>
+      <%= f.input :spare_01, label: "Friendly_id [어퍼스트로피, 쉼표, 따옴표 제거]" %>
+      <%= f.input :link, label: "상품 URL" %>
       <!-- <%= f.input :description, label: "상품 설명" %> -->
       <%= f.input :source, label: "판매 사이트" %>
       <%= f.input :hashtag, label: "해시태그" %>
-      <%= f.input :key_word, label: "관련검색어" %>
+      <!-- <%= f.input :key_word, label: "관련검색어" %> -->
       <div class="pricing clearfix">
         <%= f.input :is_price, label: "현재 가격" %>
         <%= f.input :was_price, label: "세일전 가격" %>
         <%= f.input :pct, label: "할인률" %>
+        <%= f.input :review_count, label: "리뷰 수" %>
         <div class="star_rating">
-          <%= f.input :star_5, label: "5" %>
+          <%= f.input :spare_56, label: "별점" %>
+          <!-- <%= f.input :star_5, label: "5" %>
           <%= f.input :star_4_5, label: "4.5" %>
           <%= f.input :star_4, label: "4" %>
           <%= f.input :star_3_5, label: "3.5" %>
-          <%= f.input :star_3, label: "3" %>
+          <%= f.input :star_3, label: "3" %> -->
         </div>
-        <%= f.input :review_count, label: "리뷰 수" %>
       </div>
     </div>
 

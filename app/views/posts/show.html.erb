@@ -4,7 +4,6 @@
         <%= render '/posts/header_show' %>
       </div>
 
-
       <nav class="navigation show_nav">
         <div class="dummy-viewport">
           <div class="horizontal-menu">
@@ -32,34 +31,56 @@
         <div class="inner_section">
           <div class="inner clearfix">
             <% if @post.source.present? %>
-              <em>by <%= @post.source %></em>
+              <em>by <%= @post.source %><span></span></em>
             <% else %>
               <em>by 쿠팡</em>
             <% end %>
             <h2><%= @post.title %></h2>
 
-            <div class="star_rating">
+          <!--   <div class="star_rating">
               <% if @post.review_count.present? %>
                 <% if @post.star_4_5.present? %>
-                  <img class="star_4_5" src="<%=asset_path 'star_4_5.png' %>" />
+                  <img class="star_4_5" src="<%=asset_path 'star_45.png' %>" alt="벌점4.5"/>
                   <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% elsif @post.star_4.present? %>
-                  <img class="star_4" src="<%=asset_path 'star_4.png' %>" />
+                  <img class="star_4" src="<%=asset_path 'star_4.png' %>" alt="벌점 4" />
                   <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% elsif @post.star_3_5.present? %>
-                  <img class="star_3_5" src="<%=asset_path 'star_3_5.png' %>" />
+                  <img class="star_3_5" src="<%=asset_path 'star_35.png' %>" alt="벌점3.5" />
                   <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% elsif @post.star_3.present? %>
-                  <img class="star_3" src="<%=asset_path 'star_3.png' %>" />
+                  <img class="star_3" src="<%=asset_path 'star_3.png' %>" alt="벌점 3" />
                   <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% elsif %>
-                  <img class="star_5" src="<%=asset_path 'star_5.png' %>" />
+                  <img class="star_5" src="<%=asset_path 'star_5.png' %>" alt="벌점 5" />
                   <em><%= @post.review_count %>+ 개의 상품평</em>
                 <% end %>
               <% end %>
-            </div>
-            
-            <!-- <p>별점: 4/5, 리뷰 수: 100+ 개</p> -->
+            </div> -->
+
+           <% if @post.review_count.present? %>
+             <div class="star_rating">
+                <% if @post.spare_56 == 50 %>
+                  <img class="star_4_5" src="<%=asset_path 'star_5.png' %>" alt="벌점4.5"/>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
+                <% elsif @post.spare_56 == 45 %>
+                  <img class="star_4_5" src="<%=asset_path 'star_45.png' %>" alt="벌점4.5"/>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
+                <% elsif @post.spare_56 == 40 %>
+                  <img class="star_4_5" src="<%=asset_path 'star_4.png' %>" alt="벌점4.5"/>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
+                <% elsif @post.spare_56 == 35 %>
+                  <img class="star_4_5" src="<%=asset_path 'star_35.png' %>" alt="벌점4.5"/>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
+                <% elsif @post.spare_56 == 30 %>
+                  <img class="star_4_5" src="<%=asset_path 'star_3.png' %>" alt="벌점4.5"/>
+                  <em><%= @post.review_count %>+ 개의 상품평</em>
+                <% end %>
+              </div>
+            <% else %>
+            <% end %>
+
+
             <% goods_pct = 0 %>
             <% goods_pct =  (@post.was_price.to_f - @post.is_price.to_f) / @post.was_price.to_f * 100 %>
             <p class="is_price"><%= number_to_currency(@post.is_price, locale: :kr) %>원</p>
@@ -67,16 +88,16 @@
               <em class="was_price"><%= number_to_currency(@post.was_price, locale: :kr) %>원</em>
               <em class="pct"> ( <%= number_to_percentage(goods_pct, precision: 0) %> off )</em>
             <% end %>
-            <p class="hashtag">관련 해시태그 :: <%= render_with_hashtags(@post.hashtag) %></p>
+            <p class="hashtag"><%= render_with_hashtags(@post.hashtag) %></p>
           </div>
 
           <div class="btn menu clearfix">
             <div class="menu-inner">
               <a href="/" class="menu-item">뒤로가기</a>
-              <a href="#" class="menu-item active">사러가기</a>
+              <a target="_blank" href="#" class="menu-item active">사러가기</a>
               <% if @post.was_price.present? %>
                <div class="sale_cat">
-                 <img src="<%=asset_path 'sale.png'%>"" alt="">
+                 <img src="<%=asset_path 'dont_go.png'%>" alt="세일알림이 냥이">
                </div>
               <% end %>
             </div>

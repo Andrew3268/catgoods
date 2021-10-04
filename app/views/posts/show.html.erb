@@ -37,7 +37,12 @@
             <% if @post.source.present? %>
               <em>by <%= @post.source %><span></span></em>
             <% else %>
-              <em>by 쿠팡</em>
+              <em>
+                by 쿠팡
+                <% if current_user && current_user.admin %>
+                   | <a href="/">Back</a>
+                <% end%>
+              </em>
             <% end %>
             <h2><%= @post.title %></h2>
 

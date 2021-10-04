@@ -7,5 +7,7 @@
 #   Character.create(name: 'Luke', movie: mov거es.first)
 
 
+#Update When post updeated!!
+
 
 

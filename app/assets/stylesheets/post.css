@@ -61,8 +61,8 @@
 .header-buttons{display:flex;align-items:center;justify-content:flex-end}
 
 .title{margin-top:1rem}
-.title h1{font-size:2rem;font-weight:700}
-.title p{font-size:1.5rem;color:var(--c-gray-500);margin-top:-10px;}
+.title h1{font-size:2rem;font-weight:700;padding:10px;}
+.title p{font-size:1.5rem;color:var(--c-gray-500);margin-top:-10px;padding:0 10px;}
 .title .hashtag_indicator{}
 .title .hashtag_indicator span{font-size:30px;border-bottom:3px solid #f9bc73;box-shadow:inset 0 -15px 0 #f9bc73;}
 .search{position:relative;z-index:1;transition:.15s ease}

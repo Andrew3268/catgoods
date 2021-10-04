@@ -11,7 +11,16 @@
         </div>
         <img src="<%=asset_path 'hero.jpg'%>"" alt="gift for cat lover" class="hero-image">
       </div>
-      <h1>Gift for cat lover</h1>
+      <h1>
+        Gift for cat lover
+        <% if current_user && current_user.admin %>
+          <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "navigation-item" %>
+          <%= link_to 'New Post', new_post_path, :class => "navigation-item" %>
+        <% else %>
+          <%= link_to 'Sign up', new_user_registration_path, :class => "navigation-item" %>
+          <%= link_to "Sign in", new_user_session_path, :class => "navigation-item" %>
+        <% end %>
+      </h1>
       <p>고양이를 좋아하는 사람들을 위한 선물 아이디어!!</p>
     </section>
 

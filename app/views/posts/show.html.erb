@@ -100,7 +100,8 @@
 
           <div class="btn menu clearfix">
             <div class="menu-inner">
-              <a href="/" class="menu-item">뒤로가기</a>
+              <button class="menu-item" onclick="goBack()">뒤로가기</button>
+              <!-- <a href="/" class="menu-item">뒤로가기</a> -->
               <a target="_blank" href="<%= @post.link %>" class="menu-item active">사러가기</a>
               <% if @post.was_price.present? %>
                <div class="sale_cat">
@@ -108,7 +109,11 @@
                </div>
               <% end %>
             </div>
-
+            <script>
+              function goBack() {
+                window.history.back();
+              }
+            </script>
           </div>
       </div><!-- inner -->
     

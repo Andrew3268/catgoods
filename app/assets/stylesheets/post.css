@@ -142,9 +142,9 @@
 .show_index .show_card .inner_section .inner h2{margin-bottom:5px;}
 .show_index .show_card .inner_section .inner p{font-size:17px;margin-top:10px;}
 .show_index .show_card .inner_section .inner p.hashtag a{background:var(--c-yellow-500);padding:3px 7px;border-radius:15px;font-size:15px;display:inline-block;margin-bottom:5px;}
-.show_index .show_card .inner_section .inner .is_price{font-size:25px;}
+.show_index .show_card .inner_section .inner .is_price{font-size:30px;}
 .show_index .show_card .inner_section .inner .hashtag{}
-.show_index .show_card .inner_section .inner em{color:#ccc;}
+.show_index .show_card .inner_section .inner em{color:#ccc;font-size:17px;}
 .show_index .show_card .inner_section .inner .star_rating{margin-bottom:10px;}
 .show_index .show_card .inner_section .inner .star_rating img{height:17px;vertical-align:sub;display:inline-block;}
 .show_index .show_card .inner_section .inner .star_rating em{vertical-align:middle;}
@@ -158,8 +158,8 @@
 
 .menu-inner{margin:2rem 2.5% 0 2.5%;border-radius:15px;border:2px solid var(--c-gray-900);justify-content:space-between;padding:.75rem;background-color:var(--c-blue-500);position:relative}
 .menu-inner:after{content:"";display:block;position:absolute;z-index:-1;width:95%;height:100%;bottom:-9px;left:calc(50% - 47.5%);border-radius:20px;border:2px solid var(--c-gray-900);background-color:var(--c-gray-100)}
-.menu-inner .sale_cat{position:absolute;top:-48px;}
-.menu-inner .sale_cat img{width:200px;}
+.menu-inner .sale_cat{position:absolute;top:-37px;}
+.menu-inner .sale_cat img{width:165px;}
 .menu-item{display:inline-block;width:48%;text-align:center;color:#fff;border-radius:15px;padding-top:.375rem;padding-bottom:.375rem;text-decoration:none;background-color:transparent;border:2px solid transparent}
 .menu-item.active,.menu-item:focus,.menu-item:hover{border-color:var(--c-gray-900);background-color:var(--c-yellow-500);color:var(--c-gray-900)}*,:focus{outline:0}
 
@@ -172,7 +172,7 @@
   .show_index .show_card .inner_section{float:none;width:100%;margin:30px 0 0 0;height:auto;}
   .menu-inner{margin:4rem 0 0 0;}
   .show_index .show_card .inner_section .btn{position:relative;}
-  .show_index .show_card .inner_section .btn .sale_cat{position:absolute;top:-48px;}
+  .show_index .show_card .inner_section .btn .sale_cat{position:absolute;top:-40px;}
 }
 
 @media screen and (min-width:641px) and (max-width:1199px){

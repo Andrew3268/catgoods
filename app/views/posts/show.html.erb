@@ -103,11 +103,9 @@
               <button class="menu-item" onclick="goBack()">뒤로가기</button>
               <!-- <a href="/" class="menu-item">뒤로가기</a> -->
               <a target="_blank" href="<%= @post.link %>" class="menu-item active">사러가기</a>
-              <% if @post.was_price.present? %>
                <div class="sale_cat">
                  <img src="<%=asset_path 'dont_go.png'%>" alt="세일알림이 냥이">
                </div>
-              <% end %>
             </div>
             <script>
               function goBack() {

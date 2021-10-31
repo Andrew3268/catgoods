@@ -18,4 +18,5 @@ Rails.application.routes.draw do
 
   get 'hubs/seed_files'
   get 'hubs/about_us'
+  get 'hubs/error_test'
 end

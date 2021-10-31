@@ -88,3 +88,9 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 @media screen and (min-width:641px) and (max-width:1199px){
   .about_us{width:100%;margin-top:120px;}
 }
+
+
+/*404 Errors Page*/
+.not_found_box{width:600px;text-align:center;display:block;margin:150px auto 150px auto;position:relative;}
+.not_found_box img{width:100%;border-radius:20px;}
+.not_found_box a{position:absolute;bottom:85px;left:60px;font-size:25px;background:#f9bc73;padding:5px 20px;color:#fff;border-radius:20px;}

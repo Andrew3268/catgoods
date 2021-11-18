@@ -12,6 +12,8 @@ gem 'sitemap_generator'
 gem 'whenever', require: false
 gem 'impressionist'
 # gem 'sshkit', '~> 1.4.0'
+gem "punching_bag"
+
 
 gem 'capistrano-rails-console', require: false
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_19_050024) do
+ActiveRecord::Schema.define(version: 2021_11_18_092453) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -93,6 +93,17 @@ ActiveRecord::Schema.define(version: 2021_09_19_050024) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["post_id"], name: "index_posts_tags_on_post_id"
     t.index ["tag_id"], name: "index_posts_tags_on_tag_id"
+  end
+
+  create_table "punches", force: :cascade do |t|
+    t.integer "punchable_id", null: false
+    t.string "punchable_type", limit: 20, null: false
+    t.datetime "starts_at", null: false
+    t.datetime "ends_at", null: false
+    t.datetime "average_time", null: false
+    t.integer "hits", default: 1, null: false
+    t.index ["average_time"], name: "index_punches_on_average_time"
+    t.index ["punchable_type", "punchable_id"], name: "punchable_index"
   end
 
   create_table "tags", force: :cascade do |t|

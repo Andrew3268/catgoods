@@ -1,0 +1,4 @@
+/* Popular Page */
+
+.numbering{position:absolute;top:-27px;right:-15px;}
+.numbering span{font-size:30px;border-radius:50%;border:3px solid;width:50px;height:50px;display:block;text-align:center;padding-top:4px;background:#eab3c0;}

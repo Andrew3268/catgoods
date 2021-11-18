@@ -1,11 +1,17 @@
+<section class="title">
+  <h1>Most Popular Cat Goods Top 10 in the last week</h1>
+  <p>한 주동안 뷰가 가장 많은 굿즈 Top 10</p>
+</section>
+
 <section class="productlists clearfix">
 
-  <% @posts.each do |post| %>
+  <% @posts_week.each_with_index do |post, i| %> 
     <div class="card_box">
       <div class="image_box">
         <%= link_to image_tag(post.image, alt: post.title, title: post.title), post %>
       </div>
       <div class="inner">
+        
         <!--
         <% if post.source.present? %>
           <em>by <%= post.source %></em>
@@ -35,6 +41,10 @@
           <img src="<%=asset_path 'sale.png'%>" alt="세일알림이 냥이">
         </div>
       <% end %>
+
+      <div class="numbering">
+        <span><%= i + 1 %></span>
+      </div>
     </div>
   <% end %>
 

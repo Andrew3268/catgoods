@@ -1,5 +1,8 @@
 class Post < ApplicationRecord
 
+  acts_as_punchable
+
+
   extend FriendlyId
   friendly_id :spare_01, use: :slugged
 

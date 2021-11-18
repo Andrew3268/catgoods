@@ -1,0 +1,20 @@
+<div class="wrap">
+  <div class="index_wrap">
+    <%= render '/posts/header' %>
+    <%= render '/posts/navigation' %>
+    
+    <!-- 오늘 뷰가 가장 많은 굿즈 -->
+    <%= render '/hubs/popular_today' %>
+
+    <!-- 한 주동안 뷰가 가장 많은 굿즈 -->
+    <%= render '/hubs/popular_week' %>
+
+    <!-- 한 달동안 뷰가 가장 많은 굿즈 -->
+    <%= render '/hubs/popular_month' %>
+
+
+
+  </div>
+</div>
+
+<%= javascript_pack_tag 'search_modal' %>

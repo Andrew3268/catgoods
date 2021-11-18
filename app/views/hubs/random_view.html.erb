@@ -13,13 +13,6 @@
           </div>
           <div class="inner">
             
-            <!--
-            <% if post.source.present? %>
-              <em>by <%= post.source %></em>
-            <% else %>
-              <em>by 쿠팡</em>
-            <% end %>
-            -->
             <% if current_user && current_user.admin %>
               <div class="admin_controller">
                 <span><%= link_to 'Edit', edit_post_path(post) %></span>
@@ -47,6 +40,6 @@
       <% end %>
 
     </section>
-    
+
   </div>
 </div>

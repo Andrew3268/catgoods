@@ -34,7 +34,8 @@
     
         <div class="inner_section">
           <div class="inner clearfix">
-            <% if current_user && current_user.admin %><a class="back" href="/">Back</a><% end%>
+            <% if current_user && current_user.admin %><a class="back" href="/">Back</a><a class="back" href="/hubs/random_view">Back To Ransom</a><% end%>
+
             <% if @post.source.present? %>
               <em>by <%= @post.source %><span></span></em>
             <% else %>

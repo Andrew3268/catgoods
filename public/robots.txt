@@ -5,3 +5,4 @@ User-agent: *
 Disallow: /posts/new
 Disallow: /posts/edit
 Disallow: /hubs/seed_files
+Disallow: /hubs/random_view

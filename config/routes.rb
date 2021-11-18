@@ -20,4 +20,5 @@ Rails.application.routes.draw do
   get 'hubs/about_us'
   get 'hubs/error_test'
   get 'hubs/popular'
+  get 'hubs/random_view'
 end

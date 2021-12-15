@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_18_092453) do
+ActiveRecord::Schema.define(version: 2021_12_15_062514) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -21,6 +21,52 @@ ActiveRecord::Schema.define(version: 2021_11_18_092453) do
     t.index ["slug", "sluggable_type", "scope"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type_and_scope", unique: true
     t.index ["slug", "sluggable_type"], name: "index_friendly_id_slugs_on_slug_and_sluggable_type"
     t.index ["sluggable_type", "sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_type_and_sluggable_id"
+  end
+
+  create_table "jibsas", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "j_title"
+    t.string "j_link"
+    t.string "j_image"
+    t.string "j_source"
+    t.string "j_hashtag"
+    t.string "j_rating"
+    t.string "j_review_count"
+    t.string "j_key_word"
+    t.string "j_friendly_id"
+    t.decimal "j_is_price"
+    t.decimal "j_was_price"
+    t.decimal "j_pct"
+    t.text "j_description"
+    t.string "j_spare_01"
+    t.string "j_spare_02"
+    t.string "j_spare_03"
+    t.string "j_spare_04"
+    t.string "j_spare_05"
+    t.string "j_spare_06"
+    t.string "j_spare_07"
+    t.string "j_spare_08"
+    t.string "j_spare_09"
+    t.string "j_spare_10"
+    t.text "j_spare_31"
+    t.text "j_spare_32"
+    t.float "j_spare_41"
+    t.float "j_spare_42"
+    t.float "j_spare_43"
+    t.integer "j_spare_56"
+    t.integer "j_spare_57"
+    t.integer "j_spare_58"
+    t.decimal "j_spare_61"
+    t.decimal "j_spare_62"
+    t.decimal "j_spare_63"
+    t.datetime "j_spare_66"
+    t.datetime "j_spare_67"
+    t.date "j_spare_71"
+    t.date "j_spare_72"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "slug"
+    t.index ["slug"], name: "index_jibsas_on_slug", unique: true
   end
 
   create_table "posts", force: :cascade do |t|

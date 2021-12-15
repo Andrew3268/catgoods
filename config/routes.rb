@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :jibsas
   # root 'posts#index'
   root 'hubs#new_index'
   resources :sitemap, :only => :index

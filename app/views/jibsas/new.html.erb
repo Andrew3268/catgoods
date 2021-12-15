@@ -1,0 +1,9 @@
+<% if current_user && current_user.admin %>
+  <div class="form_box">
+    <div class="wrap">
+      <h1>New Jibsa</h1>
+      <%= render 'form', jibsa: @jibsa %>
+      <%= link_to 'Back', jibsas_path %>
+    </div>
+  </div>
+<% end %>

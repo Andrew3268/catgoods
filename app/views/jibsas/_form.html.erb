@@ -1,0 +1,29 @@
+<%= simple_form_for(@jibsa) do |f| %>
+  <%= f.error_notification %>
+  <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+  <div class="form-inputs">
+      <%= f.input :j_image, label: "상품 이미지" %>
+      <%= f.input :j_title, label: "상품 이름" %>
+      <%= f.input :j_friendly_id, label: "Friendly_id [어퍼스트로피, 쉼표, 따옴표 제거]" %>
+      <%= f.input :j_link, label: "상품 URL" %>
+      <!-- <%= f.input :j_description, label: "상품 설명" %> -->
+      <%= f.input :j_source, label: "판매 사이트" %>
+      <%= f.input :j_hashtag, label: "해시태그" %>
+      <!-- <%= f.input :j_key_word, label: "관련검색어" %> -->
+      <div class="pricing clearfix">
+        <%= f.input :j_is_price, label: "현재 가격" %>
+        <%= f.input :j_was_price, label: "세일전 가격" %>
+        <%= f.input :j_pct, label: "할인률" %>
+        <%= f.input :j_review_count, label: "리뷰 수" %>
+        <div class="star_rating">
+          <%= f.input :j_rating, label: "별점" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+
+<% end %>

@@ -29,4 +29,9 @@ SitemapGenerator::Sitemap.create do
   Post.find_each do |post|
     add post_path(post), :lastmod => post.updated_at, :priority => 0.5
   end
+
+  add jibsas_path, :priority => 0.5, :changefreq => 'daily'
+  Jibsa.find_each do |jibsa|
+    add jibsa_path(jibsa), :lastmod => jibsa.updated_at, :priority => 0.5
+  end
 end

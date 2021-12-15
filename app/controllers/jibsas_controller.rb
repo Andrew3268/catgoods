@@ -9,6 +9,7 @@ class JibsasController < ApplicationController
 
   # GET /jibsas/1 or /jibsas/1.json
   def show
+    @jibsa.punch(request)
   end
 
   def hashtags

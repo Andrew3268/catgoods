@@ -13,4 +13,8 @@ class HubsController < ApplicationController
   def random_view
     @posts_random = Post.offset(rand(Post.count)).limit(1)
   end
+
+  def new_index
+    @posts = Post.all.order("created_at DESC")
+  end
 end

@@ -43,7 +43,7 @@
 .navigation-item.active:before{background-color:var(--c-yellow-500)}
 .navigation-item:before{content:"";display:block;position:absolute;width:100%;height:14px;background-color:transparent;z-index:-1;bottom:-2px;left:0;transition:.15s ease}
 .navigation-item+.navigation-item{margin-left:1.25rem}
-.navigation-item:focus,.navigation-item:hover:before{background-color:var(--c-yellow-500)}
+/*.navigation-item:focus,.navigation-item:hover:before{background-color:var(--c-yellow-500)}*/
 /* Navebar only display on Moblie */
 .nav_mobile{display:none;}
 .horizontal-menu{overflow:hidden;height:44px;padding:4px 0}

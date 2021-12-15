@@ -1,0 +1,34 @@
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <a href="#n">나는 집사입니다.</a>
+    </div>
+  </div>
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
+      <%= render '/posts/navigation' %>
+      <section class="title">
+        <div class="hero">
+          <div class="hero-overlay">
+            <!-- <h1>Bubbles</h1> -->
+          </div>
+          <img src="<%=asset_path 'hero_01.png'%>"" alt="gift for cat lover" class="hero-image">
+        </div>
+        <h1>
+          Gift for cat lover
+          <% if current_user && current_user.admin %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "navigation-item" %>
+            <%= link_to 'New Post', new_post_path, :class => "navigation-item" %>
+          <% end %>
+        </h1>
+        <p>고양이를 좋아하는 사람들을 위한 선물 아이디어!!</p>
+      </section>
+
+      <%= render 'posts/index_section' %>
+
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'search_modal' %>

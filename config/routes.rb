@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
-  root 'posts#index'
+  # root 'posts#index'
+  root 'hubs#new_index'
   resources :sitemap, :only => :index
   get 'sitemap.xml', :controller => "sitemap", :action => "xml"
   
@@ -21,4 +22,5 @@ Rails.application.routes.draw do
   get 'hubs/error_test'
   get 'hubs/popular'
   get 'hubs/random_view'
+  get 'hubs/new_index'
 end

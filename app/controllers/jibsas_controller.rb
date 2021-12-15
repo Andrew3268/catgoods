@@ -4,11 +4,16 @@ class JibsasController < ApplicationController
 
   # GET /jibsas or /jibsas.json
   def index
-    @jibsas = Jibsa.all
+    @jibsas = Jibsa.all.order("created_at DESC")
   end
 
   # GET /jibsas/1 or /jibsas/1.json
   def show
+  end
+
+  def hashtags
+    tag = Tag.find_by(name: params[:name])
+    @jibsas = tag.jibsas.order("created_at DESC")
   end
 
   # GET /jibsas/new

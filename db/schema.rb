@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_15_062514) do
+ActiveRecord::Schema.define(version: 2021_12_15_063816) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string "slug", null: false
@@ -67,6 +67,15 @@ ActiveRecord::Schema.define(version: 2021_12_15_062514) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
     t.index ["slug"], name: "index_jibsas_on_slug", unique: true
+  end
+
+  create_table "jibsas_tags", id: false, force: :cascade do |t|
+    t.integer "jibsa_id"
+    t.integer "tag_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["jibsa_id"], name: "index_jibsas_tags_on_jibsa_id"
+    t.index ["tag_id"], name: "index_jibsas_tags_on_tag_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -171,6 +180,8 @@ ActiveRecord::Schema.define(version: 2021_12_15_062514) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "jibsas_tags", "jibsas"
+  add_foreign_key "jibsas_tags", "tags"
   add_foreign_key "posts_tags", "posts"
   add_foreign_key "posts_tags", "tags"
 end

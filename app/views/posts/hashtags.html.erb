@@ -1,21 +1,62 @@
-<div class="wrap">
-  <div class="index_wrap">
-    <%= render '/posts/header' %>
-  
-    <%= render '/posts/navigation' %>
-  
-    <section class="title">
-      <div class="hashtag_indicator">
-        <% if params[:name].present? %>
-          <span>#<%= params[:name] %></span>
-        <% end %>
-      </div>
-    </section>
-   
-    <%= render 'posts/index_section' %>
-    <%= raw pagy_nav(@pagy) %>
-    
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>고양이를 사랑하는<br />냥덕후들을 위한 공간</h2>
+      <p>귀여운 고양이를 테마로 하는 굿즈를 큐레이팅 합니다.&nbsp;다양한 냥이 굿즈를 구경하세요.</p>
+      <a href="/hubs/popular_today">#인기_많은_굿즈_TOP_10</a>
+    </div>
   </div>
+
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
+
+      <section class="search search_pc">
+        <div class="search-inner">
+            <button class="search-button">
+              <img src="<%=asset_path 'search.png'%>" alt="냥이굿즈 찾기">
+            </button>
+            <%= form_for "",url: posts_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
+            <% end %> 
+          </div>
+       </section>
+      
+
+      <%= render '/posts/navigation' %>
+      <section>
+        <div class="hero">
+          <img src="<%=asset_path 'hero_01.png'%>" alt="gift for cat lover" class="hero-image">
+        </div>
+        <div class="trending">
+          <a href="/hubs/popular_today">#인기_많은_굿즈_TOP_10</a>
+        </div>
+        <h1>
+          <% if current_user && current_user.admin %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "navigation-item" %>
+            <%= link_to 'New Post', new_post_path, :class => "navigation-item" %>
+            <%= link_to 'New Jibsa', new_jibsa_path, :class => "navigation-item" %>
+          <% end %>
+        </h1>
+        
+      </section>
+
+      <section class="title">
+        <div class="hashtag_indicator">
+          <% if params[:name].present? %>
+            <span>#<%= params[:name] %></span>
+          <% end %>
+        </div>
+      </section>
+
+      <%= render 'posts/index_section' %>
+
+      <%= raw pagy_nav(@pagy) %>
+    </div>
+
+  </div><!-- end index_right -->
+
+
 </div>
 
 <%= javascript_pack_tag 'search_modal' %>

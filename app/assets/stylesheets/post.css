@@ -105,8 +105,8 @@
 .card_box .inner .admin_controller{display:inline-block;}
 .card_box .inner .p_title{word-break:break-all;line-height:1.4;height:1.4em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:1;}
 .card_box .inner .p_price{font-size:25px;display:inline-block;}
-.card_box .sale_cat{position:absolute;top:-30px;left:5px;}
-.card_box .sale_cat img{width:130px;}
+.card_box .sale_cat{position:absolute;top:-25px;left:5px;}
+.card_box .sale_cat img{width:100px;}
 
 
 

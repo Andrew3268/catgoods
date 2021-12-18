@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   
   resources :jibsas
-  # root 'posts#index'
-  root 'hubs#new_index'
+  root 'posts#index'
+  # root 'hubs#new_index'
   resources :sitemap, :only => :index
   get 'sitemap.xml', :controller => "sitemap", :action => "xml"
   
@@ -25,4 +25,5 @@ Rails.application.routes.draw do
   get 'hubs/popular'
   get 'hubs/random_view'
   get 'hubs/new_index'
+  get 'hubs/popular_today'
 end

@@ -1,4 +1,4 @@
-<header class="header">
+<header class="header clearfix">
 
   <button class="search_btn">
     <div class="header-logo">
@@ -23,8 +23,7 @@
 
       <div class="modal-content">
         
-        <p>Find the best gift for cat lover :)</p>
-        <!-- <span>찾아라!!</span> -->
+        <!-- <p>Find the best gift for cat lover :)</p>
         <section class="search clearfix">
           <div class="search-inner search_inner_modal">
             <button class="search-button">
@@ -34,7 +33,7 @@
               <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
             <% end %> 
           </div>
-        </section><br/>
+        </section><br/> -->
 
         <div class="sub_menu clearfix">
           <%= render 'posts/tag_menu' %>
@@ -48,25 +47,15 @@
     <a href="/"><em>Jelly</em><em>Jelly</em><em>Jelly</em><em>Jelly</em></a>
   </div>
 
-   <section class="search search_pc">
-      <div class="search-inner">
-        <button class="search-button">
-          <i class="ai-search"></i>
-        </button>
-        <%= form_for "",url: posts_path, role: "search", method: :get do %>
-          <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
-        <% end %> 
-      </div>
-   </section>
-  
+  <!--
+  <div class="drop-menu">
+      <a href="javascript:void(0)">나는 누구?</a>
+    <ul>
+      <li><a href="/jibsas">나는 집사</a></li>
+      <li><a href="/hubs/new_index">나는 냥덕</a></li>
+    </ul>
+  </div>
+  -->
+
 </header>
-
-
-
-
-
-
-
-
-
-  
+<%= javascript_pack_tag 'select_type' %>

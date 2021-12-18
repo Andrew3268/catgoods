@@ -1,0 +1,34 @@
+<section class="productlists clearfix">
+
+  <% @jibsas.each do |jibsa| %>
+    <div class="card_box">
+      <div class="image_box">
+        <%= link_to image_tag(jibsa.j_image, alt: jibsa.j_title, title: jibsa.j_title), jibsa %>
+      </div>
+      <div class="inner">
+        <% if current_user && current_user.admin %>
+          <div class="admin_controller">
+            <span><%= link_to 'Edit', edit_jibsa_path(jibsa) %></span>
+            <span><%= link_to 'Destroy', jibsa, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+            <span>Views: <%= jibsa.hits %></span>
+          </div>
+        <% end %>
+        <p class="p_title"><%= link_to jibsa.j_title, jibsa %></p>
+        <% goods_pct = 0 %>
+        <% goods_pct =  (jibsa.j_was_price.to_f - jibsa.j_is_price.to_f) / jibsa.j_was_price.to_f * 100 %>
+        <p class="p_price"><span><%= number_to_currency(jibsa.j_is_price, locale: :kr) %>원</span></p>
+        <% if jibsa.j_was_price.present? %>
+          <em class="was_price"><%= number_to_currency(jibsa.j_was_price, locale: :kr) %>원</em>
+          <em class="pct"> ( <%= number_to_percentage(goods_pct, precision: 0) %> off )</em>
+        <% end %>
+      </div>
+
+      <% if jibsa.j_was_price.present? %>
+        <div class="sale_cat">
+          <img src="<%=asset_path 'sale.png'%>" alt="세일알림이 냥이">
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+
+</section>

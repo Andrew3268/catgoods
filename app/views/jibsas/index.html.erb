@@ -1,28 +1,30 @@
-<h1>Jibsas</h1>
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <p>여기는 잡사 페이지입니다.</p>
+      <a href="/hubs/new_index">나는 냥이 덕후.</a>
+    </div>
+  </div>
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
+      <%= render '/posts/navigation' %>
+      <section class="title">
+        <div class="hero"><img src="<%=asset_path 'hero_01.png'%>"" alt="gift for cat lover" class="hero-image"></div>
+        <h1>
+          <% if current_user && current_user.admin %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "navigation-item" %>
+            <%= link_to 'New Post', new_post_path, :class => "navigation-item" %>
+            <%= link_to 'New Jibsa', new_jibsa_path, :class => "navigation-item" %>
+          <% end %>
+        </h1>
+        
+      </section>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+      <%= render 'jibsas/index_section' %>
 
-  <tbody>
-    <% @jibsas.each do |jibsa| %>
-      <tr>
-        <td><%= jibsa.j_title %></td>
-        <td><%= render_with_jhashtags(jibsa.j_hashtag) %></td>
-        <td><%= link_to 'Show', jibsa %></td>
-        <td>views: <%= jibsa.hits %></td>
-        <td><%= link_to 'Edit', edit_jibsa_path(jibsa) %></td>
-        <td><%= link_to 'Destroy', jibsa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Jibsa', new_jibsa_path %>
+<%= javascript_pack_tag 'search_modal' %>

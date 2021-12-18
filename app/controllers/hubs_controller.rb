@@ -10,6 +10,10 @@ class HubsController < ApplicationController
     @posts_month = Post.most_hit(1.month.ago, 10) 
   end
 
+  def popular_today
+    @posts_day = Post.most_hit(1.day.ago, 10) 
+  end
+
   def random_view
     @posts_random = Post.offset(rand(Post.count)).limit(1)
   end

@@ -1,8 +1,14 @@
 .index_box{width:800px;height:100%;margin:0 auto;position:fixed;left:50%;transform:translate(-50%, 0);}
-.index_box .search{display:none;}
-.index_box .index_left{float:left;width:40%;border:1px solid;padding:20px;height:100%;position:relative;}
-.index_box .index_left .ctn_box{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);}
+
+/*.index_box .search{display:none;}*/
+.index_box .index_left{float:left;width:40%;padding:0 10px;height:100%;position:relative;}
+.index_box .index_left .ctn_box{position:absolute;top:50%;left:50%;transform:translate(-50%, -50%);width:100%;}
+/*.index_box .index_left .ctn_box{margin-top:30px;}*/
+.index_box .index_left .ctn_box h2{font-size:25px;padding:0 10px;}
+.index_box .index_left .ctn_box p{font-size:20px;padding:10px;}
+
 .index_box .index_left .ctn_box a{background:#000;color:#fff;font-size:20px;padding:10px;border-radius:20px;}
+
 .index_box .index_right{float:left;width:60%;padding:15px;height:100%;overflow-x:hidden;overflow-y:auto;-ms-overflow-style:none;/* IE and Edge */scrollbar-width:none; /* Firefox */}
 .index_box .index_right::-webkit-scrollbar{display:none;}
 .index_box .index_right .index_wrap{margin:0;padding:1rem;}
@@ -14,6 +20,35 @@
 .index_box .index_right .index_wrap .card_box .image_box{height:130px;}
 .index_box .index_right .index_wrap .card_box .image_box img{width:90%;height:90%;}
 .index_box .index_right .index_wrap .card_box .inner .p_price{display:block;}
+
+
+
+/* Show Page */
+.index_box .index_right .show_index{width:100%;}
+.index_box .index_right .show_index .show_card{margin:0;}
+.index_box .index_right .show_index .show_card .image_box{float:none;width:100%;}
+.index_box .index_right .show_index .show_card .inner_section{float:none;width:100%;}
+.index_box .index_right .show_index .notice{margin:12%;}
+
+@media screen and (max-width:640px){
+  .index_box{width:100%;margin:0;}
+  .index_box .index_left{display:none;}
+  .index_box .index_right{float:none;width:100%;margin:0;}
+  .index_box .index_right .index_wrap{padding:5px;}
+  .index_box .index_right .index_wrap .trending{position:fixed;bottom:30px;z-index:100;right:30px;}
+  .index_box .index_right .index_wrap .trending a{background:#000;color:#fff;padding:7px 10px;border-radius:20px;font-size:20px;}
+}
+
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .index_box{width:100%;margin:0;}
+}
+
+
+
+
+
+
 
 
 

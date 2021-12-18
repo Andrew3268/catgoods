@@ -1,0 +1,88 @@
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>고양이를 사랑하는<br />냥덕후들을 위한 공간</h2>
+      <p>귀여운 고양이를 테마로 하는 굿즈를 큐레이팅 합니다.&nbsp;다양한 냥이 굿즈를 구경하세요.</p>
+      <a href="/">#더_다양한_굿즈_구경가기</a>
+    </div>
+  </div>
+
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
+
+      <section class="search search_pc">
+        <div class="search-inner">
+            <button class="search-button">
+              <img src="<%=asset_path 'search.png'%>" alt="냥이굿즈 찾기">
+            </button>
+            <%= form_for "",url: posts_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "Search....", class: 'search-input' %>
+            <% end %> 
+          </div>
+       </section>
+      
+
+      <%= render '/posts/navigation' %>
+
+      <section class="title">
+        <h2>오늘 하루 가장 인기 있는 냥이 굿즈 TOP10</h2>
+      </section>
+
+      <section class="productlists clearfix">
+
+        <% @posts_day.each_with_index do |post, i| %> 
+          <div class="card_box">
+            <div class="image_box">
+              <%= link_to image_tag(post.image, alt: post.title, title: post.title), post %>
+            </div>
+            <div class="inner">
+              
+              <!--
+              <% if post.source.present? %>
+                <em>by <%= post.source %></em>
+              <% else %>
+                <em>by 쿠팡</em>
+              <% end %>
+              -->
+              <% if current_user && current_user.admin %>
+                <div class="admin_controller">
+                  <span><%= link_to 'Edit', edit_post_path(post) %></span>
+                  <span><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+                  <span>Views: <%= post.hits %></span>
+                </div>
+              <% end %>
+              <p class="p_title"><%= link_to post.title, post %></p>
+              <% goods_pct = 0 %>
+              <% goods_pct =  (post.was_price.to_f - post.is_price.to_f) / post.was_price.to_f * 100 %>
+              <p class="p_price"><span><%= number_to_currency(post.is_price, locale: :kr) %>원</span></p>
+              <% if post.was_price.present? %>
+                <em class="was_price"><%= number_to_currency(post.was_price, locale: :kr) %>원</em>
+                <em class="pct"> ( <%= number_to_percentage(goods_pct, precision: 0) %> off )</em>
+              <% end %>
+            </div>
+
+            <% if post.was_price.present? %>
+              <div class="sale_cat">
+                <img src="<%=asset_path 'sale.png'%>" alt="세일알림이 냥이">
+              </div>
+            <% end %>
+
+            <div class="numbering">
+              <span><%= i + 1 %></span>
+            </div>
+          </div>
+        <% end %>
+
+      </section>
+      
+      
+
+    </div>
+  </div><!-- end index_right -->
+
+
+</div>
+
+<%= javascript_pack_tag 'search_modal' %>
+

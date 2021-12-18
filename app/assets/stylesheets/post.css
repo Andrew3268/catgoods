@@ -94,7 +94,7 @@
 .search-input:-ms-input-placeholder{font-weight:600;color:var(--c-gray-900);-ms-transition:.15s ease;transition:.15s ease}
 .search-input::placeholder{font-weight:600;color:var(--c-gray-900);transition:.15s ease}
 
-.productlists{margin-top:50px;}
+.productlists{margin-top:30px;}
 .currently-playing{padding:1rem .5rem}
 .card_box{float:left;width:23%;margin:1% 1% 5% 1%;border:2px solid;border-radius:20px;padding:15px;position:relative;background:#fff;}
 .card_box:after{content:"";display:block;position:absolute;z-index:-1;width:95%;height:100%;bottom:-9px;left:calc(50% - 47.5%);border-radius:20px;border:2px solid var(--c-gray-900);background-color:var(--c-yellow-300)}

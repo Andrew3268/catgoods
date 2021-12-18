@@ -26,10 +26,10 @@
       <%= render '/posts/navigation' %>
       <section class="title">
         <div class="hero">
-          <div class="hero-overlay">
-            <!-- <h1>Bubbles</h1> -->
-          </div>
           <img src="<%=asset_path 'hero_01.png'%>" alt="gift for cat lover" class="hero-image">
+        </div>
+        <div class="trending">
+          <a href="/hubs/popular_today">#인기_많은_굿즈_TOP_10</a>
         </div>
         <h1>
           <% if current_user && current_user.admin %>
@@ -43,11 +43,9 @@
 
       <%= render 'posts/index_section' %>
 
-      <div class="trending">
-        <a href="/hubs/popular_today">#인기_많은_굿즈_TOP_10</a>
-      </div>
-
+      <%= raw pagy_nav(@pagy) %>
     </div>
+
   </div><!-- end index_right -->
 
 

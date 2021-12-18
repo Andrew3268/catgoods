@@ -26,7 +26,7 @@
 .index_box .index_right .show_index{width:100%;}
 .index_box .index_right .show_index .show_card{margin:0;}
 .index_box .index_right .show_index .show_card .image_box{float:none;width:100%;}
-.index_box .index_right .show_index .show_card .inner_section{float:none;width:100%;}
+.index_box .index_right .show_index .show_card .inner_section{float:none;width:100%;margin:0;}
 .index_box .index_right .show_index .notice{margin:13% 0 5% 0;}
 
 @media screen and (max-width:640px){

@@ -1,16 +1,36 @@
 <div class="index_box clearfix">
   <div class="index_left">  
     <div class="ctn_box">
-      <p>여기는 잡사 페이지입니다.</p>
-      <a href="/hubs/new_index">나는 냥이 덕후.</a>
+      <h2>고양이를 모시는<br />집사들을 위한 공간</h2>
+      <p>쓸모있는 고양이 용품을 큐레이팅 합니다.&nbsp;다양한 냥이 굿즈를 구경하세요.</p>
+      <a href="#n">#인기_많은_냥이용품_TOP_10</a>
     </div>
   </div>
+
   <div class="index_right">
     <div class="index_wrap">
       <%= render '/posts/header' %>
+
+      <section class="search search_pc">
+        <div class="search-inner">
+            <button class="search-button">
+              <img src="<%=asset_path 'search.png'%>" alt="냥이굿즈 찾기">
+            </button>
+            <%= form_for "",url: jibsas_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "냥이 용품 찾기...", class: 'search-input' %>
+            <% end %> 
+          </div>
+       </section>
+      
+
       <%= render '/posts/navigation' %>
       <section class="title">
-        <div class="hero"><img src="<%=asset_path 'hero_01.png'%>"" alt="gift for cat lover" class="hero-image"></div>
+        <div class="hero">
+          <img src="<%=asset_path 'hero_01.png'%>" alt="gift for cat lover" class="hero-image">
+        </div>
+        <div class="trending">
+          <a href="/hubs/popular_today">#인기_많은_굿즈_TOP_10</a>
+        </div>
         <h1>
           <% if current_user && current_user.admin %>
             <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "navigation-item" %>
@@ -22,9 +42,12 @@
       </section>
 
       <%= render 'jibsas/index_section' %>
-
+      <%= render 'jibsas/blog_section' %>
+      <%= raw pagy_nav(@pagy) %>
+      
     </div>
-  </div>
+
+  </div><!-- end index_right -->
 </div>
 
 <%= javascript_pack_tag 'search_modal' %>

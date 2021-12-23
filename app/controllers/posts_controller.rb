@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def index
     if params.has_key?(:category)
       @category = Category.find_by_name(params[:category])
-      @pagy, @posts = pagy(@posts = Post.where(category: @category).order("created_at DESC"), items: 1)
+      @pagy, @posts = pagy(@posts = Post.where(category: @category).order("created_at DESC"), items: 40)
     else
       @pagy, @posts = pagy(Post.all.order("created_at DESC"), items: 40)
       # @pagy, @posts = pagy(Post.offset(rand(Post.count)), items: 40)

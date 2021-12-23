@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   
   resources :jibsas
-  root 'posts#index'
-  # root 'hubs#new_index'
+  # root 'posts#index'
+  root 'jibsas#index'
   resources :sitemap, :only => :index
   get 'sitemap.xml', :controller => "sitemap", :action => "xml"
   

@@ -43,6 +43,7 @@
 
 @media screen and (min-width:641px) and (max-width:1199px){
   .index_box{width:100%;margin:0;}
+  .index_box .index_left .ctn_box{padding:25px;}
 }
 
 

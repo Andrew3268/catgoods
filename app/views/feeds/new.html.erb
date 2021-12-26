@@ -1,0 +1,9 @@
+<% if current_user && current_user.admin %>
+  <div class="form_box">
+    <div class="wrap">
+      <h1>New Feed</h1>
+      <%= render 'form', feed: @feed %>
+      <%= link_to 'Back', feeds_path %>
+    </div>
+  </div>
+<% end %>

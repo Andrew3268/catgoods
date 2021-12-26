@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :feeds
   resources :jibsas
   # root 'posts#index'
   root 'jibsas#index'

@@ -39,6 +39,7 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 .form_box{margin-top:30px;}
 .form_box label{display:block;}
 .form_box input{width:40%;padding:10px;margin-bottom:5px;}
+.form_box textarea{width:480px;height:300px;}
 .form_box .pricing{margin:10px 0;}
 .form_box .pricing label{float:left;}
 .form_box .pricing input{float:left;width:100px;margin-right:10px;}
@@ -73,7 +74,7 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 @media screen and (max-width:640px){
   .about_us{width:100%;margin-top:30px;}
   .about_us .sections{margin:30px 0;padding:25px;}
-  .about_us .headline{font-size:65px;margin-bottom:3px;}
+  .about_us .headline{font-size:50px;margin-bottom:20px;}
   .about_us .headline em a{font-size:10px;}
   .about_us h2{font-size:15px;}
   .about_us h3{padding:0;}

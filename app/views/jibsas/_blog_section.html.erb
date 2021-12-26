@@ -3,26 +3,36 @@
   <div class="blog_box clearfix">
     <h2>사료</h2>
 
-    <div class="blog_hero">
-      <img src="https://images.unsplash.com/photo-1494256997604-768d1f608cac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=929&q=80" alt="">
-      <div class="inner">
-        <h3>고양이 사료 고르는 방법</h3>
-        <span>UPDATED DECEMBER 16, 2021</span>
-        <p>불러 광야에서 그들의 많이 끓는 뿐이다. 영락과 끓는 인간의 석가는 힘차게 것이다. 청춘에서만 이것을 것은 위하여 붙잡아 뿐이다. 뛰노는 가슴이 사랑의 간에 그들에게 대한 역사를 끓는 얼마나 말이다. 이상 따뜻한 동산에는 눈이 예수는 얼마나 청춘을 보배를 있으랴?</p>
+    <% @latest_feeds.each do |feed| %>
+      <div class="blog_hero">
+        <a href="#n"><img src="<%= feed.f_image %>" alt="<%= feed.f_title %>"></a>
+        <div class="inner">
+          <h3><%= feed.f_title %></h3>
+          <span>UPDATED DECEMBER 16, 2021</span>
+          <p><%= feed.f_description %></p>
+        </div>
+        <!-- <div class="more"><a href="/feeds/<%= feed.id %>">더 읽기</a></div> -->
+        <div class="more"><a href="#n">더 읽기</a></div> <!-- a tag 주소는 컨텐츠 페이지로 연결하기 -->
       </div>
-    </div>
+    <% end %>
 
     <div class="blog_sub clearfix">
 
-      <div class="blog_card clearfix">
-        <div class="img_box">
-          <img src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OXx8Y2F0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60" alt="">
-        </div>
-        <div class="inner">
-          <h3>Title</h3>
-          <span>UPDATED DECEMBER 16, 2021</span>
-        </div>
-      </div>
+      <% @except_first_feeds.each do |feed| %>
+        <a href="#n">
+          <div class="blog_card clearfix">
+            <div class="img_box">
+              <img src="<%= feed.f_image %>" alt="<%= feed.f_title %>">
+            </div>
+            <div class="inner">
+              <h3><%= feed.f_title %></h3>
+              <span>UPDATED DECEMBER 16, 2021</span>
+            </div>
+            <div class="sub_more"><a href="#n">더 읽기</a></div>
+          </div>
+
+        </a>
+      <% end %>
 
       <div class="blog_card clearfix">
         <div class="img_box">

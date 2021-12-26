@@ -5,7 +5,8 @@ class JibsasController < ApplicationController
   # GET /jibsas or /jibsas.json
   def index
     @pagy, @jibsas = pagy(Jibsa.all.order("created_at DESC"), items: 40)
-
+    @latest_feeds = Feed.last(1)
+    @except_first_feeds = Feed.order("id desc").offset(1).all
     ### Blog에 사용할것
     # @latest_post = Jibsa.last(1) #마지막 포스팅만 보여준다
     # @except_first_posts = Jibsa.order("id desc").offset(1).all #마지막 포스팅만 뺴고 보여준다

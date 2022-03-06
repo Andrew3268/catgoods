@@ -1,0 +1,200 @@
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>고양이 영양소 계산기</h2>
+      <p>단백질, 탄수화물 지방 함량에 따른 하루 사료 권장량 계산하기</p>
+      <!-- <a href="#n">#인기_많은_냥이용품_TOP_10</a> -->
+    </div>
+  </div>
+
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
+
+
+      <div id="outerbox" class="result_box clearfix">
+        <h3> 습식사료 </h3><br/>
+
+        <div id="box"> 
+            <div class="label"><p class="formtext"> 조단백질</p> <input type="number" placeholder="0" class="form" id="wprotien"></div>
+            <div class="label"><p class="formtext"> 조지방 </p> <input type="number" placeholder="0" class="form" id="wfat"></div>
+            <div class="label"><p class="formtext"> 칼슘 </p> <input type="number" placeholder="0" class="form" id="wcalcium"></div>
+            <div class="label"><p class="formtext"> 인 </p> <input type="number" placeholder="0" class="form" id="wphosphorus"></div>
+            <div class="label"><p class="formtext"> 조회분 </p> <input type="number" placeholder="0" class="form" id="wash"></div>
+            <div class="label"><p class="formtext"> 조섬유 </p> <input type="number" placeholder="0" class="form" id="wfiber"></div>
+            <div class="label"><p class="formtext"> 수분 </p> <input type="number" placeholder="0" class="form" id="wwater"></div>
+
+          <input type="submit" class="submit" onclick=wnuTrient() diSplay() value="계산하기"></input>
+        </div>
+            
+        <div class="ctn_result">
+          <div class="without_water clearfix"> 
+            <h4>수분을 제외한 영양소 비율</h4>
+            <!-- <p> 조단백: <span id="crudeProtein"></span>%</p> 
+            <p> 조지방: <span id="fatContent"></span>%</p> 
+            <p> 칼슘: <span id="calCium"></span>%</p> 
+            <p> 인: <span id="phosPhorus"></span>%</p> 
+ -->    
+            <table>
+              <div class="highlight"></div>
+              <tr>
+                <th colspan="3">AAFCO 고양이 최소 영양소 기준 <br/>*수분 0%(DM, Dry Matter)기준</th>
+                <th></th>
+              </tr>
+              <tr>
+                <th>영양소</th>
+                <th>성장기, 임신</th>
+                <th>성묘</th>
+                <th>DM</th>
+              </tr>
+              <tr>
+                <td>조단백질</td>
+                <td>30.0%</td>
+                <td>26.0%</td>
+                <td><span id="wcrudeProtein"></span>%</td>
+              </tr>
+              <tr>
+                <td>조지방</td>
+                <td>9.0%</td>
+                <td>9.0%</td>
+                <td><span id="wfatContent"></span>%</td>
+              </tr>
+              <tr>
+                <td>칼슘</td>
+                <td>1.0%</td>
+                <td>0.6%</td>
+                <td><span id="wcalCium"></span>%</td>
+              </tr>
+              <tr>
+                <td>인</td>
+                <td>0.8%</td>
+                <td>0.5%</td>
+                <td><span id="wphosPhorus"></span>%</td>
+              </tr>
+              <tr>
+                <td colspan="4">이 습식사료의 탄수화물 함량은 <span id="wblaNce"></span>% 입니다.</td>
+                
+              </tr>
+
+            </table>
+
+          </div>
+
+          
+          <div class="calorie">
+            <h4>100g당 칼로리</h4>
+            <p>조단백질: <span id="protienKcal"></span></p> 
+            <p>조지방:  <span id="fatKcal"></span></p> 
+            <p>탄수화물: <span id="carboKcal"></span></p> 
+            <em>총 칼로리: <span id="totalKcal"></span></em> 
+          </div>
+
+          <div class="blance clearfix">
+            <h4>100g당 탄단지(탄수화물, 단백질, 지방) 비율</h4>
+            <p>조단백질 <span id="protienNutrient"></span>%</p> 
+            <p>조지방 <span id="fatNutrient"></span>%</p> 
+            <p>탄수화물 <span id="carboNutrient"></span>%</p> 
+          </div>
+
+          
+
+          <!-- <p> 사료 라벨 조단백 <span id="justResult"></span>%</p>  -->
+        </div>
+    
+      
+    </div>
+
+  </div><!-- end index_right -->
+</div>
+
+
+
+<script type="text/javascript">
+// 고양이 사료 영양소 계산기 JS //
+function wnuTrient() {
+  function find(id) {
+    return document.getElementById(id);}
+  var wprotien = find("wprotien").value;
+  var wfat = find("wfat").value;
+  var wphosphorus = find("wphosphorus").value;
+  var wcalcium = find("wcalcium").value;
+  var wwater = find("wwater").value;
+  var wash = find("wash").value;
+  var wfiber = find("wfiber").value;
+
+
+  //////// 사료 라벨 수치 ////////
+  //조단백
+  // var just_result = 0;
+  //   just_result = protien;
+  // find("justResult").innerHTML = just_result;
+
+  //////// 수분을 제외한 영양소 비율 ////////
+  //조단백
+  var w_protien_result = 0;
+    w_protien_result = 100 * wprotien / (100 - wwater);
+  // find("crudeProtein").innerHTML = Math.round(protien_result);
+  find("wcrudeProtein").innerHTML = (w_protien_result.toFixed(1));
+
+  //조지방
+  var w_fat_result = 0;
+    w_fat_result = 100 * wfat / (100 - wwater);
+  // find("fatContent").innerHTML = Math.round(fat_result);
+  find("wfatContent").innerHTML = (w_fat_result.toFixed(1));
+
+  //칼슘
+  var w_calcium_result = 0;
+    w_calcium_result = 100 * wcalcium / (100 - wwater);
+  find("wcalCium").innerHTML = (w_calcium_result.toFixed(1));
+
+  //인
+  var w_phosphorus_result = 0;
+    w_phosphorus_result = 100 * wphosphorus / (100 - wwater);
+  find("wphosPhorus").innerHTML = (w_phosphorus_result.toFixed(1));
+
+  //탄수화물 비율
+  var w_carbo_blance_result =0;
+    w_carbo_blance_result = 100 - wprotien - wfat - wwater - wash - wfiber;
+  find("wblaNce").innerHTML = (w_carbo_blance_result.toFixed(1));
+
+
+  //////// 100g 당 칼로리 ////////
+  //100g 당 단백질 칼로리
+  var w_protien_kcal_result = 0;
+    w_protien_kcal_result = wprotien * 3.5;
+  find("protienKcal").innerHTML = (w_protien_kcal_result.toFixed(1));    
+
+  //100g 당 지방 칼로리
+  var w_fat_kcal_result = 0;
+    w_fat_kcal_result = wfat * 8.5;
+  find("fatKcal").innerHTML = (w_fat_kcal_result.toFixed(1));    
+
+  //100g 당 탄수화물 칼로리
+  var w_carbo_kcal_result = 0;
+    w_carbo_kcal_result = w_carbo_blance_result * 3.5;
+  find("carboKcal").innerHTML = (w_carbo_kcal_result.toFixed(1));    
+
+  //100g 당 총 칼로리
+  var w_total_kcal_result = 0;
+    w_total_kcal_result = w_protien_kcal_result + w_fat_kcal_result + w_carbo_kcal_result;
+  find("totalKcal").innerHTML = (w_total_kcal_result.toFixed(1));    
+
+  //////// 100g 당 각 영양소(탄단지) 비율 ////////
+  //100g 당 단백질 영양비율
+  var w_protien_nutrient_result = 0;
+    w_protien_nutrient_result = (w_protien_kcal_result / w_total_kcal_result) * 100;
+  find("protienNutrient").innerHTML = (w_protien_nutrient_result.toFixed(1));    
+
+  //100g 당 지방 영양비율
+  var w_fat_nutrient_result = 0;
+    w_fat_nutrient_result = (w_fat_kcal_result / w_total_kcal_result) * 100;
+  find("fatNutrient").innerHTML = (w_fat_nutrient_result.toFixed(1));    
+
+  //100g 당 탄수화물 영양비율
+  var w_carbo_nutrient_result = 0;
+    w_carbo_nutrient_result = (w_carbo_kcal_result / w_total_kcal_result) * 100;
+  find("carboNutrient").innerHTML = (w_carbo_nutrient_result.toFixed(1));    
+
+  }
+
+</script>

@@ -28,4 +28,5 @@ Rails.application.routes.draw do
   get 'hubs/new_index'
   get 'hubs/popular_today'
   get 'hubs/nutrient'
+  get 'hubs/water'
 end

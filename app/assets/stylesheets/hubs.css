@@ -1,3 +1,34 @@
 /* Popular Page */
 .numbering{position:absolute;top:-20px;right:-8px;}
 .numbering span{font-size:20px;border-radius:50%;border:3px solid;width:40px;height:40px;display:block;text-align:center;padding-top:4px;background:#eab3c0;}
+
+
+/* calorie calculator */
+.index_box .index_right{}
+.index_box .index_right .result_box{}
+.index_box .index_right .result_box div.label{margin-bottom:20px;float:left;width:48%;margin:1% 1% 15px 1%;}
+.index_box .index_right .result_box div.label p{font-size:20px;background:#fbf8f2;padding:3px 10px;width:45%;text-align:center;border-radius:15px;margin-bottom:5px;}
+.index_box .index_right .result_box input{border:2px solid;border-radius:15px;height:50px;padding:0 10px 0 20px;font-size:20px;width:100%;}
+.index_box .index_right .result_box input.submit{width:100%;margin-top:20px;padding:3px 0 0 0;}
+.index_box .index_right .result_box .ctn_result{margin-top:20px;padding:20px 10px;background:#fbf8f2;border-radius:20px;}
+.index_box .index_right .result_box .ctn_result .without_water{position:relative;}
+.index_box .index_right .result_box .ctn_result .without_water .highlight{position:absolute;top:24%;right:0;width:25%;height:66%;background:red;opacity:0.1;border-radius:20px;}
+.index_box .index_right .result_box .ctn_result .without_water p{float:left;width:46%;margin:2%;border:2px solid;border-radius:15px;padding:5px 10px;}
+
+.index_box .index_right .result_box .ctn_result .calorie{display:block;margin:30px 0;text-align:center;}
+.index_box .index_right .result_box .ctn_result .calorie h4{text-align:left;}
+.index_box .index_right .result_box .ctn_result .calorie p{float:left;width:33.333%;border:1px solid #ddd;padding:10px;}
+.index_box .index_right .result_box .ctn_result .calorie em{border:1px solid #ddd;width:100%;display:block;padding:55px 5px 5px 5px;}
+
+.index_box .index_right .result_box .ctn_result .blance{text-align:center;}
+.index_box .index_right .result_box .ctn_result .blance h4{text-align:left;}
+.index_box .index_right .result_box .ctn_result .blance p{float:left;width:33%;border:1px solid #ddd;padding:10px;}
+
+.index_box .index_right .result_box .ctn_result .without_water table{border-collapse:collapse;width:100%;}
+.index_box .index_right .result_box .ctn_result .without_water th, td{padding:8px;text-align:left;border-bottom:1px solid #ddd;text-align:center;width:25%;}
+
+
+@media screen and (max-width:640px){
+  .index_box .index_right .result_box div.label p{width:60%;}
+  .index_box .index_right .result_box .ctn_result .without_water th, td{padding:5px;}
+}

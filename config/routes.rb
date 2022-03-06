@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   get 'hubs/random_view'
   get 'hubs/new_index'
   get 'hubs/popular_today'
+  get 'hubs/nutrient'
 end

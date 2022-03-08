@@ -9,7 +9,7 @@
 
 .index_box .index_left .ctn_box a{background:#000;color:#fff;font-size:20px;padding:10px;border-radius:20px;}
 
-.index_box .index_right{float:left;width:60%;padding:15px;height:100%;overflow-x:hidden;overflow-y:auto;-ms-overflow-style:none;/* IE and Edge */scrollbar-width:none; /* Firefox */}
+.index_box .index_right{float:left;width:60%;padding:15px 10px;height:100%;overflow-x:hidden;overflow-y:auto;-ms-overflow-style:none;/* IE and Edge */scrollbar-width:none; /* Firefox */}
 .index_box .index_right::-webkit-scrollbar{display:none;}
 .index_box .index_right .index_wrap{margin:0;padding:1rem;}
 .index_box .index_right .index_wrap .navigation{white-space:nowrap;overflow-x:scroll;}

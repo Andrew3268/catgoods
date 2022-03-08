@@ -30,4 +30,5 @@ Rails.application.routes.draw do
   get 'hubs/dry_feed'
   get 'hubs/wet_feed'
   get 'hubs/nutrition_dic'
+  get 'hubs/nutrient_calculator'
 end

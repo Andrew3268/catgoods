@@ -265,11 +265,11 @@
 
   .product .popup-card .info{
     width: 100%;
-    height: auto;
+    height: 550px;
     padding: 20px;
-    /*border-top-left-radius: 0;
-    border-top-right-radius: 0;*/
     border-radius:20px;
+    overflow-x:hidden;
+    overflow-y:scroll;
   }
 
   .product .popup-card .info h2{

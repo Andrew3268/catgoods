@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   get 'hubs/random_view'
   get 'hubs/new_index'
   get 'hubs/popular_today'
-  get 'hubs/nutrient'
-  get 'hubs/water'
+  get 'hubs/dry_feed'
+  get 'hubs/wet_feed'
+  get 'hubs/nutrition_dic'
 end

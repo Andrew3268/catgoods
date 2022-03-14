@@ -27,17 +27,17 @@
             <div class="label"><p class="formtext"> 조지방 </p> <input type="number" placeholder="0" class="form" id="fat"></div>
             <div class="label"><p class="formtext"> 칼슘 </p> <input type="number" placeholder="0" class="form" id="calcium"></div>
             <div class="label"><p class="formtext"> 인 </p> <input type="number" placeholder="0" class="form" id="phosphorus"></div>
-            <div class="label"><p class="formtext"> 칼로리 </p> <input type="number" placeholder="0" class="form" id="calorie"></div>
-            <div class="label"><p class="formtext"> 수분 </p> <input type="number" placeholder="0" class="form" id="water"></div>
             <div class="label"><p class="formtext"> 조회분 </p> <input type="number" placeholder="0" class="form" id="ash"></div>
             <div class="label"><p class="formtext"> 조섬유 </p> <input type="number" placeholder="0" class="form" id="fiber"></div>
+            <div class="label"><p class="formtext"> 칼로리 </p> <input type="number" placeholder="0" class="form" id="calorie"></div>
+            <div class="label"><p class="formtext"> 수분 </p> <input type="number" placeholder="0" class="form" id="water"></div>
 
           <input type="submit" class="submit" onclick=nuTrient() diSplay() value="계산하기"></input>
         </div>
             
         <div class="ctn_result">
           <div class="without_water clearfix"> 
-            <h4>수분을 제외한 영양소 비율</h4>
+            <h4>*수분을 제외한 영양소 비율</h4>
             <!-- <p> 조단백: <span id="crudeProtein"></span>%</p> 
             <p> 조지방: <span id="fatContent"></span>%</p> 
             <p> 칼슘: <span id="calCium"></span>%</p> 
@@ -46,7 +46,8 @@
             <table>
               <div class="highlight"></div>
               <tr>
-                <th colspan="3">AAFCO 고양이 최소 영양소 기준 <br/>*4,000 kcal/kg, 수분 0%(DM, Dry Matter)기준</th>
+                <th colspan="3">AAFCO 고양이 최소 영양소 기준 </th>
+                <!-- <br/>*4,000 kcal/kg, 수분 0%(DM, Dry Matter)기준 -->
                 <th></th>
               </tr>
               <tr>
@@ -80,17 +81,37 @@
                 <td><span id="phosPhorus"></span>%</td>
               </tr>
               <tr>
-                <td colspan="4">탄수화물(NFE) 함량: <span id="blaNce"></span>% </td>
-                
+                <td colspan="4" class="nfe_in">탄수화물(NFE) 함량: <span id="blaNce"></span>%</td>
               </tr>
-
             </table>
+          </div>
 
+         <div class="info clearfix">
+            <ul class="info_ul">
+              <li>
+                <input type="checkbox" checked>
+                <i></i>
+                <h3>AAFCO란 무엇인가요?</h3>
+                <p>This page was written in HTML and CSS. The CSS was compiled from SASS. I used Normalize as my CSS reset and -prefix-free to save myself some headaches. I haven't quite gotten the hang of Slim for compiling into HTML, but someday I'll use it since its syntax compliments that of SASS. Regardless, this could all be done in plain HTML and CSS.</p>
+              </li>
+              <li>
+                <input type="checkbox" checked>
+                <i></i>
+                <h3>탄수화물 함량을 계산하는 이유?</h3>
+                <p>Using the sibling and checked selectors, we can determine the styling of sibling elements based on the checked state of the checkbox input element. One use, as demonstrated here, is an entirely CSS and HTML accordion element. Media queries are used to make the element responsive to different screen sizes.</p>
+              </li>
+              <li>
+                <input type="checkbox" checked>
+                <i></i>
+                <h3>수분을 제외하고 계산해야 하는 이유는?</h3>
+                <p>By making the open state default for when :checked isn't detected, we can make this system accessable for browsers that don't recognize :checked. The fallback is simply an open accordion. The accordion can be manipulated with Javascript (if needed) by changing the "checked" property of the input element.</p>
+              </li>
+            </ul>
           </div>
 
           
-          <div class="calorie">
-            <h4>100g당 칼로리</h4>
+          <div class="calorie clearfix">
+            <h4>*100g당 칼로리</h4>
             <p>조단백질: <span id="protienKcal"></span></p> 
             <p>조지방:  <span id="fatKcal"></span></p> 
             <p>탄수화물: <span id="carboKcal"></span></p> 
@@ -98,7 +119,7 @@
           </div>
 
           <div class="blance clearfix">
-            <h4>100g당 탄단지(탄수화물, 단백질, 지방) 비율</h4>
+            <h4>*100g당 탄단지(탄수화물, 단백질, 지방) 비율</h4>
             <p>조단백질 <span id="protienNutrient"></span>%</p> 
             <p>조지방 <span id="fatNutrient"></span>%</p> 
             <p>탄수화물 <span id="carboNutrient"></span>%</p> 
@@ -162,7 +183,7 @@ function nuTrient() {
   find("phosPhorus").innerHTML = (phosphorus_result.toFixed(1));
 
   //탄수화물 비율
-  var carbo_blance_result =0;
+  var carbo_blance_result = 0;
     carbo_blance_result = 100 - protien - fat - water - ash - fiber;
   find("blaNce").innerHTML = (carbo_blance_result.toFixed(1));
 

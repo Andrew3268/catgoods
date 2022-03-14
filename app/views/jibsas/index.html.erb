@@ -3,7 +3,11 @@
     <div class="ctn_box">
       <h2>고양이를 모시는<br />집사들을 위한 공간</h2>
       <p>쓸모있는 고양이 용품을 큐레이팅 합니다.&nbsp;다양한 냥이 굿즈를 구경하세요.</p>
-      <a href="#n">#인기_많은_냥이용품_TOP_10</a>
+      <a href="#n">#인기_많은_냥이용품_TOP_10</a><br>
+      <% if current_user && current_user.admin %>
+        <a href="/hubs/dry_feed">#고양이_영양소_계산기</a><br>
+        <a href="/hubs/nutrition_dic">#고양이_영양소_백과사전</a>
+      <% end %>
     </div>
   </div>
 

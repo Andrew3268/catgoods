@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 h1,h2,h3,h4,h5,h6,p,ul,li,address,form,fieldset,legend,input,button,dl,dt,dd,table,thead,tbody,tfoot,tr,th,td{margin:0;padding:0;font-family:inherit;}
 a img{border:0;}/* a태그로 감싼 이미지의 파란 테두리 삭제 (ie9-10) */
@@ -15,7 +16,7 @@ input, textarea, select{border:1px solid #ccc;-moz-appearance:none;appearance:no
 .clearfix:after{display:block;clear:both;content:".";visibility:hidden;height:0;}
 .clearfix{display:block;}
 
-body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:300;-webkit-scrollbar:none;font-family: 'Hi Melody', cursive;}
+body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:300;-webkit-scrollbar:none;font-family: 'Nanum Gothic', sans-serif;}
 @media screen and (max-width:640px){
   body{font-size:13px;font-weight:400;}
 }
@@ -49,7 +50,7 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 
 /* pagination */
 .pagination{margin-top:20px;}
-.pagination span{font-size:25px;margin-left:10px;}
+.pagination span{font-size:15px;margin-left:10px;}
 .pagination span.active{background:#a8dee2;padding:5px 10px;border-radius:10px;}
 
 

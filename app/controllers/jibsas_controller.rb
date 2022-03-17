@@ -4,7 +4,7 @@ class JibsasController < ApplicationController
 
   # GET /jibsas or /jibsas.json
   def index
-    @pagy, @jibsas = pagy(Jibsa.all.order("created_at DESC"), items: 40)
+    @pagy, @jibsas = pagy(Jibsa.all.order("created_at DESC"), items: 10)
     @latest_feeds = Feed.last(1)
     @except_first_feeds = Feed.order("id desc").offset(1).all
     ### Blog에 사용할것
@@ -25,7 +25,7 @@ class JibsasController < ApplicationController
 
   def hashtags
     tag = Tag.find_by(name: params[:name])
-    @jibsas = tag.jibsas.order("created_at DESC")
+    @pagy, @jibsas = pagy(tag.jibsas.order("created_at DESC"), items: 20)
   end
 
   # GET /jibsas/new
@@ -83,7 +83,8 @@ class JibsasController < ApplicationController
     # Only allow a list of trusted parameters through.
     def jibsa_params
       params.require(:jibsa).permit(:j_title, :j_link, :j_image, :j_source, :j_hashtag, :j_rating, :j_review_count, :j_key_word, 
-                                    :j_link, :j_is_price, :j_was_price, :j_pct, :j_friendly_id)
+                                    :j_link, :j_is_price, :j_was_price, :j_pct, :j_friendly_id, :j_spare_56, :j_spare_01, :j_spare_02,
+                                    :j_spare_03, :j_spare_04, :j_spare_05)
     end
 end
 

@@ -4,7 +4,14 @@ class FeedsController < ApplicationController
 
   # GET /feeds or /feeds.json
   def index
-    @feeds = Feed.all
+    @pagy, @feeds = pagy(Feed.all.order("created_at DESC"), items: 10)
+    @latest_feeds = Feed.last(1)
+    @except_first_feeds = Feed.order("id desc").offset(1).all
+
+    if params[:search]
+      @search_term = params[:search]
+      @feeds = @feeds.search_by(@search_term)
+    end
   end
 
   # GET /feeds/1 or /feeds/1.json

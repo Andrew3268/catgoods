@@ -1,26 +1,66 @@
-<h1>Feeds</h1>
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>고양이를 모시는<br />집사들을 위한 공간</h2>
+      <p>쓸모있는 고양이 용품을 큐레이팅 합니다.&nbsp;다양한 냥이 굿즈를 구경하세요.</p>
+      <% if current_user && current_user.admin %>
+        <a href="/jibsas">#블로그</a><br>
+        <a href="/posts">#고양이 굿즈 스토어</a><br>
+        <a href="/hubs/for_cat_store">#고양이 용품 스토어</a><br>
+      <% end %>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
 
-  <tbody>
-    <% @feeds.each do |feed| %>
-      <tr>
-        <td><%= feed.f_title %></td>
-        <td><%= link_to 'Show', feed %></td>
-        <td><%= link_to 'Edit', edit_feed_path(feed) %></td>
-        <td><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <section class="search search_pc">
+        <div class="search-inner">
+            <button class="search-button">
+              <img src="<%=asset_path 'search.png'%>" alt="냥이굿즈 찾기">
+            </button>
+            <%= form_for "",url: feeds_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "사료 정보 검색...", class: 'search-input' %>
+            <% end %> 
+          </div>
+       </section>
+      
 
-<br>
+      <%= render '/jibsas/navigation' %>
+    
+      <div class="blog_wrap clearfix">
 
-<%= link_to 'New Feed', new_feed_path %>
+        <div class="blog_box clearfix">
+          <h2>사료</h2>
+          <div class="blog_sub clearfix">
+
+            <% @feeds.each do |feed| %>
+              <a href="#n">
+                <div class="blog_card clearfix">
+                  <div class="img_box">
+                    <%= link_to image_tag(feed.f_image, alt: feed.f_title, title: feed.f_title), feed %>
+                  </div>
+                  <div class="inner">
+                    <h3><%= feed.f_title %></h3>
+                    <span>UPDATED DECEMBER 16, 2021</span>
+                  </div>
+                  <div class="sub_more"><a href="#n">더 읽기</a></div>
+                  <span><%= link_to 'Edit', edit_feed_path(feed) %></span>
+                <span><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+                </div>
+
+              </a>
+            <% end %>
+
+          </div>
+        </div><!-- blog_box -->        
+      </div><!-- blog_wrap -->
+      <%= raw pagy_nav(@pagy) %>
+    </div>
+
+  </div><!-- end index_right -->
+</div>
+
+<%= javascript_pack_tag 'search_modal' %>
+

@@ -1,27 +1,56 @@
-<h1>Jibsas</h1>
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>사랑하는 나의 반려묘<br />똑똑한 집사들을 위한 공간</h2>
+      <p>건강한 반려모를 위한 &nbsp; 사료 정보를 제공합니다.</p>
+      <% if current_user && current_user.admin %>
+        <a href="/jibsas">#블로그</a><br>
+        <a href="/posts">#고양이 굿즈 스토어</a><br>
+        <a href="/hubs/for_cat_store">#고양이 용품 스토어</a><br>
+      <% end %>
+    </div>
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
 
-  <tbody>
-    <% @jibsas.each do |jibsa| %>
-      <tr>
-        <td><%= jibsa.j_title %></td>
-        <td><%= render_with_jhashtags(jibsa.j_hashtag) %></td>
-        <td><%= link_to 'Show', jibsa %></td>
-        <td><%= link_to 'Edit', edit_jibsa_path(jibsa) %></td>
-        <td><%= link_to 'Destroy', jibsa, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+      <section class="search search_pc">
+        <div class="search-inner">
+            <button class="search-button">
+              <img src="<%=asset_path 'search.png'%>" alt="냥이굿즈 찾기">
+            </button>
+            <%= form_for "",url: jibsas_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "사료 찾기", class: 'search-input' %>
+            <% end %> 
+          </div>
+       </section>
+      
 
-<br>
+      <%= render '/jibsas/navigation' %>
+      <section class="title">
+        <div class="hero">
+          <img src="<%=asset_path 'hero_01.png'%>" alt="gift for cat lover" class="hero-image">
+        </div>
+        <div class="trending">
+          <a href="/hubs/popular_today">#인기_많은_사료_TOP_10</a>
+        </div>
+        <h1>
+          <% if current_user && current_user.admin %>
+            <%= link_to 'Sign out', destroy_user_session_path, method: :delete, :class => "navigation-item" %>
+            <%= link_to '새로운 사료', new_jibsa_path, :class => "navigation-item" %>
+            <%= link_to '새로운 블로그', new_feed_path, :class => "navigation-item" %>
+          <% end %>
+        </h1>
+        
+      </section>
 
-<%= link_to 'New Jibsa', new_jibsa_path %>
+      <%= render 'jibsas/index_section' %>
+      
+      <%= raw pagy_nav(@pagy) %>
+      
+    </div>
+
+  </div><!-- end index_right -->
+</div>
+

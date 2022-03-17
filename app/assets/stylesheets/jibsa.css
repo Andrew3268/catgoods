@@ -1,21 +1,54 @@
+/* Blog 메인 페이지 */
+
 .blog_wrap{}
 .blog_wrap .blog_box{margin-bottom:50px;}
-.blog_wrap .blog_box h2{border-top:3px solid;font-size:30px;}
+.blog_wrap .blog_box h2{border-top:3px solid;font-size:25px;padding:10px 0;}
 .blog_wrap .blog_box .blog_hero{margin:10px 0 70px 0;}
 .blog_wrap .blog_box .blog_hero img{width:100%;margin:0;object-fit:cover;} 
 .blog_wrap .blog_box .blog_hero .inner{margin-top:10px;}
 .blog_wrap .blog_box .blog_hero .inner h3{font-size:25px;margin:15px 0 10px 0;}
-.blog_wrap .blog_box .blog_hero .inner span{}
-.blog_wrap .blog_box .blog_hero .inner p{font-size:16px;}
+.blog_wrap .blog_box .blog_hero .inner span{font-size:11px;margin-bottom:7px;display:block;}
+.blog_wrap .blog_box .blog_hero .inner p{font-size:16px;word-break:break-all;line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;}
 .blog_wrap .blog_box .blog_hero .more{float:right;margin-top:10px;margin-right:10px;}
 .blog_wrap .blog_box .blog_hero .more a{font-size:20px;border-bottom:1px solid #ccc;}
+.blog_wrap .blog_box .blog_hero .admin span a{font-size:11px;}
 .blog_wrap .blog_box .blog_sub{height:120px;}
 .blog_wrap .blog_box .blog_sub .blog_card{margin-bottom:10px;border-bottom:1px solid #ccc;padding-bottom:10px;}
 .blog_wrap .blog_box .blog_sub .blog_card .img_box{float:left;width:30%;height:120px;}
 .blog_wrap .blog_box .blog_sub .blog_card .img_box img{width:100%;height:100%;object-fit:contain;}
 .blog_wrap .blog_box .blog_sub .blog_card .inner{float:left;width:67%;margin-left:3%;padding:10px;}
-.blog_wrap .blog_box .blog_sub .blog_card .inner h3{font-size:20px;}
+.blog_wrap .blog_box .blog_sub .blog_card .inner h3{font-size:17px;}
+.blog_wrap .blog_box .blog_sub .blog_card .inner span{font-size:11px;}
 .blog_wrap .blog_box .blog_sub .blog_card .inner p{font-size:16px;}
 .blog_wrap .blog_box .blog_sub .blog_card .sub_more{float:right;margin-right:10px;}
 .blog_wrap .blog_box .blog_sub .blog_card .sub_more a{font-size:20px;border-bottom:1px solid #ccc;}
+.blog_wrap .blog_box .blog_sub .blog_card .admin{float:right;margin-right:10px;}
+.blog_wrap .blog_box .blog_sub .blog_card .admin span a{font-size:11px;}
+
+
+/* Blog 메인 페이지 */
+.blog_wrap .blog_box .blog_show{}
+.blog_wrap .blog_box .blog_show h2{}
+.blog_wrap .blog_box .blog_show .b_img_box{margin:5px 0 20px 0;}
+.blog_wrap .blog_box .blog_show .b_img_box img{}
+.blog_wrap .blog_box .blog_show .inner{}
+.blog_wrap .blog_box .blog_show .inner p{font-size:16px;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

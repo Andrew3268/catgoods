@@ -21,4 +21,12 @@ class HubsController < ApplicationController
   def new_index
     @posts = Post.all.order("created_at DESC")
   end
+
+  def for_catfeed_store
+    @pagy, @jibsas = pagy(Jibsa.all.order("created_at DESC"), items: 20)
+  end
+
+  def testing
+    @pagy, @jibsas = pagy(Jibsa.all.order("created_at DESC"), items: 20)
+  end
 end

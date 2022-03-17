@@ -1,7 +1,62 @@
-<p>
-  <strong>Title:</strong>
-  <%= @feed.f_title %>
-</p>
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>고양이를 모시는<br />집사들을 위한 공간</h2>
+      <p>쓸모있는 고양이 용품을 큐레이팅 합니다.&nbsp;다양한 냥이 굿즈를 구경하세요.</p>
+      <% if current_user && current_user.admin %>
+        <a href="/jibsas">#블로그</a><br>
+        <a href="/posts">#고양이 굿즈 스토어</a><br>
+        <a href="/hubs/for_cat_store">#고양이 용품 스토어</a><br>
+      <% end %>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_feed_path(@feed) %> |
-<%= link_to 'Back', feeds_path %>
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
+
+      <section class="search search_pc">
+        <div class="search-inner">
+            <button class="search-button">
+              <img src="<%=asset_path 'search.png'%>" alt="냥이굿즈 찾기">
+            </button>
+            <%= form_for "",url: feeds_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "사료 정보 검색...", class: 'search-input' %>
+            <% end %> 
+          </div>
+       </section>
+      
+
+      <%= render '/jibsas/navigation' %>
+    
+      <div class="blog_wrap clearfix">
+
+        <div class="blog_box clearfix">
+
+          <div class="blog_show">
+            <h2><%= @feed.f_title %></h2>
+            <div class="b_img_box">
+              <img src="<%= @feed.f_image %>" >
+            </div>
+
+            <div class="inner">
+              <p><%= @feed.f_description %></p>
+            </div>
+
+            <%= link_to 'Edit', edit_feed_path(@feed) %> |
+            <%= link_to 'Back', feeds_path %>
+          </div>
+
+         
+        </div><!-- blog_box -->        
+      </div><!-- blog_wrap -->
+      
+    </div>
+
+  </div><!-- end index_right -->
+</div>
+
+<%= javascript_pack_tag 'search_modal' %>
+
+
+

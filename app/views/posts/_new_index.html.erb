@@ -4,6 +4,11 @@
       <h2>고양이를 사랑하는<br />냥덕후들을 위한 공간</h2>
       <p>귀여운 고양이를 테마로 하는 굿즈를 큐레이팅 합니다.&nbsp;다양한 냥이 굿즈를 구경하세요.</p>
       <a href="/hubs/popular_today">오늘 가장 핫한 냥이 굿즈는?</a>
+      <% if current_user && current_user.admin %>
+        <a href="/jibsas">#블로그</a><br>
+        <a href="/posts">#고양이 굿즈 스토어</a><br>
+        <a href="/hubs/for_catfeed_store">#고양이 사료 스토어</a>
+      <% end %>
     </div>
   </div>
 

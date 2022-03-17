@@ -12,11 +12,29 @@
     <div class="index_wrap">
       <%= render '/posts/header' %>
 
-          <div class="dic_container">
+      <section class="search search_pc">
+        <div class="search-inner">
+            <button class="search-button">
+              <img src="<%=asset_path 'search.png'%>" alt="냥이굿즈 찾기">
+            </button>
+            <%= form_for "",url: feeds_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "사료 정보 검색...", class: 'search-input' %>
+            <% end %> 
+          </div>
+       </section>      
+      
+      <%= render '/jibsas/navigation' %>
+      <br />
 
 
-            <!-- 첫번째 박스 -->
-            <div class="product">
+          <div class="dic_search">
+            <input type="text" id="myInput" onkeyup="myFunction()" placeholder="냥이 필수 영양소 검색" title="Type in a name">
+          </div>
+
+          <ul id="myUL" class="dic_container">
+
+            <!-- 비타민 A 박스 -->
+            <li class="product">
               <div class="product-card box_of_01">
                 <a class="popup-btn">비타민 A<br /><em>Vitamin A</em></a>
               </div>
@@ -49,10 +67,10 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </li>
 
             <!-- 두번째 박스 -->
-            <div class="product">
+            <li class="product">
               <div class="product-card box_of_02">
                 <a class="popup-btn">비타민 A<br /><em>Vitamin A</em></a>
               </div>
@@ -82,9 +100,1034 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </li>
 
-          </div>
+            <!-- 타우린 박스 -->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">타우린<br /><em>taurine</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>타우린<br><span class="eng_name">taurine</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>타우린이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--메티오닌 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">메티오닌<br /><em>methionine</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>메티오닌<br><span class="eng_name">methionine</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>메티오닌이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--나이아신(비타민B3) 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">나이아신<br>(비타민B3)<br /><em>niacin</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>나이아신(비타민B3)<br><span class="eng_name">niacin</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>나이아신(비타민B3)이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--미네랄 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">미네랄<br /><em>mineral</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>미네랄<br><span class="eng_name">mineral</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>미네랄이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--식이섬유 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">식이섬유<br /><em>dietary fiber</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>식이섬유<br><span class="eng_name">dietary fiber</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>식이섬유가 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--맥주효모 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">맥주효모<br /><em>brewers yeast</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>맥주효모<br><span class="eng_name">brewers yeast</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>맥주효모가 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--비트펄프 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">비트펄프<br /><em>beet pulp</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>비트펄프<br><span class="eng_name">beet pulp</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>비트펄프가 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--유카추출물 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">유카추출물<br /><em>yucca extract</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>유카추출물<br><span class="eng_name">yucca extract</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>유카추출물이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--비타민D3 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">비타민 D3<br /><em>vitamin D3</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>비타민 D3<br><span class="eng_name">vitamin D3</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>비타민 D3가 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--비타민E 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">비타민 E<br /><em>vitamin E</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>비타민 E<br><span class="eng_name">vitamin E</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>비타민 E가 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--염화칼륨 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">염화칼륨<br /><em>potassium chloride</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>염화칼륨<br><span class="eng_name">potassium chloride</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>염화칼륨이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--염화콜린 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">염화콜린<br /><em>choline chloride</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>염화콜린<br><span class="eng_name">choline chloride</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>염화콜린이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--류신 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">류신<br /><em>leucine</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>류신<br><span class="eng_name">leucine</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>류신이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--라이신 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">라이신<br /><em>lysine</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>라이신<br><span class="eng_name">lysine</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>라이신이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--트레오닌 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">트레오닌<br /><em>threonine</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>트레오닌<br><span class="eng_name">threonine</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>트레오닌이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--리놀레산 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">리놀레산<br /><em>linoleic acid</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>리놀레산<br><span class="eng_name">linoleic acid</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>리놀레산이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--탄산칼슘 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">탄산칼슘<br /><em>calcium carbonate</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>탄산칼슘<br><span class="eng_name">calcium carbonate</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>탄산칼슘이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--이눌린 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">이눌린<br /><em>inulin</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>이눌린<br><span class="eng_name">inulin</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>이눌린이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--아마인 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">아마인<br /><em>flaxseed</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>아마인<br><span class="eng_name">flaxseed</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>아마인이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--아마종실 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">아마종실<br /><em>flaxseed</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>아마종실<br><span class="eng_name">flaxseed</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>아마종실이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--페닐알라닌 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">페닐알라닌<br /><em>phenylalanine</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>페닐알라닌<br><span class="eng_name">phenylalanine</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>페닐알라닌이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--아라키돈산 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">아라키돈산<br /><em>arachidonic acid</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>아라키돈산<br><span class="eng_name">arachidonic acid</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>아라키돈산이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--아르지닌 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">아르지닌<br /><em>arginine</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>아르지닌<br><span class="eng_name">arginine</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>아르지닌이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--정제섬유소 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">정제섬유소<br /><em>refined fiber</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>정제섬유소<br><span class="eng_name">refined fiber</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>정제섬유소가 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--산화망간 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">산화망간<br /><em>manganese oxide</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>산화망간<br><span class="eng_name">manganese oxide</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>산화망간이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--아이소루신 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">아이소루신<br /><em>isoleucine</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>아이소루신<br><span class="eng_name">isoleucine</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>아이소루신이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--트립토판 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">트립토판<br /><em>tryptophan</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>트립토판<br><span class="eng_name">tryptophan</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>트립토판이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--알파리놀레산 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">알파리놀레산<br /><em>α-linolenic acid</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>알파리놀레산<br><span class="eng_name">α-linolenic acid</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>알파리놀레산이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--황산구리 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">황산구리<br /><em>copper(II) sulfate</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>황산구리<br><span class="eng_name">copper(II) sulfate</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>황산구리가 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--아셀렌산나트륨 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn fontsize">아셀렌산나트륨<br /><em>sodium selenite</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>아셀렌산나트륨<br><span class="eng_name">sodium selenite</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>아셀렌산나트륨이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!--히스티딘 박스-->
+            <li class="product">
+              <div class="product-card box_of_02">
+                <a class="popup-btn">히스티딘<br /><em>histidine</em></a>
+              </div>
+
+              <div class="popup-view">
+                <div class="popup-card">
+                  <a><i class="fas fa-times close-btn">닫기</i></a>
+                  
+                  <div class="info">
+                    <h2>히스티딘<br><span class="eng_name">histidine</span></h2>
+                    
+                    <p class="description">
+                      <span>- 기능 및 특징 -</span><br />
+                      empty
+                    </p>
+
+                    <div class="not_enough">
+                      <p>만약 부족하면?</p>
+                      <span>empty</span>
+                    </div>
+
+                    <div class="high_in">
+                      <p>히스티딘이 풍부한 식품</p>
+                      <span>empty</span>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+
+
+          </ul>
     
       
     </div><!-- index_wrap -->
@@ -119,5 +1162,23 @@
   });
 </script>
 
+<script type="text/javascript">
+  function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+  }
+</script>
 
 

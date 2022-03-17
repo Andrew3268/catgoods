@@ -1,11 +1,113 @@
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>사랑하는 나의 반려묘<br />똑똑한 집사들을 위한 공간</h2>
+      <p>건강한 반려모를 위한 &nbsp; 사료 정보를 제공합니다.</p>
+      <% if current_user && current_user.admin %>
+        <a href="/jibsas">#블로그</a><br>
+        <a href="/posts">#고양이 굿즈 스토어</a><br>
+        <a href="/hubs/for_cat_store">#고양이 용품 스토어</a><br>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="index_right">
+      
+        <div class="index_wrap show_index">
+          
+          <%= render '/posts/header' %>
+            
+          <div class="show_card clearfix">
+
+            <div class="image_box">
+              <img src="<%= @jibsa.j_image %>" alt="<%= @jibsa.j_title %>" title="<%= @jibsa.j_title %>" />
+            </div>
+        
+            <div class="inner_section">
+              <div class="inner clearfix">
+                <% if current_user && current_user.admin %><a class="back" href="/jibsas">Back</a><a class="back" href="/hubs/random_view">Back To Ransom</a><% end%>
+
+                <% if @jibsa.j_source.present? %>
+                  <em>by <%= @jibsa.j_source %><span></span></em>
+                <% else %>
+                  <em>
+                    by 쿠팡
+                  </em>
+                <% end %>
+                <h2><%= @jibsa.j_title %></h2>
+
+               <% if @jibsa.j_review_count.present? %>
+                  <div class="star_rating">
+                    <% if @jibsa.j_spare_56 == 50 %>
+                      <img class="star_4_5" src="<%=asset_path 'star_5.png' %>" alt="벌점4.5"/>
+                      <em><%= @jibsa.j_review_count %>+ 개의 상품평</em>
+                    <% elsif @jibsa.j_spare_56 == 45 %>
+                      <img class="star_4_5" src="<%=asset_path 'star_45.png' %>" alt="벌점4.5"/>
+                      <em><%= @jibsa.j_review_count %>+ 개의 상품평</em>
+                    <% elsif @jibsa.j_spare_56 == 40 %>
+                      <img class="star_4_5" src="<%=asset_path 'star_4.png' %>" alt="벌점4.5"/>
+                      <em><%= @jibsa.j_review_count %>+ 개의 상품평</em>
+                    <% elsif @jibsa.j_spare_56 == 35 %>
+                      <img class="star_4_5" src="<%=asset_path 'star_35.png' %>" alt="벌점4.5"/>
+                      <em><%= @jibsa.j_review_count %>+ 개의 상품평</em>
+                    <% elsif @jibsa.j_spare_56 == 30 %>
+                      <img class="star_4_5" src="<%=asset_path 'star_3.png' %>" alt="벌점4.5"/>
+                      <em><%= @jibsa.j_review_count %>+ 개의 상품평</em>
+                    <% end %>
+                  </div>
+                <% end %>
+                
 
 
-<p>
-  <strong>Title:</strong>
-  <%= @jibsa.j_title %>
-</p>
+                <% goods_pct = 0 %>
+                <% goods_pct =  (@jibsa.j_was_price.to_f - @jibsa.j_is_price.to_f) / @jibsa.j_was_price.to_f * 100 %>
+                <p class="is_price"><%= number_to_currency(@jibsa.j_is_price, locale: :kr) %>원</p>
+                <% if @jibsa.j_was_price.present? %>
+                  <em class="was_price"><%= number_to_currency(@jibsa.j_was_price, locale: :kr) %>원</em>
+                  <em class="pct"> ( <%= number_to_percentage(goods_pct, precision: 0) %> off )</em>
+                <% end %>
+                <p class="hashtag"><%= render_with_jhashtags(@jibsa.j_hashtag) %></p>
+              </div>
+
+              <div class="btn menu clearfix">
+                <div class="menu-inner">
+                  <button class="menu-item" onclick="goBack()">뒤로가기</button>
+                  <!-- <a href="/" class="menu-item">뒤로가기</a> -->
+                  <a target="_blank" href="<%= @jibsa.j_link %>" class="menu-item active">사러가기</a>
+                   <div class="sale_cat">
+                     <img src="<%=asset_path 'dont_go.png'%>" alt="세일알림이 냥이">
+                   </div>
+                </div>
+                <script>
+                  function goBack() {
+                    window.history.back();
+                  }
+                </script>
+              </div>
+          </div><!-- inner -->
+        
+        </div><!-- show card -->
+        <div class="notice clearfix">
+            <ul>
+              <li>가격과 평점이 다른가요? <a href="/hubs/about_us">[자세히 보기]</a></li>
+              <% if @jibsa.j_source.present? %>
+                <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아닙니다.</li>
+              <% else %>
+                <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아니며 쿠팡 파트너스 활동을 통해 일정의 수수료를 지급받아요.</li>
+              <% end %>
+              <% if current_user && current_user.admin %>
+                <div class="admin_controller">
+                  <li><%= link_to 'Edit', edit_jibsa_path(@jibsa) %>| <%= link_to 'Destroy', @jibsa, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+                </div>
+              <% end %>
+            </ul>
+          </div>
+      </div><!-- show_wrap -->
+
+    <%= javascript_pack_tag 'search_modal' %>
+  </div>
+
+</div>
 
 
 
-<%= link_to 'Edit', edit_jibsa_path(@jibsa) %> |
-<%= link_to 'Back', jibsas_path %>

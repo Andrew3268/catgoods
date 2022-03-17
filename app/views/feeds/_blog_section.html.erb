@@ -12,10 +12,8 @@
           <p><%= feed.f_description %></p>
         </div>
         <div class="more"><a href="/feeds/<%= feed.id %>">더 읽기</a></div> <!-- a tag 주소는 컨텐츠 페이지로 연결하기 -->
-        <div class="admin">
-          <span><%= link_to 'Edit', edit_feed_path(feed) %></span>
-          <span><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-        </div>
+        <span><%= link_to 'Edit', edit_feed_path(feed) %></span>
+        <span><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></span>
       </div>
     <% end %>
 
@@ -32,10 +30,8 @@
               <span>UPDATED DECEMBER 16, 2021</span>
             </div>
             <div class="sub_more"><a href="/feeds/<%= feed.id %>">더 읽기</a></div>
-            <div class="admin clearfix">
-              <span><%= link_to 'Edit', edit_feed_path(feed) %></span>
-              <span><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></span>
-            </div>
+            <span><%= link_to 'Edit', edit_feed_path(feed) %></span>
+          <span><%= link_to 'Destroy', feed, method: :delete, data: { confirm: 'Are you sure?' } %></span>
           </div>
 
         </a>

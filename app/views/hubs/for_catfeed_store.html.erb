@@ -1,0 +1,203 @@
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>사랑하는 나의 반려묘<br />똑똑한 집사들을 위한 공간</h2>
+      <p>건강한 반려모를 위한 &nbsp; 사료 정보를 제공합니다.</p>
+      <% if current_user && current_user.admin %>
+        <a href="/jibsas">#블로그</a><br>
+        <a href="/posts">#고양이 굿즈 스토어</a><br>
+        <a href="/hubs/for_catfeed_store">#고양이 사료 스토어</a>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
+
+      <section class="search search_pc">
+        <div class="search-inner">
+            <button class="search-button">
+              <img src="<%=asset_path 'search.png'%>" alt="냥이굿즈 찾기">
+            </button>
+            <%= form_for "",url: feeds_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "사료 정보 검색...", class: 'search-input' %>
+            <% end %> 
+          </div>
+       </section>      
+      
+      <%= render '/jibsas/navigation' %>
+
+
+
+
+      <div class="feed_wrap">
+        <div class="category row">
+          
+          <a href="#0" class="cd-popup-trigger">우리집 냥이 사료 찾기</a>
+
+          <div class="cd-popup" role="alert">
+            <div class="cd-popup-container">
+
+              <div class="option_wrap">
+                  <ul class="category__nav">
+                    <div class="cat_box">
+                      <h4>나이</h4>
+                      <li><a data-target="metal" href="#">Metal</a></li>
+                      <li><a data-target="standart" href="#">Standart</a></li>
+                      <li><a data-target="reinforced" href="#">Reinforced</a></li><br><br>
+                    </div>
+                    <h4>건강상태</h4>
+                      <li><a data-target="superlight" href="#">Superlight</a></li><br><br>
+                    <h4>효능</h4>
+                      <li><a data-target="special" href="#">Special</a></li>
+                      <li><a data-target="dielectric" href="#">Dielectric</a></li><br><br>
+                    <h4>주원료</h4>
+                      <li><a data-target="red" href="#">Red</a></li><br><br>
+                    <h4>브랜드</h4>
+                      <li><a data-target="blue" href="#">Blue</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+                      <li><a data-target="green" href="#">Green</a></li>
+
+                  </ul>
+              </div>
+
+              <a href="#0" class="cd-popup-close">찾기</a>
+            </div> <!-- cd-popup-container -->
+          </div> <!-- cd-popup -->
+
+          <div class="col-xs-12 category-flex clearfix" style="padding: 0">
+
+              <% @jibsas.each do |jibsa| %>
+                <div data-target="<%= jibsa.j_spare_01 %>, <%= jibsa.j_spare_02 %>, <%= jibsa.j_spare_03 %>" class="cableItem">
+                  <div class="card_box filter_box">
+                    <div class="image_box">
+                      <%= link_to image_tag(jibsa.j_image, alt: jibsa.j_title, title: jibsa.j_title), jibsa %>
+                    </div>
+                    <div class="inner">
+                      <% if current_user && current_user.admin %>
+                        <div class="admin_controller">
+                          <span><%= link_to 'Edit', edit_jibsa_path(jibsa) %></span>
+                          <span><%= link_to 'Destroy', jibsa, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+                          <span>Views: <%= jibsa.hits %></span>
+                        </div>
+                      <% end %>
+                      <p class="p_title"><%= link_to jibsa.j_title, jibsa %></p>
+                      <% goods_pct = 0 %>
+                      <% goods_pct =  (jibsa.j_was_price.to_f - jibsa.j_is_price.to_f) / jibsa.j_was_price.to_f * 100 %>
+                      <p class="p_price"><span><%= number_to_currency(jibsa.j_is_price, locale: :kr) %>원</span></p>
+                      <% if jibsa.j_was_price.present? %>
+                        <em class="was_price"><%= number_to_currency(jibsa.j_was_price, locale: :kr) %>원</em>
+                        <em class="pct"> ( <%= number_to_percentage(goods_pct, precision: 0) %> off )</em>
+                      <% end %>
+                    </div>
+
+                    <% if jibsa.j_was_price.present? %>
+                      <div class="sale_cat">
+                        <img src="<%=asset_path 'sale.png'%>" alt="세일알림이 냥이">
+                      </div>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+
+              <!-- <a href="#" data-target="metal, standart" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/dps.png)"></div>
+                  <p class="cableItem__title">Standard metal</p>
+              </a>
+              <a href="#" data-target="metal, standart, reinforced" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/dps2.png)"></div>
+                  <p class="cableItem__title">Standard reinforced metal</p>
+              </a>
+              <a href="#" data-target="metal, superlight" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/tos.png)"></div>
+                  <p class="cableItem__title">Superlight metal</p>
+              </a>
+              <a href="#" data-target="metal, superlight, reinforced" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/tos2.png)"></div>
+                  <p class="cableItem__title">Superlight reinforced metal</p>
+              </a>
+              <a href="#" data-target="metal, special" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/tsos.png)"></div>
+                  <p class="cableItem__title">Special metal</p>
+              </a>
+              <a href="#" data-target="metal, special" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/das.png)"></div>
+                  <p class="cableItem__title">Special metal</p>
+              </a>
+              <a href="#" data-target="metal, special, reinforced" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/das2.png)"></div>
+                  <p class="cableItem__title">Special reinforced metal</p>
+              </a>
+              <a href="#" data-target="dielectric, standart" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/dpd.png)"></div>
+                  <p class="cableItem__title">Standart dielectric</p>
+              </a>
+              <a href="#" data-target="dielectric, standart, reinforced" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/dpd2.png)"></div>
+                  <p class="cableItem__title">Standard reinforced dielectric</p>
+              </a>
+              <a href="#" data-target="dielectric, superlight" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/01/tod.png)"></div>
+                  <p class="cableItem__title">Superlight dielectric</p>
+              </a>
+              <a href="#" data-target="dielectric, superlight, reinforced" class="cableItem">
+                  <div class="cableItem__img" style="background-image: url(http://new.incab.ru/wp-content/uploads/2018/02/tod2.png)"></div>
+                  <p class="cableItem__title">Superlight reinforced dielectric</p>
+              </a> -->
+
+          </div>
+        </div>
+
+      </div>
+      <%= raw pagy_nav(@pagy) %>
+    </div>
+
+  </div><!-- end index_right -->
+</div>
+<%= javascript_pack_tag 'search_modal' %>
+<%= javascript_pack_tag 'feeds' %>
+
+<script type="text/javascript">
+  jQuery(document).ready(function($){
+  //open popup
+  $('.cd-popup-trigger').on('click', function(event){
+    event.preventDefault();
+    $('.cd-popup').addClass('is-visible');
+  });
+  
+  //close popup
+  $('.cd-popup').on('click', function(event){
+    if( $(event.target).is('.cd-popup-close') || $(event.target).is('.cd-popup') ) {
+      event.preventDefault();
+      $(this).removeClass('is-visible');
+    }
+  });
+  //close popup when clicking the esc keyboard button
+  $(document).keyup(function(event){
+      if(event.which=='27'){
+        $('.cd-popup').removeClass('is-visible');
+      }
+    });
+  });
+</script>
+

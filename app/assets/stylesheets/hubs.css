@@ -40,7 +40,7 @@
 
 
 @media screen and (max-width:640px){
-  .index_box .index_right .result_box ul.feed_menu li a.active{padding:13px 11px;}
+  .index_box .index_right .result_box ul.feed_menu li a.active{padding:10px 50px;}
   .index_box .index_right .result_box div.label p{width:60%;}
   .index_box .index_right .result_box .ctn_result .without_water th, td{padding:5px;}
   .index_box .index_right .result_box .ctn_result .without_water .highlight{top:30%;height:60%;}
@@ -124,12 +124,12 @@ ul.info_ul li input[type=checkbox]:checked ~ i:after{transform: translate(-2px, 
   .product .product-card .popup-btn em{font-size:11px;}
   .product .product-card a.fontsize{font-size:18px;line-height:1;}
   .product .popup-card .info p{font-size:15px;}
-  .product .popup-card .info p.description span{font-size:15px;width:40%;}
+  .product .popup-card .info p.description span{font-size:15px;width:50%;}
   .product .popup-card .info .not_enough span{font-size:15px;}
   .product .popup-card .info .high_in span{font-size:15px;}
   .product .popup-card{flex-direction:column;width:550px;height:auto;}
   .product .popup-card .info{width:100%;height:500px;padding:20px;border-radius:20px;overflow-x:hidden;overflow-y:scroll;}
-  .product .popup-card .info h2{margin:20px 5px 10px 5px;font-size:30px;}
+  .product .popup-card .info h2{margin:20px 5px 10px 5px;font-size:25px;width:75%;}
   .product .popup-card .info h2 span{font-size:10px;}
   .product .popup-card .info span.eng_name{font-size:12px;}
   .product .popup-card .close-btn{z-index:4;}
@@ -148,7 +148,7 @@ ul.info_ul li input[type=checkbox]:checked ~ i:after{transform: translate(-2px, 
 /* 사료스토어 */
 .row{margin:30px auto;transition:all 0.4s;}
 .category h1{margin-bottom:21px;}
-.category .option_wrap{height:520px;padding:5%;}
+.category .option_wrap{height:550px;padding:5%;}
 .category__nav{padding:15px;list-style-type:none;display:block;width:60%;margin:0 auto;height:100%;overflow-x: hidden;overflow-y:auto;}
 .category__nav .cat_box{margin-bottom:20px;}
 .category__nav h4{text-align:left;margin-top:20px;}
@@ -169,8 +169,12 @@ ul.info_ul li input[type=checkbox]:checked ~ i:after{transform: translate(-2px, 
 
 
 @media screen and (max-width:640px){
-  .category .option_wrap{padding:0 0 7% 0;}
+  .category .option_wrap{height:90%;padding:0 0 7% 0;}
   .category__nav{width:100%;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .category .option_wrap{height:85%;}
 }
 
 
@@ -283,7 +287,7 @@ Main components
   width: 170px;
   height: 50px;
   line-height: 50px;
-  margin: 1em auto;
+  margin:3em auto 1em auto; 
   text-align: center;
   color: #FFF;
   font-size: 14px;
@@ -329,7 +333,7 @@ xpopup
   width: 95%;
   height:95%;
   /*max-width: 400px;*/
-  margin:2em auto;
+  margin:1.35em auto;
   background: #FFF;
   border-radius:20px;
   text-align: center;
@@ -432,8 +436,8 @@ xpopup
 
 
 @media screen and (max-width:640px){
-  .cd-popup-close{margin: -0.5rem auto;}
-  .cd-popup-container{margin:1.2em auto 2em auto;}
+  .cd-popup-close{margin: 1.5rem auto;}
+  .cd-popup-container{margin:0;border-radius:none;width:100%;height:100%;border-radius:0;}
 }
 @media only screen and (min-width: 1170px) {
   .cd-popup-trigger {

@@ -35,6 +35,24 @@
 .blog_wrap .blog_box .blog_show .inner p{font-size:16px;}
 
 
+/* jibsas show page */
+.detail_wrap{padding:10px;}
+.detail_wrap  p.info_title{text-align:left;font-size:20px;}
+.detail_wrap .detail_box{}
+.detail_wrap .detail_box .comm{}
+.detail_wrap .detail_nutri .comm ul{}
+.detail_wrap .detail_nutri .comm ul li{padding:5px 0;border-bottom:1px solid #ccc;}
+.detail_wrap .detail_nutri .comm ul li.two_line{height:50px;word-break:keep-all;}
+.detail_wrap .detail_nutri .comm ul li em{text-align:right;}
+.detail_wrap .detail_box .left{float:left;width:30%;} 
+.detail_wrap .detail_box .right{float:right;width:70%;text-align:left;}
+
+.detail_wrap .nutrition_box .left{float:left;width:33.33%;} 
+.detail_wrap .nutrition_box .mid{float:left;width:33.33%;} 
+.detail_wrap .nutrition_box .right{float:left;width:33.33%;} 
+
+
+
 
 
 

@@ -6,7 +6,7 @@
       <% if current_user && current_user.admin %>
         <a href="/jibsas">#블로그</a><br>
         <a href="/posts">#고양이 굿즈 스토어</a><br>
-        <a href="/hubs/for_cat_store">#고양이 용품 스토어</a><br>
+        <a href="/hubs/for_catfeed_store">#고양이 사료 스토어</a><br>
       <% end %>
     </div>
   </div>
@@ -68,6 +68,12 @@
                 <% end %>
                 <p class="hashtag"><%= render_with_jhashtags(@jibsa.j_hashtag) %></p>
               </div>
+
+              <p><%= @jibsa.j_spare_01 %>, <%= @jibsa.j_spare_02 %>, <%= @jibsa.j_spare_03 %>, <%= @jibsa.j_spare_04 %>, <%= @jibsa.j_spare_05 %></p>
+
+
+              <%= render 'jibsas/detail' %>
+
 
               <div class="btn menu clearfix">
                 <div class="menu-inner">

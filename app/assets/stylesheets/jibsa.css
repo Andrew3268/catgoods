@@ -36,21 +36,50 @@
 
 
 /* jibsas show page */
-.detail_wrap{padding:10px;}
+.detail_wrap{padding:20px;background:#fbf8f2;border-radius:20px;}
 .detail_wrap  p.info_title{text-align:left;font-size:20px;}
 .detail_wrap .detail_box{}
 .detail_wrap .detail_box .comm{}
 .detail_wrap .detail_nutri .comm ul{}
 .detail_wrap .detail_nutri .comm ul li{padding:5px 0;border-bottom:1px solid #ccc;}
 .detail_wrap .detail_nutri .comm ul li.two_line{height:50px;word-break:keep-all;}
-.detail_wrap .detail_nutri .comm ul li em{text-align:right;}
+.detail_wrap .detail_nutri .comm ul li em{text-align:right;border-bottom:1px solid #b0e0e6;box-shadow:inset 0 -6px 0 #b0e0e6;}
 .detail_wrap .detail_box .left{float:left;width:30%;} 
+.detail_wrap .detail_box .left ul{}
+.detail_wrap .detail_box .left ul li{border-right:1px solid #ccc;}
 .detail_wrap .detail_box .right{float:right;width:70%;text-align:left;}
+.detail_wrap .detail_box .right ul{}
+.detail_wrap .detail_box .right ul li{padding-left:5%;}
 
+
+.detail_wrap .nutrition_box .important{}
+.detail_wrap .nutrition_box .important .right{}
+.detail_wrap .nutrition_box .important .right ul{}
+.detail_wrap .nutrition_box .important .right ul li{color:#ff6873;}
+
+.detail_wrap .nutrition_box h3{text-align:left;}
+.detail_wrap .nutrition_box h3 span{color:#ff6873;}
 .detail_wrap .nutrition_box .left{float:left;width:33.33%;} 
 .detail_wrap .nutrition_box .mid{float:left;width:33.33%;} 
 .detail_wrap .nutrition_box .right{float:left;width:33.33%;} 
 
+.detail_wrap .nutrition_box .carbo_ratio{margin:20px 0;}
+
+.detail_wrap .nutrition_box .kcal_balnace{margin-bottom:20px;}
+.detail_wrap .nutrition_box .kcal_balnace p{float:left;width:33.33%;border:1px solid #ccc;}
+.detail_wrap .nutrition_box .kcal_balnace p span{display:block;color:#ff6873;margin-top:3px;}
+.detail_wrap .nutrition_box .kcal_balnace h4{display:inline-block;border:1px solid #ccc;border-top:0;width:100%;padding:7px;}
+.detail_wrap .nutrition_box .kcal_balnace h4 span{color:#ff6873;}
+
+.detail_wrap .nutrition_box .nutrient_balnace{margin-bottom:20px;}
+.detail_wrap .nutrition_box .nutrient_balnace p{float:left;width:33.33%;border:1px solid #ccc;}
+.detail_wrap .nutrition_box .nutrient_balnace p span{display:block;color:#ff6873;margin-top:3px;}
+
+
+
+/* 필터용 */
+.filter_box{border:1px solid;padding:10px;}
+.filter_box li{float:left;}
 
 
 

@@ -13,13 +13,14 @@
 .index_box .index_right .result_box ul.feed_menu li:nth-child(3){background:#e3746b;}
 .index_box .index_right .result_box ul.feed_menu li:nth-child(4){background:#ec93a7;}
 .index_box .index_right .result_box ul.feed_menu li a{color:#fff;font-size:16px;}
-.index_box .index_right .result_box ul.feed_menu li a.active{background:#fff;padding:8px 65px;color:#000;border:2px solid;border-radius:15px;}
+.index_box .index_right .result_box ul.feed_menu li a.active{background:#fff;padding:8px 50px;color:#000;border:2px solid;border-radius:15px;}
 .index_box .index_right .result_box div.label{margin-bottom:20px;float:left;width:48%;margin:1% 1% 15px 1%;}
-.index_box .index_right .result_box div.label p{font-size:17px;background:#fbf8f2;padding:3px 10px;width:45%;text-align:center;border-radius:15px;margin-bottom:5px;}
+.index_box .index_right .result_box div.label p{font-size:14px;background:#a8dee2;padding:3px 10px;width:45%;text-align:center;border-radius:15px;margin-bottom:5px;}
 .index_box .index_right .result_box input{border:2px solid;border-radius:15px;height:50px;padding:0 10px 0 20px;font-size:20px;width:100%;}
-.index_box .index_right .result_box input.submit{width:100%;margin-top:20px;padding:3px 0 0 0;background:#efefef;}
+.index_box .index_right .result_box input.submit{width:100%;margin-top:20px;padding:3px 0 0 0;background:#efefef;border:2px solid;}
+.index_box .index_right .result_box p.info_p{color:#ff6873;}
 .index_box .index_right .result_box .ctn_result{margin-top:20px;padding:20px 10px;background:#fbf8f2;border-radius:20px;}
-.index_box .index_right .result_box .ctn_result h4{font-size:18px;}
+.index_box .index_right .result_box .ctn_result h4{font-size:14px;}
 .index_box .index_right .result_box .ctn_result .without_water{position:relative;}
 .index_box .index_right .result_box .ctn_result .without_water .highlight{position:absolute;top:22.1%;right:0;width:25%;height:68.3%;background:red;opacity:0.1;border-radius:20px;display:none;}
 .index_box .index_right .result_box .ctn_result .without_water p{float:left;width:46%;margin:2%;border:2px solid;border-radius:15px;padding:5px 10px;}
@@ -27,33 +28,37 @@
 .index_box .index_right .result_box .ctn_result .calorie{display:block;margin:30px 0;text-align:center;}
 .index_box .index_right .result_box .ctn_result .calorie h4{text-align:left;}
 .index_box .index_right .result_box .ctn_result .calorie p{float:left;width:33.333%;border:1px solid #ddd;padding:10px;}
-.index_box .index_right .result_box .ctn_result .calorie em{border:1px solid #ddd;width:100%;display:block;padding:55px 5px 5px 5px;}
+.index_box .index_right .result_box .ctn_result .calorie p span{display:block;margin-top:5px;color:#ff6873;}
+.index_box .index_right .result_box .ctn_result .calorie em{border:1px solid #ddd;width:100%;display:block;padding:5px;}
 
 .index_box .index_right .result_box .ctn_result .blance{text-align:center;}
 .index_box .index_right .result_box .ctn_result .blance h4{text-align:left;}
 .index_box .index_right .result_box .ctn_result .blance p{float:left;width:33%;border:1px solid #ddd;padding:10px;}
+.index_box .index_right .result_box .ctn_result .blance p span{display:block;margin-top:5px;color:#ff6873;}
 
 .index_box .index_right .result_box .ctn_result .without_water table{border-collapse:collapse;width:100%;margin-top:10px;}
-.index_box .index_right .result_box .ctn_result .without_water th, td{padding:8px;text-align:left;border-bottom:1px solid #ddd;text-align:center;width:25%;font-size:17px;}
+.index_box .index_right .result_box .ctn_result .without_water th, td{padding:8px;text-align:left;border-bottom:1px solid #ddd;text-align:center;width:25%;font-size:13px;}
 .index_box .index_right .result_box .ctn_result .without_water th:nth-child(4), td:nth-child(4){color:#ff6873;}
 .index_box .index_right .result_box .ctn_result .without_water td.nfe_in{text-align:left;padding-top:10px;}
+.index_box .index_right .result_box .ctn_result .without_water td.nfe_in em{color:#ff6873;}
 
 
 @media screen and (max-width:640px){
   .index_box .index_right .result_box ul.feed_menu li a.active{padding:10px 50px;}
-  .index_box .index_right .result_box div.label p{width:60%;}
+  .index_box .index_right .result_box div.label p{width:50%;}
   .index_box .index_right .result_box .ctn_result .without_water th, td{padding:5px;}
   .index_box .index_right .result_box .ctn_result .without_water .highlight{top:30%;height:60%;}
   .index_box .index_right .result_box ul li a.active{padding:13px 11px;}
 }
 
 /* 영양소 계산기 Collapse 메뉴 */
-.ctn_result .info{margin-top:20px;}
+.ctn_result .info{margin-top:20px;border:1px solid #ccc;border-radius:20px;padding:10px 15px 15px 15px;}
 .transition, ul.info_ul li i:before, ul.info_ul li i:after{transition: all 0.25s ease-in-out;}
 ul.info_ul{list-style:none;perspective:900;padding:0;margin:0;}
-ul.info_ul li{position:relative;padding:5px;margin:0;border-bottom:1px dotted #ccc;}
-ul.info_ul li:last-of-type{padding-bottom:0;}
-ul.info_ul li i{position:absolute;transform:translate(-6px, 0);margin-top:10px;right:0;}
+ul.info_ul li{position:relative;padding:5px;margin:0;border-bottom:1px dotted #ccc;font-size:12px;}
+/*ul.info_ul li:last-of-type{padding-bottom:0;}*/
+ul.info_ul li p{padding:0 10px;}
+ul.info_ul li i{position:absolute;transform:translate(-6px, 0);margin-top:7px;right:0;}
 ul.info_ul li i:before, ul.info_ul li i:after{content:"";position:absolute;background-color:#ff6873;width:3px;height:9px;}
 ul.info_ul li i:before{transform: translate(-2px, 0) rotate(45deg);}
 ul.info_ul li i:after{transform: translate(2px, 0) rotate(-45deg);}

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_23_091412) do
+ActiveRecord::Schema.define(version: 2022_03_19_093848) do
 
   create_table "feeds", force: :cascade do |t|
     t.integer "user_id"
@@ -104,6 +104,26 @@ ActiveRecord::Schema.define(version: 2021_12_23_091412) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "slug"
+    t.integer "j_option_01"
+    t.integer "j_option_02"
+    t.integer "j_option_03"
+    t.integer "j_option_04"
+    t.integer "j_option_05"
+    t.integer "j_option_06"
+    t.integer "j_option_07"
+    t.integer "j_option_08"
+    t.integer "j_option_09"
+    t.integer "j_option_10"
+    t.decimal "j_option_11"
+    t.decimal "j_option_12"
+    t.decimal "j_option_13"
+    t.decimal "j_option_14"
+    t.decimal "j_option_15"
+    t.decimal "j_option_16"
+    t.decimal "j_option_17"
+    t.decimal "j_option_18"
+    t.decimal "j_option_19"
+    t.decimal "j_option_20"
     t.index ["slug"], name: "index_jibsas_on_slug", unique: true
   end
 

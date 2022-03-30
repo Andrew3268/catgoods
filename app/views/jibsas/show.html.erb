@@ -69,8 +69,10 @@
                 <p class="hashtag"><%= render_with_jhashtags(@jibsa.j_hashtag) %></p>
               </div>
 
-              <p><%= @jibsa.j_spare_01 %>, <%= @jibsa.j_spare_02 %>, <%= @jibsa.j_spare_03 %>, <%= @jibsa.j_spare_04 %>, <%= @jibsa.j_spare_05 %></p>
 
+              <% if current_user && current_user.admin %>
+                <%= render 'jibsas/filter' %>
+              <% end %>
 
               <%= render 'jibsas/detail' %>
 
@@ -114,6 +116,5 @@
   </div>
 
 </div>
-
 
 

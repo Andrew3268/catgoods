@@ -148,15 +148,15 @@
 .show_index .show_card .inner_section{float:left;width:45%;text-align:center;margin-left:5%;height:350px;/*position:relative;*/height:auto;}
 .show_index .show_card .inner_section a.back{display:block;}
 .show_index .show_card .inner_section .inner{padding:0 2.5%;margin-top:30px;}
-.show_index .show_card .inner_section .inner h2{margin:5px 0 7px 0;word-break:break-word;}
+.show_index .show_card .inner_section .inner h2{margin:5px 0 7px 0;word-break:break-word;font-size:17px;}
 .show_index .show_card .inner_section .inner p{font-size:17px;margin-top:10px;}
 .show_index .show_card .inner_section .inner p.hashtag a{background:var(--c-yellow-500);padding:3px 7px;border-radius:15px;font-size:15px;display:inline-block;margin-bottom:5px;}
 .show_index .show_card .inner_section .inner .is_price{font-size:30px;}
 .show_index .show_card .inner_section .inner .hashtag{}
 .show_index .show_card .inner_section .inner em{color:#ccc;font-size:17px;}
-.show_index .show_card .inner_section .inner .star_rating{margin-bottom:10px;}
+.show_index .show_card .inner_section .inner .star_rating{margin:15px 0;}
 .show_index .show_card .inner_section .inner .star_rating img{height:17px;vertical-align:sub;display:inline-block;}
-.show_index .show_card .inner_section .inner .star_rating em{vertical-align:middle;}
+.show_index .show_card .inner_section .inner .star_rating em{vertical-align:middle;font-size:14px;margin-left:13px;}
 /*.show_index .show_card .inner_section .btn{position:absolute;bottom:-50px;width:100%;}*/
 
 

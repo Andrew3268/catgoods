@@ -1,9 +1,26 @@
+
 <br>
 <div class="detail_wrap clearfix">
-  <p class="info_title">상세정보</p>
   
+
   <div class="detail_box detail_nutri clearfix">
 
+    <div class="basic_info clearfix">
+      <div class="bi_box">        
+        <span>이탈리아</span>
+        <p>제조국가</p>
+      </div>
+      <div class="bi_box">        
+        <span>건식</span>
+        <p>사료타입</p>
+      </div>
+      <div class="bi_box">        
+        <span>키튼</span>
+        <p>급여대상</p>
+      </div>
+    </div>
+
+    <p class="info_title">상세정보</p>
     <div class="left comm">
       <ul>
         <li>사료 타입</li>
@@ -42,162 +59,19 @@
           <% end %>
         </li>
         <li>
-          <% if @jibsa.j_option_06 == 801 %>
-            <em>로얄캐닌</em>
-          <% elsif @jibsa.j_option_06 == 802 %>
-            <em>캐츠랑</em>
-          <% elsif @jibsa.j_option_06 == 803 %>
-            <em>ANF</em>
-          <% elsif @jibsa.j_option_06 == 804 %>
-            <em>뉴트리나</em>
-          <% elsif @jibsa.j_option_06 == 805 %>
-            <em>이즈칸</em>
-          <% elsif @jibsa.j_option_06 == 806 %>
-            <em>네츄럴코어</em>
-          <% elsif @jibsa.j_option_06 == 807 %>
-            <em>위스카스</em>
-          <% elsif @jibsa.j_option_06 == 808 %>
-            <em>퓨리나</em>
-          <% elsif @jibsa.j_option_06 == 809 %>
-            <em>프로베스트</em>
-          <% elsif @jibsa.j_option_06 == 810 %>
-            <em>오리젠</em>
-          <% elsif @jibsa.j_option_06 == 811 %>
-            <em>네추럴밸런스</em>
-          <% elsif @jibsa.j_option_06 == 812 %>
-            <em>나우프레쉬</em>
-          <% elsif @jibsa.j_option_06 == 813 %>
-            <em>대한사료</em>
-          <% elsif @jibsa.j_option_06 == 814 %>
-            <em>웰츠</em>
-          <% elsif @jibsa.j_option_06 == 815 %>
-            <em>뉴트리웰</em>
-          <% elsif @jibsa.j_option_06 == 816 %>
-            <em>퓨어비타</em>
-          <% elsif @jibsa.j_option_06 == 817 %>
-            <em>한끼뚝딱</em>
-          <% elsif @jibsa.j_option_06 == 818 %>
-            <em>세라피드</em>
-          <% elsif @jibsa.j_option_06 == 819 %>
-            <em>뉴트리플랜</em>
-          <% elsif @jibsa.j_option_06 == 820 %>
-            <em>사조동아원</em>
-          <% elsif @jibsa.j_option_06 == 821 %>
-            <em>후새</em>
-          <% elsif @jibsa.j_option_06 == 822 %>
-            <em>원더캐츠</em>
-          <% elsif @jibsa.j_option_06 == 823 %>
-            <em>헤일로</em>
-          <% elsif @jibsa.j_option_06 == 824 %>
-            <em>프리스키</em>
-          <% elsif @jibsa.j_option_06 == 825 %>
-            <em>트로벳</em>
-          <% elsif @jibsa.j_option_06 == 826 %>
-            <em>탐사</em>
-          <% elsif @jibsa.j_option_06 == 827 %>
-            <em>위시본</em>
-          <% elsif @jibsa.j_option_06 == 828 %>
-            <em>웰니스</em>
-          <% elsif @jibsa.j_option_06 == 829 %>
-            <em>치킨수프 클래식</em>
-          <% elsif @jibsa.j_option_06 == 830 %>
-            <em>슈슈</em>
-          <% elsif @jibsa.j_option_06 == 831 %>
-            <em>올가밀 캣35</em>
-          <% elsif @jibsa.j_option_06 == 832 %>
-            <em>마즈</em>
-          <% elsif @jibsa.j_option_06 == 833 %>
-            <em>어스본홀리스틱</em>
-          <% elsif @jibsa.j_option_06 == 834 %>
-            <em>이퀼리브리오</em>
-          <% elsif @jibsa.j_option_06 == 835 %>
-            <em>뉴웨이브</em>
-          <% elsif @jibsa.j_option_06 == 836 %>
-            <em>아카나</em>
-          <% elsif @jibsa.j_option_06 == 837 %>
-            <em>풀무원</em>
-          <% elsif @jibsa.j_option_06 == 838 %>
-            <em>풀무원 아미오</em>
-          <% elsif @jibsa.j_option_06 == 839 %>
-            <em>밥이보약</em>
-          <% elsif @jibsa.j_option_06 == 840 %>
-            <em>하림더리얼</em>
-          <% elsif @jibsa.j_option_06 == 841 %>
-            <em>캣츠맘</em>
-          <% elsif @jibsa.j_option_06 == 842 %>
-            <em>네츄럴랩</em>
-          <% end %>
+          <%= render 'jibsas/codes_brand' %>
         </li>
         <li>
-          <% if @jibsa.j_option_03 == 301 %>
-            <em>한국</em>
-          <% elsif @jibsa.j_option_03 == 302 %>
-            <em>미국</em>
-          <% elsif @jibsa.j_option_03 == 303 %>
-            <em>캐나다</em>
-          <% elsif @jibsa.j_option_03 == 304 %>
-            <em>독일</em>
-          <% end %>
+          <%= render 'jibsas/codes_country' %>
         </li>
         <li>
-          <% if @jibsa.j_option_07 == 701 %>
-            <em>소</em>
-          <% elsif @jibsa.j_option_07 == 702 %>
-            <em>돼지</em>
-          <% elsif @jibsa.j_option_07 == 703 %>
-            <em>닭 (뼈바른 닭고기)</em>
-          <% elsif @jibsa.j_option_07 == 704 %>
-            <em>오리</em>
-          <% elsif @jibsa.j_option_07 == 705 %>
-            <em>양</em>
-          <% elsif @jibsa.j_option_07 == 706 %>
-            <em>생선</em>
-          <% elsif @jibsa.j_option_07 == 707 %>
-            <em>칠면조</em>
-          <% elsif @jibsa.j_option_07 == 708 %>
-            <em>사슴</em>
-          <% elsif @jibsa.j_option_07 == 709 %>
-            <em>탈수가금육</em>
-          <% elsif @jibsa.j_option_07 == 710 %>
-            <em>곡물</em>
-          <% elsif @jibsa.j_option_07 == 711 %>
-            <em>야채</em>
-          <% end %>
+          <%= render 'jibsas/codes_ingredient' %>
         </li>
         <li>
           <em><%= @jibsa.j_option_19 %>kg</em>
         </li>
         <li class="two_line">
-          <% if @jibsa.j_spare_01.present? %>
-            <em>면역력</em>
-          <% end %>
-          <% if @jibsa.j_spare_02.present? %>
-            <em>헤어볼</em>
-          <% end %>
-          <% if @jibsa.j_spare_03.present? %>
-            <em>체중조절</em>
-          <% end %>
-          <% if @jibsa.j_spare_04.present? %>
-            <em>소화기능&변냄새</em>
-          <% end %>
-          <% if @jibsa.j_spare_05.present? %>
-            <em>피부&모질 개선</em>
-          <% end %>
-          <% if @jibsa.j_spare_06.present? %>
-            <em>뼈&관절 건강</em>
-          <% end %>
-          <% if @jibsa.j_spare_07.present? %>
-            <em>치석&구강 건강</em>
-          <% end %>
-          <% if @jibsa.j_spare_08.present? %>
-            <em>눈물&눈 건강</em>
-          <% end %>
-          <% if @jibsa.j_spare_09.present? %>
-            <em>비뇨계</em>
-          <% end %>
-          <% if @jibsa.j_spare_10.present? %>
-            <em>신장&심부전</em>
-          <% end %>
+          <%= render 'jibsas/codes_functional' %>
         </li>
         <% if @jibsa.j_option_04.present? %>
           <li>
@@ -245,13 +119,13 @@
       <div class="mid comm">
         <ul>
           <li>수분 포함</li>
-          <li>35%</li>
-          <li>26%</li>
-          <li>1.29%</li>
-          <li>1.09%</li>
-          <!-- <li>7.83%</li>
-          <li>2.01%</li> -->
-          <li>10%</li>
+          <li><%= number_to_percentage(@jibsa.j_option_11, precision: 2) %></li>
+          <li><%= number_to_percentage(@jibsa.j_option_14, precision: 2) %></li>
+          <li><%= number_to_percentage(@jibsa.j_option_15, precision: 2) %></li>
+          <li><%= number_to_percentage(@jibsa.j_option_16, precision: 2) %></li>
+          <!-- <li><%= number_to_percentage(@jibsa.j_option_17, precision: 2) %></li> -->
+          <!-- <li><%= number_to_percentage(@jibsa.j_option_18, precision: 2) %></li> -->
+          <li><%= number_to_percentage(@jibsa.j_option_12, precision: 2) %></li>
         </ul>
       </div>
 
@@ -287,10 +161,24 @@
 
     <div class="carbo_ratio ">
       <h3>
+        <!-- 탄수화물 함량 = 100 -( 조단백질+조지방+수분+조회분 ) -->
         탄수화물 함류량:
         <% carbo_blance = 0 %>
-        <% carbo_blance =  100 - @jibsa.j_option_11.to_f - @jibsa.j_option_14.to_f - @jibsa.j_option_12.to_f - @jibsa.j_option_17.to_f - @jibsa.j_option_18.to_f %>
-        <span><%= number_to_percentage(carbo_blance, precision: 2) %></span>
+        <% carbo_blance =  100 - @jibsa.j_option_11.to_f - @jibsa.j_option_14.to_f - @jibsa.j_option_12.to_f - @jibsa.j_option_18.to_f %>
+
+        <!-- 권장 함량과의 차이 20 보다 높을 때-->
+        <% over_twenty = 0 %> 
+        <% over_twenty = carbo_blance - 20 %>
+
+        <!-- 권장 함량과의 차이 20 보다 높을 때-->
+        <% under_twenty = 0 %> 
+        <% under_twenty = 20 - carbo_blance  %>
+
+        <% if carbo_blance > 20 %>
+          <span>탄수화물 함량이 <%= number_to_percentage(carbo_blance, precision: 2) %>로 권장 탄수화물 함량인 20% 보다 <%= number_to_percentage(over_twenty, precision: 2) %> 높아요.</span>
+        <% elsif carbo_blance < 20 %>
+          <span>탄수화물 함량이 <%= number_to_percentage(carbo_blance, precision: 2) %>로 권장 탄수화물 함량인 20% 보다 <%= number_to_percentage(under_twenty, precision: 2) %> 낮아요.</span>
+        <% end %>
       </h3>
     </div>
 
@@ -320,6 +208,18 @@
         <!-- 칼슘:인 비율 -->
         칼슘:인 비율:: 1 : <%= number_with_precision(ca_phos_ratio, precision: 2) %>
       </h3>
+
+      <hr />
+
+       <h3>
+        MD기준 인 비율
+        <!-- 인 비율 -->
+        <% dm_ca_phos_ratio = 0 %>
+        <% dm_ca_phos_ratio = dm_phosphorus / dm_calcium %>
+        인 비율: <%= number_with_precision(dm_ca_phos_ratio, precision: 2) %>
+      </h3>
+
+
     </div><br/><br/>
 
     <div class="kcal_balnace">

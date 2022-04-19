@@ -7,18 +7,18 @@
 .index_box .index_right{}
 .index_box .index_right .result_box{}
 .index_box .index_right .result_box ul.feed_menu{margin-bottom:20px;}
-.index_box .index_right .result_box ul.feed_menu li{float:left;width:50%;text-align:center;padding:15px 3px;}
-.index_box .index_right .result_box ul.feed_menu li:nth-child(1){background:#e12742;border-top-left-radius:15px;border-bottom-left-radius:15px;}
-.index_box .index_right .result_box ul.feed_menu li:nth-child(2){background:#e75469;border-top-right-radius:15px;border-bottom-right-radius:15px;}
-.index_box .index_right .result_box ul.feed_menu li:nth-child(3){background:#e3746b;}
-.index_box .index_right .result_box ul.feed_menu li:nth-child(4){background:#ec93a7;}
-.index_box .index_right .result_box ul.feed_menu li a{color:#fff;font-size:16px;}
-.index_box .index_right .result_box ul.feed_menu li a.active{background:#fff;padding:8px 50px;color:#000;border:2px solid;border-radius:15px;}
+.index_box .index_right .result_box ul.feed_menu li{float:left;width:50%;text-align:center;padding:10px;}
+.index_box .index_right .result_box ul.feed_menu li:nth-child(1){}
+.index_box .index_right .result_box ul.feed_menu li:nth-child(2){}
+/*.index_box .index_right .result_box ul.feed_menu li:nth-child(3){background:#e3746b;}
+.index_box .index_right .result_box ul.feed_menu li:nth-child(4){background:#ec93a7;}*/
+.index_box .index_right .result_box ul.feed_menu li a{color:#000;font-size:16px;}
+.index_box .index_right .result_box ul.feed_menu li a.active{color:#000;border-bottom:1px solid #b0e0e6;box-shadow:inset 0 -6px 0 #b0e0e6;}
 .index_box .index_right .result_box div.label{margin-bottom:20px;float:left;width:48%;margin:1% 1% 15px 1%;}
-.index_box .index_right .result_box div.label p{font-size:14px;background:#a8dee2;padding:3px 10px;width:45%;text-align:center;border-radius:15px;margin-bottom:5px;}
+.index_box .index_right .result_box div.label p{font-size:14px;background:#fbf8f2;padding:3px 10px;width:45%;text-align:center;border-radius:15px;margin-bottom:5px;}
 .index_box .index_right .result_box input{border:2px solid;border-radius:15px;height:50px;padding:0 10px 0 20px;font-size:20px;width:100%;}
-.index_box .index_right .result_box input.submit{width:100%;margin-top:20px;padding:3px 0 0 0;background:#efefef;border:2px solid;}
-.index_box .index_right .result_box p.info_p{color:#ff6873;}
+.index_box .index_right .result_box input.submit{width:100%;margin-top:20px;padding:3px 0 0 0;background:#f9bc73;border:2px solid;color:#000;}
+.index_box .index_right .result_box p.info_p{color:#ff6873;font-size:12px;}
 .index_box .index_right .result_box .ctn_result{margin-top:20px;padding:20px 10px;background:#fbf8f2;border-radius:20px;}
 .index_box .index_right .result_box .ctn_result h4{font-size:14px;}
 .index_box .index_right .result_box .ctn_result .without_water{position:relative;}
@@ -30,7 +30,7 @@
 .index_box .index_right .result_box .ctn_result .calorie p{float:left;width:33.333%;border:1px solid #ddd;padding:10px;}
 .index_box .index_right .result_box .ctn_result .calorie p span{display:block;margin-top:5px;color:#ff6873;}
 .index_box .index_right .result_box .ctn_result .calorie em{border:1px solid #ddd;width:100%;display:block;padding:5px;}
-
+.index_box .index_right .result_box .ctn_result .calorie em span.total_ckal{color:#ff6873;}
 .index_box .index_right .result_box .ctn_result .blance{text-align:center;}
 .index_box .index_right .result_box .ctn_result .blance h4{text-align:left;}
 .index_box .index_right .result_box .ctn_result .blance p{float:left;width:33%;border:1px solid #ddd;padding:10px;}
@@ -39,7 +39,7 @@
 .index_box .index_right .result_box .ctn_result .without_water table{border-collapse:collapse;width:100%;margin-top:10px;}
 .index_box .index_right .result_box .ctn_result .without_water th, td{padding:8px;text-align:left;border-bottom:1px solid #ddd;text-align:center;width:25%;font-size:13px;}
 .index_box .index_right .result_box .ctn_result .without_water th:nth-child(4), td:nth-child(4){color:#ff6873;}
-.index_box .index_right .result_box .ctn_result .without_water td.nfe_in{text-align:left;padding-top:10px;}
+.index_box .index_right .result_box .ctn_result .without_water td.nfe_in{}
 .index_box .index_right .result_box .ctn_result .without_water td.nfe_in em{color:#ff6873;}
 
 
@@ -47,8 +47,13 @@
   .index_box .index_right .result_box ul.feed_menu li a.active{padding:10px 50px;}
   .index_box .index_right .result_box div.label p{width:50%;}
   .index_box .index_right .result_box .ctn_result .without_water th, td{padding:5px;}
+  .index_box .index_right .result_box .ctn_result .without_water th{font-size:12px;}
   .index_box .index_right .result_box .ctn_result .without_water .highlight{top:30%;height:60%;}
   .index_box .index_right .result_box ul li a.active{padding:13px 11px;}
+}
+
+@media screen and (min-width:641px) and (max-width:1199px){
+  .index_box .index_right{padding:15px 30px;}
 }
 
 /* 영양소 계산기 Collapse 메뉴 */
@@ -75,10 +80,6 @@ ul.info_ul li input[type=checkbox]:checked ~ i:after{transform: translate(-2px, 
   92%{transform:rotateX(-3deg);}
   100%{transform-origin: top center;transform:rotateX(0deg);}
 }
-
-
-
-
 
 
 
@@ -156,8 +157,8 @@ ul.info_ul li input[type=checkbox]:checked ~ i:after{transform: translate(-2px, 
 .category .option_wrap{height:550px;padding:5%;}
 .category__nav{padding:15px;list-style-type:none;display:block;width:60%;margin:0 auto;height:100%;overflow-x: hidden;overflow-y:auto;}
 .category__nav .category_box{margin-bottom:20px;border-bottom:1px dotted;}
-.category__nav h4{text-align:left;}
-.category__nav li{float:left;margin:5px 5px 5px 0;}
+.category__nav h4{text-align:left;padding-left:20px;}
+.category__nav li{float:left;margin:5px 5px 5px 0;width:48%;}
 .category__nav li a{color:#235d80;font-size:13px;transition:all .4s;display:inline-block;padding:7px 24px 7px 12px;position:relative;}
 .category__nav li a:hover, .category__nav li a:focus{text-decoration:none;}
 .category__nav li a:after,.category__nav li a:before{content:"";width:2px;height:11px;background:#fff;position:absolute;top:50%;right:14px;transform:translateY(-50%);}

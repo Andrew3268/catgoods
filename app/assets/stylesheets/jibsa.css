@@ -36,7 +36,7 @@
 
 
 /* jibsas show page */
-.detail_wrap{padding:20px;background:#fbf8f2;border-radius:20px;}
+.detail_wrap{padding:20px 0;/*background:#fbf8f2;border-radius:20px;*/}
 .detail_wrap  p.info_title{text-align:left;font-size:20px;}
 .detail_wrap .detail_box{}
 .detail_wrap .detail_box .comm{}
@@ -57,7 +57,7 @@
 .detail_wrap .nutrition_box .important .right ul{}
 .detail_wrap .nutrition_box .important .right ul li{color:#ff6873;}
 
-.detail_wrap .nutrition_box h3{text-align:left;}
+.detail_wrap .nutrition_box h3{text-align:left;font-size:12px;margin-bottom:5px;}
 .detail_wrap .nutrition_box h3 span{color:#ff6873;}
 .detail_wrap .nutrition_box .left{float:left;width:33.33%;} 
 .detail_wrap .nutrition_box .mid{float:left;width:33.33%;} 
@@ -66,15 +66,22 @@
 .detail_wrap .nutrition_box .carbo_ratio{margin:20px 0;}
 
 .detail_wrap .nutrition_box .kcal_balnace{margin-bottom:20px;}
-.detail_wrap .nutrition_box .kcal_balnace p{float:left;width:33.33%;border:1px solid #ccc;}
+.detail_wrap .nutrition_box .kcal_balnace p{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
 .detail_wrap .nutrition_box .kcal_balnace p span{display:block;color:#ff6873;margin-top:3px;}
-.detail_wrap .nutrition_box .kcal_balnace h4{display:inline-block;border:1px solid #ccc;border-top:0;width:100%;padding:7px;}
+.detail_wrap .nutrition_box .kcal_balnace h4{display:inline-block;border-top:0;width:100%;padding:7px;}
 .detail_wrap .nutrition_box .kcal_balnace h4 span{color:#ff6873;}
 
 .detail_wrap .nutrition_box .nutrient_balnace{margin-bottom:20px;}
-.detail_wrap .nutrition_box .nutrient_balnace p{float:left;width:33.33%;border:1px solid #ccc;}
+.detail_wrap .nutrition_box .nutrient_balnace p{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
 .detail_wrap .nutrition_box .nutrient_balnace p span{display:block;color:#ff6873;margin-top:3px;}
 
+
+
+/* for new_detail */
+.detail_wrap .detail_box .basic_info{margin-bottom:5px;}
+.detail_wrap .detail_box .basic_info .bi_box{float:left;width:20%;margin:2.5%;}
+.detail_wrap .detail_box .basic_info .bi_box span{border:1px solid #e6e6e6;padding:15px 5px;border-radius:10px;width:100%;display:block;font-size:13px;border-bottom: 1px solid #b0e0e6;box-shadow:inset 0 -2px 0 #b0e0e6;}
+.detail_wrap .detail_box .basic_info .bi_box p{margin:5px 0 0 0;font-size:11.5px;}
 
 
 /* 필터용 */

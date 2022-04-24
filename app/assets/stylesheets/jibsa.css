@@ -63,25 +63,54 @@
 .detail_wrap .nutrition_box .mid{float:left;width:33.33%;} 
 .detail_wrap .nutrition_box .right{float:left;width:33.33%;} 
 
-.detail_wrap .nutrition_box .carbo_ratio{margin:20px 0;}
+.detail_wrap .nutrition_box .carbo_ratio{margin:20px 0;text-align:left;border:1px solid #ccc;border-radius:20px;padding:15px;}
+.detail_wrap .nutrition_box .carbo_ratio h3{font-size:20px;}
+.detail_wrap .nutrition_box .carbo_ratio p{font-size:13px;}
 
-.detail_wrap .nutrition_box .kcal_balnace{margin-bottom:20px;}
+.detail_wrap .nutrition_box .ca_phos_ratio{text-align:left;border:1px solid #ccc;border-radius:20px;padding:15px;}
+.detail_wrap .nutrition_box .ca_phos_ratio h3{font-size:20px;}
+.detail_wrap .nutrition_box .ca_phos_ratio p{font-size:13px;}
+
+.detail_wrap .nutrition_box .nutri_analysis{margin:20px 0;text-align:left;border:1px solid #ccc;border-radius:20px;padding:15px;}
+.detail_wrap .nutrition_box .nutri_analysis p{font-size:14px;}
+.detail_wrap .nutrition_box .nutri_analysis ul{margin:10px 0 0 30px;}
+.detail_wrap .nutrition_box .nutri_analysis ul li{list-style:circle;font-size:12px;margin-bottom:5px;}
+
+.detail_wrap .nutrition_box .kcal_balnace{margin-bottom:20px;border:1px solid #ccc;border-radius:20px;padding:15px;}
 .detail_wrap .nutrition_box .kcal_balnace p{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
 .detail_wrap .nutrition_box .kcal_balnace p span{display:block;color:#ff6873;margin-top:3px;}
 .detail_wrap .nutrition_box .kcal_balnace h4{display:inline-block;border-top:0;width:100%;padding:7px;}
 .detail_wrap .nutrition_box .kcal_balnace h4 span{color:#ff6873;}
 
-.detail_wrap .nutrition_box .nutrient_balnace{margin-bottom:20px;}
+.detail_wrap .nutrition_box .nutrient_balnace{margin-bottom:20px;border:1px solid #ccc;border-radius:20px;padding:15px;}
 .detail_wrap .nutrition_box .nutrient_balnace p{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
 .detail_wrap .nutrition_box .nutrient_balnace p span{display:block;color:#ff6873;margin-top:3px;}
 
+.detail_wrap .ingredient_box{text-align:left;}
+.detail_wrap .ingredient_box h2{}
+.detail_wrap .ingredient_box .whole_ingre{}
+.detail_wrap .ingredient_box .core_ingre{margin:30px 0;}
+.detail_wrap .ingredient_box .core_ingre h3{}
+.detail_wrap .ingredient_box .core_ingre ul{}
+.detail_wrap .ingredient_box .core_ingre ul li{border:1px solid #ccc;border-radius:20px;padding:7px 10px;margin-bottom:10px;padding-left:15px;}
+.detail_wrap .ingredient_box .core_ingre .description{}
+.detail_wrap .ingredient_box .core_ingre .description .des_comm{}
+.detail_wrap .ingredient_box .core_ingre .description .des_comm p{font-size:13px;margin-bottom:10px;}
 
 
 /* for new_detail */
-.detail_wrap .detail_box .basic_info{margin-bottom:5px;}
-.detail_wrap .detail_box .basic_info .bi_box{float:left;width:20%;margin:2.5%;}
-.detail_wrap .detail_box .basic_info .bi_box span{border:1px solid #e6e6e6;padding:15px 5px;border-radius:10px;width:100%;display:block;font-size:13px;border-bottom: 1px solid #b0e0e6;box-shadow:inset 0 -2px 0 #b0e0e6;}
-.detail_wrap .detail_box .basic_info .bi_box p{margin:5px 0 0 0;font-size:11.5px;}
+.inner_section .inner .basic_info{margin-bottom:5px;}
+.inner_section .inner .basic_info .bi_box{float:left;width:20%;margin:2.5%;}
+.inner_section .inner .basic_info .bi_box span{border:1px solid #e6e6e6;padding:15px 5px;border-radius:10px;width:100%;display:block;font-size:13px;/*border-bottom: 1px solid #b0e0e6;box-shadow:inset 0 -2px 0 #b0e0e6;*/}
+.inner_section .inner .basic_info .bi_box p.info_p{margin:5px 0 0 0;font-size:11.5px;}
+
+.brand_box{border:1px solid #ccc;padding:15px;border-radius:20px;margin:20px 0 0 0;}
+.brand_box .question{float:left;width:80%;text-align:left;font-size:13px;}
+.brand_box .question ul{}
+.brand_box .question ul li{margin-bottom:5px;}
+.brand_box .question ul li.green{color:#00cc00;}
+.brand_box .question ul li.red{color:#ff4d4d;}
+.brand_box .answer{float:left;width:20%;}
 
 
 /* 필터용 */
@@ -91,6 +120,175 @@
 
 
 
+
+
+
+/**********/
+
+.nutrition_comparison{font-size:13px;}
+
+/*ul {
+ list-style: none;
+ padding: 0px;
+}
+*/
+
+.pricing-tables .col-md-3:first-child .pricing-table {
+ border-radius: 25px 0px 0px 25px;
+}
+
+.pricing-tables .col-md-3:last-child .pricing-table {
+ border-radius: 0px 25px 25px 0px;
+ border-right: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.pricing-table {
+ border-top: 2px solid rgba(255, 255, 255, 0.2);
+ border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+ border-left: 2px solid rgba(255, 255, 255, 0.2);
+ text-align: center;
+ padding-bottom: 40px;
+}
+
+
+
+.pricing-table .features {
+ margin: 40px 0px;
+}
+
+.pricing-table .features li {
+ color: #fff;
+ /*font-size: 16px;*/
+ text-align: center;
+ margin-bottom: 16px;
+}
+
+.pricing-table .features li:last-child {
+ margin-bottom: 0px;
+}
+
+.pricing-table .features li strong {
+ font-weight: 600;
+ font-size:13px;
+}
+
+.pricing-2 .pricing-tables .col-md-3:first-child .pricing-table {
+ border-radius: 25px 0px 0px 25px;
+}
+
+.pricing-2 .pricing-tables .col-md-3:last-child .pricing-table {
+ border-radius: 0px 25px 25px 0px;
+ border-right: 2px solid rgba(35, 35, 35, 0.2);
+}
+
+.pricing-2 .pricing-table {
+ border-top: 2px solid rgba(35, 35, 35, 0.2);
+ border-bottom: 2px solid rgba(35, 35, 35, 0.2);
+ border-left: 2px solid rgba(35, 35, 35, 0.2);
+ text-align: center;
+ padding-bottom: 16px;
+}
+
+.pricing-2 .pricing-table .features {
+ margin: 0px;
+}
+
+.pricing-2 .pricing-table .features li:first-child {
+ border-top: none;
+}
+
+.pricing-2 .pricing-table .features li {
+ color: #333333;
+ border-top: 2px solid rgba(35, 35, 35, 0.2);
+ padding: 10px 0px;
+ margin: 0;
+}
+
+.pricing-table.emphasis {
+ background-color: #2c3e50;
+}
+
+.pricing-2 .pricing-table.emphasis {
+ background-color: #2c3e50;
+}
+
+.pricing-2 .pricing-table.emphasis .features li {
+ color: #fff;
+ background-color: #2c3e50 !important;
+ /*border-radius: 25px;*/
+ /*font-size:13px;*/
+ /*border:none;*/
+ /*padding:10.5px 0;*/
+ border-top:2px solid #2c3e50;
+
+}
+
+.pricing-2 .pricing-table.emphasis .features li.mid_tit{border-radius:25px;border:none;}
+
+.pricing-2 .pricing-table.emphasis .price .amount,
+.pricing-2 .pricing-table.emphasis .sub {
+ color: #fff;
+}
+
+/*.pricing-2 .pricing-table.emphasis .features li {
+ 
+}*/
+
+.pricing-2 .feature-list {
+ padding-bottom: 0px;
+}
+
+.pricing-2 .pricing-table .features li:nth-child(even) {
+ background: #f4f4f4;
+}
+
+.pricing-tables .col-md-3{float:left;width:27.333%;}
+
+.pricing-tables .no-pad {
+ /*padding: 0px 15px;*/
+}
+
+.pricing-tables .no-pad-left {
+ /*padding-left: 15px;*/
+}
+
+.pricing-tables .no-pad-right{width:18%;/*padding-right: 15px;*/}
+.pricing-tables .no-pad-right strong{font-size:12px;}
+
+
+/*.pricing-tables .no-pad-right {
+ /*padding-right: 15px;*/
+}*/
+
+.pricing-table {
+ margin-bottom: 16px;
+ border-radius: 25px !important;
+ border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.pricing-2 .hidden-sm:first-child {
+ display: none;
+}
+
+.pricing-2 .pricing-table .features li:first-child {
+ font-size: 13px;
+}
+
+.pricing-tables .no-pad {
+ /*padding: 0px 15px;*/
+}
+
+.pricing-tables .no-pad-left {
+ /*padding-left: 15px;*/
+}
+
+
+
+.pricing-table {
+ margin-bottom: 30px;
+ border-radius: 25px !important;
+ border: 2px solid rgba(255, 255, 255, 0.2) !important;
+}
 
 
 

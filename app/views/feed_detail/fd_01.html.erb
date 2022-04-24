@@ -1,0 +1,373 @@
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>사랑하는 나의 반려묘<br />똑똑한 집사들을 위한 공간</h2>
+      <p>건강한 반려모를 위한 &nbsp; 사료 정보를 제공합니다.</p>
+      <% if current_user && current_user.admin %>
+        <a href="/jibsas">#블로그</a><br>
+        <a href="/posts">#고양이 굿즈 스토어</a><br>
+        <a href="/hubs/for_catfeed_store">#고양이 사료 스토어</a><br>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="index_right">
+      
+        <div class="index_wrap show_index">
+          
+          <%= render '/posts/header' %>
+            
+          <div class="show_card clearfix">
+
+            <div class="image_box">
+              <img src="https://thumbnail7.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/512057584589232-8b755849-14c9-4a77-9e7a-d4a4b384d2de.jpg" alt="퍼시캣 연어 레시피 고양이 건식사료" title="퍼시캣 연어 레시피 고양이 건식사료" />
+            </div>
+        
+            <div class="inner_section">
+
+              <div class="inner clearfix">
+                <em>퍼시캣</em>
+                <!-- <em>by 쿠팡</em> -->
+                <h2>퍼시캣 연어 레시피 고양이 건식사료</h2>
+
+                <div class="basic_info clearfix">
+                  <div class="bi_box">        
+                    <span>이탈리아</span>
+                    <p class="info_p">제조국가</p>
+                  </div>
+                  <div class="bi_box">        
+                    <span>이탈리아</span>
+                    <p class="info_p">원산지</p>
+                  </div>
+                  <div class="bi_box">        
+                    <span>건식</span>
+                    <p class="info_p">사료타입</p>
+                  </div>
+                  <div class="bi_box">        
+                    <span>키튼</span>
+                    <p class="info_p">급여대상</p>
+                  </div>
+                  <div class="bi_box">        
+                    <span>연어</span>
+                    <p class="info_p">주 단백질원</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="brand_box clearfix">
+                <div class="question clearfix">
+                  <ul>
+                    <li class="green">AAFCO 최소 영양기준에 충족하나요?</li>
+                    <li class="green">오리젠 자체공장에서 생산되나요?</li>
+                    <li class="green">오리젠 연구소가 존재하나요?</li>
+                    <li class="red">5년이내에 리콜이력이 몇 번인가요?</li>
+                  </ul>
+
+                  <ul>
+                    <li class="green">AAFCO 최소 영양기준에 충족합니다.</li>
+                    <li class="green">오리젠 자체공장에서 생산되고 있어요.</li>
+                    <li class="green">오리젠 연구소가 있어요.</li>
+                    <li class="red">5년이내에 리콜이력이 1번 있어요.</li>
+                  </ul>
+                </div>
+                <div class="answer clearfix">
+                  <ul>
+                    <li>V</li>
+                    <li>V</li>
+                    <li>V</li>
+                    <li>X</li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="detail_wrap clearfix">
+
+                <div class="detail_box detail_nutri clearfix">
+
+                  <div class="nutrition_box detail_nutri clearfix">
+                    
+                    <!-- <h2>영양소 분석</h2>
+                    <p class="info_title">중요 성분비율</p>
+                    <div class="important clearfix">
+                      <div class="left comm">
+                         <ul>
+                          <li>성분</li>
+                          <li>조단백질</li>
+                          <li>조지방</li>
+                          <li>칼슘</li>
+                          <li>인</li>
+                          <li>수분</li>
+                        </ul>
+                      </div>
+
+                      <div class="mid comm">
+                        <ul>
+                          <li>수분 포함</li>
+                          <li>32%</li>
+                          <li>16%</li>
+                          <li>1.3%</li>
+                          <li>0.8%</li>
+                          <li>10%</li>
+                        </ul>
+                      </div>
+
+                      <div class="right comm">
+                        <ul>
+                          <li>수분 제거</li>
+                          <li>35%</li>
+                          <li>20%</li>
+                          <li>1.3%</li>
+                          <li>1%</li>
+                          <li>0%</li>
+                        </ul>
+                      </div>
+                    </div> -->
+
+
+
+                    <div class="nutrition_comparison clearfix">
+                      
+                      <div class="main-container">
+                        <section class="pricing-2">
+                         <div class="container">
+                          <div class="row text-center">
+                           <h2>영양소 분석</h2>
+                          </div>
+
+                          <div class="row pricing-tables">
+
+                           <div class="col-md-3 no-pad-right hidden-sm">
+                            <div class="pricing-table feature-list">
+                             <ul class="features">
+                              <li><strong>&nbsp;</strong></li>
+                              <li><strong>Storage Space</strong></li>
+                              <li><strong>Unique Logins</strong></li>
+                              <li><strong>Offsite Backup</strong></li>
+                              <li><strong>Support Hours</strong></li>
+                              <li><strong>Bandwidth</strong></li>
+                             </ul>
+                            </div>
+                           </div>
+
+                           <div class="col-md-3 no-pad-right hidden-sm">
+                            <div class="pricing-table feature-list">
+                             <ul class="features">
+                              <li><strong>주요성분</strong></li>
+                              <li><strong>조단백질</strong></li>
+                              <li><strong>조지방</strong></li>
+                              <li><strong>칼슘</strong></li>
+                              <li><strong>인</strong></li>
+                              <!-- <li><strong>수분</strong></li> -->
+                             </ul>
+                            </div>
+                           </div>
+
+                           <div class="col-md-3 no-pad hidden-sm">
+                            <div class="pricing-table">
+                             <ul class="features">
+                              <li><strong>수분포함</strong></li>
+                              <li><strong>32%</strong></li>
+                              <li><strong>16%</strong></li>
+                              <li><strong>1.0%</strong></li>
+                              <li><strong>0.8%</strong></li>
+                              <!-- <li><strong>10%</strong></li> -->
+                             </ul>
+                            </div>
+                           </div>
+
+                           <div class="col-md-3 no-pad hidden-sm">
+                            <div class="pricing-table emphasis">
+                             <ul class="features">
+                              <li class="mid_tit"><strong>AAFCO 기준</strong></li>
+                              <li><strong>26%</strong></li>
+                              <li><strong>9%</strong></li>
+                              <li><strong>0.6%</strong></li>
+                              <li><strong>0.9%</strong></li>
+                              <!-- <li><strong>0%</strong></li> -->
+                             </ul>
+                            </div>
+                           </div>
+
+                           <div class="col-md-3 no-pad-left hidden-sm">
+                            <div class="pricing-table">
+                             <ul class="features">
+                              <li><strong>수분제거</strong></li>
+                              <li><strong>35.5%</strong></li>
+                              <li><strong>20.1%</strong></li>
+                              <li><strong>1.1%</strong></li>
+                              <li><strong>0.95%</strong></li>
+                              <!-- <li><strong>0%</strong></li> -->
+                             </ul>
+                             
+                             
+                            </div>
+                           </div>
+                          </div>
+                         </div>
+                        </section>
+                      </div>
+                    </div><!-- nutrition_comparison -->
+
+
+                    <!-- 기타 성분 [조회분, 조섬유, 오메가3, 오메가6, 비타민류 등] -->
+                    <div class="other_nutrition">
+                    </div>
+
+
+
+                    <div class="carbo_ratio ">
+                      
+                        <!-- 탄수화물 함량 = 100 -( 조단백질+조지방+수분+조회분 ) -->
+                        <h3>탄수화물 함류량 34.5%</h3>
+                        <p>탄수화물 함량이 34.5%로 권장 탄수화물 함량인 20% 보다 14.5% 높아요.</span>
+                        <p>탄수화물 함량이 34.5%로 건식사료 평균 탄수화물 함량인 30% ~ 35%% 보다 범위내에 속합니다.</span>
+                        <!-- <span>탄수화물 함량이 XX 로 권장 탄수화물 함량인 20% 보다 n% 낮아요.</span> -->
+                      
+                    </div>
+
+                    <div class="ca_phos_ratio">
+                      <!-- 칼슘:인 비율 -->
+                      <h3>칼슘과 인의 비율 1 : 1</h3>
+                      <p>AAFCO 칼슘과 인 최소 비율인 1:1을 충족해요.</p>
+                    </div>  
+
+
+                    <div class="nutri_analysis">
+                      <p>퍼시캣 연어 레시피는 Pawjelly의 1000개 건식사료 데이터베이스와 비교하면(DM기준):</p>
+                      <ul>
+                        <li>평균보다 다소 높은 조단백질을 함유</li>
+                        <li>평균보다 조금 높은 조지방을 함유</li>
+                        <li>평균보다 조금 높은 칼슘을 함유</li>
+                        <li>평균보다 다소 낮은 인을 함유</li>
+                        <li>평균보다 다소 낮은 조섬유를 함유</li>
+                        <li>평균치와 근사치인 조회분을 함유</li>
+                        <li>평균보다 높은 탄수화물을 함유</li>
+                      </ul>
+                    </div>
+
+                    <div class="kcal_balnace">
+                      <h3>100g당 PFC 추정 칼로리</h3>
+                      <div class="clearfix">
+                        <p>
+                          조단백질
+                          <span>115.50 kcal</span>
+                        </p>
+                        <p>
+                          조지방                          
+                          <span>170.00 kcal</span>
+                        </p>
+                        <p>
+                          탄수화물
+                          <span>105.00 kcal</span>
+                        </p>
+                      </div>
+                      <h4>총 칼로리(100g)</h4>
+                      <span> 390.50 kcal</span>
+                    </div>
+
+                    <div class="nutrient_balnace">
+                      <h3>100g당 PFC 추정 비율</h3>
+                      <!-- <div class="clearfix">
+                        <p>
+                          조단백
+                          <span>40%</span>
+                        </p>
+                        <p>
+                          조지방
+                          <span>40%</span>
+                        </p>
+                        <p>
+                          탄수화물
+                          <span>20%</span>
+                        </p>
+                      </div> -->
+                      <img src="<%=asset_path 'chart_01.png'%>" alt="세일알림이 냥이">
+                    </div>
+                  </div><!--nutrition_box-->
+
+
+
+                  <hr />
+                  <div class="ingredient_box detail_ingredient clearfix">
+                    <h2>원재료(성분) 분석</h2>
+                    <div class="whole_ingre">
+                      <p>
+                        밀글루텐, 소맥분, 동물성 지방 (닭, 칠면조, 오리 및 돼지), 육분 (닭, 오리, 칠면조), 쌀, 옥수수, 분말셀룰로스, 동물성 유도단백질 (닭, 칠면조), 치커리 펄프, 혼합광물질류 합제, 어유, 대두유, 효모, 토마토 (라이코펜의 원료), 가수분해효모, 글루코사민, 보리지유, 금잔화 추출물 (루테인의 원료), 뮤코다당단백(콘드로이틴의 원료), 비타민 A, 비타민 D3, 철, 요오드, 구리, 망간, 아연, 셀레늄, 차 카테킨 (폴리페놀의 원료), 소르빈산칼륨, 항산화제.
+                      </p>
+                    </div>
+
+                    <div class="core_ingre">
+                      <h3>제 1주원료 ~ 제 5주원료</h3>
+                      <ul>
+                        <li>밀글루텐</li>
+                        <li>소맥분</li>
+                        <li>동물성 지방 (닭, 칠면조, 오리 및 돼지)</li>
+                        <li>육분 (닭, 오리, 칠면조)</li>
+                        <li>쌀</li>
+                      </ul>
+                    </div>
+
+                    <div class="allergic_potential">
+                      <h3>알러지를 일으킬 수 있는 원료</h3>
+                      <ul>
+                        <li>밀글루텐</li>
+                        <li>쌀</li>
+                        <li>옥수수</li>
+                      </ul>
+                    </div>
+
+                    <div class="description">
+                      <ul>
+                        <li>첫번째 주 원료가 동물성 단백질이 아닌 곡물인 글루텐.</li>
+                      </ul>
+                    </div>
+
+                    
+
+
+
+                  </div><!--ingredient_box-->
+
+
+
+
+
+
+
+                </div><!--detail_box-->
+              </div><!--detail_wrap-->
+
+              <div class="btn menu clearfix">
+                <div class="menu-inner">
+                  <button class="menu-item" onclick="goBack()">뒤로가기</button>
+                  <!-- <a href="/" class="menu-item">뒤로가기</a> -->
+                  <a target="_blank" href="#n" class="menu-item active">사러가기</a>
+                   <div class="sale_cat">
+                     <img src="<%=asset_path 'dont_go.png'%>" alt="세일알림이 냥이">
+                   </div>
+                </div>
+                <script>
+                  function goBack() {
+                    window.history.back();
+                  }
+                </script>
+              </div>
+
+          </div><!-- inner -->
+        </div><!-- show card -->
+
+        <div class="notice clearfix">
+            <ul>
+              <li>가격과 평점이 다른가요? <a href="/hubs/about_us">[자세히 보기]</a></li>
+              <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아닙니다.</li>
+              <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아니며 쿠팡 파트너스 활동을 통해 일정의 수수료를 지급받아요.</li>
+            </ul>
+          </div>
+      </div><!-- show_wrap -->
+
+    <%= javascript_pack_tag 'search_modal' %>
+  </div>
+
+</div>
+
+

@@ -15,6 +15,7 @@ gem 'impressionist'
 gem "punching_bag"
 
 
+
 gem 'capistrano-rails-console', require: false
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'

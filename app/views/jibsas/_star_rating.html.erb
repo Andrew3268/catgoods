@@ -1,0 +1,20 @@
+<% if @jibsa.j_review_count.present? %>
+  <div class="star_rating">
+    <% if @jibsa.j_spare_56 == 50 %>
+      <img class="star_4_5" src="<%=asset_path 'star_5.png' %>" alt="벌점4.5"/>
+      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
+    <% elsif @jibsa.j_spare_56 == 45 %>
+      <img class="star_4_5" src="<%=asset_path 'star_45.png' %>" alt="벌점4.5"/>
+      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
+    <% elsif @jibsa.j_spare_56 == 40 %>
+      <img class="star_4_5" src="<%=asset_path 'star_4.png' %>" alt="벌점4.5"/>
+      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
+    <% elsif @jibsa.j_spare_56 == 35 %>
+      <img class="star_4_5" src="<%=asset_path 'star_35.png' %>" alt="벌점4.5"/>
+      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
+    <% elsif @jibsa.j_spare_56 == 30 %>
+      <img class="star_4_5" src="<%=asset_path 'star_3.png' %>" alt="벌점4.5"/>
+      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
+    <% end %>
+  </div>
+<% end %>

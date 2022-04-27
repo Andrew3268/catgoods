@@ -1,4 +1,7 @@
 class Jibsa < ApplicationRecord
+  has_rich_text :j_description
+  has_rich_text :j_spare_31
+
   acts_as_punchable
   
   belongs_to :user

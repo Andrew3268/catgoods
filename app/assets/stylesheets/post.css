@@ -149,7 +149,7 @@
 .show_index .show_card .inner_section a.back{display:block;}
 .show_index .show_card .inner_section .inner{padding:0 2.5%;margin-top:30px;}
 .show_index .show_card .inner_section .inner h2{margin:5px 0 7px 0;word-break:break-word;font-size:17px;}
-.show_index .show_card .inner_section .inner p{font-size:17px;margin-top:10px;}
+.show_index .show_card .inner_section .inner p{font-size:13px;margin-top:10px;}
 .show_index .show_card .inner_section .inner p.hashtag a{background:var(--c-yellow-500);padding:3px 7px;border-radius:15px;font-size:15px;display:inline-block;margin-bottom:5px;}
 .show_index .show_card .inner_section .inner .is_price{font-size:30px;}
 .show_index .show_card .inner_section .inner .hashtag{}

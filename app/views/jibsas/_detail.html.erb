@@ -287,10 +287,24 @@
 
     <div class="carbo_ratio ">
       <h3>
+        <!-- 탄수화물 함량 = 100 -( 조단백질+조지방+수분+조회분 ) -->
         탄수화물 함류량:
         <% carbo_blance = 0 %>
         <% carbo_blance =  100 - @jibsa.j_option_11.to_f - @jibsa.j_option_14.to_f - @jibsa.j_option_12.to_f - @jibsa.j_option_17.to_f - @jibsa.j_option_18.to_f %>
-        <span><%= number_to_percentage(carbo_blance, precision: 2) %></span>
+
+        <!-- 권장 함량과의 차이 20 보다 높을 때-->
+        <% over_twenty = 0 %> 
+        <% over_twenty = carbo_blance - 20 %>
+
+        <!-- 권장 함량과의 차이 20 보다 높을 때-->
+        <% under_twenty = 0 %> 
+        <% under_twenty = 20 - carbo_blance  %>
+
+        <% if carbo_blance > 20 %>
+          <span>탄수화물 함량이 <%= number_to_percentage(carbo_blance, precision: 2) %>로 권장 탄수화물 함량인 20% 보다 <%= number_to_percentage(over_twenty, precision: 2) %> 높아요.</span>
+        <% elsif carbo_blance < 20 %>
+          <span>탄수화물 함량이 <%= number_to_percentage(carbo_blance, precision: 2) %>로 권장 탄수화물 함량인 20% 보다 <%= number_to_percentage(under_twenty, precision: 2) %> 낮아요.</span>
+        <% end %>
       </h3>
     </div>
 

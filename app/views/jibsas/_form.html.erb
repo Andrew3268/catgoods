@@ -7,7 +7,6 @@
       <%= f.input :j_title, label: "상품 이름" %>
       <%= f.input :j_friendly_id, label: "Friendly_id [어퍼스트로피, 쉼표, 따옴표 제거]" %>
       <%= f.input :j_link, label: "상품 URL" %>
-      <!-- <%= f.input :j_description, label: "상품 설명" %> -->
       <%= f.input :j_source, label: "판매 사이트" %>
       <%= f.input :j_hashtag, label: "해시태그" %>
       <!-- <%= f.input :j_key_word, label: "관련검색어" %> -->
@@ -58,14 +57,15 @@
         <%= f.input :j_option_12, label: "수분" %>
         <%= f.input :j_option_13, label: "칼로리" %>
         <%= f.input :j_option_19, label: "중량(kg)" %>
-        
-        
+                
       </div>
+
+
 
       <br><br><br>
       <div class="pricing clearfix">
-        <%= f.input :j_spare_31, label: "필터" %>
-        
+        <%= f.input :j_description, as: :rich_text_area %>
+        <%= f.input :j_spare_31, as: :rich_text_area %>
       </div>
 
 

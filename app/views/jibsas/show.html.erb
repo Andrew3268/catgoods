@@ -25,51 +25,17 @@
         
             <div class="inner_section">
               <div class="inner clearfix">
-                <% if current_user && current_user.admin %><a class="back" href="/jibsas">Back</a><a class="back" href="/hubs/random_view">Back To Ransom</a><% end%>
+                
+                <em><%= render 'jibsas/codes_brand' %></em>                
+                <h2><%= @jibsa.j_title %></h2>
 
-                <% if @jibsa.j_source.present? %>
-                  <em><%= render 'jibsas/codes_brand' %></em>
-                <% else %>
-                  <em>
-                    by 쿠팡
-                  </em>
-                <% end %>
-                <h2><%= @jibsa.j_title %>(<%= @jibsa.j_option_19 %>kg)</h2>
-
-               <% if @jibsa.j_review_count.present? %>
-                  <div class="star_rating">
-                    <% if @jibsa.j_spare_56 == 50 %>
-                      <img class="star_4_5" src="<%=asset_path 'star_5.png' %>" alt="벌점4.5"/>
-                      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
-                    <% elsif @jibsa.j_spare_56 == 45 %>
-                      <img class="star_4_5" src="<%=asset_path 'star_45.png' %>" alt="벌점4.5"/>
-                      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
-                    <% elsif @jibsa.j_spare_56 == 40 %>
-                      <img class="star_4_5" src="<%=asset_path 'star_4.png' %>" alt="벌점4.5"/>
-                      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
-                    <% elsif @jibsa.j_spare_56 == 35 %>
-                      <img class="star_4_5" src="<%=asset_path 'star_35.png' %>" alt="벌점4.5"/>
-                      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
-                    <% elsif @jibsa.j_spare_56 == 30 %>
-                      <img class="star_4_5" src="<%=asset_path 'star_3.png' %>" alt="벌점4.5"/>
-                      <em><%= @jibsa.j_review_count %>+ 개의 상품평 by <%= @jibsa.j_source %></em>
-                    <% end %>
-                  </div>
-                <% end %>
-
+               
                 
                 <p class="hashtag"><%= render_with_jhashtags(@jibsa.j_hashtag) %></p>
+            
+
+                <%= render 'jibsas/new_detail' %>
               </div>
-
-
-              <% if current_user && current_user.admin %>
-                <%= render 'jibsas/filter' %>
-              <% end %>
-
-
-
-              <%= render 'jibsas/new_detail' %>
-
 
               <div class="btn menu clearfix">
                 <div class="menu-inner">
@@ -90,20 +56,23 @@
         
         </div><!-- show card -->
         <div class="notice clearfix">
-            <ul>
-              <li>가격과 평점이 다른가요? <a href="/hubs/about_us">[자세히 보기]</a></li>
-              <% if @jibsa.j_source.present? %>
-                <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아닙니다.</li>
-              <% else %>
-                <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아니며 쿠팡 파트너스 활동을 통해 일정의 수수료를 지급받아요.</li>
-              <% end %>
-              <% if current_user && current_user.admin %>
-                <div class="admin_controller">
-                  <li><%= link_to 'Edit', edit_jibsa_path(@jibsa) %>| <%= link_to 'Destroy', @jibsa, method: :delete, data: { confirm: 'Are you sure?' } %></li>
-                </div>
-              <% end %>
-            </ul>
-          </div>
+          <ul>
+            <li>가격과 평점이 다른가요? <a href="/hubs/about_us">[자세히 보기]</a></li>
+            <% if @jibsa.j_source.present? %>
+              <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아닙니다.</li>
+            <% else %>
+              <li>"JellyJellyJellyJelly"는 이 상품 판매의 당사자가 아니며 쿠팡 파트너스 활동을 통해 일정의 수수료를 지급받아요.</li>
+            <% end %>
+            <% if current_user && current_user.admin %>
+              <div class="admin_controller">
+                <li><%= link_to 'Edit', edit_jibsa_path(@jibsa) %>| <%= link_to 'Destroy', @jibsa, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+              </div>
+            <% end %>
+          </ul>
+        </div>
+        <% if current_user && current_user.admin %>
+            <%= render 'jibsas/filter' %>
+          <% end %>
       </div><!-- show_wrap -->
 
     <%= javascript_pack_tag 'search_modal' %>

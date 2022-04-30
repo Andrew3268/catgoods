@@ -75,6 +75,7 @@
 .detail_wrap .nutrition_box .nutri_analysis p{font-size:14px;}
 .detail_wrap .nutrition_box .nutri_analysis ul{margin:10px 0 0 30px;}
 .detail_wrap .nutrition_box .nutri_analysis ul li{list-style:circle;font-size:12px;margin-bottom:5px;}
+.detail_wrap .nutrition_box .nutri_analysis ul li em{font-weight:bold;}
 
 .detail_wrap .nutrition_box .kcal_balnace{margin-bottom:20px;border:1px solid #ccc;border-radius:20px;padding:15px;}
 .detail_wrap .nutrition_box .kcal_balnace p{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}

@@ -32,6 +32,8 @@ Rails.application.routes.draw do
   get 'hubs/nutrition_dic'
   get 'hubs/for_catfeed_store'
   get 'hubs/testing'
+  get 'hubs/product_comparison'
+  
 
   # Feed_detail
   get 'feed_detail/fd_01'

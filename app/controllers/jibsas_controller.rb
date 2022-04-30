@@ -85,7 +85,7 @@ class JibsasController < ApplicationController
       params.require(:jibsa).permit(:j_title, :j_link, :j_image, :j_source, :j_hashtag, :j_rating, :j_review_count, :j_key_word, 
                                     :j_link, :j_is_price, :j_was_price, :j_pct, :j_friendly_id, :j_spare_56, :j_option_01, :j_option_02, :j_option_03,
                                     :j_option_04, :j_option_05, :j_option_06, :j_option_07, :j_spare_01, :j_spare_02, :j_spare_03, :j_spare_04, :j_spare_05,
-                                    :j_spare_06, :j_spare_07, :j_spare_08, :j_spare_09, :j_spare_10, :j_spare_31, :j_option_11, :j_option_12 , :j_option_13,
+                                    :j_spare_06, :j_spare_07, :j_spare_08, :j_spare_09, :j_spare_10, :j_spare_31, :j_spare_32, :j_option_11, :j_option_12 , :j_option_13,
                                     :j_option_14, :j_option_15, :j_option_16, :j_option_17, :j_option_18, :j_option_19, :j_description)
     end
 end

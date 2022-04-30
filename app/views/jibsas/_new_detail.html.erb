@@ -282,7 +282,7 @@
         <% total_kcal = protein_kcal + fat_kcal + carbo_kcal %>
         <span><%= number_with_precision(total_kcal, precision: 2) %> kcal</span>
       </h4>
-      <%= bar_chart [["조단백", protein_kcal], ["조지방", fat_kcal], ["탄수화물", carbo_kcal], ["총 칼로리", total_kcal]]  %>
+      <%= bar_chart [["조단백질", protein_kcal], ["조지방", fat_kcal], ["탄수화물", carbo_kcal], ["총 칼로리", total_kcal]], colors: ["#239023"] %>
     </div>
 
 
@@ -315,18 +315,59 @@
     </div>
 
      <div class="nutri_analysis">
-        <p>퍼시캣 연어 레시피는 Pawjelly의 1000개 건식사료 데이터베이스와 비교하면(DM기준):</p>
+        <% protien_aveage = 30 %>
+        <% fat_aveage = 16 %>
+        <% calcium_aveage = 0.8 %>
+        <% phosphorus_aveage = 0.65 %>
+        <% fiber_aveage = 3 %>
+        <% ash_aveage = 8 %>
+        <% carbo_aveage = 20 %>
+        <% water_aveage = 10 %>
+        
+        <p>퍼시캣 연어 레시피는 Pawjelly의 1000개 건식사료 데이터베이스와 비교하면:</p>
         <ul>
-          <li>평균보다 다소 높은 조단백질을 함유</li>
-          <li>평균보다 조금 높은 조지방을 함유</li>
-          <li>평균보다 조금 높은 칼슘을 함유</li>
-          <li>평균보다 다소 낮은 인을 함유</li>
-          <li>평균보다 다소 낮은 조섬유를 함유</li>
-          <li>평균치와 근사치인 조회분을 함유</li>
-          <li>평균보다 높은 탄수화물을 함유</li>
+          <% if @jibsa.j_option_11 > protien_aveage %>
+            <li>평균보다 <em>높은⬆</em> 조단백질을 함유</li>
+          <% else %>
+            <li>평균보다 <em>낮은⬇</em> 조단백질을 함유</li>
+          <% end %>
+          <% if @jibsa.j_option_14 > fat_aveage %>
+            <li>평균보다 <em>높은⬆</em> 조지방을 함유</li>
+          <% else %>
+            <li>평균보다 <em>낮은⬇</em> 조지방을 함유</li>
+          <% end %>
+          <% if @jibsa.j_option_17 > fiber_aveage %>
+            <li>평균보다 <em>높은⬆</em> 조섬유를 함유</li>
+          <% else %>
+            <li>평균보다 <em>낮은⬇</em> 조섬유를 함유</li>
+          <% end %>
+          <% if @jibsa.j_option_18 > ash_aveage %>
+            <li>평균보다 <em>높은⬆</em> 조회분을 함유</li>
+          <% else %>
+            <li>평균보다 <em>낮은⬇</em> 조회분을 함유</li>
+          <% end %>
+          <% if @jibsa.j_option_15 > calcium_aveage %>
+            <li>평균보다 <em>높은⬆</em> 칼슘을 함유</li>
+          <% else %>  
+            <li>평균보다 <em>낮은⬇</em> 칼슘을 함유</li>
+          <% end %>
+          <% if @jibsa.j_option_16 > phosphorus_aveage %>
+            <li>평균보다 <em>높은⬆</em> 인을 함유</li>
+          <% else %>
+            <li>평균보다 <em>낮은⬇</em> 인을 함유</li> 
+          <% end %>
+          <% if carbo_blance > carbo_aveage %>
+            <li>평균보다 <em>높은⬆</em> 탄수화물을 함유</li> 
+          <% else %>
+            <li>평균보다 <em>낮은⬇</em> 탄수화물을 함유</li> 
+          <% end %>
+          <% if @jibsa.j_option_12 > water_aveage %>
+            <li>평균보다 <em>높은⬆</em> 수분을 함유</li>
+          <% else %>
+            <li>평균보다 <em>낮은⬇</em> 수분을 함유</li> 
+          <% end %>
         </ul>
       </div>
-
 
     <br /><br />
     

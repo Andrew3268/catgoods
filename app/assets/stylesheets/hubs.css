@@ -225,10 +225,6 @@ xpopup
 
 
 
-
-
-
-
 /**** product comparison ****/
 /* -------------------------------- 
 Search Filter
@@ -785,7 +781,7 @@ Search Filter
   transition-delay: 0.3s;
 }
 
-/*@media screen and (min-width: 59.688em) {*/
+
 @media screen and (max-width:640px){
   .flexbox .compare__effect {
     /*display: -webkit-flex;
@@ -809,7 +805,7 @@ Search Filter
   }
 }
 
-/*@media screen and (max-width: 59.688em) {*/
+
 @media screen and (max-width:640px){
   .grid {
     padding: 2em 0.5em;
@@ -866,11 +862,10 @@ Search Filter
   }
 
 
-
-  .compare__item .product__flash { border-bottom: 2px solid #2E294E; }
-  .compare__item .product__region { border-bottom: 2px solid #6D6FD2; }
-  .compare__item .product__varietal { border-bottom: 2px solid #4B5267; }
-  .compare__item .product__alcohol { border-bottom: 2px solid #3C3474; }
+  .compare__item .product__flash{border-bottom: 2px solid #2E294E;}
+  .compare__item .product__region{border-bottom: 2px solid #6D6FD2;}
+  .compare__item .product__varietal{border-bottom: 2px solid #4B5267;}
+  .compare__item .product__alcohol{border-bottom: 2px solid #3C3474;}
 
   .action--close {
     padding: 0.5em 0.75em;
@@ -947,7 +942,7 @@ a:hover {
 }*/
 
 /* Blueprint header */
-.bp-header {
+/*.bp-header {
   width: 90%;
   max-width: 69em;
   margin: 0 auto;
@@ -1048,9 +1043,9 @@ a:hover {
   color: #5C5EDC;
   speak: none;
   -webkit-font-smoothing: antialiased;
-}
+}*/
 
-.bp-header nav .bp-icon:after {
+/*.bp-header nav .bp-icon:after {
   line-height: 2.4;
   position: absolute;
   top: 0;
@@ -1088,7 +1083,7 @@ a:hover {
   .bp-header h1 {
     font-size: 1.8em;
   }
-}
+}*/
 
 
 

@@ -484,7 +484,7 @@ Search Filter
   transition: opacity 0.3s, background 0.2s;
 }
 
-..action--close .fa-remove{font-size:30px;}
+.action--close .fa-remove{font-size:30px;}
 
 .view--compare + .compare .action--close {
   pointer-events: auto;
@@ -890,6 +890,7 @@ Search Filter
   }
 
   .action--close .fa-remove{font-size:30px;}
+
   /*.compare__item .action--buy {
     margin: 0;
     display: block;

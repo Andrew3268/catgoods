@@ -68,7 +68,7 @@
 .detail_wrap .nutrition_box .carbo_ratio h3{font-size:20px;}
 .detail_wrap .nutrition_box .carbo_ratio p{font-size:13px;}
 
-.detail_wrap .nutrition_box .ca_phos_ratio{text-align:left;border-radius:20px;padding:15px;background:rgb(0,204,0,0.1);}
+.detail_wrap .nutrition_box .ca_phos_ratio{text-align:left;border-radius:20px;padding:15px;background:rgba(0,204,0,0.1);}
 .detail_wrap .nutrition_box .ca_phos_ratio h3{font-size:20px;color:#00cc00;font-weight:100;text-align:center;}
 .detail_wrap .nutrition_box .ca_phos_ratio p{font-size:13px;text-align:center;color:#00cc00;margin:0;}
 

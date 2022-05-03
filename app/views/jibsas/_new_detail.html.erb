@@ -30,6 +30,43 @@
       </div>
     </div>
 
+    
+    <% dm_protein = 0 %>
+    <% dm_protein =  100 * @jibsa.j_option_11.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+    
+    <% dm_fat = 0 %>
+    <% dm_fat =  100 * @jibsa.j_option_14.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+  
+    <% dm_calcium = 0 %>
+    <% dm_calcium =  100 * @jibsa.j_option_15.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+  
+    <% dm_phosphorus = 0 %>
+    <% dm_phosphorus =  100 * @jibsa.j_option_16.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+    
+
+    <div class="basic_info clearfix">
+      <div class="bi_box">        
+        <% if dm_protein > 26 && dm_fat > 9 && dm_calcium > 0.6 && dm_phosphorus > 0.5 %>
+          <span>O</span>
+        <% else %>
+          <span>X</span>
+        <% end %>
+        <p class="info_p">AAFCO 기준</p>
+      </div>
+      <div class="bi_box">        
+        <span>O</span>
+        <p class="info_p">생산 공장</p>
+      </div>
+      <div class="bi_box">        
+        <span>O</span>
+        <p class="info_p">자체 연구소</p>
+      </div>
+      <div class="bi_box">        
+        <span>X</span>
+        <p class="info_p">리콜이력</p>
+      </div>
+    </div>
+
     <!-- <p class="info_title">상세정보</p> -->
     <br />
     <div class="left comm">
@@ -178,28 +215,44 @@
                 <strong>
                   <% dm_protein = 0 %>
                   <% dm_protein =  100 * @jibsa.j_option_11.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
-                  <%= number_to_percentage(dm_protein, precision: 2) %>    
+                  <% if dm_protein > 26 %>
+                    <p class="over"><%= number_to_percentage(dm_protein, precision: 2) %></p>
+                  <% else %>
+                    <p class="lower"><%= number_to_percentage(dm_protein, precision: 2) %></p>
+                  <% end %>
                 </strong>
               </li>
               <li>
                 <strong>
                   <% dm_fat = 0 %>
                   <% dm_fat =  100 * @jibsa.j_option_14.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
-                  <%= number_to_percentage(dm_fat, precision: 2) %>
+                  <% if dm_fat > 9 %>
+                    <p class="over"><%= number_to_percentage(dm_fat, precision: 2) %></p>
+                  <% else %>
+                    <p class="lower"><%= number_to_percentage(dm_fat, precision: 2) %></p>
+                  <% end %>
                 </strong>
               </li>
               <li>
                 <strong>
                   <% dm_calcium = 0 %>
                   <% dm_calcium =  100 * @jibsa.j_option_15.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
-                  <%= number_to_percentage(dm_calcium, precision: 2) %>
+                  <% if dm_calcium > 0.6 %>
+                    <p class="over"><%= number_to_percentage(dm_calcium, precision: 2) %></p>
+                  <% else %>
+                    <p class="lower"><%= number_to_percentage(dm_calcium, precision: 2) %></p>
+                  <% end %>
                 </strong>
               </li>
               <li>
                 <strong>
                   <% dm_phosphorus = 0 %>
                   <% dm_phosphorus =  100 * @jibsa.j_option_16.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
-                  <%= number_to_percentage(dm_phosphorus, precision: 2) %>
+                  <% if dm_phosphorus > 0.5 %>
+                    <p class="over"><%= number_to_percentage(dm_phosphorus, precision: 2) %></p>
+                  <% else %>
+                    <p class="lower"><%= number_to_percentage(dm_phosphorus, precision: 2) %></p>
+                  <% end %>
                 </strong>
               </li>
              </ul>
@@ -426,6 +479,10 @@
     <%= @jibsa.j_spare_31 %>
 
   </div><!--ingredient_box-->
+
+  <div class="general review">
+    총평
+  </div>
 
 
   

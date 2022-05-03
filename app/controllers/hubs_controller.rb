@@ -29,4 +29,8 @@ class HubsController < ApplicationController
   def testing
     @pagy, @jibsas = pagy(Jibsa.all.order("created_at DESC"), items: 20)
   end
+
+  def product_comparison
+    @jibsas = Jibsa.all.order("created_at DESC")
+  end
 end

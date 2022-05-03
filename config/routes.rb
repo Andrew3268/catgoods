@@ -33,7 +33,7 @@ Rails.application.routes.draw do
   get 'hubs/for_catfeed_store'
   get 'hubs/testing'
   get 'hubs/product_comparison'
-  get 'hubs/compare_test'
+  
   
 
   # Feed_detail

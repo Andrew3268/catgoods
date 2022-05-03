@@ -1,322 +1,529 @@
-    <!-- <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Blueprint: Product Comparison Layout &amp; Effect</title>
-    <meta name="description" content="Blueprint: A basic responsive product grid layout with comparison functionality" />
-    <meta name="keywords" content="blueprint, template, html, css, javascript, grid, layout, effect, product comparison" />
-    <meta name="author" content="Codrops" /> -->
-    <!-- <link rel="shortcut icon" href="favicon.ico"> -->
-    
-    <!-- <link rel="stylesheet" type="text/css" href="css/demo.css" /> -->
-    <!-- <link rel="stylesheet" type="text/css" href="css/component.css" /> -->
-    <!-- Modernizr is used for flexbox fallback -->
-    <!-- <script src="js/modernizr.custom.js"></script> -->
-
-  
-<!-- Compare basket -->
-<div class="compare_box">
-    <div class="compare-basket">
-      <button class="action action--button action--compare"><i class="fa fa-check"></i><span class="action__text">비교하기( Max 3개 )</span></button>
-
+<div class="index_box clearfix">
+  <div class="index_left">  
+    <div class="ctn_box">
+      <h2>사랑하는 나의 반려묘<br />똑똑한 집사들을 위한 공간</h2>
+      <p>건강한 반려모를 위한 &nbsp; 사료 정보를 제공합니다.</p>
+      <% if current_user && current_user.admin %>
+        <a href="/jibsas">#블로그</a><br>
+        <a href="/posts">#고양이 굿즈 스토어</a><br>
+        <a href="/hubs/for_catfeed_store">#고양이 사료 스토어</a><br>
+        <!-- <a href="/hubs/nutrition_dic">#고양이_영양소_백과사전</a> -->
+      <% end %>
     </div>
-        <br><br><br><br><br><br>
+  </div>
 
+  <div class="index_right">
+    <div class="index_wrap">
+      <%= render '/posts/header' %>
 
-    <!-- Main view -->
-    <div class="view">
+      <section class="search search_pc">
+        <div class="search-inner">
+            <button class="search-button">
+              <img src="<%=asset_path 'search.png'%>" alt="냥이굿즈 찾기">
+            </button>
+            <%= form_for "",url: feeds_path, role: "search", method: :get do %>
+              <%= text_field_tag :search, @search_term, placeholder: "사료 정보 검색...", class: 'search-input' %>
+            <% end %> 
+          </div>
+       </section>      
       
-      <!-- Blueprint header -->
-
-      <!-- Product grid -->
-      <section class="grid">
-        <div class="search_filter">
-          <input type="text" placeholder="search" data-search />
-        </div>
-        
-        <!-- Products -->
-        <div data-filter-item data-filter-name="퓨리나">
-          <div class="product">
-            <div class="product__info">
-              <img class="product__image" src="https://cdn.shopify.com/s/files/1/1065/8354/files/browning_strike_force_F_75.jpg?4854682253595354624" alt="Product 1" />
-
-              <h3 class="product__title">[퓨리나]Browning Strike Force Elite</h3>
-              <div class="detail_box extra">
-                <div class="basic_info">
-                  <ul>
-                    <li>제조국가</li>
-                    <li>한국</li>
-                    <li>사료타압</li>
-                    <li>건식사료</li>
-                    <li>급여연령</li>
-                    <li>어덜트(생후 1년 이상)</li>
-                    <li>그레인프리</li>
-                    <li>O</li>
-                    <li>AAFCO 충족</li>
-                    <li>O</li>
-                    <li>기대효과</li>
-                    <li class="effects">소화, 당뇨, 헤어볼, 관절, 체중조절, 비뇨</li>
-
-                  </ul>
-                </div>
-
-                <div class="nutri_info">
-                  <ul>
-                    <li>조단백질</li>
-                    <li>35%</li>
-                    <li>조지방</li>
-                    <li>13%</li>
-                    <li>칼슘</li>
-                    <li>1%</li>
-                    <li>인</li>
-                    <li>0.8%</li>
-                    <li>조섬유</li>
-                    <li>3%</li>
-                    <li>조회분</li>
-                    <li>10%</li>
-                    <li>수분</li>
-                    <li>10%</li>
-                    <li>캴슘:인 비율</li>
-                    <li>1:0.75</li>
-                    <li>탄수화물 함량</li>
-                    <li>34%</li>
-                  </ul>
-                </div>
-
-                <div class="ingre_info">
-                  <ul>
-                    <li>제1주 원료</li>
-                    <li>닭고기분</li>
-                    <li>제2주 원료</li>
-                    <li>뼈를 발라낸 칠면조</li>
-                    <li>제3주 원료</li>
-                    <li>옥수수 글루텤</li>
-                    <li>제4주 원료</li>
-                    <li>마이즈</li>
-                    <li>제5주 원료</li>
-                    <li>통밀</li>
-                  </ul>
-                </div>
-               
-                <a href="#n" class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">자세히 보기</span></a>
-              </div>
-            </div>
-            <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
-          </div>
-        </div>
-
-        <div data-filter-item data-filter-name="퓨리나">
-          <div class="product">
-            <div class="product__info">
-              <img class="product__image" src="https://cdn.shopify.com/s/files/1/1065/8354/files/btc6hd_F_75.jpg?4854682253595354624" alt="Product 2" />
-              <h3 class="product__title">[퓨리나]Browning Dark Ops Elite(APPLE)</h3>
-              <div class="detail_box extra">
-                
-                <div class="basic_info">
-                  <ul>
-                    <li>제조국가</li>
-                    <li>한국</li>
-                    <li>사료타압</li>
-                    <li>건식사료</li>
-                    <li>급여연령</li>
-                    <li>어덜트(생후 1년 이상)</li>
-                    <li>그레인프리</li>
-                    <li>O</li>
-                    <li>AAFCO 충족</li>
-                    <li>O</li>
-                    <li>기대효과</li>
-                    <li class="effects">소화, 당뇨, 헤어볼, 관절, 체중조절, 비뇨</li>
-
-                  </ul>
-                </div>
-
-                <div class="nutri_info">
-                  <ul>
-                    <li>조단백질</li>
-                    <li>35%</li>
-                    <li>조지방</li>
-                    <li>13%</li>
-                    <li>칼슘</li>
-                    <li>1%</li>
-                    <li>인</li>
-                    <li>0.8%</li>
-                    <li>조섬유</li>
-                    <li>3%</li>
-                    <li>조회분</li>
-                    <li>10%</li>
-                    <li>수분</li>
-                    <li>10%</li>
-                    <li>캴슘:인 비율</li>
-                    <li>1:0.75</li>
-                    <li>탄수화물 함량</li>
-                    <li>34%</li>
-                  </ul>
-                </div>
-
-                <div class="ingre_info">
-                  <ul>
-                    <li>제1주 원료</li>
-                    <li>닭고기분</li>
-                    <li>제2주 원료</li>
-                    <li>뼈를 발라낸 칠면조</li>
-                    <li>제3주 원료</li>
-                    <li>옥수수 글루텤</li>
-                    <li>제4주 원료</li>
-                    <li>마이즈</li>
-                    <li>제5주 원료</li>
-                    <li>통밀</li>
-                  </ul>
-                </div>
-               
-                <a href="#n" class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">자세히 보기</span></a>
-              </div>
-            </div>
-            <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
-          </div>
-        </div>
-
-        <div data-filter-item data-filter-name="퓨리나">
-          <div class="product">
-            <div class="product__info">
-              <img class="product__image" src="https://cdn.shopify.com/s/files/1/1065/8354/files/btc7fhdp_F_75.jpg?4854682253595354624" alt="Product 3" />
-              <h3 class="product__title">[퓨리나]Browning Recon Force Platinum</h3>
-              <div class="detail_box extra">
-                
-                <div class="basic_info">
-                  <ul>
-                    <li>제조국가</li>
-                    <li>한국</li>
-                    <li>사료타압</li>
-                    <li>건식사료</li>
-                    <li>급여연령</li>
-                    <li>어덜트(생후 1년 이상)</li>
-                    <li>그레인프리</li>
-                    <li>O</li>
-                    <li>AAFCO 충족</li>
-                    <li>O</li>
-                    <li>기대효과</li>
-                    <li class="effects">소화, 당뇨, 헤어볼, 관절, 체중조절, 비뇨</li>
-                  </ul>
-                </div>
-
-                <div class="nutri_info">
-                  <ul>
-                    <li>조단백질</li>
-                    <li>35%</li>
-                    <li>조지방</li>
-                    <li>13%</li>
-                    <li>칼슘</li>
-                    <li>1%</li>
-                    <li>인</li>
-                    <li>0.8%</li>
-                    <li>조섬유</li>
-                    <li>3%</li>
-                    <li>조회분</li>
-                    <li>10%</li>
-                    <li>수분</li>
-                    <li>10%</li>
-                    <li>캴슘:인 비율</li>
-                    <li>1:0.75</li>
-                    <li>탄수화물 함량</li>
-                    <li>34%</li>
-                  </ul>
-                </div>
-
-                <div class="ingre_info">
-                  <ul>
-                    <li>제1주 원료</li>
-                    <li>닭고기분</li>
-                    <li>제2주 원료</li>
-                    <li>뼈를 발라낸 칠면조</li>
-                    <li>제3주 원료</li>
-                    <li>옥수수 글루텤</li>
-                    <li>제4주 원료</li>
-                    <li>마이즈</li>
-                    <li>제5주 원료</li>
-                    <li>통밀</li>
-                  </ul>
-                </div>
-               
-                <a href="#n" class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">자세히 보기</span></a>             
-               </div>
-            </div>
-            <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
-          </div>
-        </div>
-
-        <div data-filter-item data-filter-name="웰츠">
-          <div class="product">
-            <div class="product__info">
-              <img class="product__image" src="https://cdn.shopify.com/s/files/1/1065/8354/files/browning_BTC8HD_spec_ops_F_75.jpg?4854682253595354624" alt="Product 4" />
-              <h3 class="product__title">[웰츠]Browning Spec Ops Platinum</h3>
-              <div class="detail_box extra">
-                
-                <!-- <span class="product__price highlight">$179.95</span> -->
-                <!-- <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">Add to cart</span></button> -->
-              </div>
-            </div>
-            <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
-          </div>
-        </div>
-
-        <div data-filter-item data-filter-name="웰츠">
-          <div class="product">
-            <div class="product__info">
-              <img class="product__image" src="https://cdn.shopify.com/s/files/1/1065/8354/files/bushnell_119774_aggressor_F_75.jpg?11905472145033955850" alt="Product 5" />
-              <h3 class="product__title">[웰츠]Bushnell Aggressor Red Glow<(BANANA)</h3>
-              <div class="detail_box extra">
-               
-                <!-- <span class="product__price highlight">$179.95</span> -->
-                <!-- <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">Add to cart</span></button> -->
-              </div>
-            </div>
-            <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
-          </div>
-        </div>
-
-        <div data-filter-item data-filter-name="이퀼리브리엄">
-          <div class="product">
-            <div class="product__info">
-              <img class="product__image" src="https://cdn.shopify.com/s/files/1/1065/8354/files/bushnell-_119776_aggressor_F_75.jpg?11905472145033955850" alt="Product 6" />
-              <h3 class="product__title">[이퀼리브리엄]Bushnell Aggressor No Glow</h3>
-              <div class="detail_box extra">
-                <!-- <span class="product__year extra highlight">&bull;Photo Trigger - 0.14s</span> 
-                <span class="product__year extra highlight">&bull;Photo Recovery - 0.93s </span> 
-                <span class="product__year extra highlight">&bull;Video Trigger - 2.41s </span> 
-                <span class="product__year extra highlight">&bull;Video Recovery - 5.0s </span>
-                <span class="product__year extra highlight">&#42;Battery Life - 8.6 Months (Lithium batteries 35 day and 35 night) </span>
-                <span class="product__year extra highlight">&#10004;No Glow Infrared Flash</span>
-                <span class="product__region extra highlight"> &#10004;Photo Resolution - 14 Mpxl Resolution (Interpolated)</span>
-                <span class="product__varietal extra highlight">&#10004;Video- 1920 x 1080 HD</span>
-                <span class="product__alcohol extra highlight">&#10004;External Power Jack - 6 Volt</span>
-                <span class="product__alcohol extra highlight">&#10004;Battery Type - 8 AA</span>
-                 <span class="product__alcohol extra highlight">&#10004;Time Lapse</span>
-                 <span class="product__alcohol extra highlight">&#x2717;Time Lapse mode + Motion Detect Images </span>  
-                 <span class="product__alcohol extra highlight">&#10004;Multi-Shot Mode up to 3 Images</span>
-                  <span class="product__alcohol extra highlight">&#10004;PIR Settings: Low, Normal, High, Auto</span>
-                 <span class="product__alcohol extra highlight">&#10004;Flash Settings: Low, Medium, High</span>          
-                 <span class="product__alcohol extra highlight">&#x2717;Built in Viewer</span> 
-                 <span class="product__alcohol extra highlight">&#x2717;Passcode Lock</span> 
-                 <span class="product__alcohol extra highlight">&#x2717;Photo + Video</span>  
-                 <span class="product__alcohol extra highlight">&#10004;Start Stop Time - AM or PM</span>  -->
-                <!-- <span class="product__price highlight">$199.95</span> -->
-                <!-- <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">Add to cart</span></button> -->
-              </div>
-            </div>
-            <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
-          </div>
-        </div>
+      <%= render '/jibsas/navigation' %>
 
      
+      <!-- Compare basket -->
+      <div class="compare_box">
+          <div class="compare-basket">
+            <button class="action action--button action--compare"><i class="fa fa-check"></i><span class="action__text">비교하기( Max 3개 )</span></button>
+          </div>
 
-      </section>
-    </div><!-- /view -->
 
-    <!-- product compare wrapper -->
-    <section class="compare">
-      <button class="action action--close"><i class="fa fa-remove"></i><span class="action__text action__text--invisible">Close comparison overlay</span></button>
-    </section>
+          <!-- Main view -->
+          <div class="view">
+            
+            <!-- Blueprint header -->
+
+            <!-- Product grid -->
+            <section class="grid">
+              <div class="search_filter">
+                <input type="text" placeholder="비교하고 싶은 사료를 찾아보세요." data-search />
+              </div>
+
+
+              <% @jibsas.each do |jibsa| %>
+                <div data-filter-item data-filter-name="<%= jibsa.j_source %>">
+                  <div class="product">
+                    <div class="product__info">
+                      <div class="img_box">
+                        <img class="product__image" src="<%= jibsa.j_image %>" alt="<%= jibsa.j_title %>" />
+                      </div>
+
+                      <h3 class="product__title"><%= jibsa.j_source %><br/><%= jibsa.j_title %></h3>
+                      <div class="detail_box extra">
+
+                        <div class="basic_info">
+                          <ul>
+                            <div class="each_box">
+                              <li>제조국가</li>
+                              <li><span>한국</span></li>
+                            </div>
+                            <div class="each_box">
+                              <li>사료타압</li>
+                              <li>건식사료</li>
+                            </div>
+                            <div class="each_box">
+                              <li>급여연령</li>
+                              <li class="age">어덜트(생후 1년 이상)</li>
+                            </div>
+                            <div class="each_box">
+                              <li>그레인프리</li>
+                              <li>O</li>
+                            </div>
+                            <div class="each_box">
+                              <li>AAFCO 기준</li>
+                              <li>충족</li>
+                            </div>
+                            <div class="each_box">
+                              <li>기대효과</li>
+                              <li class="effects">소화, 당뇨, 헤어볼, 관절, 체중조절, 비뇨</li>
+                            </div>
+                          </ul>
+                        </div>
+                        <hr class="section_line">
+
+                        <div class="nutri_info">
+                          <ul>
+                            <div class="each_box">
+                              <li>조단백질</li>
+                              <li>35%</li>
+                            </div>
+                            <div class="each_box">
+                              <li>조지방</li>
+                              <li>13%</li>
+                            </div>
+                            <div class="each_box">
+                              <li>칼슘</li>
+                              <li>1%</li>
+                            </div>
+                            <div class="each_box">
+                              <li>인</li>
+                              <li>0.8%</li>
+                            </div>
+                            <div class="each_box">
+                              <li>조섬유</li>
+                              <li>3%</li>
+                            </div>
+                            <div class="each_box">
+                              <li>조회분</li>
+                              <li>10%</li>
+                            </div>
+                            <div class="each_box">
+                              <li>수분</li>
+                              <li>10%</li>
+                            </div>
+                            <div class="each_box">
+                              <li>캴슘:인 비율</li>
+                              <li>1:0.75</li>
+                            </div>
+                            <div class="each_box">
+                              <li>탄수화물 함량</li>
+                              <li>34%</li>
+                            </div>
+                          </ul>
+                        </div>
+                        <hr class="section_line">
+
+                        <div class="ingre_info">
+                          <ul>
+                            <li>제1주 원료</li>
+                            <li>닭고기분</li>
+                            <li>제2주 원료</li>
+                            <li>뼈를 발라낸 칠면조</li>
+                            <li>제3주 원료</li>
+                            <li>옥수수 글루텤</li>
+                            <li>제4주 원료</li>
+                            <li>마이즈</li>
+                            <li>제5주 원료</li>
+                            <li>통밀</li>
+                          </ul>
+                        </div>
+                       
+                        <a href="/jibsas/<%= jibsa.id %>" class="action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">자세히 보기</span></a>
+                      </div>
+                    </div>
+                    <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
+                  </div>
+                </div>
+              <% end %>
+              
+              <!-- Products -->
+              <div data-filter-item data-filter-name="퓨리나">
+                <div class="product">
+                  <div class="product__info">
+                    <div class="img_box">
+                      <img class="product__image" src="https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcS0zB2Er0kSVEH7iashV7ZrIWIr6JdCLbfNuHXtMPp5XD4co4mTtW8soDaZ7ex6qT9hzpcpsTwn3RaKKv294Fnn6rvc_CxG0BVfFFMVqPqzE_WyMKUE4oFB&usqp=CAE" alt="Product 1" />
+                    </div>
+
+                    <h3 class="product__title">[퓨리나]Browning Strike Force Elite</h3>
+                    <div class="detail_box extra">
+                      <div class="basic_info">
+                        <ul>
+                          <div class="each_box">
+                              <li>제조국가</li>
+                              <li>한국</li>
+                          </div>
+                          <div class="each_box">
+                            <li>사료타압</li>
+                            <li>건식사료</li>
+                          </div>
+                          <div class="each_box">
+                            <li>급여연령</li>
+                            <li class="age">어덜트(생후 1년 이상)</li>
+                          </div>
+                          <div class="each_box">
+                            <li>그레인프리</li>
+                            <li>O</li>
+                          </div>
+                          <div class="each_box">
+                            <li>AAFCO 기준</li>
+                            <li>충족</li>
+                          </div>
+                          <div class="each_box">
+                            <li>기대효과</li>
+                            <li class="effects">소화, 당뇨, 헤어볼, 관절, 체중조절, 비뇨</li>
+                          </div>
+                        </ul>
+                      </div>
+                      <hr class="section_line">
+
+                      <div class="nutri_info">
+                        <ul>
+                          <div class="each_box">
+                            <li>조단백질</li>
+                            <li>35%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>조지방</li>
+                            <li>13%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>칼슘</li>
+                            <li>1%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>인</li>
+                            <li>0.8%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>조섬유</li>
+                            <li>3%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>조회분</li>
+                            <li>10%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>수분</li>
+                            <li>10%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>캴슘:인 비율</li>
+                            <li>1:0.75</li>
+                          </div>
+                          <div class="each_box">
+                            <li>탄수화물 함량</li>
+                            <li>34%</li>
+                          </div>
+                        </ul>
+                      </div>
+                      <hr class="section_line">
+
+                      <div class="ingre_info">
+                        <ul>
+                          <li>제1주 원료</li>
+                          <li>닭고기분</li>
+                          <li>제2주 원료</li>
+                          <li>뼈를 발라낸 칠면조</li>
+                          <li>제3주 원료</li>
+                          <li>옥수수 글루텤</li>
+                          <li>제4주 원료</li>
+                          <li>마이즈</li>
+                          <li>제5주 원료</li>
+                          <li>통밀</li>
+                        </ul>
+                      </div>
+                     
+                      <a href="#n" class="action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">자세히 보기</span></a>
+                    </div>
+                  </div>
+                  <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
+                </div>
+              </div>
+
+              <div data-filter-item data-filter-name="퓨리나">
+                <div class="product">
+                  <div class="product__info">
+                    <div class="img_box">
+                      <img class="product__image" src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTGv68TXh8RRD5ZFxUFeG8s-m_4OnBpcIy_yaIfw53M3AKEwJFIbjcLF6ZBHQSNBMuhp5XzzlEbJiSfc5j8dxEBgF9g4-O105pcM8i8Ye68SAe5p1r7W7Js&usqp=CAE" alt="Product 2" />
+                    </div>
+                    <h3 class="product__title">[퓨리나]Browning Dark Ops Elite(APPLE)</h3>
+                    <div class="detail_box extra">
+                      
+                      <div class="basic_info">
+                        <ul>
+                          <div class="each_box">
+                              <li>제조국가</li>
+                              <li>한국</li>
+                            </div>
+                            <div class="each_box">
+                              <li>사료타압</li>
+                              <li>건식사료</li>
+                            </div>
+                            <div class="each_box">
+                              <li>급여연령</li>
+                              <li class="age">어덜트(생후 1년 이상)</li>
+                            </div>
+                            <div class="each_box">
+                              <li>그레인프리</li>
+                              <li>O</li>
+                            </div>
+                            <div class="each_box">
+                              <li>AAFCO 기준</li>
+                              <li>충족</li>
+                            </div>
+                            <div class="each_box">
+                              <li>기대효과</li>
+                              <li class="effects">소화, 당뇨, 헤어볼, 관절, 체중조절, 비뇨</li>
+                            </div>
+                        </ul>
+                      </div>
+                      <hr class="section_line">
+
+                      <div class="nutri_info">
+                        <ul>
+                          <div class="each_box">
+                            <li>조단백질</li>
+                            <li>35%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>조지방</li>
+                            <li>13%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>칼슘</li>
+                            <li>1%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>인</li>
+                            <li>0.8%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>조섬유</li>
+                            <li>3%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>조회분</li>
+                            <li>10%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>수분</li>
+                            <li>10%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>캴슘:인 비율</li>
+                            <li>1:0.75</li>
+                          </div>
+                          <div class="each_box">
+                            <li>탄수화물 함량</li>
+                            <li>34%</li>
+                          </div>
+                        </ul>
+                      </div>
+                      <hr class="section_line">
+
+                      <div class="ingre_info">
+                        <ul>
+                          <li>제1주 원료</li>
+                          <li>닭고기분</li>
+                          <li>제2주 원료</li>
+                          <li>뼈를 발라낸 칠면조</li>
+                          <li>제3주 원료</li>
+                          <li>옥수수 글루텤</li>
+                          <li>제4주 원료</li>
+                          <li>마이즈</li>
+                          <li>제5주 원료</li>
+                          <li>통밀</li>
+                        </ul>
+                      </div>
+                     
+                      <a href="#n" class="action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">자세히 보기</span></a>
+                    </div>
+                  </div>
+                  <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
+                </div>
+              </div>
+
+              <div data-filter-item data-filter-name="퓨리나">
+                <div class="product">
+                  <div class="product__info">
+                    <div class="img_box">
+                      <img class="product__image" src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ-Zd3qElynht0ULRJ0nxQ7oBYfXPjosPS6zIdcnMG05Pwv5BnBsEmCOYf2ACwpPuM4y1fkwl-lpCFrE2fO1N24nKgi5HQ-d44bAL-5T3stTmdmfJcaM9ou&usqp=CAE" alt="Product 3" />
+                    </div>
+                    <h3 class="product__title">[퓨리나]Browning Recon Force Platinum</h3>
+                    <div class="detail_box extra">
+                      
+                      <div class="basic_info">
+                        <ul>
+                         <div class="each_box">
+                            <li>제조국가</li>
+                            <li>한국</li>
+                          </div>
+                          <div class="each_box">
+                            <li>사료타압</li>
+                            <li>건식사료</li>
+                          </div>
+                          <div class="each_box">
+                            <li>급여연령</li>
+                            <li class="age">어덜트(생후 1년 이상)</li>
+                          </div>
+                          <div class="each_box">
+                            <li>그레인프리</li>
+                            <li>O</li>
+                          </div>
+                          <div class="each_box">
+                            <li>AAFCO 기준</li>
+                            <li>충족</li>
+                          </div>
+                          <div class="each_box">
+                            <li>기대효과</li>
+                            <li class="effects">소화, 당뇨, 헤어볼, 관절, 체중조절, 비뇨</li>
+                          </div>
+                        </ul>
+                      </div>
+                      <hr class="section_line">
+
+                      <div class="nutri_info">
+                        <ul>
+                          <div class="each_box">
+                            <li>조단백질</li>
+                            <li>35%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>조지방</li>
+                            <li>13%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>칼슘</li>
+                            <li>1%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>인</li>
+                            <li>0.8%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>조섬유</li>
+                            <li>3%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>조회분</li>
+                            <li>10%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>수분</li>
+                            <li>10%</li>
+                          </div>
+                          <div class="each_box">
+                            <li>캴슘:인 비율</li>
+                            <li>1:0.75</li>
+                          </div>
+                          <div class="each_box">
+                            <li>탄수화물 함량</li>
+                            <li>34%</li>
+                          </div>
+                        </ul>
+                      </div>
+                      <hr class="section_line">
+
+                      <div class="ingre_info">
+                        <ul>
+                          <li>제1주 원료</li>
+                          <li>닭고기분</li>
+                          <li>제2주 원료</li>
+                          <li>뼈를 발라낸 칠면조</li>
+                          <li>제3주 원료</li>
+                          <li>옥수수 글루텤</li>
+                          <li>제4주 원료</li>
+                          <li>마이즈</li>
+                          <li>제5주 원료</li>
+                          <li>통밀</li>
+                        </ul>
+                      </div>
+                     
+                      <a href="#n" class="action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">자세히 보기</span></a>             
+                     </div>
+                  </div>
+                  <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
+                </div>
+              </div>
+
+              <div data-filter-item data-filter-name="웰츠">
+                <div class="product">
+                  <div class="product__info">
+                    <img class="product__image" src="https://cdn.shopify.com/s/files/1/1065/8354/files/browning_BTC8HD_spec_ops_F_75.jpg?4854682253595354624" alt="Product 4" />
+                    <h3 class="product__title">[웰츠]Browning Spec Ops Platinum</h3>
+                    <div class="detail_box extra">
+                      
+                      <!-- <span class="product__price highlight">$179.95</span> -->
+                      <!-- <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">Add to cart</span></button> -->
+                    </div>
+                  </div>
+                  <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
+                </div>
+              </div>
+
+              <div data-filter-item data-filter-name="웰츠">
+                <div class="product">
+                  <div class="product__info">
+                    <img class="product__image" src="https://cdn.shopify.com/s/files/1/1065/8354/files/bushnell_119774_aggressor_F_75.jpg?11905472145033955850" alt="Product 5" />
+                    <h3 class="product__title">[웰츠]Bushnell Aggressor Red Glow<(BANANA)</h3>
+                    <div class="detail_box extra">
+                     
+                      <!-- <span class="product__price highlight">$179.95</span> -->
+                      <!-- <button class="action action--button action--buy"><i class="fa fa-shopping-cart"></i><span class="action__text">Add to cart</span></button> -->
+                    </div>
+                  </div>
+                  <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
+                </div>
+              </div>
+
+              <div data-filter-item data-filter-name="이퀼리브리엄">
+                <div class="product">
+                  <div class="product__info">
+                    <img class="product__image" src="https://cdn.shopify.com/s/files/1/1065/8354/files/bushnell-_119776_aggressor_F_75.jpg?11905472145033955850" alt="Product 6" />
+                    <h3 class="product__title">[이퀼리브리엄]Bushnell Aggressor No Glow</h3>
+                    <div class="detail_box extra">
+                     
+                    </div>
+                  </div>
+                  <label class="action action--compare-add"><input class="check-hidden" type="checkbox" /><i class="fa fa-plus"></i><i class="fa fa-check"></i><span class="action__text action__text--invisible">Add to compare</span></label>
+                </div>
+              </div>
+
+          
+            </section>
+          </div><!-- /view -->
+
+          <!-- product compare wrapper -->
+          <section class="compare">
+            <button class="action action--close"><i class="fa fa-remove"></i><span class="action__text action__text--invisible">Close comparison overlay</span></button>
+          </section>
+      </div>
+
+    
+    </div>
+  </div><!-- end index_right -->
 </div>
 
+<%= javascript_pack_tag 'search_modal' %>
 
 <script type="text/javascript">
     /*!

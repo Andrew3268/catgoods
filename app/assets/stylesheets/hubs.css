@@ -832,10 +832,10 @@ Search Filter
     font-size: 65%;
   }
 
-  .product {
+  /*.product {
     margin: 0.5em 0.5em 1em;
     min-width: 13em;
-  }
+  }*/
 
   .product__title {
     font-size: 115%;

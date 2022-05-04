@@ -192,8 +192,8 @@ ul.info_ul li input[type=checkbox]:checked ~ i:after{transform: translate(-2px, 
 /* -------------------------------- 
 Main components 
 -------------------------------- */
-.cd-popup-trigger{display:block;width:170px;line-height:40px;border:2px solid #000;margin:1em auto;text-align:center;color:#fff;font-size:14px;font-size:.875rem;font-weight:700;text-transform:uppercase;border-radius:50em;background:#35a785;box-shadow:0 3px 0 rgba(0,0,0,.07);}
-.find_btn .cd-popup-close{display:block;width:170px;line-height:40px;margin:3em auto 1em auto;text-align:center;color:#fff;font-size:14px;font-size:.875rem;font-weight:700;text-transform:uppercase;border-radius:50em;background:#35a785;border:2px solid #000;box-shadow:0 3px 0 rgba(0,0,0,.07);}
+.cd-popup-trigger{display:block;width:170px;line-height:40px;border:2px solid #000;margin:1em auto;text-align:center;color:#fff;font-size:14px;font-size:.875rem;font-weight:700;text-transform:uppercase;border-radius:50em;background:#494BC7;box-shadow:0 3px 0 rgba(0,0,0,.07);}
+.find_btn .cd-popup-close{display:block;width:170px;line-height:40px;margin:3em auto 1em auto;text-align:center;color:#fff;font-size:14px;font-size:.875rem;font-weight:700;text-transform:uppercase;border-radius:50em;background:#494BC7;border:2px solid #000;box-shadow:0 3px 0 rgba(0,0,0,.07);}
 .close_btn .cd-popup-close{position:absolute;top:10px;right:20px;border:2px solid;padding:7px 14px;border-radius:15px;background:#f9bc73;}
 /* -------------------------------- 
 xpopup 
@@ -305,7 +305,7 @@ Search Filter
 }
 
 .compare__item .detail_box{margin-top:20px;display:block;}
-.compare__item .detail_box hr.section_line{margin:10px 0;height:5px;background:#000;}
+.compare__item .detail_box hr.section_line{margin:10px 0;height:5px;background:#5c5edc;}
 .compare__item .detail_box ul{text-align:center;}
 .compare__item .detail_box ul .each_box{border:1px solid #ccc;border-radius:20px;margin-bottom:3%}
 .compare__item .detail_box ul li{padding:7px 7px 0 7px;color:#a3a3a3;}
@@ -315,7 +315,7 @@ Search Filter
 /*.compare__item .detail_box .basic_info ul li:nth-child(odd){background:#f9bc73;}*/
 .compare__item .detail_box .basic_info ul li:nth-child(even){padding-bottom:7px;color:#5c5c5c;font-weight:bold;}
 .compare__item .detail_box .nutri_info ul li:nth-child(even){padding-bottom:7px;color:#5c5c5c;font-weight:bold;}
-.compare__item .detail_box .basic_info ul li:nth-child(even){padding-bottom:7px;color:#5c5c5c;font-weight:bold;}
+.compare__item .detail_box .ingre_info ul li:nth-child(even){padding-bottom:7px;color:#5c5c5c;font-weight:bold;}
 /*.compare__item .detail_box .nutri_info ul li:nth-child(odd){background:#a8dee2;}*/
 /*.compare__item .detail_box .ingre_info ul li:nth-child(odd){background:#fbf8f2;}*/
 
@@ -432,18 +432,10 @@ Search Filter
 
 .compare .action{font-size:30px;}
 
-/*.action--button {
-  background: #2C2D34;
-  color: #fff;
-  border-radius: 2px;
-  -webkit-transition: background 0.2s;
-  transition: background 0.2s;
-  width:45%;
-}
+.action--button{display:block;text-align:center;font-size:13px;background:#494BC7;color:#fff;border-radius:15px;padding:10px;margin-top:10px;}
 
-.action--button:hover {
-  background: #5C5EDC;
-}*/
+
+
 
 /*.action__text {
   font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -744,7 +736,7 @@ Search Filter
 .compare__item:first-of-type:nth-last-of-type(2),
 .compare__item:first-of-type:nth-last-of-type(2) ~ .compare__item {
     width: 50%;
-    padding:50px 2px;
+    padding:30px 2px 60px 2px;
 }
 
 /* three items */

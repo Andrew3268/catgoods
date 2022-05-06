@@ -103,8 +103,8 @@
 
 /* for new_detail */
 .inner_section .inner .basic_info{margin-bottom:5px;}
-.inner_section .inner .basic_info .bi_box{float:left;width:20%;margin:2.5%;}
-.inner_section .inner .basic_info .bi_box span{border:1px solid #e6e6e6;padding:15px 5px;border-radius:10px;width:100%;display:block;font-size:13px;/*border-bottom: 1px solid #b0e0e6;box-shadow:inset 0 -2px 0 #b0e0e6;*/}
+.inner_section .inner .basic_info .bi_box{float:left;width:23%;margin:1%;}
+.inner_section .inner .basic_info .bi_box span{/*border:1px solid #e6e6e6;*/padding:15px 5px;border-radius:10px;width:100%;display:block;font-size:13px;/*border-bottom: 1px solid #b0e0e6;box-shadow:inset 0 -2px 0 #b0e0e6;*/background:rgba(139,128,248,0.5);color:#fff;}
 .inner_section .inner .basic_info .bi_box p.info_p{margin:5px 0 0 0;font-size:11.5px;}
 
 .brand_box{border:1px solid #ccc;padding:15px;border-radius:20px;margin:20px 0 0 0;}
@@ -140,12 +140,12 @@
 .pricing-2 .pricing-table .features li:first-child{border-top:none;}
 .pricing-2 .pricing-table .features li{color:#333;border-top:2px solid rgba(35,35,35,.2);padding:10px 0;margin:0;}
 .pricing-table.emphasis {background-color:#a8dee2;}
-.pricing-2 .pricing-table.emphasis{background-color:#a8dee2;}
-.pricing-2 .pricing-table.emphasis .features li{color:#fff;background-color:#a8dee2!important;border-top:2px solid #a8dee2;}
+.pricing-2 .pricing-table.emphasis{background-color:#8b80f8;}
+.pricing-2 .pricing-table.emphasis .features li{color:#fff;background-color:#8b80f8!important;border-top:2px solid #8b80f8;}
 .pricing-2 .pricing-table.emphasis .features li.mid_tit{border-radius:25px;border:none;}
 .pricing-2 .pricing-table.emphasis .price .amount, .pricing-2 .pricing-table.emphasis .sub{color: #fff;}
 .pricing-2 .feature-list{padding-bottom:0px;}
-.pricing-2 .pricing-table .features li:nth-child(even){background: #f4f4f4;}
+/*.pricing-2 .pricing-table .features li:nth-child(even){background: #f4f4f4;}*/
 .pricing-tables .col-md-3{float:left;width:27.333%;}
 .pricing-tables .no-pad-right{width:18%;/*padding-right: 15px;*/}
 .pricing-tables .no-pad-right strong{font-size:12px;}

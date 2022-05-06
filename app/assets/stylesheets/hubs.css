@@ -305,17 +305,18 @@ Search Filter
 }
 
 .compare__item .detail_box{margin-top:20px;display:block;}
-.compare__item .detail_box hr.section_line{margin:10px 0;height:5px;background:#5c5edc;}
+.compare__item .detail_box hr.section_line{height:3px;background:#5c5edc;}
 .compare__item .detail_box ul{text-align:center;}
-.compare__item .detail_box ul .each_box{border:1px solid #ccc;border-radius:20px;margin-bottom:3%}
-.compare__item .detail_box ul li{padding:7px 7px 0 7px;color:#a3a3a3;}
+.compare__item .detail_box ul .each_box{border:1px solid #ccc;border-radius:20px;margin-bottom:5%;padding:5px;}
+.compare__item .detail_box ul li{padding:5px 7px 0 7px;color:#a3a3a3;}
+.compare__item .detail_box p.divide_section{margin-top:20px;}
 .compare__item .detail_box .basic_info ul{}
 .compare__item .detail_box .basic_info ul li.age{height:50px;word-break:keep-all;}
 .compare__item .detail_box .basic_info ul li.effects{height:70px;word-break:keep-all;}
 /*.compare__item .detail_box .basic_info ul li:nth-child(odd){background:#f9bc73;}*/
-.compare__item .detail_box .basic_info ul li:nth-child(even){padding-bottom:7px;color:#5c5c5c;font-weight:bold;}
-.compare__item .detail_box .nutri_info ul li:nth-child(even){padding-bottom:7px;color:#5c5c5c;font-weight:bold;}
-.compare__item .detail_box .ingre_info ul li:nth-child(even){padding-bottom:7px;color:#5c5c5c;font-weight:bold;}
+.compare__item .detail_box .basic_info ul li:nth-child(even){padding:10px;color:#fff;font-weight:bold;background:#8b80f8;border-radius:20px;}
+.compare__item .detail_box .nutri_info ul li:nth-child(even){padding:10px;color:#fff;font-weight:bold;background:#8b80f8;border-radius:20px;}
+.compare__item .detail_box .ingre_info ul li:nth-child(even){padding:10px;color:#fff;font-weight:bold;background:#8b80f8;border-radius:20px;}
 /*.compare__item .detail_box .nutri_info ul li:nth-child(odd){background:#a8dee2;}*/
 /*.compare__item .detail_box .ingre_info ul li:nth-child(odd){background:#fbf8f2;}*/
 
@@ -664,7 +665,7 @@ Search Filter
   background:#fff;
   overflow-x:hidden;
   overflow-y:scroll;
-  padding:15px;
+  padding:15px 15px 50px 15px;
 }
 
 /*.compare::before {

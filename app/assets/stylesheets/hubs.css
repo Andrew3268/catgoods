@@ -364,7 +364,7 @@ Search Filter
 
   .action--close{padding: 0.3em 0.7em;}
   .action--close .fa-remove{font-size:30px;}
-  .compare__item span[class^="product__"]{display: inline-block;padding: 0.25em;margin: 0 0 0.5em 0;font-size: 0.85em;}
+  /*.compare__item span[class^="product__"]{display:inline-block;padding:0.25em;margin:0 0 0.5em 0;font-size:0.85em;}*/
 }
 
 /* Helper classes */

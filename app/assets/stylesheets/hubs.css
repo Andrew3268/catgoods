@@ -339,6 +339,7 @@ Search Filter
 
 
 @media screen and (max-width:640px){
+
   .flexbox .compare__effect{}
   .flexbox .compare__item .product__image{-webkit-align-self:center;-ms-flex-align:center;align-self:center;-webkit-flex:none;-ms-flex:none;flex:none;}
 
@@ -346,10 +347,7 @@ Search Filter
   .compare__item .product__title{font-size:115%;}
   .flexbox .product{-webkit-flex:0 0 13em;-ms-flex:0 0 13em;flex:0 0 13em;}
 
-  .no-flexbox .compare__item,
-  .compare__item,
-  .compare__item:first-of-type:nth-last-of-type(3),
-  .compare__item:first-of-type:nth-last-of-type(3) ~ .compare__item {width:33.3333%;height:auto;}
+  .no-flexbox .compare__item, .compare__item, .compare__item:first-of-type:nth-last-of-type(3), .compare__item:first-of-type:nth-last-of-type(3) ~ .compare__item{width:33.3333%;height:auto;}
   .compare__item{text-align:left;padding:.5em;font-size:90%;}
   .compare__item .product__image{height:40px;}
   .compare__item .product__title {font-size: 0.85em;display: block;text-align:center;}
@@ -364,13 +362,13 @@ Search Filter
 
   .action--close{padding: 0.3em 0.7em;}
   .action--close .fa-remove{font-size:30px;}
-  
+  /*.compare__item span[class^="product__"]{display:inline-block;padding:0.25em;margin:0 0 0.5em 0;font-size:0.85em;}*/ 
 }
 
 /* Helper classes */
 .cf:before, .cf:after{content:' ';display:table;}
-.cf:after{clear: both;}
-.hidden{position: absolute;opacity: 0;pointer-events: none;}
+.cf:after{clear:both;}
+.hidden{position:absolute;opacity:0;pointer-events:none;}
 
 
 

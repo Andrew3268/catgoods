@@ -50,14 +50,18 @@
 
 
               <% @jibsas.each do |jibsa| %>
-                <div data-filter-item data-filter-name="<%= jibsa.j_source %>">
+                <div data-filter-item data-filter-name="<%= jibsa.j_source %><%= jibsa.j_title %> ">
                   <div class="product">
                     <div class="product__info">
                       <div class="img_box">
                         <img class="product__image" src="<%= jibsa.j_image %>" alt="<%= jibsa.j_title %>" />
                       </div>
 
-                      <h3 class="product__title"><%= jibsa.j_source %><br/><%= jibsa.j_title %></h3>
+                      <h3 class="product__title">
+                        <span><%= jibsa.j_source %></span>
+                        <p><%= jibsa.j_title %></p>
+                      </h3>
+
                       <div class="detail_box extra">
 
                         <p>기본정보</p>
@@ -67,27 +71,104 @@
                           <ul>
                             <div class="each_box">
                               <li>제조국가</li>
-                              <li><span>한국</span></li>
+                              <li>
+                                <% if jibsa.j_option_03 == 301 %>
+                                  <span>한국</span>
+                                <% elsif jibsa.j_option_03 == 302 %>
+                                  <span>미국</span>
+                                <% elsif jibsa.j_option_03 == 303 %>
+                                  <span>캐나다</span>
+                                <% elsif jibsa.j_option_03 == 304 %>
+                                  <span>독일</span>
+                                <% end %>
+                              </li>
+
                             </div>
                             <div class="each_box">
-                              <li>사료타압</li>
-                              <li>건식사료</li>
+                              <li>사료형태</li>
+                              <li>
+                                <% if jibsa.j_option_01 == 101 %>
+                                  <span>건식사료</span>
+                                <% elsif jibsa.j_option_01 == 102 %>
+                                  <span>습식사료</span>
+                                <% elsif jibsa.j_option_01 == 103 %>
+                                  <span>동결건조</span>
+                                <% end %>
+                              </li>
                             </div>
                             <div class="each_box">
                               <li>급여연령</li>
-                              <li class="age">어덜트(생후 1년 이상)</li>
+                              <li class="age">
+                                <% if jibsa.j_option_02 == 201 %>
+                                  <span>키튼(1세 미만)</span>
+                                <% elsif jibsa.j_option_02 == 202 %>
+                                  <span>어덜트(1세 ~ 7세)</span>
+                                <% elsif jibsa.j_option_02 == 203 %>
+                                  <span>시니어(7세 이상)</span>
+                                <% elsif jibsa.j_option_02 == 204 %>
+                                  <span>전연령용</span>
+                                <% end %>
+                              </li>
                             </div>
-                            <div class="each_box">
+                            <!-- <div class="each_box">
                               <li>그레인프리</li>
                               <li>O</li>
-                            </div>
+                            </div> -->
+                            <% dm_protein = 0 %>
+                            <% dm_protein =  100 * jibsa.j_option_11.to_f / (100 - jibsa.j_option_12.to_f) * 4000 / jibsa.j_option_13.to_f %>
+  
+                            <% dm_fat = 0 %>
+                            <% dm_fat =  100 * jibsa.j_option_14.to_f / (100 - jibsa.j_option_12.to_f) * 4000 / jibsa.j_option_13.to_f %>
+                          
+                            <% dm_calcium = 0 %>
+                            <% dm_calcium =  100 * jibsa.j_option_15.to_f / (100 - jibsa.j_option_12.to_f) * 4000 / jibsa.j_option_13.to_f %>
+                          
+                            <% dm_phosphorus = 0 %>
+                            <% dm_phosphorus =  100 * jibsa.j_option_16.to_f / (100 - jibsa.j_option_12.to_f) * 4000 / jibsa.j_option_13.to_f %>
                             <div class="each_box">
                               <li>AAFCO 기준</li>
-                              <li>충족</li>
+                              <li>
+                                <% if dm_protein > 26 && dm_fat > 9 && dm_calcium > 0.6 && dm_phosphorus > 0.5 %>
+                                  <span>O</span>
+                                <% else %>
+                                  <span>X</span>
+                                <% end %>
+                              </li>
                             </div>
                             <div class="each_box">
                               <li>기대효과</li>
-                              <li class="effects">소화, 당뇨, 헤어볼, 관절, 체중조절, 비뇨</li>
+                              <li class="effects">
+                                <% if jibsa.j_spare_01.present? %>
+                                  <span>면역력</span>
+                                <% end %>
+                                <% if jibsa.j_spare_02.present? %>
+                                  <span>헤어볼</span>
+                                <% end %>
+                                <% if jibsa.j_spare_03.present? %>
+                                  <span>체중조절</span>
+                                <% end %>
+                                <% if jibsa.j_spare_04.present? %>
+                                  <span>소화기능&변냄새</span>
+                                <% end %>
+                                <% if jibsa.j_spare_05.present? %>
+                                  <span>피부&모질 개선</span>
+                                <% end %>
+                                <% if jibsa.j_spare_06.present? %>
+                                  <span>뼈&관절 건강</span>
+                                <% end %>
+                                <% if jibsa.j_spare_07.present? %>
+                                  <span>치석&구강 건강</span>
+                                <% end %>
+                                <% if jibsa.j_spare_08.present? %>
+                                  <span>눈물&눈 건강</span>
+                                <% end %>
+                                <% if jibsa.j_spare_09.present? %>
+                                  <span>비뇨계</span>
+                                <% end %>
+                                <% if jibsa.j_spare_10.present? %>
+                                  <span>신장&심부전</span>
+                                <% end %>
+                              </li>
                             </div>
                           </ul>
                         </div>
@@ -99,39 +180,43 @@
                           <ul>
                             <div class="each_box">
                               <li>조단백질</li>
-                              <li>35%</li>
+                              <li><%= number_to_percentage(jibsa.j_option_11, precision: 2) %></li>
                             </div>
                             <div class="each_box">
                               <li>조지방</li>
-                              <li>13%</li>
+                              <li><%= number_to_percentage(jibsa.j_option_14, precision: 2) %></li>
                             </div>
                             <div class="each_box">
                               <li>칼슘</li>
-                              <li>1%</li>
+                              <li><%= number_to_percentage(jibsa.j_option_15, precision: 2) %></li>
                             </div>
                             <div class="each_box">
                               <li>인</li>
-                              <li>0.8%</li>
+                              <li><%= number_to_percentage(jibsa.j_option_16, precision: 2) %></li>
                             </div>
                             <div class="each_box">
                               <li>조섬유</li>
-                              <li>3%</li>
+                              <li><%= number_to_percentage(jibsa.j_option_17, precision: 2) %></li>
                             </div>
                             <div class="each_box">
                               <li>조회분</li>
-                              <li>10%</li>
+                              <li><%= number_to_percentage(jibsa.j_option_18, precision: 2) %></li>
                             </div>
                             <div class="each_box">
                               <li>수분</li>
-                              <li>10%</li>
+                              <li><%= number_to_percentage(jibsa.j_option_12, precision: 2) %></li>
                             </div>
                             <div class="each_box">
+                              <% dm_ca_phos_ratio = 0 %>
+                              <% dm_ca_phos_ratio = dm_phosphorus / dm_calcium %>
                               <li>캴슘:인 비율</li>
-                              <li>1:0.75</li>
+                              <li>1 : <%= number_with_precision(dm_ca_phos_ratio, precision: 2) %></li>
                             </div>
                             <div class="each_box">
+                              <% carbo_blance = 0 %>
+                              <% carbo_blance =  100 - jibsa.j_option_11.to_f - jibsa.j_option_14.to_f - jibsa.j_option_12.to_f - jibsa.j_option_17.to_f - jibsa.j_option_18.to_f %>
                               <li>탄수화물 함량</li>
-                              <li>34%</li>
+                              <li><%= number_to_percentage(carbo_blance, precision: 2) %></li>
                             </div>
                           </ul>
                         </div>

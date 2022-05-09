@@ -1,4 +1,4 @@
- Popular Page */
+ /* Popular Page */
 .numbering{position:absolute;top:-20px;right:-8px;}
 .numbering span{font-size:20px;border-radius:50%;border:3px solid;width:40px;height:40px;display:block;text-align:center;padding-top:4px;background:#eab3c0;}
 
@@ -412,7 +412,6 @@ Search Filter
   -webkit-line-clamp: 2;
 }
 
-
   .compare__item .product__flash{border-bottom: 2px solid #2E294E;}
   .compare__item .product__region{border-bottom: 2px solid #6D6FD2;}
   .compare__item .product__varietal{border-bottom: 2px solid #4B5267;}
@@ -456,28 +455,6 @@ Search Filter
     -ms-flex: none;
     flex: none;
   }
-
-  /*.compare__item:nth-child(odd) {
-    -webkit-transform: translate3d(-100%,0,0);
-    transform: translate3d(-100%,0,0);
-  }
-
-  .compare__item:nth-child(even) {
-    -webkit-transform: translate3d(100%,0,0);
-    transform: translate3d(100%,0,0);
-  }
-
-  .compare__item:nth-child(odd) .compare__effect {
-    -webkit-transform: translate3d(-250px,0,0);
-    transform: translate3d(-250px,0,0);
-  }
-
-  .compare__item:nth-child(even) .compare__effect {
-    -webkit-transform: translate3d(250px,0,0);
-    transform: translate3d(250px,0,0);
-  }*/
-
-
 }
 
 /* Helper classes */
@@ -566,3 +543,23 @@ Search Filter
 .view--compare + .compare::before {
   opacity: 1;
 }*/
+
+/*.compare__item:nth-child(odd) {
+    -webkit-transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%,0,0);
+  }
+
+  .compare__item:nth-child(even) {
+    -webkit-transform: translate3d(100%,0,0);
+    transform: translate3d(100%,0,0);
+  }
+
+  .compare__item:nth-child(odd) .compare__effect {
+    -webkit-transform: translate3d(-250px,0,0);
+    transform: translate3d(-250px,0,0);
+  }
+
+  .compare__item:nth-child(even) .compare__effect {
+    -webkit-transform: translate3d(250px,0,0);
+    transform: translate3d(250px,0,0);
+  }*/

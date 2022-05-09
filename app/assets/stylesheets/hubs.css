@@ -230,6 +230,7 @@ Search Filter
 -------------------------------- */
 [data-filter-item]{float:left;width:31.3333%;margin:1%;height:220px;}
 .hiddennn {display:none;}
+.search_filter{font-size:15px;}
 .search_filter input{width:100%;padding:15px;border-radius:15px;margin-bottom:30px;}
 .view{-webkit-transition: -webkit-transform 0.4s ease-in-out;transition: transform 0.4s ease-in-out;}
 .view--compare {-webkit-transform: scale3d(0.9,0.9,1);transform: scale3d(0.9,0.9,1);}
@@ -251,14 +252,16 @@ Search Filter
 .compare__item .detail_box ul{text-align:center;}
 .compare__item .detail_box ul .each_box{border:1px solid #ccc;border-radius:20px;margin-bottom:5%;padding:5px;}
 .compare__item .detail_box ul li{padding:5px 7px 0 7px;color:#a3a3a3;}
-.compare__item .detail_box p.divide_section{margin-top:20px;}
+.compare__item .detail_box p{padding:10px;color:#fff;font-weight:bold;background:#8b80f8;border-radius:20px;text-align:center;}
+.compare__item .detail_box p.divide_section{margin-top:35px;}
+.compare__item .detail_box ul li span{border-bottom: 1px solid rgba(139,128,248,0.5);box-shadow: inset 0 -7px 0 rgba(139,128,248,0.5);}
 .compare__item .detail_box .basic_info ul{}
-.compare__item .detail_box .basic_info ul li.age{height:50px;word-break:keep-all;}
-.compare__item .detail_box .basic_info ul li.effects{height:70px;word-break:keep-all;}
+.compare__item .detail_box .basic_info ul li.age{word-break:keep-all;}
+.compare__item .detail_box .basic_info ul li.effects{height:180px;word-break:keep-all;padding:10px 3px;display:block;}
 /*.compare__item .detail_box .basic_info ul li:nth-child(odd){background:#f9bc73;}*/
-.compare__item .detail_box .basic_info ul li:nth-child(even){padding:10px;color:#fff;font-weight:bold;background:#8b80f8;border-radius:20px;}
-.compare__item .detail_box .nutri_info ul li:nth-child(even){padding:10px;color:#fff;font-weight:bold;background:#8b80f8;border-radius:20px;}
-.compare__item .detail_box .ingre_info ul li:nth-child(even){padding:10px;color:#fff;font-weight:bold;background:#8b80f8;border-radius:20px;}
+.compare__item .detail_box .basic_info ul li:nth-child(even){padding:3px;color:#000;font-weight:bold;border-radius:20px;}
+.compare__item .detail_box .nutri_info ul li:nth-child(even){padding:3px;color:#000;font-weight:bold;border-radius:20px;}
+.compare__item .detail_box .ingre_info ul li:nth-child(even){padding:3px;color:#000;font-weight:bold;border-radius:20px;}
 
 /* product info */
 .product__info > span {display: block;padding:1em 0;}
@@ -271,7 +274,7 @@ Search Filter
 
 .product__title {font-size:11px;margin:1.5em 0 0;}
 .product__title span{display:block;}
-.product__title p{line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-bottom:7px;}
+.product__title p{line-height:1.4;height:2.8em;overflow:hidden;display:-webkit-box;display:-ms-flexbox;vertical-align:top;text-overflow:ellipsis;-webkit-box-orient:vertical;-webkit-line-clamp:2;margin-bottom:7px;font-size:11px;padding:3px;}
 
 .action{display:inline-block;font-size:1em;white-space:nowrap;padding:.5em 1em;cursor:pointer;border:none;background:0 0;text-align:center;}
 .action:focus{outline:none;}

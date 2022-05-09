@@ -180,43 +180,43 @@
                           <ul>
                             <div class="each_box">
                               <li>조단백질</li>
-                              <li><%= number_to_percentage(jibsa.j_option_11, precision: 2) %></li>
+                              <li><span><%= number_to_percentage(jibsa.j_option_11, precision: 2) %></span></li>
                             </div>
                             <div class="each_box">
                               <li>조지방</li>
-                              <li><%= number_to_percentage(jibsa.j_option_14, precision: 2) %></li>
+                              <li><span><%= number_to_percentage(jibsa.j_option_14, precision: 2) %></span></li>
                             </div>
                             <div class="each_box">
                               <li>칼슘</li>
-                              <li><%= number_to_percentage(jibsa.j_option_15, precision: 2) %></li>
+                              <li><span><%= number_to_percentage(jibsa.j_option_15, precision: 2) %></span></li>
                             </div>
                             <div class="each_box">
                               <li>인</li>
-                              <li><%= number_to_percentage(jibsa.j_option_16, precision: 2) %></li>
+                              <li><span><%= number_to_percentage(jibsa.j_option_16, precision: 2) %></span></li>
                             </div>
                             <div class="each_box">
                               <li>조섬유</li>
-                              <li><%= number_to_percentage(jibsa.j_option_17, precision: 2) %></li>
+                              <li><span><%= number_to_percentage(jibsa.j_option_17, precision: 2) %></span></li>
                             </div>
                             <div class="each_box">
                               <li>조회분</li>
-                              <li><%= number_to_percentage(jibsa.j_option_18, precision: 2) %></li>
+                              <li><span><%= number_to_percentage(jibsa.j_option_18, precision: 2) %></span></li>
                             </div>
                             <div class="each_box">
                               <li>수분</li>
-                              <li><%= number_to_percentage(jibsa.j_option_12, precision: 2) %></li>
+                              <li><span><%= number_to_percentage(jibsa.j_option_12, precision: 2) %></span></li>
                             </div>
                             <div class="each_box">
                               <% dm_ca_phos_ratio = 0 %>
                               <% dm_ca_phos_ratio = dm_phosphorus / dm_calcium %>
                               <li>캴슘:인 비율</li>
-                              <li>1 : <%= number_with_precision(dm_ca_phos_ratio, precision: 2) %></li>
+                              <li><span>1 : <%= number_with_precision(dm_ca_phos_ratio, precision: 2) %></span></li>
                             </div>
                             <div class="each_box">
                               <% carbo_blance = 0 %>
                               <% carbo_blance =  100 - jibsa.j_option_11.to_f - jibsa.j_option_14.to_f - jibsa.j_option_12.to_f - jibsa.j_option_17.to_f - jibsa.j_option_18.to_f %>
                               <li>탄수화물 함량</li>
-                              <li><%= number_to_percentage(carbo_blance, precision: 2) %></li>
+                              <li><span><%= number_to_percentage(carbo_blance, precision: 2) %></span></li>
                             </div>
                           </ul>
                         </div>
@@ -228,23 +228,23 @@
                           <ul>
                             <div class="each_box">
                             <li>제1주 원료</li>
-                            <li>닭고기분</li>
+                            <li><span>닭고기분</span></li>
                           </div>
                           <div class="each_box">
                             <li>제2주 원료</li>
-                            <li>뼈를 발라낸 칠면조</li>
+                            <li><span>뼈를 발라낸 칠면조</span></li>
                           </div>
                           <div class="each_box">
                             <li>제3주 원료</li>
-                            <li>옥수수 글루텤</li>
+                            <li><span>옥수수 글루텤</span></li>
                           </div>
                           <div class="each_box">
                             <li>제4주 원료</li>
-                            <li>마이즈</li>
+                            <li><span>마이즈</span></li>
                           </div>
                           <div class="each_box">
                             <li>제5주 원료</li>
-                            <li>통밀</li>
+                            <li><span>통밀</span></li>
                           </div>
                           </ul>
                         </div>

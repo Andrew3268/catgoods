@@ -449,6 +449,7 @@ Search Filter
     -ms-flex-pack: justify;
     justify-content: space-between;*/
   }
+  .compare__effect .img_box{height:120px;}
 
   .flexbox .compare__item .product__image {
     -webkit-align-self: center;
@@ -566,3 +567,5 @@ Search Filter
     -webkit-transform: translate3d(250px,0,0);
     transform: translate3d(250px,0,0);
   }*/
+
+

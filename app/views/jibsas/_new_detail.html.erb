@@ -143,7 +143,7 @@
           <% else %>
             <h3>AAFCO 성숙기(성묘) 기준</h3>
           <% end %>
-          <div class="row pricing-tables">
+          <div class="pricing-tables">
 
            <div class="col-md-3 no-pad-right hidden-sm">
             <div class="pricing-table feature-list">
@@ -307,67 +307,96 @@
 
     <br/><br/>
 
-    <div class="kcal_balnace">
-      <h3>100g당 PFC 칼로리</h3>
-      <div class="clearfix">
-        <p>
-          조단백질
-          <% protein_kcal = 0 %>
-          <% protein_kcal =  @jibsa.j_option_11.to_f * 3.5 %>
-          <span><%= number_with_precision(protein_kcal, precision: 2) %> kcal</span>
-        </p>
-        <p>
-          조지방
-          <% fat_kcal = 0 %>
-          <% fat_kcal =  @jibsa.j_option_14.to_f * 8.5 %>
-          <span><%= number_with_precision(fat_kcal, precision: 2) %> kcal</span>
-        </p>
-        <p>
-          탄수화물
-          <% carbo_kcal = 0 %>
-          <% carbo_kcal =  carbo_blance * 3.5 %>
-          <span><%= number_with_precision(carbo_kcal, precision: 2) %> kcal</span>
-        </p>
+
+    <% protein_kcal = 0 %>
+    <% protein_kcal =  @jibsa.j_option_11.to_f * 3.5 %>
+    <% fat_kcal = 0 %>
+    <% fat_kcal =  @jibsa.j_option_14.to_f * 8.5 %>
+    <% carbo_kcal = 0 %>
+    <% carbo_kcal =  carbo_blance * 3.5 %>
+    <% total_kcal = 0 %>
+    <% total_kcal = protein_kcal + fat_kcal + carbo_kcal %>
+
+    <div class="slide_tab">
+      <input type="radio" id="core_ingre" name="tab" checked hidden/>
+      <input type="radio" id="allergic_potential" name="tab" hidden/>
+      <input type="radio" id="caution_ingredient" name="tab" hidden/>
+      <div class="slide_tab__menu">
+        <label class="slide_tab__menu-item" for="core_ingre">탄단지 비율</label>
+        <label class="slide_tab__menu-item" for="allergic_potential">탄단지 칼로리</label>
+        <label class="slide_tab__menu-item" for="caution_ingredient">주의 성분</label>
       </div>
-      <h4>
-        총 칼로리:
-        <% total_kcal = 0 %>
-        <% total_kcal = protein_kcal + fat_kcal + carbo_kcal %>
-        <span><%= number_with_precision(total_kcal, precision: 2) %> kcal</span>
-      </h4>
-      <%= bar_chart [["조단백질", protein_kcal], ["조지방", fat_kcal], ["탄수화물", carbo_kcal], ["총 칼로리", total_kcal]], colors: ["#8b80f8"] %>
-    </div>
+      <div class="slide_tab__content">
 
+        <div class="slide_tab__content-item" data-tab="core_ingre">
 
-    
+          <div class="nutrient_balnace">
+            <h3>100g당 탄단지(탄수화물,단백질,지방) 비율</h3>
+            <div class="clearfix">
+              <div class="nutri_box">
+                <p>조단백질</p>
+                <% protien_nutrient = 0 %>
+                <% protien_nutrient = (protein_kcal / total_kcal) * 100 %>
+                <span><%= number_to_percentage(protien_nutrient, precision: 2) %></span>
+              </div>
+              <div class="nutri_box">
+                <p>조지방</p>
+                <% fat_nutrient = 0 %>
+                <% fat_nutrient = (fat_kcal / total_kcal) * 100 %>
+                <span><%= number_to_percentage(fat_nutrient, precision: 2) %></span>
+              </div>
+              <div class="nutri_box">
+                <p>탄수화물</p>
+                <% carbo_nutrient = 0 %>
+                <% carbo_nutrient = (carbo_kcal / total_kcal) * 100 %>
+                <span><%= number_to_percentage(carbo_nutrient, precision: 2) %></span>
+              </div>
+            </div>
+            <br />
+            <%= pie_chart [ ["조단백질", number_to_percentage(protien_nutrient, precision: 2)], ["조지방", number_to_percentage(fat_nutrient, precision: 2)], ["탄수화물", number_to_percentage(carbo_nutrient, precision: 2)]], colors: ["#7568f7", "#a198f9", "#b7b0fb"] %>
+          </div>  
+          
+        </div>
 
-    <div class="nutrient_balnace">
-      <h3>100g당 PFC 비율</h3>
-      <div class="clearfix">
-        <p>
-          조단백질
-          <% protien_nutrient = 0 %>
-          <% protien_nutrient = (protein_kcal / total_kcal) * 100 %>
-          <span><%= number_to_percentage(protien_nutrient, precision: 2) %></span>
-        </p>
-        <p>
-          조지방
-          <% fat_nutrient = 0 %>
-          <% fat_nutrient = (fat_kcal / total_kcal) * 100 %>
-          <span><%= number_to_percentage(fat_nutrient, precision: 2) %></span>
-        </p>
-        <p>
-          탄수화물
-          <% carbo_nutrient = 0 %>
-          <% carbo_nutrient = (carbo_kcal / total_kcal) * 100 %>
-          <span><%= number_to_percentage(carbo_nutrient, precision: 2) %></span>
-        </p>
+        <div class="slide_tab__content-item" data-tab="allergic_potential">
+
+          <div class="kcal_balnace">
+            <h3>100g당 탄단지(탄수화물,단백질,지방) 칼로리</h3>
+            <div class="clearfix">
+              <div class="nutri_box">
+                <p>조단백질</p>
+                <span><%= number_with_precision(protein_kcal, precision: 2) %> kcal</span>
+              </div>
+              <div class="nutri_box">
+                <p>조지방</p>
+                <span><%= number_with_precision(fat_kcal, precision: 2) %> kcal</span>
+              </div>
+              <div class="nutri_box">
+                <p>탄수화물</p>
+                <span><%= number_with_precision(carbo_kcal, precision: 2) %> kcal</span>
+              </div>
+              
+            </div>
+            <h4>
+              총 칼로리:
+              <span><%= number_with_precision(total_kcal, precision: 2) %> kcal</span>
+            </h4>
+            <div class="bar_chart">
+              <%= bar_chart [["조단백질", protein_kcal], ["조지방", fat_kcal], ["탄수화물", carbo_kcal], ["총 칼로리", total_kcal]], colors: ["#8b80f8"] %>
+            </div>
+          </div>
+
+        </div>
+        <div class="slide_tab__content-item" data-tab="caution_ingredient">
+          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis ipsam quas animi, quam eum quae eius veniam consequuntur aliquam odit similique et numquam sed nihil suscipit voluptatem, cupiditate, blanditiis reprehenderit.</p>
+          <img src="https://source.unsplash.com/600x240" alt="">
+        </div>
       </div>
-      <br />
-      <%= pie_chart [ ["조단백질", number_to_percentage(protien_nutrient, precision: 2)], ["조지방", number_to_percentage(fat_nutrient, precision: 2)], ["탄수화물", number_to_percentage(carbo_nutrient, precision: 2)]], colors: ["#239023", "#47d247", "#70dc70"] %>
-    </div>
+    </div><!-- slide_tab -->
 
-     <div class="nutri_analysis">
+     
+    <div class="nutri_analysis">
         <% protien_aveage = 30 %>
         <% fat_aveage = 16 %>
         <% calcium_aveage = 0.8 %>
@@ -420,7 +449,7 @@
             <li>평균보다 <em>낮은⬇</em> 수분을 함유</li> 
           <% end %>
         </ul>
-      </div>
+    </div><!-- nutri_analysis -->
 
     <br /><br />
     
@@ -436,36 +465,85 @@
       </p>
     </div>
 
-    <div class="core_ingre">
-      <h3>제 1주원료 ~ 제 5주원료</h3>
-      <ul>
-        <li>밀글루텐</li>
-        <li>소맥분</li>
-        <li>동물성 지방 (닭, 칠면조, 오리 및 돼지)</li>
-        <li>육분 (닭, 오리, 칠면조)</li>
-        <li>쌀</li>
-      </ul>
+
+    <div class="vertical_tab_container clearfix">
+      
+      <div class="bhoechie-tab-container">
+          <div class=" bhoechie-tab-menu">
+            <div class="list-group">
+              <a href="#" class="list-group-item active text-center">주원료</a>
+              <a href="#" class="list-group-item text-center">알러지 유발 가능성분</a>
+              <a href="#" class="list-group-item text-center">의심 성분</a>
+              <a href="#" class="list-group-item text-center">주의 성분</a>
+            </div>
+          </div>
+          <div class="bhoechie-tab">
+              <!-- flight section -->
+              <div class="bhoechie-tab-content active">
+                  <center>
+                    <ul>
+                      <li>제 1원료</li>
+                      <li>제 2원료</li>
+                      <li>제 3원료</li>
+                      <li>제 4원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      <li>제 5원료</li>
+                      
+                    </ul>
+                  </center>
+              </div>
+              <!-- train section -->
+              <div class="bhoechie-tab-content">
+                  <center>
+                    <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
+                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                    <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
+                  </center>
+              </div>
+  
+              <!-- hotel search -->
+              <div class="bhoechie-tab-content">
+                  <center>
+                    <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
+                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                    <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
+                  </center>
+              </div>
+              <div class="bhoechie-tab-content">
+                  <center>
+                    <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
+                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                    <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
+                  </center>
+              </div>
+              <div class="bhoechie-tab-content">
+                  <center>
+                    <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
+                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
+                    <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
+                  </center>
+              </div>
+          </div>
+      </div>
+      
     </div>
 
-    <div class="allergic_potential">
-      <h3>알러지를 일으킬 수 있는 원료</h3>
-      <ul>
-        <li>밀글루텐</li>
-        <li>쌀</li>
-        <li>옥수수</li>
-      </ul>
-    </div>
 
-    <br /><br />
 
-    <div class="caution_ingredient">
-      <h3>주의 성분</h3>
-      <ul>
-        <li>밀글루텐</li>
-        <li>쌀</li>
-        <li>옥수수</li>
-      </ul>
-    </div>
+
 
     <br /><br />
 
@@ -492,3 +570,19 @@
 </div>
 <br>
 <br>
+
+
+
+<!-- 주원료, 알러지 가능성 및 주의 성분 탭 메뉴 -->
+<script type="text/javascript">
+  $(document).ready(function() {
+    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings('a.active').removeClass("active");
+        $(this).addClass("active");
+        var index = $(this).index();
+        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
+        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
+    });
+  });
+</script>

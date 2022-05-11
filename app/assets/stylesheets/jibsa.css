@@ -58,7 +58,7 @@
 .detail_wrap .nutrition_box .important .right ul{}
 .detail_wrap .nutrition_box .important .right ul li{color:#ff6873;}
 
-.detail_wrap .nutrition_box h3{text-align:left;font-size:12px;margin-bottom:5px;}
+.detail_wrap .nutrition_box h3{text-align:left;font-size:12px;margin-bottom:10px;}
 .detail_wrap .nutrition_box h3 span{color:#ff6873;}
 .detail_wrap .nutrition_box .left{float:left;width:33.33%;} 
 .detail_wrap .nutrition_box .mid{float:left;width:33.33%;} 
@@ -72,21 +72,23 @@
 .detail_wrap .nutrition_box .ca_phos_ratio h3{font-size:20px;color:#00cc00;font-weight:100;text-align:center;}
 .detail_wrap .nutrition_box .ca_phos_ratio p{font-size:13px;text-align:center;color:#00cc00;margin:0;}
 
-.detail_wrap .nutrition_box .nutri_analysis{margin:20px 0;text-align:left;border:1px solid #ccc;border-radius:20px;padding:15px;}
+.detail_wrap .nutrition_box .nutri_analysis{margin:20px 0;text-align:left;border-radius:20px;padding:15px;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
 .detail_wrap .nutrition_box .nutri_analysis p{font-size:14px;}
 .detail_wrap .nutrition_box .nutri_analysis ul{margin:10px 0 0 30px;}
 .detail_wrap .nutrition_box .nutri_analysis ul li{list-style:circle;font-size:12px;margin-bottom:5px;}
 .detail_wrap .nutrition_box .nutri_analysis ul li em{font-weight:bold;}
 
-.detail_wrap .nutrition_box .kcal_balnace{margin-bottom:20px;border:1px solid #ccc;border-radius:20px;padding:15px;}
-.detail_wrap .nutrition_box .kcal_balnace p{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
-.detail_wrap .nutrition_box .kcal_balnace p span{display:block;color:#70dc70;margin-top:3px;}
+.detail_wrap .nutrition_box .kcal_balnace{margin-bottom:20px;padding:15px;}
+.detail_wrap .nutrition_box .kcal_balnace .nutri_box{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
+.detail_wrap .nutrition_box .kcal_balnace .nutri_box p{margin:0 !important;}
+.detail_wrap .nutrition_box .kcal_balnace .nutri_box p span{display:block;color:#70dc70;margin-top:3px;}
 .detail_wrap .nutrition_box .kcal_balnace h4{display:inline-block;border-top:0;width:100%;padding:7px;}
 .detail_wrap .nutrition_box .kcal_balnace h4 span{color:#70dc70;}
 
-.detail_wrap .nutrition_box .nutrient_balnace{margin-bottom:20px;border:1px solid #ccc;border-radius:20px;padding:15px;}
-.detail_wrap .nutrition_box .nutrient_balnace p{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
-.detail_wrap .nutrition_box .nutrient_balnace p span{display:block;color:#70dc70;margin-top:3px;}
+.detail_wrap .nutrition_box .nutrient_balnace{margin-bottom:20px;border-radius:20px;padding:15px;}
+.detail_wrap .nutrition_box .nutrient_balnace .nutri_box{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
+.detail_wrap .nutrition_box .nutrient_balnace .nutri_box p{margin:0 !important;}
+.detail_wrap .nutrition_box .nutrient_balnace .nutri_box p span{display:block;color:#70dc70;margin-top:3px;}
 
 .detail_wrap .ingredient_box{text-align:left;}
 .detail_wrap .ingredient_box h2{}
@@ -158,7 +160,84 @@
 
 
 
+/* 탄단지 비율 탭 메뉴 */
+.slide_tab{margin-top:30px;width:100%;}
+.slide_tab__menu{display:flex;flex-wrap:wrap;border-bottom:2px solid #ddd;}
+.slide_tab__menu-item{flex:1;padding:8px;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;text-align:center;color:#999;box-shadow:0 2px 0 transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;transition:.3s;}
+.slide_tab__content{padding:20px 5px;}
+.slide_tab__content-item{height:0;overflow:hidden;line-height:1.4;opacity:0;transform:translateY(-20px);visibility:hidden;transition:.3s;}
+input[id=core_ingre]:checked ~ .slide_tab__menu .slide_tab__menu-item[for=core_ingre]{background: rgba(139,128,248,0.5);color: #494BC7;box-shadow: 0 2px 0 #494BC7;}
+input[id=core_ingre]:checked ~ .slide_tab__content .slide_tab__content-item[data-tab=core_ingre]{height: auto;opacity: 1;transform: translateY(0);visibility: visible;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:20px;}
+input[id=allergic_potential]:checked ~ .slide_tab__menu .slide_tab__menu-item[for=allergic_potential]{background: rgba(139,128,248,0.5);color: #494BC7;box-shadow: 0 2px 0 #494BC7;}
+input[id=allergic_potential]:checked ~ .slide_tab__content .slide_tab__content-item[data-tab=allergic_potential]{height: auto;opacity: 1;transform: translateY(0);visibility: visible;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:20px;}
+input[id=caution_ingredient]:checked ~ .slide_tab__menu .slide_tab__menu-item[for=caution_ingredient]{background: rgba(139,128,248,0.5);color: #494BC7;box-shadow: 0 2px 0 #494BC7;}
+input[id=caution_ingredient]:checked ~ .slide_tab__content .slide_tab__content-item[data-tab=caution_ingredient]{height: auto;opacity: 1;transform: translateY(0);visibility: visible;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:20px;}
 
+
+/* 주원료, 알러지 가능성 및 주의 성분 탭 메뉴 */
+
+/*  bhoechie tab */
+.vertical_tab_container{margin:50px 0;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;padding:10px;border-radius:20px;}
+div.bhoechie-tab-container{
+  z-index: 10;
+  background-color:#fff;
+  padding: 0 !important;
+  border-radius:20px;
+  opacity: 0.97;
+  filter: alpha(opacity=97);
+}
+div.bhoechie-tab-menu{
+  float:left;
+  width:40%;
+  padding-right: 0;
+  padding-left: 0;
+  padding-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group{
+  margin-bottom: 0;
+}
+div.bhoechie-tab-menu div.list-group>a{margin-bottom:0;display:block;text-align:center;padding:10px 3px;}
+/*div.bhoechie-tab-menu div.list-group>a .glyphicon,
+div.bhoechie-tab-menu div.list-group>a .fa {
+  color: #5A55A3;
+}*/
+div.bhoechie-tab-menu div.list-group>a:first-child{
+  border-top-right-radius: 0;
+  -moz-border-top-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a:last-child{
+  border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+}
+div.bhoechie-tab-menu div.list-group>a.active,
+div.bhoechie-tab-menu div.list-group>a.active .glyphicon,
+div.bhoechie-tab-menu div.list-group>a.active .fa{
+  background-color: #5A55A3;
+  color: #ffffff;
+  border-radius:20px;
+}
+div.bhoechie-tab-menu div.list-group>a.active:after{
+  content: '';
+  position: absolute;
+  left: 100%;
+  top: 50%;
+  margin-top: -13px;
+  border-left: 0;
+  border-bottom: 13px solid transparent;
+  border-top: 13px solid transparent;
+  border-left: 10px solid #5A55A3;
+}
+
+div.bhoechie-tab-content{
+  background-color: #ffffff;
+  /* border: 1px solid #eeeeee; */
+  padding:20px 10px;
+}
+
+div.bhoechie-tab{float:left;width:60%;}
+div.bhoechie-tab div.bhoechie-tab-content:not(.active){
+  display: none;
+}
 
 
 

@@ -33,6 +33,7 @@
     
     <% dm_protein = 0 %>
     <% dm_protein =  100 * @jibsa.j_option_11.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+
     <% dm_fat = 0 %>
     <% dm_fat =  100 * @jibsa.j_option_14.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
   
@@ -133,67 +134,62 @@
 
     
     <div class="nutrition_comparison clearfix">
-                      
       <div class="main-container">
-        <section class="pricing-2">
-             <div class="container">          
+        
+            <div class="title_box">
+              <h2>영양소 분석</h2>
+            </div> 
 
-              <div class="title_box">
-                <h2>영양소 분석</h2>
-              </div> 
+            <div class="graph_wrap">   
+              <h2>Horizontal Bar Chart</h2>
+              <div class="barGraph">
+                <ul class="graph">
+                  <span class="graph-barBack">
+                    <li class="graph-bar" data-value="<%= @jibsa.j_option_11 %>">
+                      <span class="graph-legend">조단백질</span>
+                    </li>
+                  </span>  
 
+                  <span class="graph-barBack">    
+                    <li class="graph-bar" data-value="<%= @jibsa.j_option_14 %>">
+                      <span class="graph-legend">조지방</span>
+                    </li>
+                  </span>
 
-              <div class="graph_wrap">   
-                <h2>Horizontal Bar Chart</h2>
-                <div class="barGraph">
-                  <ul class="graph">
-                    <span class="graph-barBack">
-                      <li class="graph-bar" data-value="<%= @jibsa.j_option_11 %>">
-                        <span class="graph-legend">조단백질</span>
-                      </li>
-                    </span>  
+                  <span class="graph-barBack">    
+                    <li class="graph-bar" data-value="<%= @jibsa.j_option_18 %>">
+                      <span class="graph-legend">조회분</span>
+                    </li>
+                  </span>
 
-                    <span class="graph-barBack">    
-                      <li class="graph-bar" data-value="<%= @jibsa.j_option_14 %>">
-                        <span class="graph-legend">조지방</span>
-                      </li>
-                    </span>
+                  <span class="graph-barBack">    
+                    <li class="graph-bar" data-value="<%= @jibsa.j_option_17 %>">
+                      <span class="graph-legend">조섬유</span>
+                    </li>
+                  </span>
 
-                    <span class="graph-barBack">    
-                      <li class="graph-bar" data-value="<%= @jibsa.j_option_18 %>">
-                        <span class="graph-legend">조회분</span>
-                      </li>
-                    </span>
+                  <span class="graph-barBack">    
+                    <li class="graph-bar" data-value="<%= @jibsa.j_option_15 %>">
+                      <span class="graph-legend">칼슘</span>
+                    </li>
+                  </span>
 
-                    <span class="graph-barBack">    
-                      <li class="graph-bar" data-value="<%= @jibsa.j_option_17 %>">
-                        <span class="graph-legend">조섬유</span>
-                      </li>
-                    </span>
+                  <span class="graph-barBack">    
+                    <li class="graph-bar" data-value="<%= @jibsa.j_option_16 %>">
+                      <span class="graph-legend">인</span>
+                    </li>
+                  </span>      
 
-                    <span class="graph-barBack">    
-                      <li class="graph-bar" data-value="<%= @jibsa.j_option_15 %>">
-                        <span class="graph-legend">칼슘</span>
-                      </li>
-                    </span>
+                  <span class="graph-barBack">    
+                    <li class="graph-bar" data-value="<%= @jibsa.j_option_12 %>">
+                      <span class="graph-legend">수분</span>
+                    </li>
+                  </span>      
+                </ul>
+              </div>
+            </div><!-- graph_wrap -->
 
-                    <span class="graph-barBack">    
-                      <li class="graph-bar" data-value="<%= @jibsa.j_option_16 %>">
-                        <span class="graph-legend">인</span>
-                      </li>
-                    </span>      
-
-                    <span class="graph-barBack">    
-                      <li class="graph-bar" data-value="<%= @jibsa.j_option_12 %>">
-                        <span class="graph-legend">수분</span>
-                      </li>
-                    </span>      
-                  </ul>
-                </div>
-                
-              </div><!-- graph_wrap -->
-
-             <div>
+            <div>
               <% dm_ca_phos_ratio = 0 %>
               <% dm_ca_phos_ratio = dm_phosphorus / dm_calcium %>
               <% carbo_blance = 0 %>
@@ -366,20 +362,11 @@
 
            
 
-          </div>
-         <!-- </div> -->
-        </section>
       </div><!-- main-container -->
     </div><!-- nutrition_comparison -->
 
 
-    <!-- 기타 성분 [조회분, 조섬유, 오메가3, 오메가6, 비타민류 등] -->
-    <div class="other_nutrition">
-    </div>
-
-
-    
-
+  
 
     <br/><br/>
 
@@ -639,11 +626,7 @@
   </div>
 
 
-  
-
-
-
-</div>
+</div><!-- detail_wrap -->
 <br>
 <br>
 
@@ -673,6 +656,7 @@
     });
   });
 </script>
+
 
 <!-- 영양소 탭 메뉴 -->
 <script type="text/javascript">

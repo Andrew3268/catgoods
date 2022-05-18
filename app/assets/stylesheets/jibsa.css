@@ -149,7 +149,7 @@
 
 
 .inner_section .inner .basic_infomation{}
-.inner_section .inner .basic_infomation .infom_box{float:left;width:31.333%;margin:1%;border:1px solid #ccc;box-shadow:rgb(0 0 0 / 16%) 0px 1px 4px;border-radius:15px;}
+.inner_section .inner .basic_infomation .infom_box{float:left;width:31.333%;margin:1%;border:1px solid #ccc;box-shadow:rgba(0 0 0 / 16%) 0px 1px 4px;border-radius:15px;}
 .inner_section .inner .basic_infomation .infom_box span{border-bottom:1px solid #ccc;display:block;padding:7px;font-size:11px;border-top-left-radius:15px;border-top-right-radius:15px;background:#7b9acc;color:#FCF6F5;}
 .inner_section .inner .basic_infomation .infom_box p{padding:7px;margin:0 !important;font-size:12px !important;background-color:#FCF6F5;color:#7b9acc;border-bottom-left-radius:15px;border-bottom-right-radius:15px;}
 

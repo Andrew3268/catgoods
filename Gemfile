@@ -13,6 +13,7 @@ gem 'whenever', require: false
 gem 'impressionist'
 # gem 'sshkit', '~> 1.4.0'
 gem "punching_bag"
+gem "chartkick"
 
 
 

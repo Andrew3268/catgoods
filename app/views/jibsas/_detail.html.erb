@@ -1,536 +1,397 @@
-
 <br>
 <div class="detail_wrap clearfix">
+  <p class="info_title">상세정보</p>
   
-
   <div class="detail_box detail_nutri clearfix">
 
-    <div class="basic_info clearfix">
-      <div class="bi_box">        
-        <%= render 'jibsas/codes_country' %>
-        <p class="info_p">제조국가</p>
-      </div>
-      <div class="bi_box">        
-        <%= render 'jibsas/codes_country' %>
-        <p class="info_p">원산지</p>
-      </div>
-      <div class="bi_box">        
-        <% if @jibsa.j_option_01 == 101 %>
-          <span>건식사료</span>
-        <% elsif @jibsa.j_option_01 == 102 %>
-          <span>습식사료</span>
-        <% elsif @jibsa.j_option_01 == 103 %>
-          <span>동결건조</span>
-        <% end %>
-        <p class="info_p">사료타입</p>
-      </div>
-      <div class="bi_box">        
-        <%= render 'jibsas/codes_ingredient' %>
-        <p class="info_p">제1주 원료</p>
-      </div>
-    </div>
-
-    
-    <% dm_protein = 0 %>
-    <% dm_protein =  100 * @jibsa.j_option_11.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
-
-    <% dm_fat = 0 %>
-    <% dm_fat =  100 * @jibsa.j_option_14.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
-  
-    <% dm_calcium = 0 %>
-    <% dm_calcium =  100 * @jibsa.j_option_15.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
-  
-    <% dm_phosphorus = 0 %>
-    <% dm_phosphorus =  100 * @jibsa.j_option_16.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
-    
-
-    <div class="basic_info clearfix">
-      <div class="bi_box">        
-        <% if dm_protein > 26 && dm_fat > 9 && dm_calcium > 0.6 && dm_phosphorus > 0.5 %>
-          <span>충족</span>
-        <% else %>
-          <span>불충족</span>
-        <% end %>
-        <p class="info_p">AAFCO 기준</p>
-      </div>
-      <div class="bi_box">        
-        <span>있음</span>
-        <p class="info_p">생산 공장</p>
-      </div>
-      <div class="bi_box">        
-        <span>있음</span>
-        <p class="info_p">자체 연구소</p>
-      </div>
-      <div class="bi_box">        
-        <span>없음</span>
-        <p class="info_p">리콜이력</p>
-      </div>
-    </div>
-
-
-    <div class="basic_infomation">
-      <div class="infom_box">
-        <span>제조 국가</span>
-        <p>한국</p>
-      </div>
-
-      <div class="infom_box">
-        <span>원산지</span>
-        <p>한국</p>
-      </div>
-
-      <div class="infom_box">
-        <span>급여 대상</span>
-        <p>한국</p>
-      </div>
-
-      <div class="infom_box">
-        <span>사료 타입</span>
-        <p>한국</p>
-      </div>
-
-      <div class="infom_box">
-        <span>주 단백질원</span>
-        <p>한국</p>
-      </div>
-
-      <div class="infom_box">
-        <span>그레인프리</span>
-        <p>한국</p>
-      </div>
-
-      <div class="infom_box">
-        <span>자체 생산시설</span>
-        <p>한국</p>
-      </div>
-
-      <div class="infom_box">
-        <span>자체 연구소</span>
-        <p>한국</p>
-      </div>
-
-      <div class="infom_box">
-        <span>리콜 이력</span>
-        <p>한국</p>
-      </div>
-    </div>
-
-    
-
-    <!-- <p class="info_title">상세정보</p> -->
-    <br />
-  
-    <div class="expection_effects">
-      <h4>기대 효과</h4>
-      <%= render 'jibsas/codes_functional' %>
-    </div>
-
-  </div><!-- detail_box -->
-
-  <br><br>
-
-  <div class="nutrition_box detail_nutri clearfix">
-
-
-    
-    <div class="nutrition_comparison clearfix">
-      <div class="main-container">
-        
-            <div class="title_box">
-              <h2>영양소 분석</h2>
-            </div> 
-
-            <div class="graph_wrap">   
-              <h2>Horizontal Bar Chart</h2>
-              <div class="barGraph">
-                <ul class="graph">
-                  <span class="graph-barBack">
-                    <li class="graph-bar" data-value="<%= @jibsa.j_option_11 %>">
-                      <span class="graph-legend">조단백질</span>
-                    </li>
-                  </span>  
-
-                  <span class="graph-barBack">    
-                    <li class="graph-bar" data-value="<%= @jibsa.j_option_14 %>">
-                      <span class="graph-legend">조지방</span>
-                    </li>
-                  </span>
-
-                  <span class="graph-barBack">    
-                    <li class="graph-bar" data-value="<%= @jibsa.j_option_18 %>">
-                      <span class="graph-legend">조회분</span>
-                    </li>
-                  </span>
-
-                  <span class="graph-barBack">    
-                    <li class="graph-bar" data-value="<%= @jibsa.j_option_17 %>">
-                      <span class="graph-legend">조섬유</span>
-                    </li>
-                  </span>
-
-                  <span class="graph-barBack">    
-                    <li class="graph-bar" data-value="<%= @jibsa.j_option_15 %>">
-                      <span class="graph-legend">칼슘</span>
-                    </li>
-                  </span>
-
-                  <span class="graph-barBack">    
-                    <li class="graph-bar" data-value="<%= @jibsa.j_option_16 %>">
-                      <span class="graph-legend">인</span>
-                    </li>
-                  </span>      
-
-                  <span class="graph-barBack">    
-                    <li class="graph-bar" data-value="<%= @jibsa.j_option_12 %>">
-                      <span class="graph-legend">수분</span>
-                    </li>
-                  </span>      
-                </ul>
-              </div>
-            </div><!-- graph_wrap -->
-
-            <div>
-              <% dm_ca_phos_ratio = 0 %>
-              <% dm_ca_phos_ratio = dm_phosphorus / dm_calcium %>
-              <% carbo_blance = 0 %>
-              <% carbo_blance =  100 - @jibsa.j_option_11.to_f - @jibsa.j_option_14.to_f - @jibsa.j_option_12.to_f - @jibsa.j_option_17.to_f - @jibsa.j_option_18.to_f %>
-              <div class="ratio_box clearfix">
-                <div class="left_ratio comm_ratio">
-                  <h3>칼슘 인 비율</h3>
-                  <p>1 : <%= number_with_precision(dm_ca_phos_ratio, precision: 2) %></p>
-                </div>
-                <div class="right_ratio comm_ratio">
-                  <h3>탄수화물 함량</h3>
-                  <p><%= number_to_percentage(carbo_blance, precision: 2) %></p>
-                </div>
-              </div>
-            </div>
-
-
-
-
-           
-
-      </div><!-- main-container -->
-    </div><!-- nutrition_comparison -->
-
-
-  
-
-    <br/><br/>
-
-
-    <% protein_kcal = 0 %>
-    <% protein_kcal =  @jibsa.j_option_11.to_f * 3.5 %>
-    <% fat_kcal = 0 %>
-    <% fat_kcal =  @jibsa.j_option_14.to_f * 8.5 %>
-    <% carbo_kcal = 0 %>
-    <% carbo_kcal =  carbo_blance * 3.5 %>
-    <% total_kcal = 0 %>
-    <% total_kcal = protein_kcal + fat_kcal + carbo_kcal %>
-
-    <div class="slide_tab">
-      <input type="radio" id="core_ingre" name="tab" checked hidden/>
-      <input type="radio" id="allergic_potential" name="tab" hidden/>
-      <input type="radio" id="caution_ingredient" name="tab" hidden/>
-      <div class="slide_tab__menu">
-        <label class="slide_tab__menu-item" for="core_ingre">탄단지 비율</label>
-        <label class="slide_tab__menu-item" for="allergic_potential">탄단지 칼로리</label>
-        <label class="slide_tab__menu-item" for="caution_ingredient">주의 성분</label>
-      </div>
-      <div class="slide_tab__content">
-
-        <div class="slide_tab__content-item" data-tab="core_ingre">
-
-          <div class="nutrient_balnace">
-            <h3>100g당 탄단지(탄수화물,단백질,지방) 비율</h3>
-            <div class="clearfix">
-              <div class="nutri_box">
-                <p>조단백질</p>
-                <% protien_nutrient = 0 %>
-                <% protien_nutrient = (protein_kcal / total_kcal) * 100 %>
-                <span><%= number_to_percentage(protien_nutrient, precision: 2) %></span>
-              </div>
-              <div class="nutri_box">
-                <p>조지방</p>
-                <% fat_nutrient = 0 %>
-                <% fat_nutrient = (fat_kcal / total_kcal) * 100 %>
-                <span><%= number_to_percentage(fat_nutrient, precision: 2) %></span>
-              </div>
-              <div class="nutri_box">
-                <p>탄수화물</p>
-                <% carbo_nutrient = 0 %>
-                <% carbo_nutrient = (carbo_kcal / total_kcal) * 100 %>
-                <span><%= number_to_percentage(carbo_nutrient, precision: 2) %></span>
-              </div>
-            </div>
-            <br />
-            <%= pie_chart [ ["조단백질", number_to_percentage(protien_nutrient, precision: 2)], ["조지방", number_to_percentage(fat_nutrient, precision: 2)], ["탄수화물", number_to_percentage(carbo_nutrient, precision: 2)]], colors: ["#ff4729", "#ff9617", "#ffd34d"] %>
-          </div>  
-          
-        </div>
-
-        <div class="slide_tab__content-item" data-tab="allergic_potential">
-
-          <div class="kcal_balnace">
-            <h3>100g당 탄단지(탄수화물,단백질,지방) 칼로리</h3>
-            <div class="clearfix">
-              <div class="nutri_box">
-                <p>조단백질</p>
-                <span><%= number_with_precision(protein_kcal, precision: 2) %> kcal</span>
-              </div>
-              <div class="nutri_box">
-                <p>조지방</p>
-                <span><%= number_with_precision(fat_kcal, precision: 2) %> kcal</span>
-              </div>
-              <div class="nutri_box">
-                <p>탄수화물</p>
-                <span><%= number_with_precision(carbo_kcal, precision: 2) %> kcal</span>
-              </div>
-              
-            </div>
-            <h4>
-              총 칼로리:
-              <span><%= number_with_precision(total_kcal, precision: 2) %> kcal</span>
-            </h4>
-            <div class="bar_chart">
-              <%= bar_chart [["조단백질", protein_kcal], ["조지방", fat_kcal], ["탄수화물", carbo_kcal], ["총 칼로리", total_kcal]], colors: ["#ff4729", "#ff9617", "#ffd34d", "#00f522"] %>
-            </div>
-          </div>
-
-        </div>
-        <div class="slide_tab__content-item" data-tab="caution_ingredient">
-          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis ipsam quas animi, quam eum quae eius veniam consequuntur aliquam odit similique et numquam sed nihil suscipit voluptatem, cupiditate, blanditiis reprehenderit.</p>
-          <img src="https://source.unsplash.com/600x240" alt="">
-        </div>
-      </div>
-    </div><!-- slide_tab -->
-
-     
-    <div class="nutri_analysis">
-        <% protien_aveage = 30 %>
-        <% fat_aveage = 16 %>
-        <% calcium_aveage = 0.8 %>
-        <% phosphorus_aveage = 0.65 %>
-        <% fiber_aveage = 3 %>
-        <% ash_aveage = 8 %>
-        <% carbo_aveage = 20 %>
-        <% water_aveage = 10 %>
-        
-        <p>퍼시캣 연어 레시피는 Pawjelly의 1000개 건식사료 데이터베이스와 비교하면:</p>
-        <ul>
-          <% if @jibsa.j_option_11 > protien_aveage %>
-            <li>평균보다 <em>높은⬆</em> 조단백질을 함유</li>
-          <% else %>
-            <li>평균보다 <em>낮은⬇</em> 조단백질을 함유</li>
-          <% end %>
-          <% if @jibsa.j_option_14 > fat_aveage %>
-            <li>평균보다 <em>높은⬆</em> 조지방을 함유</li>
-          <% else %>
-            <li>평균보다 <em>낮은⬇</em> 조지방을 함유</li>
-          <% end %>
-          <% if @jibsa.j_option_17 > fiber_aveage %>
-            <li>평균보다 <em>높은⬆</em> 조섬유를 함유</li>
-          <% else %>
-            <li>평균보다 <em>낮은⬇</em> 조섬유를 함유</li>
-          <% end %>
-          <% if @jibsa.j_option_18 > ash_aveage %>
-            <li>평균보다 <em>높은⬆</em> 조회분을 함유</li>
-          <% else %>
-            <li>평균보다 <em>낮은⬇</em> 조회분을 함유</li>
-          <% end %>
-          <% if @jibsa.j_option_15 > calcium_aveage %>
-            <li>평균보다 <em>높은⬆</em> 칼슘을 함유</li>
-          <% else %>  
-            <li>평균보다 <em>낮은⬇</em> 칼슘을 함유</li>
-          <% end %>
-          <% if @jibsa.j_option_16 > phosphorus_aveage %>
-            <li>평균보다 <em>높은⬆</em> 인을 함유</li>
-          <% else %>
-            <li>평균보다 <em>낮은⬇</em> 인을 함유</li> 
-          <% end %>
-          <% if carbo_blance > carbo_aveage %>
-            <li>평균보다 <em>높은⬆</em> 탄수화물을 함유</li> 
-          <% else %>
-            <li>평균보다 <em>낮은⬇</em> 탄수화물을 함유</li> 
-          <% end %>
-          <% if @jibsa.j_option_12 > water_aveage %>
-            <li>평균보다 <em>높은⬆</em> 수분을 함유</li>
-          <% else %>
-            <li>평균보다 <em>낮은⬇</em> 수분을 함유</li> 
-          <% end %>
-        </ul>
-    </div><!-- nutri_analysis -->
-
-    <br /><br />
-    
-  </div><!-- nutrition_box -->
-
-
-
-  <div class="ingredient_box detail_ingredient clearfix">
-    <h2>원재료(성분) 분석</h2>
-    <div class="whole_ingre">
-      <p>
-        밀글루텐, 소맥분, 동물성 지방 (닭, 칠면조, 오리 및 돼지), 육분 (닭, 오리, 칠면조), 쌀, 옥수수, 분말셀룰로스, 동물성 유도단백질 (닭, 칠면조), 치커리 펄프, 혼합광물질류 합제, 어유, 대두유, 효모, 토마토 (라이코펜의 원료), 가수분해효모, 글루코사민, 보리지유, 금잔화 추출물 (루테인의 원료), 뮤코다당단백(콘드로이틴의 원료), 비타민 A, 비타민 D3, 철, 요오드, 구리, 망간, 아연, 셀레늄, 차 카테킨 (폴리페놀의 원료), 소르빈산칼륨, 항산화제.
-      </p>
-    </div>
-
-
-    <div class="vertical_tab_container clearfix">
-      
-      <div class="bhoechie-tab-container">
-          <div class=" bhoechie-tab-menu">
-            <div class="list-group">
-              <a href="#" class="list-group-item active text-center">주원료</a>
-              <a href="#" class="list-group-item text-center">알러지 유발 가능성분</a>
-              <a href="#" class="list-group-item text-center">의심 성분</a>
-              <a href="#" class="list-group-item text-center">주의 성분</a>
-            </div>
-          </div>
-          <div class="bhoechie-tab">
-              <!-- flight section -->
-              <div class="bhoechie-tab-content active">
-                  <center>
-                    <ul>
-                      <li>제 1원료</li>
-                      <li>제 2원료</li>
-                      <li>제 3원료</li>
-                      <li>제 4원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-
-                    </ul>
-                  </center>
-              </div>
-              <!-- train section -->
-              <div class="bhoechie-tab-content">
-                  <center>
-                    <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
-                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                    <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
-                  </center>
-              </div>
-  
-              <!-- hotel search -->
-              <div class="bhoechie-tab-content">
-                  <center>
-                    <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
-                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                    <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
-                  </center>
-              </div>
-              <div class="bhoechie-tab-content">
-                  <center>
-                    <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
-                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                    <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
-                  </center>
-              </div>
-              <div class="bhoechie-tab-content">
-                  <center>
-                    <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
-                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                    <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
-                  </center>
-              </div>
-          </div>
-      </div>
-      
-    </div>
-
-
-
-
-
-    <br /><br />
-
-    <div class="description">
+    <div class="left comm">
       <ul>
-        <li>첫번째 주 원료가 동물성 단백질이 아닌 곡물인 글루텐.</li>
+        <li>사료 타입</li>
+        <li>급여 대상</li>
+        <li>브랜드</li>
+        <li>제조 국가</li>
+        <li>제1주 원료</li>
+        <li>중량</li>
+        <li class="two_line">기능성</li>
+        <% if @jibsa.j_option_04.present? %>
+          <li>상태</li>
+        <% end %>
+        <% if @jibsa.j_option_05.present? %>
+          <li>알레르기</li>
+        <% end %>
       </ul>
     </div>
+    <div class="right comm">
+      <ul>
+        <li>
+          <% if @jibsa.j_option_01 == 101 %>
+            <em>건식사료</em>
+          <% elsif @jibsa.j_option_01 == 102 %>
+            <em>습식사료</em>
+          <% end %>
+        </li>
+        <li>
+          <% if @jibsa.j_option_02 == 201 %>
+            <em>키튼(1세 미만)</em>
+          <% elsif @jibsa.j_option_02 == 202 %>
+            <em>어덜트(1세 ~ 7세)</em>
+          <% elsif @jibsa.j_option_02 == 203 %>
+            <em>시니어(7세 이상)</em>
+          <% elsif @jibsa.j_option_02 == 204 %>
+            <em>전연령용</em>
+          <% end %>
+        </li>
+        <li>
+          <% if @jibsa.j_option_06 == 801 %>
+            <em>로얄캐닌</em>
+          <% elsif @jibsa.j_option_06 == 802 %>
+            <em>캐츠랑</em>
+          <% elsif @jibsa.j_option_06 == 803 %>
+            <em>ANF</em>
+          <% elsif @jibsa.j_option_06 == 804 %>
+            <em>뉴트리나</em>
+          <% elsif @jibsa.j_option_06 == 805 %>
+            <em>이즈칸</em>
+          <% elsif @jibsa.j_option_06 == 806 %>
+            <em>네츄럴코어</em>
+          <% elsif @jibsa.j_option_06 == 807 %>
+            <em>위스카스</em>
+          <% elsif @jibsa.j_option_06 == 808 %>
+            <em>퓨리나</em>
+          <% elsif @jibsa.j_option_06 == 809 %>
+            <em>프로베스트</em>
+          <% elsif @jibsa.j_option_06 == 810 %>
+            <em>오리젠</em>
+          <% elsif @jibsa.j_option_06 == 811 %>
+            <em>네추럴밸런스</em>
+          <% elsif @jibsa.j_option_06 == 812 %>
+            <em>나우프레쉬</em>
+          <% elsif @jibsa.j_option_06 == 813 %>
+            <em>대한사료</em>
+          <% elsif @jibsa.j_option_06 == 814 %>
+            <em>웰츠</em>
+          <% elsif @jibsa.j_option_06 == 815 %>
+            <em>뉴트리웰</em>
+          <% elsif @jibsa.j_option_06 == 816 %>
+            <em>퓨어비타</em>
+          <% elsif @jibsa.j_option_06 == 817 %>
+            <em>한끼뚝딱</em>
+          <% elsif @jibsa.j_option_06 == 818 %>
+            <em>세라피드</em>
+          <% elsif @jibsa.j_option_06 == 819 %>
+            <em>뉴트리플랜</em>
+          <% elsif @jibsa.j_option_06 == 820 %>
+            <em>사조동아원</em>
+          <% elsif @jibsa.j_option_06 == 821 %>
+            <em>후새</em>
+          <% elsif @jibsa.j_option_06 == 822 %>
+            <em>원더캐츠</em>
+          <% elsif @jibsa.j_option_06 == 823 %>
+            <em>헤일로</em>
+          <% elsif @jibsa.j_option_06 == 824 %>
+            <em>프리스키</em>
+          <% elsif @jibsa.j_option_06 == 825 %>
+            <em>트로벳</em>
+          <% elsif @jibsa.j_option_06 == 826 %>
+            <em>탐사</em>
+          <% elsif @jibsa.j_option_06 == 827 %>
+            <em>위시본</em>
+          <% elsif @jibsa.j_option_06 == 828 %>
+            <em>웰니스</em>
+          <% elsif @jibsa.j_option_06 == 829 %>
+            <em>치킨수프 클래식</em>
+          <% elsif @jibsa.j_option_06 == 830 %>
+            <em>슈슈</em>
+          <% elsif @jibsa.j_option_06 == 831 %>
+            <em>올가밀 캣35</em>
+          <% elsif @jibsa.j_option_06 == 832 %>
+            <em>마즈</em>
+          <% elsif @jibsa.j_option_06 == 833 %>
+            <em>어스본홀리스틱</em>
+          <% elsif @jibsa.j_option_06 == 834 %>
+            <em>이퀼리브리오</em>
+          <% elsif @jibsa.j_option_06 == 835 %>
+            <em>뉴웨이브</em>
+          <% elsif @jibsa.j_option_06 == 836 %>
+            <em>아카나</em>
+          <% elsif @jibsa.j_option_06 == 837 %>
+            <em>풀무원</em>
+          <% elsif @jibsa.j_option_06 == 838 %>
+            <em>풀무원 아미오</em>
+          <% elsif @jibsa.j_option_06 == 839 %>
+            <em>밥이보약</em>
+          <% elsif @jibsa.j_option_06 == 840 %>
+            <em>하림더리얼</em>
+          <% elsif @jibsa.j_option_06 == 841 %>
+            <em>캣츠맘</em>
+          <% elsif @jibsa.j_option_06 == 842 %>
+            <em>네츄럴랩</em>
+          <% end %>
+        </li>
+        <li>
+          <% if @jibsa.j_option_03 == 301 %>
+            <em>한국</em>
+          <% elsif @jibsa.j_option_03 == 302 %>
+            <em>미국</em>
+          <% elsif @jibsa.j_option_03 == 303 %>
+            <em>캐나다</em>
+          <% elsif @jibsa.j_option_03 == 304 %>
+            <em>독일</em>
+          <% end %>
+        </li>
+        <li>
+          <% if @jibsa.j_option_07 == 701 %>
+            <em>소</em>
+          <% elsif @jibsa.j_option_07 == 702 %>
+            <em>돼지</em>
+          <% elsif @jibsa.j_option_07 == 703 %>
+            <em>닭 (뼈바른 닭고기)</em>
+          <% elsif @jibsa.j_option_07 == 704 %>
+            <em>오리</em>
+          <% elsif @jibsa.j_option_07 == 705 %>
+            <em>양</em>
+          <% elsif @jibsa.j_option_07 == 706 %>
+            <em>생선</em>
+          <% elsif @jibsa.j_option_07 == 707 %>
+            <em>칠면조</em>
+          <% elsif @jibsa.j_option_07 == 708 %>
+            <em>사슴</em>
+          <% elsif @jibsa.j_option_07 == 709 %>
+            <em>탈수가금육</em>
+          <% elsif @jibsa.j_option_07 == 710 %>
+            <em>곡물</em>
+          <% elsif @jibsa.j_option_07 == 711 %>
+            <em>야채</em>
+          <% end %>
+        </li>
+        <li>
+          <em><%= @jibsa.j_option_19 %>kg</em>
+        </li>
+        <li class="two_line">
+          <% if @jibsa.j_spare_01.present? %>
+            <em>면역력</em>
+          <% end %>
+          <% if @jibsa.j_spare_02.present? %>
+            <em>헤어볼</em>
+          <% end %>
+          <% if @jibsa.j_spare_03.present? %>
+            <em>체중조절</em>
+          <% end %>
+          <% if @jibsa.j_spare_04.present? %>
+            <em>소화기능&변냄새</em>
+          <% end %>
+          <% if @jibsa.j_spare_05.present? %>
+            <em>피부&모질 개선</em>
+          <% end %>
+          <% if @jibsa.j_spare_06.present? %>
+            <em>뼈&관절 건강</em>
+          <% end %>
+          <% if @jibsa.j_spare_07.present? %>
+            <em>치석&구강 건강</em>
+          <% end %>
+          <% if @jibsa.j_spare_08.present? %>
+            <em>눈물&눈 건강</em>
+          <% end %>
+          <% if @jibsa.j_spare_09.present? %>
+            <em>비뇨계</em>
+          <% end %>
+          <% if @jibsa.j_spare_10.present? %>
+            <em>신장&심부전</em>
+          <% end %>
+        </li>
+        <% if @jibsa.j_option_04.present? %>
+          <li>
+            <% if @jibsa.j_option_04 == 401 %>
+              <em>임신&출산&수유</em>
+            <% elsif @jibsa.j_option_04 == 402 %>
+              <em>중성화 수술</em>
+            <% end %>
+          </li>
+        <% end %>
+        <% if @jibsa.j_option_05.present? %>
+          <li>
+            <% if @jibsa.j_option_05 == 501 %>
+              <em>LID</em>
+            <% elsif @jibsa.j_option_05 == 502 %>
+              <em>가수분해단백질</em>
+            <% elsif @jibsa.j_option_05 == 503 %>
+              <em>그레인프리</em>
+            <% elsif @jibsa.j_option_05 == 504 %>
+              <em>글루틴프리</em>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div> 
+  <br><br><br>
+  <div class="nutrition_box detail_nutri clearfix">
 
-    <%= @jibsa.j_description %>
-    <%= @jibsa.j_spare_31 %>
+    <p class="info_title">중요 성분비율</p>
+    <div class="important clearfix">
+      <div class="left comm">
+         <ul>
+          <li>성분</li>
+          <li>조단백질</li>
+          <li>조지방</li>
+          <li>칼슘</li>
+          <li>인</li>
+          <!-- <li>조회분</li>
+          <li>조섬유</li> -->
+          <li>수분</li>
+        </ul>
+      </div>
 
-  </div><!--ingredient_box-->
+      <div class="mid comm">
+        <ul>
+          <li>수분 포함</li>
+          <li>35%</li>
+          <li>26%</li>
+          <li>1.29%</li>
+          <li>1.09%</li>
+          <!-- <li>7.83%</li>
+          <li>2.01%</li> -->
+          <li>10%</li>
+        </ul>
+      </div>
 
-  <div class="general review">
-    총평
+      <div class="right comm">
+        <ul>
+          <li>수분 제거</li>
+          <li>
+            <% dm_protein = 0 %>
+            <% dm_protein =  100 * @jibsa.j_option_11.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+            <%= number_to_percentage(dm_protein, precision: 2) %>
+          </li>
+          <li>
+            <% dm_fat = 0 %>
+            <% dm_fat =  100 * @jibsa.j_option_14.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+            <%= number_to_percentage(dm_fat, precision: 2) %>
+          </li>
+          <li>
+            <% dm_calcium = 0 %>
+            <% dm_calcium =  100 * @jibsa.j_option_15.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+            <%= number_to_percentage(dm_calcium, precision: 2) %>
+          </li>
+          <li>
+            <% dm_phosphorus = 0 %>
+            <% dm_phosphorus =  100 * @jibsa.j_option_16.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+            <%= number_to_percentage(dm_phosphorus, precision: 2) %>
+          </li>
+          <!-- <li>1.29%</li>
+          <li>1.09%</li> -->
+          <li>0%</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="carbo_ratio ">
+      <h3>
+        <!-- 탄수화물 함량 = 100 -( 조단백질+조지방+수분+조회분 ) -->
+        탄수화물 함류량:
+        <% carbo_blance = 0 %>
+        <% carbo_blance =  100 - @jibsa.j_option_11.to_f - @jibsa.j_option_14.to_f - @jibsa.j_option_12.to_f - @jibsa.j_option_17.to_f - @jibsa.j_option_18.to_f %>
+
+        <!-- 권장 함량과의 차이 20 보다 높을 때-->
+        <% over_twenty = 0 %> 
+        <% over_twenty = carbo_blance - 20 %>
+
+        <!-- 권장 함량과의 차이 20 보다 높을 때-->
+        <% under_twenty = 0 %> 
+        <% under_twenty = 20 - carbo_blance  %>
+
+        <% if carbo_blance > 20 %>
+          <span>탄수화물 함량이 <%= number_to_percentage(carbo_blance, precision: 2) %>로 권장 탄수화물 함량인 20% 보다 <%= number_to_percentage(over_twenty, precision: 2) %> 높아요.</span>
+        <% elsif carbo_blance < 20 %>
+          <span>탄수화물 함량이 <%= number_to_percentage(carbo_blance, precision: 2) %>로 권장 탄수화물 함량인 20% 보다 <%= number_to_percentage(under_twenty, precision: 2) %> 낮아요.</span>
+        <% end %>
+      </h3>
+    </div>
+
+    <div class="ca_phos_ratio">
+      <h3>
+        <!-- 칼슘 함량 -->
+        <% calcium_ratio = 0 %>
+        <% calcium_ratio = ( @jibsa.j_option_19.to_f * 1000 ) * @jibsa.j_option_15.to_f / 100  %>
+        칼슘 함량: <%= number_with_precision(calcium_ratio, precision: 0) %>g
+      </h3>
+
+      <h3>
+        <!-- 인 함량 -->
+        <% phosphorus_ratio = 0 %>
+        <% phosphorus_ratio = ( @jibsa.j_option_19.to_f * 1000 ) * @jibsa.j_option_16.to_f / 100  %>
+        인 함량: <%= number_with_precision(phosphorus_ratio, precision: 0) %>g
+      </h3>
+
+       <h3>
+        <!-- 인 비율 -->
+        <% ca_phos_ratio = 0 %>
+        <% ca_phos_ratio = phosphorus_ratio / calcium_ratio %>
+        인 비율: <%= number_with_precision(ca_phos_ratio, precision: 2) %>
+      </h3>
+
+      <h3>
+        <!-- 칼슘:인 비율 -->
+        칼슘:인 비율:: 1 : <%= number_with_precision(ca_phos_ratio, precision: 2) %>
+      </h3>
+    </div><br/><br/>
+
+    <div class="kcal_balnace">
+      <h3>100g당 PFC 칼로리</h3>
+      <div class="clearfix">
+        <p>
+          조단백질
+          <% protein_kcal = 0 %>
+          <% protein_kcal =  @jibsa.j_option_11.to_f * 3.5 %>
+          <span><%= number_with_precision(protein_kcal, precision: 2) %> kcal</span>
+        </p>
+        <p>
+          조지방
+          <% fat_kcal = 0 %>
+          <% fat_kcal =  @jibsa.j_option_14.to_f * 8.5 %>
+          <span><%= number_with_precision(fat_kcal, precision: 2) %> kcal</span>
+        </p>
+        <p>
+          탄수화물
+          <% carbo_kcal = 0 %>
+          <% carbo_kcal =  carbo_blance * 3.5 %>
+          <span><%= number_with_precision(carbo_kcal, precision: 2) %> kcal</span>
+        </p>
+      </div>
+      <h4>
+        총 칼로리:
+        <% total_kcal = 0 %>
+        <% total_kcal = protein_kcal + fat_kcal + carbo_kcal %>
+        <span><%= number_with_precision(total_kcal, precision: 2) %> kcal</span>
+      </h4>
+    </div>
+
+    <div class="nutrient_balnace">
+      <h3>100g당 PFC 비율</h3>
+      <div class="clearfix">
+        <p>
+          조단백
+          <% protien_nutrient = 0 %>
+          <% protien_nutrient = (protein_kcal / total_kcal) * 100 %>
+          <span><%= number_to_percentage(protien_nutrient, precision: 2) %></span>
+        </p>
+        <p>
+          조지방
+          <% fat_nutrient = 0 %>
+          <% fat_nutrient = (fat_kcal / total_kcal) * 100 %>
+          <span><%= number_to_percentage(fat_nutrient, precision: 2) %></span>
+        </p>
+        <p>
+          탄수화물
+          <% carbo_nutrient = 0 %>
+          <% carbo_nutrient = (carbo_kcal / total_kcal) * 100 %>
+          <span><%= number_to_percentage(carbo_nutrient, precision: 2) %></span>
+        </p>
+      </div>
+    </div>
   </div>
 
 
-</div><!-- detail_wrap -->
+</div>
 <br>
 <br>
-
-
-
-<!-- 주원료, 알러지 가능성 및 주의 성분 탭 메뉴 -->
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-        e.preventDefault();
-        $(this).siblings('a.active').removeClass("active");
-        $(this).addClass("active");
-        var index = $(this).index();
-        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-    });
-  });
-</script>
-
-<!-- 차트 -->
-<script type="text/javascript">
-  // Produces width of .barChart
-  $(document).ready(function() {
-    $('.graph-bar').each(function() {
-       var dataWidth = $(this).data('value');
-       $(this).css("width", dataWidth + "%");
-    });
-  });
-</script>
-
-
-<!-- 영양소 탭 메뉴 -->
-<script type="text/javascript">
-  // Tabs Action
-    const tabLink = document.querySelectorAll(".tab-menu-link");
-    const tabContent = document.querySelectorAll(".tab-bar-content");
-
-    tabLink.forEach((item) => {
-      item.addEventListener("click", activeTab);
-    });
-
-    function activeTab(item) {
-      const btnTarget = item.currentTarget;
-      const content = btnTarget.dataset.content;
-
-      tabContent.forEach((item) => {
-        item.classList.remove("is-active");
-      });
-
-      tabLink.forEach((item) => {
-        item.classList.remove("is-active");
-      });
-
-      document.querySelector("#" + content).classList.add("is-active");
-      btnTarget.classList.add("is-active");
-    }
-
-</script>

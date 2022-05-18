@@ -52,7 +52,7 @@
 .horizontal-menu .horizontal-menu-link{display:block;color:inherit;text-decoration:none;padding:10px 5px}
 
 
-.index_wrap{margin:30px auto;border-radius:25px;overflow:hidden;padding:2rem;background-color:#fff;position:relative;z-index:1;/*box-shadow:0 0 0 10px var(--c-gray-300),0 0 0 11px var(--c-gray-200);*/box-shadow:3px 3px 15px rgb(0 0 0 / 10%);}
+.index_wrap{margin:30px auto;border-radius:25px;overflow:hidden;padding:2rem;background-color:#fff;position:relative;z-index:1;/*box-shadow:0 0 0 10px var(--c-gray-300),0 0 0 11px var(--c-gray-200);*/box-shadow:3px 3px 15px rgba(0,0,0,0.1);}
 .index_wrap img{display:block;max-width:100%;}
 .index_wrap input, .index_wrap button{font:inherit;}
 /*.header{display:grid;align-items:center;justify-content:space-between;margin-bottom:1.5rem;grid-template-columns:1fr 2fr 1fr}*/

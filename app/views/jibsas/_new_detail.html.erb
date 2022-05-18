@@ -216,7 +216,7 @@
                   <h3>AAFCO 성숙기(성묘) 기준</h3>
                   <p>JellyPaw는 미국사료관리협회인 AAFCO가 제시하는 필수 영양소의 최소 요구량을 기준으로 영양성분을 분석하여 결과를 알려드립니다.</p>
                 <% end %>
-                
+
                 <div class="tab">
                   <div class="tab-menu">
                     <button class="tab-menu-link is-active" data-content="item-1">
@@ -372,92 +372,7 @@
     <br/><br/>
 
 
-    <% protein_kcal = 0 %>
-    <% protein_kcal =  @jibsa.j_option_11.to_f * 3.5 %>
-    <% fat_kcal = 0 %>
-    <% fat_kcal =  @jibsa.j_option_14.to_f * 8.5 %>
-    <% carbo_kcal = 0 %>
-    <% carbo_kcal =  carbo_blance * 3.5 %>
-    <% total_kcal = 0 %>
-    <% total_kcal = protein_kcal + fat_kcal + carbo_kcal %>
-
-    <div class="slide_tab">
-      <input type="radio" id="core_ingre" name="tab" checked hidden/>
-      <input type="radio" id="allergic_potential" name="tab" hidden/>
-      <input type="radio" id="caution_ingredient" name="tab" hidden/>
-      <div class="slide_tab__menu">
-        <label class="slide_tab__menu-item" for="core_ingre">탄단지 비율</label>
-        <label class="slide_tab__menu-item" for="allergic_potential">탄단지 칼로리</label>
-        <label class="slide_tab__menu-item" for="caution_ingredient">주의 성분</label>
-      </div>
-      <div class="slide_tab__content">
-
-        <div class="slide_tab__content-item" data-tab="core_ingre">
-
-          <div class="nutrient_balnace">
-            <h3>100g당 탄단지(탄수화물,단백질,지방) 비율</h3>
-            <div class="clearfix">
-              <div class="nutri_box">
-                <p>조단백질</p>
-                <% protien_nutrient = 0 %>
-                <% protien_nutrient = (protein_kcal / total_kcal) * 100 %>
-                <span><%= number_to_percentage(protien_nutrient, precision: 2) %></span>
-              </div>
-              <div class="nutri_box">
-                <p>조지방</p>
-                <% fat_nutrient = 0 %>
-                <% fat_nutrient = (fat_kcal / total_kcal) * 100 %>
-                <span><%= number_to_percentage(fat_nutrient, precision: 2) %></span>
-              </div>
-              <div class="nutri_box">
-                <p>탄수화물</p>
-                <% carbo_nutrient = 0 %>
-                <% carbo_nutrient = (carbo_kcal / total_kcal) * 100 %>
-                <span><%= number_to_percentage(carbo_nutrient, precision: 2) %></span>
-              </div>
-            </div>
-            <br />
-            <%= pie_chart [ ["조단백질", number_to_percentage(protien_nutrient, precision: 2)], ["조지방", number_to_percentage(fat_nutrient, precision: 2)], ["탄수화물", number_to_percentage(carbo_nutrient, precision: 2)]], colors: ["#ff4729", "#ff9617", "#ffd34d"] %>
-          </div>  
-          
-        </div>
-
-        <div class="slide_tab__content-item" data-tab="allergic_potential">
-
-          <div class="kcal_balnace">
-            <h3>100g당 탄단지(탄수화물,단백질,지방) 칼로리</h3>
-            <div class="clearfix">
-              <div class="nutri_box">
-                <p>조단백질</p>
-                <span><%= number_with_precision(protein_kcal, precision: 2) %> kcal</span>
-              </div>
-              <div class="nutri_box">
-                <p>조지방</p>
-                <span><%= number_with_precision(fat_kcal, precision: 2) %> kcal</span>
-              </div>
-              <div class="nutri_box">
-                <p>탄수화물</p>
-                <span><%= number_with_precision(carbo_kcal, precision: 2) %> kcal</span>
-              </div>
-              
-            </div>
-            <h4>
-              총 칼로리:
-              <span><%= number_with_precision(total_kcal, precision: 2) %> kcal</span>
-            </h4>
-            <div class="bar_chart">
-              <%= bar_chart [["조단백질", protein_kcal], ["조지방", fat_kcal], ["탄수화물", carbo_kcal], ["총 칼로리", total_kcal]], colors: ["#ff4729", "#ff9617", "#ffd34d", "#00f522"] %>
-            </div>
-          </div>
-
-        </div>
-        <div class="slide_tab__content-item" data-tab="caution_ingredient">
-          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h3>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officiis ipsam quas animi, quam eum quae eius veniam consequuntur aliquam odit similique et numquam sed nihil suscipit voluptatem, cupiditate, blanditiis reprehenderit.</p>
-          <img src="https://source.unsplash.com/600x240" alt="">
-        </div>
-      </div>
-    </div><!-- slide_tab -->
+  
 
      
     <div class="nutri_analysis">

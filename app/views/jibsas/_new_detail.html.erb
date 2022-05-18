@@ -372,7 +372,68 @@
     <br/><br/>
 
 
-  
+    <% protein_kcal = 0 %>
+    <% protein_kcal =  @jibsa.j_option_11.to_f * 3.5 %>
+    <% fat_kcal = 0 %>
+    <% fat_kcal =  @jibsa.j_option_14.to_f * 8.5 %>
+    <% carbo_kcal = 0 %>
+    <% carbo_kcal =  carbo_blance * 3.5 %>
+    <% total_kcal = 0 %>
+    <% total_kcal = protein_kcal + fat_kcal + carbo_kcal %>
+
+     <div class="nutrient_balnace">
+        <h3>100g당 탄단지(탄수화물,단백질,지방) 비율</h3>
+        <div class="clearfix">
+          <div class="nutri_box">
+            <p>조단백질</p>
+            <% protien_nutrient = 0 %>
+            <% protien_nutrient = (protein_kcal / total_kcal) * 100 %>
+            <span><%= number_to_percentage(protien_nutrient, precision: 2) %></span>
+          </div>
+          <div class="nutri_box">
+            <p>조지방</p>
+            <% fat_nutrient = 0 %>
+            <% fat_nutrient = (fat_kcal / total_kcal) * 100 %>
+            <span><%= number_to_percentage(fat_nutrient, precision: 2) %></span>
+          </div>
+          <div class="nutri_box">
+            <p>탄수화물</p>
+            <% carbo_nutrient = 0 %>
+            <% carbo_nutrient = (carbo_kcal / total_kcal) * 100 %>
+            <span><%= number_to_percentage(carbo_nutrient, precision: 2) %></span>
+          </div>
+        </div>
+        <br />
+        <%= pie_chart [ ["조단백질", number_to_percentage(protien_nutrient, precision: 2)], ["조지방", number_to_percentage(fat_nutrient, precision: 2)], ["탄수화물", number_to_percentage(carbo_nutrient, precision: 2)]], colors: ["#ff4729", "#ff9617", "#ffd34d"] %>
+      </div>  
+
+      <div class="kcal_balnace">
+        <h3>100g당 탄단지(탄수화물,단백질,지방) 칼로리</h3>
+        <div class="clearfix">
+          <div class="nutri_box">
+            <p>조단백질</p>
+            <span><%= number_with_precision(protein_kcal, precision: 2) %> kcal</span>
+          </div>
+          <div class="nutri_box">
+            <p>조지방</p>
+            <span><%= number_with_precision(fat_kcal, precision: 2) %> kcal</span>
+          </div>
+          <div class="nutri_box">
+            <p>탄수화물</p>
+            <span><%= number_with_precision(carbo_kcal, precision: 2) %> kcal</span>
+          </div>
+          
+        </div>
+        <h4>
+          총 칼로리:
+          <span><%= number_with_precision(total_kcal, precision: 2) %> kcal</span>
+        </h4>
+        <div class="bar_chart">
+          <%= bar_chart [["조단백질", protein_kcal], ["조지방", fat_kcal], ["탄수화물", carbo_kcal], ["총 칼로리", total_kcal]], colors: ["#ff4729", "#ff9617", "#ffd34d", "#00f522"] %>
+        </div>
+      </div>
+
+   
 
      
     <div class="nutri_analysis">

@@ -28,7 +28,16 @@
                 
                 <em><%= render 'jibsas/codes_brand' %></em>                
                 <h2><%= @jibsa.j_title %></h2>
-
+                <p><% if @jibsa.j_option_02 == 201 %>
+                      <span>키튼(1세 미만)</span>
+                    <% elsif @jibsa.j_option_02 == 202 %>
+                      <span>어덜트(1세 ~ 7세)</span>
+                    <% elsif @jibsa.j_option_02 == 203 %>
+                      <span>시니어(7세 이상)</span>
+                    <% elsif @jibsa.j_option_02 == 204 %>
+                      <span>전연령용</span>
+                    <% end %>
+                </p>
                
                 
                 <p class="hashtag"><%= render_with_jhashtags(@jibsa.j_hashtag) %></p>

@@ -11,7 +11,7 @@
 
 .index_box .index_right{float:left;width:60%;padding:15px 10px;height:100%;overflow-x:hidden;overflow-y:auto;-ms-overflow-style:none;/* IE and Edge */scrollbar-width:none; /* Firefox */}
 .index_box .index_right::-webkit-scrollbar{display:none;}
-.index_box .index_right .index_wrap{margin:0;padding:1rem;}
+.index_box .index_right .index_wrap{margin:0;padding:1.5rem;}
 .index_box .index_right .index_wrap .navigation{white-space:nowrap;overflow-x:scroll;}
 .index_box .index_right .index_wrap .navigation::-webkit-scrollbar{display:none;}
 .index_box .index_right .index_wrap .navigation-item+.navigation-item, .index_box .index_right .index_wrap .navigation-item{margin:0 15px 0 0;padding:5px 10px;background:#f9bc73;border-radius:15px;}
@@ -33,7 +33,7 @@
   .index_box{width:100%;margin:0;}
   .index_box .index_left{display:none;}
   .index_box .index_right{float:none;width:100%;margin:0;}
-  .index_box .index_right .index_wrap{padding:5px;}
+  .index_box .index_right .index_wrap{padding:10px;}
   .index_box .index_right .show_index .show_card .inner_section{margin:0;}
   .index_box .index_right .index_wrap .trending{display:block;margin-top:15px;}
   .index_box .index_right .index_wrap .trending a{background:#000;color:#fff;padding:7px 10px;border-radius:20px;font-size:20px;}

@@ -1,0 +1,27 @@
+<div class="ca_phos_ratio">
+  <!-- 칼슘:인 비율 -->
+  <h3>칼슘과 인의 비율 1 : <%= number_with_precision(dm_ca_phos_ratio, precision: 2) %></h3>
+  <p>AAFCO 칼슘과 인 최소 비율인 1:1을 충족해요.</p>
+</div>  
+
+<div class="carbo_ratio ">
+  
+    <!-- 탄수화물 함량 = 100 -( 조단백질+조지방+수분+조회분+조섬유 ) -->
+    
+    <h3>탄수화물 함류량 <%= number_to_percentage(carbo_blance, precision: 2) %></h3>
+
+    <!-- 권장 함량과의 차이 20 보다 높을 때-->
+    <% over_twenty = 0 %> 
+    <% over_twenty = carbo_blance - 35 %>
+
+    <!-- 권장 함량과의 차이 20 보다 높을 때-->
+    <% under_twenty = 0 %> 
+    <% under_twenty = 35 - carbo_blance  %>
+
+    <% if carbo_blance > 35 %>
+      <p>탄수화물 함량이 <%= number_to_percentage(carbo_blance, precision: 2) %>로 건식사료 평균 탄수화물 함량인 35.00% 보다 <%= number_to_percentage(over_twenty, precision: 2) %> 높아요.</p>
+    <% elsif carbo_blance < 35 %>
+      <p>탄수화물 함량이 <%= number_to_percentage(carbo_blance, precision: 2) %>로 건식사료 평균 탄수화물 함량인 35.00% 보다 <%= number_to_percentage(under_twenty, precision: 2) %> 낮아요.</p>
+    <% end %>
+
+</div>

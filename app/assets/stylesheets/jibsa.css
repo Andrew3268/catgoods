@@ -76,8 +76,8 @@
 
 .detail_wrap .nutrition_box .ratio_box .comm_ratio{color:#fff;font-weight:bold;height:110px;border-radius:20px;padding:15px 20px;position:relative;}
 .detail_wrap .nutrition_box .ratio_box .comm_ratio p{margin:0 !important;font-size:30px !important;position:absolute;bottom:10px;}
-.detail_wrap .nutrition_box .ratio_box .left_ratio{float:left;width:45%;margin-right:5%;background:#ff9617;}
-.detail_wrap .nutrition_box .ratio_box .right_ratio{float:left;width:45%;margin-left:5%;background:#ffd34d;}
+.detail_wrap .nutrition_box .ratio_box .left_ratio{float:left;width:48%;margin-right:1%;background:#ff9617;}
+.detail_wrap .nutrition_box .ratio_box .right_ratio{float:left;width:48%;margin-left:1%;background:#ffd34d;}
 
 
 .detail_wrap .nutrition_box .nutri_analysis{margin:20px 0;text-align:left;border-radius:20px;padding:15px;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;}
@@ -87,14 +87,14 @@
 .detail_wrap .nutrition_box .nutri_analysis ul li em{font-weight:bold;}
 
 .detail_wrap .nutrition_box .kcal_balnace{margin-bottom:20px;padding:15px;}
-.detail_wrap .nutrition_box .kcal_balnace .nutri_box{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
+.detail_wrap .nutrition_box .kcal_balnace .nutri_box{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;color:#3d3d3d;}
 .detail_wrap .nutrition_box .kcal_balnace .nutri_box p{margin:0 !important;}
 .detail_wrap .nutrition_box .kcal_balnace .nutri_box p span{display:block;color:#70dc70;margin-top:3px;}
-.detail_wrap .nutrition_box .kcal_balnace h4{display:inline-block;width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:20px;margin-top:5px;}
-.detail_wrap .nutrition_box .kcal_balnace h4 span{color:#70dc70;}
+.detail_wrap .nutrition_box .kcal_balnace h4{display:inline-block;width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:20px;margin-top:5px;color:#3d3d3d;font-weight:100;}
+.detail_wrap .nutrition_box .kcal_balnace h4 span{}
 
 .detail_wrap .nutrition_box .nutrient_balnace{margin-bottom:20px;border-radius:20px;padding:15px;}
-.detail_wrap .nutrition_box .nutrient_balnace .nutri_box{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;}
+.detail_wrap .nutrition_box .nutrient_balnace .nutri_box{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;color:#3d3d3d;}
 .detail_wrap .nutrition_box .nutrient_balnace .nutri_box p{margin:0 !important;}
 .detail_wrap .nutrition_box .nutrient_balnace .nutri_box p span{display:block;color:#70dc70;margin-top:3px;}
 
@@ -103,7 +103,7 @@
 .detail_wrap .nutrition_box .nutri_report{}
 .detail_wrap .nutrition_box .nutri_report table{float:left;width:46%;margin:0 2%;}
 .detail_wrap .nutrition_box .nutri_report table td{padding:1em 0 0 0;vertical-align:bottom;background-image:radial-gradient(black 1px,#fff 0);background-size:8px 8px;background-repeat:repeat-x;background-position:left bottom;}
-.detail_wrap .nutrition_box .nutri_report table td span{background-color:#fff;}
+.detail_wrap .nutrition_box .nutri_report table td span{background-color:#fff;font-size:12px;}
 .detail_wrap .nutrition_box .nutri_report table td span em{background: #ff4d4d;padding:7px;border-radius:50%;position:absolute;bottom:0;left:-3px;opacity:0.3;}
 .detail_wrap .nutrition_box .nutri_report table td span.over{color:#00ff80;}
 .detail_wrap .nutrition_box .nutri_report table td span.lower{color:#ff4d4d;}
@@ -113,12 +113,12 @@
 .detail_wrap .nutrition_box .nutri_report table td:last-child span{padding-left:.25em;}
 .nutrition_box .container{max-width:75rem;height:auto;margin:0 auto;}
 
-/* 영양성분 탭 매뉴 */
+/* 영양성분 테이블 탭 매뉴 */
 .nutrition_box .main .tab_container{margin-top:50px;}
 .nutrition_box .main .tab_container p{text-align:left;margin-bottom:20px;}
 .nutrition_box .main .tab{width:100%;height:auto;padding:0;}
 .nutrition_box .main .tab-menu{display:flex;flex-direction:row;align-items:center;max-width:100%;height:auto;margin:0 auto;transition:all .3s ease;}
-.nutrition_box .main .tab-menu-link{position:relative;overflow:hidden;font-family:inherit;font-size:1rem;font-weight:600;line-height:inherit;cursor:pointer;width:calc(100% / 4);height:auto;padding:.5rem 0;border-bottom:2.5px solid transparent;color:#9194a1;background:#fff;transition:all .3s ease;}
+.nutrition_box .main .tab-menu-link{position:relative;overflow:hidden;font-family:inherit;font-size:1rem;font-weight:600;line-height:inherit;cursor:pointer;/*width:calc(100% / 4);*/width:50%;height:auto;padding:.5rem 0;border-bottom:2.5px solid transparent;color:#9194a1;background:#fff;/*transition:all .3s ease;*/}
 .nutrition_box .main .tab-menu-link::before{position:absolute;content:"";top:0;left:0;width:100%;height:auto;z-index:2;}
 .nutrition_box .main .tab-menu-link.is-active{bottom:0;z-index:0;overflow:hidden;border-bottom:2.5px solid #fa5757;color:#252b46;background:#fff;}
 .nutrition_box .main .tab-bar{padding:.5rem 0;overflow:hidden;background:#fff;}
@@ -173,17 +173,16 @@
 
 
 /* 탄단지 비율 탭 메뉴 */
-.slide_tab{margin-top:30px;width:100%;}
-.slide_tab__menu{display:flex;flex-wrap:wrap;border-bottom:2px solid #ddd;}
-.slide_tab__menu-item{flex:1;padding:8px;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;text-align:center;color:#999;box-shadow:0 2px 0 transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;transition:.3s;}
-.slide_tab__content{padding:20px 5px;}
-.slide_tab__content-item{height:0;overflow:hidden;line-height:1.4;opacity:0;transform:translateY(-20px);visibility:hidden;transition:.3s;}
-input[id=core_ingre]:checked ~ .slide_tab__menu .slide_tab__menu-item[for=core_ingre]{background:#ccc;color:#fff;}
-input[id=core_ingre]:checked ~ .slide_tab__content .slide_tab__content-item[data-tab=core_ingre]{height: auto;opacity: 1;transform: translateY(0);visibility: visible;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:20px;}
-input[id=allergic_potential]:checked ~ .slide_tab__menu .slide_tab__menu-item[for=allergic_potential]{background:#ccc;color:#fff;}
-input[id=allergic_potential]:checked ~ .slide_tab__content .slide_tab__content-item[data-tab=allergic_potential]{height: auto;opacity: 1;transform: translateY(0);visibility: visible;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:20px;}
-input[id=caution_ingredient]:checked ~ .slide_tab__menu .slide_tab__menu-item[for=caution_ingredient]{background:#ccc;color:#fff;}
-input[id=caution_ingredient]:checked ~ .slide_tab__content .slide_tab__content-item[data-tab=caution_ingredient]{height: auto;opacity: 1;transform: translateY(0);visibility: visible;box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;border-radius:20px;}
+.pfc_report{width:100%;}
+.pfc_report__menu{display:flex;flex-wrap:wrap;}
+.pfc_report__menu-item{flex:1;padding:.5rem;font-size:1rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;text-align:center;color:#999;box-shadow:0 2px 0 transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;}
+.pfc_report__content{padding:18px 0;}
+.pfc_report__content-item{height:0;overflow:hidden;line-height:1.4;opacity:0;}
+input[id=tab_01]:checked~.pfc_report__menu .pfc_report__menu-item[for=tab_01]{bottom:0;z-index:0;overflow:hidden;border-bottom:2.5px solid #fa5757;color:#252b46;background:#fff;}
+input[id=tab_01]:checked~.pfc_report__content .pfc_report__content-item[data-tab=tab_01]{height:auto;opacity:1;transform:translateY(0);visibility:visible;}
+input[id=tab_02]:checked~.pfc_report__menu .pfc_report__menu-item[for=tab_02]{bottom:0;z-index:0;overflow:hidden;border-bottom:2.5px solid #fa5757;color:#252b46;background:#fff;}
+input[id=tab_02]:checked~.pfc_report__content .pfc_report__content-item[data-tab=tab_02]{height:auto;opacity:1;transform:translateY(0);visibility:visible}
+
 
 
 /* 주원료, 알러지 가능성 및 주의 성분 탭 메뉴 */
@@ -214,22 +213,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){display:none;}
 .index_box .index_right .index_menu .menu_box .inner p{padding:20px;}
 .index_box .index_right .index_menu .menu_box .inner a{display:block;width:60%;border:1px solid #ccc;border-radius:10px;padding:10px;text-align:center;margin:0 20%;margin-top:50px;}
 
-
-
-
-
-
 /** 필수 영양소 그래프 **/
-/* Mixings &  Variables */
-/*.clearfix,
-.clearfix:before,
-.clearfix:after {
-  display: block;
-  content: " ";
-  clear: both;
-  zoom: 1;
-}*/
-
 
 /* Resets */
 .graph_wrap{margin:0 auto;padding:10px 25px;max-width:1200px;background:#ff4729;color:#fff;border-radius:20px;margin-bottom:20px;}
@@ -262,6 +246,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){display:none;}
 .lineChart circle:hover{stroke-width:8;}
 .lineChart line{stroke:#717D95;stroke-width:4;}
 .trend line{stroke:rgba(204,51,51,0.8)}
+
 
 
 

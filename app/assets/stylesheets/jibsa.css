@@ -54,7 +54,7 @@
 .detail_wrap .detail_box .expection_effects{margin-top:20px;text-align:left;}
 .detail_wrap .detail_box .expection_effects p{border:1px solid #ccc;border-radius:20px;padding:5px 10px;display:inline-block;margin-top:5px !important;}
 
-
+.detail_wrap .nutrition_box{margin-top:70px;}
 .detail_wrap .nutrition_box .important{}
 .detail_wrap .nutrition_box .important .right{}
 .detail_wrap .nutrition_box .important .right ul{}
@@ -74,7 +74,8 @@
 .detail_wrap .nutrition_box .ca_phos_ratio h3{font-size:20px;color:#00cc00;font-weight:100;text-align:center;}
 .detail_wrap .nutrition_box .ca_phos_ratio p{font-size:13px;text-align:center;color:#00cc00;margin:0;}
 
-.detail_wrap .nutrition_box .ratio_box .comm_ratio{color:#fff;font-weight:bold;height:110px;border-radius:20px;padding:15px 20px;position:relative;}
+.detail_wrap .nutrition_box .ratio_wrap{margin-top:25px;}
+.detail_wrap .nutrition_box .ratio_box .comm_ratio{color:#fff;font-weight:bold;height:95px;border-radius:20px;padding:15px 20px;position:relative;}
 .detail_wrap .nutrition_box .ratio_box .comm_ratio p{margin:0 !important;font-size:30px !important;position:absolute;bottom:10px;right:10px;}
 .detail_wrap .nutrition_box .ratio_box .left_ratio{float:left;width:48%;margin-right:1%;background:#ff9617;}
 .detail_wrap .nutrition_box .ratio_box .right_ratio{float:left;width:48%;margin-left:1%;background:#ffd34d;}
@@ -90,7 +91,7 @@
 .detail_wrap .nutrition_box .kcal_balnace .nutri_box{float:left;width:31%;margin:1%;padding:10px;border-radius:20px;border:1px solid #e6e6e6;color:#3d3d3d;}
 .detail_wrap .nutrition_box .kcal_balnace .nutri_box p{margin:0 !important;}
 .detail_wrap .nutrition_box .kcal_balnace .nutri_box p span{display:block;color:#70dc70;margin-top:3px;}
-.detail_wrap .nutrition_box .kcal_balnace h4{display:inline-block;width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:20px;margin-top:5px;color:#3d3d3d;font-weight:100;}
+.detail_wrap .nutrition_box .kcal_balnace h4{display:inline-block;width:100%;padding:10px;border:1px solid #e6e6e6;border-radius:20px;margin:5px 0 15px 0;color:#3d3d3d;font-weight:100;}
 .detail_wrap .nutrition_box .kcal_balnace h4 span{}
 
 .detail_wrap .nutrition_box .nutrient_balnace{margin-bottom:20px;border-radius:20px;padding:15px;}
@@ -105,7 +106,7 @@
 .detail_wrap .nutrition_box .nutri_report table td{padding:1em 0 0 0;vertical-align:bottom;background-image:radial-gradient(black 1px,#fff 0);background-size:8px 8px;background-repeat:repeat-x;background-position:left bottom;}
 .detail_wrap .nutrition_box .nutri_report table td span{background-color:#fff;font-size:12px;}
 .detail_wrap .nutrition_box .nutri_report table td span em{background: #ff4d4d;padding:7px;border-radius:50%;position:absolute;bottom:0;left:-3px;opacity:0.3;}
-.detail_wrap .nutrition_box .nutri_report table td span.over{color:#00ff80;}
+.detail_wrap .nutrition_box .nutri_report table td span.over{color:#00e600;}
 .detail_wrap .nutrition_box .nutri_report table td span.lower{color:#ff4d4d;}
 .detail_wrap .nutrition_box .nutri_report table td:first-child{text-align:left;font-weight:700;width:20px;position:relative;}
 .detail_wrap .nutrition_box .nutri_report table td:first-child span{padding-right:.25em;}
@@ -124,6 +125,7 @@
 .nutrition_box .main .tab-bar{padding:.5rem 0;overflow:hidden;background:#fff;}
 .nutrition_box .main .tab-bar-content{display:none;width:100%;min-height:10rem;transition:all .3s ease;}
 .nutrition_box .main .tab-bar-content.is-active{display:block}
+.nutrition_box .main .tab-bar .description{border-top:2px solid #748593;border-bottom:3px solid #748593;color:#748593;padding:10px 5px;font-size:12px;}
 
 
 
@@ -144,14 +146,9 @@
 .inner_section .inner .basic_info{margin-bottom:5px;}
 
 .inner_section .inner .basic_info .bi_box{float:left;width:23%;margin:1%;}
-.inner_section .inner .basic_info .bi_box span{padding:15px 5px;border-radius:10px;width:100%;display:block;font-size:13px;background:rgba(139,128,248,0.5);color:#fff;box-shadow:rgba(0, 0, 0, 0.16) 0px 1px 4px;}
+.inner_section .inner .basic_info .bi_box span{padding:15px 5px;border-radius:10px;width:100%;display:block;font-size:13px;color:#748593;box-shadow:rgba(0, 0, 0, 0.16) 0px 1px 4px;}
 .inner_section .inner .basic_info .bi_box p.info_p{margin:5px 0 0 0;font-size:11.5px;}
 
-
-.inner_section .inner .basic_infomation{}
-.inner_section .inner .basic_infomation .infom_box{float:left;width:31.333%;margin:1%;border:1px solid #ccc;border-radius:15px;}
-.inner_section .inner .basic_infomation .infom_box span{border-bottom:1px solid #ccc;display:block;padding:7px;font-size:11px;border-top-left-radius:15px;border-top-right-radius:15px;background:#7b9acc;color:#FCF6F5;}
-.inner_section .inner .basic_infomation .infom_box p{padding:7px;margin:0 !important;font-size:12px !important;background-color:#FCF6F5;color:#7b9acc;border-bottom-left-radius:15px;border-bottom-right-radius:15px;}
 
 .brand_box{border:1px solid #ccc;padding:15px;border-radius:20px;margin:20px 0 0 0;}
 .brand_box .question{float:left;width:80%;text-align:left;font-size:13px;}
@@ -178,11 +175,14 @@
 .pfc_report__menu-item{flex:1;padding:.5rem;font-size:1rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;text-align:center;color:#999;box-shadow:0 2px 0 transparent;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;cursor:pointer;}
 .pfc_report__content{padding:18px 0;}
 .pfc_report__content-item{height:0;overflow:hidden;line-height:1.4;opacity:0;}
+.pfc_report__content-item .description{}
+.pfc_report__content-item .description p{font-size:13px;text-align:left;}
 input[id=tab_01]:checked~.pfc_report__menu .pfc_report__menu-item[for=tab_01]{bottom:0;z-index:0;overflow:hidden;border-bottom:2.5px solid #ff4729;color:#252b46;background:#fff;}
 input[id=tab_01]:checked~.pfc_report__content .pfc_report__content-item[data-tab=tab_01]{height:auto;opacity:1;transform:translateY(0);visibility:visible;}
 input[id=tab_02]:checked~.pfc_report__menu .pfc_report__menu-item[for=tab_02]{bottom:0;z-index:0;overflow:hidden;border-bottom:2.5px solid #ff4729;color:#252b46;background:#fff;}
 input[id=tab_02]:checked~.pfc_report__content .pfc_report__content-item[data-tab=tab_02]{height:auto;opacity:1;transform:translateY(0);visibility:visible}
-
+.pfc_report .description{border-top:2px solid #748593;border-bottom:3px solid #748593;color:#748593;padding:10px 5px;}
+.pfc_report .description p{font-size:12px !important;margin:0 !important;}
 
 
 /* 주원료, 알러지 가능성 및 주의 성분 탭 메뉴 */
@@ -223,7 +223,7 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){display:none;}
 .graph{position:relative;list-style-type:none;padding:0;margin:0;width:calc(100% - -100%);left:18%;}
 .graph-barBack{border-radius:2px;margin-bottom:10px;display:block;}
 .graph-bar{background-color:#fff;-webkit-transition:all 1s ease-out;-moz-transition:all 1s ease-out;-o-transition:all 1s ease-out;transition:all 1s ease-out;border-radius:2px;cursor:pointer;margin-bottom:10px;position:relative;z-index:9999;display:block;height:20px;width:0%;}
-.graph-bar:hover{-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;background:#428d92;}
+/*.graph-bar:hover{-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;background:#428d92;}*/
 .graph-bar:last-child{margin-bottom:0;}
 .graph-bar:after{position:absolute;content:attr(data-value);display:none;font-size:12px;border-radius:4px;background:rgba(0,0,0,.5);color:#fff;line-height:20px;height:20px;padding:0 10px;margin-left:5px;left:100%;top:0;}
 .graph-bar:hover:after{display:block;}
@@ -250,9 +250,44 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){display:none;}
 
 
 
-
-
-
-
-
-
+.ingredient_box .accordian_box{}
+.ingredient_box .accordian_box input[type="checkbox"]{display:none;}
+.ingredient_box .accordian_box label {
+  display: block;
+  padding:10px;
+  border-bottom: 1px solid #ccc;
+  font-size:16px;
+}
+.ingredient_box .accordian_box label:hover {
+  background: #fafafa;
+}
+.ingredient_box .accordian_box label:before {
+  display: block;
+  float: left;
+  margin-right: 0.75rem;
+  margin-top: -0.375em;
+  transform: rotate(180deg);
+  content: '^';
+  font-family: monospace, arial;
+  font-size: 1.5em;
+  font-weight: 900;
+  color: #ccc;
+}
+.ingredient_box .accordian_box .content {
+  overflow: hidden;
+  clear: both;
+  max-height: 0;
+  font-family: helvetica;
+  font-size: 1rem;
+  line-height: 1.4em;
+}
+.ingredient_box .accordian_box input[type="checkbox"]:checked ~ label:before {
+  content: '^';
+  margin-top: 0.125em;
+  transform: rotate(0);
+}
+.ingredient_box .accordian_box input[type="checkbox"]:checked ~ .content {
+  padding: 0.75rem 0.75rem 1.5rem;
+  border-bottom: 1px solid #ccc;
+  max-height: 999px; 
+}

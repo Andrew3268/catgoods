@@ -242,52 +242,53 @@ div.bhoechie-tab div.bhoechie-tab-content:not(.active){display:none;}
 .lines-vert:nth-of-type(8){left:80%;}
 .lineChart{-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;border-radius:3px;border:2px solid rgba(113,125,149,.45);position:relative;overflow:hidden;width:100%;height:300px;}
 .lineChart svg{position:absolute;z-index:999;}
-.lineChart circle{-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;position:relative;cursor:pointer;stroke:#59BAC0;stroke-width:3;fill:#59BAC0;}
+.lineChart circle{-webkit-transition:all .5s ease;-moz-transition:all .5s ease;-o-transition:all .5s ease;transition:all .5s ease;position:relati기e;cursor:pointer;stroke:#59BAC0;stroke-width:3;fill:#59BAC0;}
 .lineChart circle:hover{stroke-width:8;}
 .lineChart line{stroke:#717D95;stroke-width:4;}
 .trend line{stroke:rgba(204,51,51,0.8)}
 
 
 
-
+/* 영문표기 아코디언 메뉴 */
 .ingredient_box .accordian_box{}
+.ingredient_box .accordian_box .content{} 
+.ingredient_box .accordian_box .content .trix-content{font-size:12px;} 
 .ingredient_box .accordian_box input[type="checkbox"]{display:none;}
-.ingredient_box .accordian_box label {
-  display: block;
-  padding:10px;
-  border-bottom: 1px solid #ccc;
-  font-size:16px;
-}
-.ingredient_box .accordian_box label:hover {
-  background: #fafafa;
-}
-.ingredient_box .accordian_box label:before {
-  display: block;
-  float: left;
-  margin-right: 0.75rem;
-  margin-top: -0.375em;
-  transform: rotate(180deg);
-  content: '^';
-  font-family: monospace, arial;
-  font-size: 1.5em;
-  font-weight: 900;
-  color: #ccc;
-}
-.ingredient_box .accordian_box .content {
-  overflow: hidden;
-  clear: both;
-  max-height: 0;
-  font-family: helvetica;
-  font-size: 1rem;
-  line-height: 1.4em;
-}
-.ingredient_box .accordian_box input[type="checkbox"]:checked ~ label:before {
-  content: '^';
-  margin-top: 0.125em;
-  transform: rotate(0);
-}
-.ingredient_box .accordian_box input[type="checkbox"]:checked ~ .content {
-  padding: 0.75rem 0.75rem 1.5rem;
-  border-bottom: 1px solid #ccc;
-  max-height: 999px; 
-}
+.ingredient_box .accordian_box label{display:block;padding:10px;border-bottom:1px solid #ccc;font-size:13px;}
+.ingredient_box .accordian_box label:before{display:block;float:left;margin-right:.75rem;margin-top:-.375em;transform:rotate(180deg);content:'^';font-family:monospace,arial;font-size:1.5em;font-weight:900;color:#ccc;}
+.ingredient_box .accordian_box .content{overflow:hidden;clear:both;max-height:0;font-size:1rem;line-height:1.4em;}
+.ingredient_box .accordian_box input[type=checkbox]:checked~label:before{content:'^';margin-top:.125em;transform:rotate(0);}
+.ingredient_box .accordian_box input[type=checkbox]:checked~.content{padding:.75rem .75rem 1.5rem;border-bottom:1px solid #ccc;max-height:999px;}
+
+
+/* 수분제거 영양소 테이블 */
+.nutrition-table{text-align:left;border:3px solid #748593;border-right:0;border-left:0;border-collapse:collapse;color:#748593;font-weight:400;width:100%;}
+.nutrition-table .nutrition-table-title{text-transform:uppercase;font-size:1.4em;font-weight:600;letter-spacing:2px;}
+.nutrition-table tbody,.nutrition-table tr th{padding-top:.55em;padding-bottom:.55em;border-bottom:2px solid #748593;text-align:center;}
+.annotated:after{content:"*";position:absolute;}
+.servings-per-container{text-align:right;}
+.nutrition-table-heading-row, .nutrition-table-information-row{text-align:right;}
+.nutrition-table-heading-row td:first-child, .nutrition-table-heading-row th:first-child, .nutrition-table-information-row td:first-child, .nutrition-table-information-row th:first-child{text-align:center;}
+.nutrition-table-information-row:hover td{background-color:#d9cec8;}
+.nutrition-table-information-row td{padding-bottom:.26em;}
+.padrow td{font-size:.9em};
+.nutrition-table tfoot td{max-width:300px;padding:.5em 0 1em 0;line-height:1.3em;}
+
+
+/* 수분제거한 영양소 프로필 보기 */
+:root {--dark-gray: #444444;--light-gray: #c9c9c5;}
+.nutri_accordian{max-width:600px;width:100%;color:#b9b9b9;transition:all .2s cubic-bezier(.25, .8, .25, 1);font-weight:100;letter-spacing:.035em;font-size:14px;margin:0 auto;}
+.nutri_accordian ul>li{margin-bottom:8px;}
+.nutri_accordian ul>li:first-child h3{border-top:1px solid rgba(0,0,0,.1);}
+.nutri_accordian h3{cursor:pointer;background-color:#f7f9f9;padding:1.2rem 1rem 1rem 1.2rem;margin:0;border-bottom:1px solid rgba(0,0,0,.07);display:block;font-weight:100;letter-spacing:.035em;position:relative;font-size:18px;transition:all .2s cubic-bezier(.25, .8, .25, 1);box-shadow:0 1px 2px rgba(0,0,0,.24);border-radius:3px;}
+.nutri_accordian ul ul{display:none;height:100%;margin-bottom:-7px;}
+.nutri_accordian ul ul li{background-color:#fff;padding:1rem 1.8rem;color:var(--dark-gray);box-shadow:none;border-left:1px solid #dfdfdf;border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;}
+.nutri_accordian ul ul li p{opacity:0;transition:all .5s;transform:translatey(-20px);}
+.nutri_accordian ul ul.open p{opacity:1;transform:translatey(0);}
+.nutri_accordian .arrow{display:inline-block;width:13px;height:13px;border-top:2px solid var(--light-gray);border-right:2px solid var(--light-gray);transform:rotate(135deg);transform-origin:center;float:right;margin-right:8px;transition:transform .6s cubic-bezier(.175, .885, .32, 1);}
+.nutri_accordian .arrow.closed{margin-top:4px;transform:rotate(-45deg);border-top:2px solid var(--dark-gray);border-right:2px solid var(--dark-gray);}
+
+
+
+
+

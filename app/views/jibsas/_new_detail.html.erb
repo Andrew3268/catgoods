@@ -138,10 +138,8 @@
               </div>
             </div><!-- graph_wrap -->
 
-            
 
-
-            <main class="main">
+            <main class="main" style="display:none">
               <div class="tab_container">
                 <% if @jibsa.j_option_02 == 201 %>
                   <h3>AAFCO 임신·성장기 기준</h3>
@@ -367,6 +365,129 @@
               </div>
             </main>
 
+            <div>
+                <div class="nutri_accordian">  
+                  <ul> 
+                    <li> 
+                      <h3><span class="arrow"></span>자세히 보기</h3>
+                      <ul>
+                        <li>
+                            <table class="nutrition-table">
+                              <thead>
+                                <tr class="nutrition-table-title-row">
+                                  <th class="nutrition-table-title" colspan="4">
+                                    Nutritional Information    
+                                  </th><!-- .nutrition-table-heading -->
+                                </tr>
+                                <tr>
+                                  <th class="serving-size" colspan="2">
+                                    Serving size: 250ml
+                                  </th>
+                                  <th class="servings-per-container" colspan="2">
+                                    Servings Per Bottle: 4
+                                  </th>
+                                </tr>
+                                <tr class="nutrition-table-heading-row">
+                                  <th>
+                                    영양소
+                                  </th>
+                                  <th>
+                                    AAFCO 기준
+                                  </th>
+                                  <th>
+                                    라벨표시
+                                  </th>
+                                  <th>
+                                    
+                                    <span id="daily-intake-per-serv" class="annotated">수분제거</span>
+                                  </th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                <!-- <tr class="padrow"><td colspan="4">&nbsp;</td></tr> -->
+                                <tr class="nutrition-table-information-row">
+                                  <td>조단백질</td>
+                                  <td>0kJ</td>
+                                  <td>0%</td>
+                                  <td>0kJ</td>
+                                </tr>
+                                <tr class="nutrition-table-information-row">
+                                  <td>조지방</td>
+                                  <td>0g</td>
+                                  <td>0%</td>
+                                  <td>0g</td>
+                                </tr>
+                                <tr class="nutrition-table-information-row">
+                                  <td>칼슘</td>
+                                  <td>0g</td>
+                                  <td>0%</td>
+                                  <td>0g</td>
+                                </tr>
+                                <tr class="nutrition-table-information-row">
+                                  <td>인</td>
+                                  <td>0g</td>
+                                  <td>0%</td>
+                                  <td>0g</td>
+                                </tr>
+                                <tr class="nutrition-table-information-row">
+                                  <td>조회분</td>
+                                  <td>0g</td>
+                                  <td>0%</td>
+                                  <td>0g</td>
+                                </tr>    
+                                <tr class="nutrition-table-information-row">
+                                  <td>조섬유</td>
+                                  <td>0g</td>
+                                  <td>0%</td>
+                                  <td>0g</td>
+                                </tr>
+                                <tr class="nutrition-table-information-row">
+                                  <td>수분</td>
+                                  <td>0mg</td>
+                                  <td>0%</td>
+                                  <td>0mg</td>
+                                </tr>
+                                <tr class="nutrition-table-information-row">
+                                  <td>Calcium</td>
+                                  <td>0mg</td>
+                                  <td>(0%RDI*)</td>
+                                  <td>0mg</td>
+                                </tr>
+                                <!-- <tr class="padrow"><td colspan="4">&nbsp;</td></tr> -->
+                              </tbody>
+                              <tfoot>
+                                <td colspan="4">
+                                  *수분을 제거하고 다시 측정하는 이유에 대해서 여기에 적으면 될것 같음.
+                                </td>
+                              </tfoot>
+                          </table><!-- .nutrition-table -->
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div> 
+            </div>
+
+          
+
+            <div class="ratio_wrap clearfix">
+              <% ca_phos_ratio = 0 %>
+              <% ca_phos_ratio = @jibsa.j_option_16.to_f / @jibsa.j_option_15.to_f %>
+              <% carbo_blance = 0 %>
+              <% carbo_blance =  100 - @jibsa.j_option_11.to_f - @jibsa.j_option_14.to_f - @jibsa.j_option_12.to_f - @jibsa.j_option_17.to_f - @jibsa.j_option_18.to_f %>
+              <div class="ratio_box clearfix">
+                <div class="left_ratio comm_ratio">
+                  <h3>칼슘 인 비율</h3>
+                  <p>1 : <%= number_with_precision(ca_phos_ratio, precision: 2) %></p>
+                </div>
+                <div class="right_ratio comm_ratio">
+                  <h3>탄수화물 함량</h3>
+                  <p><%= number_to_percentage(carbo_blance, precision: 2) %></p>
+                </div>
+              </div>
+            </div>
+
+
       </div><!-- main-container -->
     </div><!-- nutrition_comparison -->
 
@@ -440,7 +561,40 @@
             </div><!--nutrient_balnace-->
 
              <div class="description">
-              <p><%= @jibsa.j_title %>(은)는 100g당 약<%= number_with_precision(total_kcal, precision: 2) %>칼로리를 가지고 있으며, 이는 옴뇸뇸 DB에 있는 다른 건식 고양이 사료의 평균에 비해 약간 더 많은 칼로리입니다. <br /> [ * AAFCO에서 제공한 가용성 탄수화물(NFE) 계산식 사용 ] </p>
+              <p><%= @jibsa.j_title %>(은)는 100g당 약 <%= number_with_precision(total_kcal, precision: 2) %> 칼로리를 가지고 있으며, 이는 옴뇸뇸 DB에 있는 다른 건식 고양이 사료의 평균에 비해 약간 더 많은 칼로리입니다. <br /> [ * AAFCO에서 제공한 가용성 탄수화물(NFE) 계산식 사용 ] </p>
+
+
+              <% if protien_nutrient > carbo_nutrient && protien_nutrient > fat_nutrient %>
+                조단백질이 가장 높아
+              <% elsif fat_nutrient > carbo_nutrient && fat_nutrient > protien_nutrient %> 
+                조지방이 가장 높아
+              <% elsif carbo_nutrient > fat_nutrient && carbo_nutrient > protien_nutrient %> 
+                탄수화물이 가낭 높아
+              <% end %>
+
+
+              <!-- <br/ >
+              <% if protien_nutrient > carbo_nutrient && protien_nutrient > fat_nutrient %>
+                조단백질이 가장 높아
+              <% else %> 
+                조단백질이 가장 높진 않아
+              <% end %>
+
+              <br/ >
+              <% if fat_nutrient > carbo_nutrient && fat_nutrient > protien_nutrient %>
+                조지방아 가장 높다
+              <% else %> 
+                조지방이 가장 높진 않아
+              <% end %>
+
+
+              <br/ >
+              <% if carbo_nutrient > fat_nutrient && carbo_nutrient > protien_nutrient %>
+                탄수화물이 가장 높다
+              <% else %> 
+                탄수화물이 가장 높진 않아
+              <% end %> -->
+
             </div>
             
           </div>
@@ -560,14 +714,11 @@
           <input type="checkbox" id="section1"/>
           <label for="section1">영문표기</label>
           <div class="content">
-          <p><%= @jibsa.j_spare_31 %></p>
+            <p><%= @jibsa.j_spare_31 %></p>
           </div>
         </section>
       </div>
     <% end %>
-
-
-   
 
 
     <div class="vertical_tab_container clearfix">
@@ -726,3 +877,24 @@
 
 </script>
 
+
+<!-- 수분제거한 영양소 프로필 보기 -->
+<script type="text/javascript">
+  $(function() { 
+    $('.nutri_accordian li').on('click', function() {
+      if ($(this).find('ul').hasClass('open')) {
+        $('ul.open').slideToggle().removeClass('open');
+        $('.nutri_accordian h3 span').removeClass('closed');
+        $('.nutri_accordian h3').removeClass('closed');
+      } else {
+        $('ul.open').slideToggle().removeClass('open');
+        $(this).find('ul').slideToggle().addClass('open');
+        $('.nutri_accordian h3, .nutri_accordian h3 span').removeClass('closed');
+        $(this).find('h3, h3 span').addClass('closed')
+      }
+    });
+    // Active class starts one open
+    $('.nutri_accordian li.active ul').slideDown().addClass('open');
+  });
+
+</script>

@@ -365,7 +365,25 @@
               </div>
             </main>
 
-            <div>
+            <div class="calibrated_report">
+                <!-- MD 조단백질 --->
+                <% dm_protein = 0 %>
+                <% dm_protein =  100 * @jibsa.j_option_11.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+                <!-- MD 조지방 --->
+                <% dm_fat = 0 %>
+                <% dm_fat =  100 * @jibsa.j_option_14.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+                <!-- MD 칼슘 --->
+                <% dm_calcium = 0 %>
+                <% dm_calcium =  100 * @jibsa.j_option_15.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+                <!-- MD 인 --->
+                <% dm_phosphorus = 0 %>
+                <% dm_phosphorus =  100 * @jibsa.j_option_16.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+                <!-- MD 조섬유 --->
+                <% dm_fiber = 0 %>
+                <% dm_fiber =  100 * @jibsa.j_option_17.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
+                <!-- MD 조회분 --->
+                <% dm_flour = 0 %>
+                <% dm_flour =  100 * @jibsa.j_option_18.to_f / (100 - @jibsa.j_option_12.to_f) * 4000 / @jibsa.j_option_13.to_f %>
                 <div class="nutri_accordian">  
                   <ul> 
                     <li> 
@@ -375,84 +393,127 @@
                             <table class="nutrition-table">
                               <thead>
                                 <tr class="nutrition-table-title-row">
-                                  <th class="nutrition-table-title" colspan="4">
-                                    Nutritional Information    
-                                  </th><!-- .nutrition-table-heading -->
+                                  <th class="nutrition-table-title" colspan="4">영양 정보</th><!-- .nutrition-table-heading -->
                                 </tr>
                                 <tr>
-                                  <th class="serving-size" colspan="2">
-                                    Serving size: 250ml
-                                  </th>
-                                  <th class="servings-per-container" colspan="2">
-                                    Servings Per Bottle: 4
-                                  </th>
+                                  <% if @jibsa.j_option_02 == 201 %>
+                                    <th class="serving-age" colspan="2">임신·성장기 기준</th>
+                                  <% else %>
+                                    <th class="serving-age" colspan="2">성묘 기준</th>
+                                  <% end %>
+                                  <th class="servings-per-container" colspan="2"></th>
                                 </tr>
                                 <tr class="nutrition-table-heading-row">
-                                  <th>
-                                    영양소
-                                  </th>
-                                  <th>
-                                    AAFCO 기준
-                                  </th>
-                                  <th>
-                                    라벨표시
-                                  </th>
-                                  <th>
-                                    
-                                    <span id="daily-intake-per-serv" class="annotated">수분제거</span>
-                                  </th>
+                                  <th>영양소</th>
+                                  <th>AAFCO 기준</th>
+                                  <th>라벨표시</th>
+                                  <th><span id="daily-intake-per-serv" class="annotated">수분제거</span></th>
                                 </tr>
                               </thead>
                               <tbody>
                                 <!-- <tr class="padrow"><td colspan="4">&nbsp;</td></tr> -->
                                 <tr class="nutrition-table-information-row">
                                   <td>조단백질</td>
-                                  <td>0kJ</td>
-                                  <td>0%</td>
-                                  <td>0kJ</td>
+                                  <% if @jibsa.j_option_02 == 201 %>
+                                    <td>30.0%</td>  
+                                    <td><%= number_to_percentage(@jibsa.j_option_11, precision: 1) %></td>
+                                    <% if dm_protein > 30 %>
+                                      <td class="dm_number_4_over"><%= number_to_percentage(dm_protein, precision: 1) %></td>
+                                    <% else %> 
+                                      <td class="dm_number_4_lower"><%= number_to_percentage(dm_protein, precision: 1) %></td>
+                                    <% end %>
+                                  <% else %>
+                                    <td>26.0%</td>
+                                    <td><%= number_to_percentage(@jibsa.j_option_11, precision: 1) %></td>
+                                    <% if dm_protein > 26 %>
+                                      <td class="dm_number_4_over"><%= number_to_percentage(dm_protein, precision: 1) %></td>
+                                    <% else %> 
+                                      <td class="dm_number_4_lower"><%= number_to_percentage(dm_protein, precision: 1) %></td>
+                                    <% end %>
+                                  <% end %>
                                 </tr>
                                 <tr class="nutrition-table-information-row">
                                   <td>조지방</td>
-                                  <td>0g</td>
-                                  <td>0%</td>
-                                  <td>0g</td>
+                                  <% if @jibsa.j_option_02 == 201 %>
+                                    <td>9.0%</td>
+                                    <td><%= number_to_percentage(@jibsa.j_option_14, precision: 1) %></td>
+                                    <% if dm_fat > 9 %> 
+                                      <td class="dm_number_4_over"><%= number_to_percentage(dm_fat, precision: 1) %></td>
+                                    <% else %>
+                                      <td class="dm_number_4_lower"><%= number_to_percentage(dm_fat, precision: 1) %></td>
+                                    <% end %>
+                                  <% else %> 
+                                    <td>9.0%</td>
+                                    <td><%= number_to_percentage(@jibsa.j_option_14, precision: 1) %></td>
+                                    <% if dm_fat > 9 %> 
+                                      <td class="dm_number_4_over"><%= number_to_percentage(dm_fat, precision: 1) %></td>
+                                    <% else %>
+                                      <td class="dm_number_4_lower"><%= number_to_percentage(dm_fat, precision: 1) %></td>
+                                    <% end %>
+                                  <% end %>
+                                  
                                 </tr>
                                 <tr class="nutrition-table-information-row">
                                   <td>칼슘</td>
-                                  <td>0g</td>
-                                  <td>0%</td>
-                                  <td>0g</td>
+                                  <% if @jibsa.j_option_02 == 201 %>
+                                    <td>1.0%</td>
+                                    <td><%= number_to_percentage(@jibsa.j_option_15, precision: 1) %></td>
+                                    <% if dm_calcium > 1 %>
+                                      <td class="dm_number_4_over"><%= number_to_percentage(dm_calcium, precision: 1) %></td>
+                                    <% else %>
+                                      <td class="dm_number_4_lower"><%= number_to_percentage(dm_calcium, precision: 1) %></td>
+                                    <% end %>
+                                  <% else %>
+                                    <td>0.6%</td>
+                                    <td><%= number_to_percentage(@jibsa.j_option_15, precision: 1) %></td>
+                                    <% if dm_calcium > 0.6 %>
+                                      <td class="dm_number_4_over"><%= number_to_percentage(dm_calcium, precision: 1) %></td>
+                                    <% else %>
+                                      <td class="dm_number_4_lower"><%= number_to_percentage(dm_calcium, precision: 1) %></td>
+                                    <% end %>
+                                  <% end %>
+                                  
                                 </tr>
                                 <tr class="nutrition-table-information-row">
                                   <td>인</td>
-                                  <td>0g</td>
-                                  <td>0%</td>
-                                  <td>0g</td>
+                                  <% if @jibsa.j_option_02 == 201 %>
+                                    <td>0.8%</td>
+                                    <td><%= number_to_percentage(@jibsa.j_option_16, precision: 1) %></td>
+                                    <% if dm_phosphorus > 0.8 %>
+                                      <td class="dm_number_4_over"><%= number_to_percentage(dm_phosphorus, precision: 1) %></td>
+                                    <% else %>
+                                      <td class="dm_number_4_lower"><%= number_to_percentage(dm_phosphorus, precision: 1) %></td>
+                                    <% end %>
+                                  <% else %>
+                                    <td>0.5%</td>
+                                    <td><%= number_to_percentage(@jibsa.j_option_16, precision: 1) %></td>
+                                    <% if dm_phosphorus > 0.5 %>
+                                      <td class="dm_number_4_over"><%= number_to_percentage(dm_phosphorus, precision: 1) %></td>
+                                    <% else %>
+                                      <td class="dm_number_4_lower"><%= number_to_percentage(dm_phosphorus, precision: 1) %></td>
+                                    <% end %>
+                                  <% end %>
+                                  
                                 </tr>
                                 <tr class="nutrition-table-information-row">
                                   <td>조회분</td>
-                                  <td>0g</td>
-                                  <td>0%</td>
-                                  <td>0g</td>
+                                  <td>N/A</td>
+                                  <td><%= number_to_percentage(@jibsa.j_option_18, precision: 1) %></td>
+                                  <td class="dm_number"><%= number_to_percentage(dm_flour, precision: 1) %></td>
                                 </tr>    
                                 <tr class="nutrition-table-information-row">
                                   <td>조섬유</td>
-                                  <td>0g</td>
-                                  <td>0%</td>
-                                  <td>0g</td>
+                                  <td>N/A</td>
+                                  <td><%= number_to_percentage(@jibsa.j_option_17, precision: 1) %></td>
+                                  <td class="dm_number"><%= number_to_percentage(dm_fiber, precision: 1) %></td>
                                 </tr>
                                 <tr class="nutrition-table-information-row">
                                   <td>수분</td>
-                                  <td>0mg</td>
-                                  <td>0%</td>
-                                  <td>0mg</td>
+                                  <td>N/A</td>
+                                  <td><%= number_to_percentage(@jibsa.j_option_12, precision: 1) %></td>
+                                  <td class="dm_number">0.0%</td>
                                 </tr>
-                                <tr class="nutrition-table-information-row">
-                                  <td>Calcium</td>
-                                  <td>0mg</td>
-                                  <td>(0%RDI*)</td>
-                                  <td>0mg</td>
-                                </tr>
+                                
                                 <!-- <tr class="padrow"><td colspan="4">&nbsp;</td></tr> -->
                               </tbody>
                               <tfoot>
@@ -492,7 +553,6 @@
     </div><!-- nutrition_comparison -->
 
     <br />
-    <hr />
     <br />
   
      <div class="pfc_report">
@@ -645,7 +705,6 @@
         
 
     <br />
-    <hr />
     <br />
 
 
@@ -781,7 +840,7 @@
   
     <br /><br />
 
-
+    <% if @jibsa.j_text_01.present? %>
      <div id="profile-description">
         <div class="text show-more-height">
              <div class="indre_description">
@@ -812,13 +871,14 @@
         </div>
         <div class="show-more">(Show More)</div>
     </div>
+  <% end %>
       
    
 
   </div><!--ingredient_box-->
 
   <div class="general review">
-    총평
+    
   </div>
 
 
@@ -892,15 +952,14 @@
     // Active class starts one open
     $('.nutri_accordian li.active ul').slideDown().addClass('open');
   });
-
 </script>
 
 <script type="text/javascript">
       $(".show-more").click(function () {
         if($(".text").hasClass("show-more-height")) {
-            $(this).text("(Show Less)");
+            $(this).text("Show Less");
         } else {
-            $(this).text("(Show More)");
+            $(this).text("Show More");
         }
 
         $(".text").toggleClass("show-more-height");

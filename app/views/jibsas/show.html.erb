@@ -26,9 +26,8 @@
             <div class="inner_section">
               <div class="inner clearfix">
                 
-                <em><%= render 'jibsas/codes_brand' %></em>                
-                <h2><%= @jibsa.j_title %></h2>
-                <p><% if @jibsa.j_option_02 == 201 %>
+                <em><%= render 'jibsas/codes_brand' %>/ 
+                  <p class="feeding_age"><% if @jibsa.j_option_02 == 201 %>
                       <span>키튼(1세 미만)</span>
                     <% elsif @jibsa.j_option_02 == 202 %>
                       <span>어덜트(1세 ~ 7세)</span>
@@ -37,8 +36,10 @@
                     <% elsif @jibsa.j_option_02 == 204 %>
                       <span>전연령용</span>
                     <% end %>
-                </p>
-               
+                  </p>
+                </em>                
+                <h2><%= @jibsa.j_title %></h2>
+                
                 
                 <p class="hashtag"><%= render_with_jhashtags(@jibsa.j_hashtag) %></p>
             

@@ -141,10 +141,10 @@
 .detail_wrap .ingredient_box .core_ingre .description .des_comm{}
 .detail_wrap .ingredient_box .core_ingre .description .des_comm p{font-size:13px;margin-bottom:10px;}
 
+/* 재료해석 부분 더보기/줄이기 */
 .detail_wrap .ingredient_box .indre_description{}
 .detail_wrap .ingredient_box .indre_description ul{}
-.detail_wrap .ingredient_box .indre_description ul li{margin-bottom:10px;border:1px solid #ccc;border-radius:20px;padding:10px;}
-
+.detail_wrap .ingredient_box .indre_description ul li{margin-bottom:10px;border:1px solid #ccc;border-radius:20px;padding:15px;}
 #profile-description{position:relative;}
 #profile-description .text{margin-bottom:5px;color:#777;position:relative;font-size:14px;display:block;}
 #profile-description .show-more{color:#777;font-size:12px;padding:7px;text-align:center;background:#f1f1f1;cursor:pointer;border-radius:15px;}
@@ -259,12 +259,17 @@ input[id=tab_02]:checked~.pfc_report__content .pfc_report__content-item[data-tab
 .nutrition-table{text-align:left;border:3px solid #748593;border-right:0;border-left:0;border-collapse:collapse;color:#748593;font-weight:400;width:100%;}
 .nutrition-table .nutrition-table-title{text-transform:uppercase;font-size:1.4em;font-weight:600;letter-spacing:2px;}
 .nutrition-table tbody, .nutrition-table tr th{padding-top:.55em;padding-bottom:.55em;border-bottom:2px solid #748593;text-align:center;font-size:12px;}
+.nutrition-table tr th.serving-age{text-align:left;padding-left:28px;}
 .annotated:after{content:"*";position:absolute;}
 .servings-per-container{text-align:right;}
 .nutrition-table-heading-row, .nutrition-table-information-row{text-align:right;}
 .nutrition-table-heading-row td:first-child, .nutrition-table-heading-row th:first-child, .nutrition-table-information-row td:first-child, .nutrition-table-information-row th:first-child{text-align:center;font-size:12px;}
 .nutrition-table-information-row:hover td{background-color:#d9cec8;}
 .nutrition-table-information-row td{padding-bottom:.26em;}
+.nutrition-table-information-row td.dm_number{color:#748593;}
+.nutrition-table-information-row td.dm_number_4_over{color:#00ff00;}
+.nutrition-table-information-row td.dm_number_4_lower{color:#ff4d4d;}
+
 .padrow td{font-size:.9em};
 .nutrition-table tfoot td{max-width:300px;padding:.5em 0 1em 0;line-height:1.3em;}
 
@@ -274,7 +279,7 @@ input[id=tab_02]:checked~.pfc_report__content .pfc_report__content-item[data-tab
 .nutri_accordian{max-width:600px;width:100%;color:#b9b9b9;transition:all .2s cubic-bezier(.25, .8, .25, 1);font-weight:100;letter-spacing:.035em;font-size:14px;margin:0 auto;}
 .nutri_accordian ul>li{margin-bottom:8px;}
 .nutri_accordian ul>li:first-child h3{border-top:1px solid rgba(0,0,0,.1);}
-.nutri_accordian h3{cursor:pointer;background-color:#f7f9f9;padding:1.2rem 1rem 1rem 1.2rem;margin:0;border-bottom:1px solid rgba(0,0,0,.07);display:block;font-weight:100;letter-spacing:.035em;position:relative;font-size:18px;transition:all .2s cubic-bezier(.25, .8, .25, 1);box-shadow:0 1px 2px rgba(0,0,0,.24);border-radius:3px;}
+.nutri_accordian h3{cursor:pointer;background-color:#f7f9f9;padding:1.2rem 1rem 1rem 1.2rem;margin:0;border-bottom:1px solid rgba(0,0,0,.07);display:block;font-weight:100;letter-spacing:.035em;position:relative;font-size:18px;transition:all .2s cubic-bezier(.25, .8, .25, 1);box-shadow:0 1px 2px rgba(0,0,0,.24);border-radius:3px;color:#000;}
 .nutri_accordian ul ul{display:none;height:100%;margin-bottom:-7px;}
 .nutri_accordian ul ul li{background-color:#fff;padding:5px;color:var(--dark-gray);box-shadow:none;border-left:1px solid #dfdfdf;border-right:1px solid #dfdfdf;border-bottom:1px solid #dfdfdf;}
 .nutri_accordian ul ul li p{opacity:0;transition:all .5s;transform:translatey(-20px);}

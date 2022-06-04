@@ -720,95 +720,100 @@
       </div>
     <% end %>
 
-
-    <div class="vertical_tab_container clearfix">
-      
-      <div class="bhoechie-tab-container">
-          <div class=" bhoechie-tab-menu">
-            <div class="list-group">
-              <a href="#" class="list-group-item active text-center">주원료</a>
-              <a href="#" class="list-group-item text-center">알러지 유발 가능성분</a>
-              <a href="#" class="list-group-item text-center">의심 성분</a>
-              <a href="#" class="list-group-item text-center">주의 성분</a>
-            </div>
-          </div>
-          <div class="bhoechie-tab">
-              <!-- flight section -->
-              <div class="bhoechie-tab-content active">
-                  <center>
-                    <ul>
-                      <li>제 1원료</li>
-                      <li>제 2원료</li>
-                      <li>제 3원료</li>
-                      <li>제 4원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-                      <li>제 5원료</li>
-
-                    </ul>
-                  </center>
-              </div>
-              <!-- train section -->
-              <div class="bhoechie-tab-content">
-                  <center>
-                    <h1 class="glyphicon glyphicon-road" style="font-size:12em;color:#55518a"></h1>
-                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                    <h3 style="margin-top: 0;color:#55518a">Train Reservation</h3>
-                  </center>
-              </div>
-  
-              <!-- hotel search -->
-              <div class="bhoechie-tab-content">
-                  <center>
-                    <h1 class="glyphicon glyphicon-home" style="font-size:12em;color:#55518a"></h1>
-                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                    <h3 style="margin-top: 0;color:#55518a">Hotel Directory</h3>
-                  </center>
-              </div>
-              <div class="bhoechie-tab-content">
-                  <center>
-                    <h1 class="glyphicon glyphicon-cutlery" style="font-size:12em;color:#55518a"></h1>
-                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                    <h3 style="margin-top: 0;color:#55518a">Restaurant Diirectory</h3>
-                  </center>
-              </div>
-              <div class="bhoechie-tab-content">
-                  <center>
-                    <h1 class="glyphicon glyphicon-credit-card" style="font-size:12em;color:#55518a"></h1>
-                    <h2 style="margin-top: 0;color:#55518a">Cooming Soon</h2>
-                    <h3 style="margin-top: 0;color:#55518a">Credit Card</h3>
-                  </center>
-              </div>
-          </div>
+   
+    <div class="container-md">
+      <div class="page-header">
+        <h1>주요 성분</h1>
       </div>
+      <div class="accordion-group restricted">
       
-    </div>
+        <div class="collapse-section">
+          <input class="collapse-toggle" type="checkbox" id="check-what-is" checked="checked"/>
+          <label class="collapse-heading" for="check-what-is" aria-controls="what-is" id="control-what-is"><span class="title">제1 ~ 제5 주원료</span>
+            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+              <path d="M22,18.414l-10-10l-10,10L0.586,17L11.293,6.293c0.391-0.391,1.023-0.391,1.414,0L23.414,17L22,18.414z">  </path>
+            </svg>
+          </label>
+          <div class="collapse-content" id="what-is">
+            <p><span><%= @jibsa.j_string_01 %></span> <span><%= @jibsa.j_string_02 %></span> <span><%= @jibsa.j_string_03 %></span> <span><%= @jibsa.j_string_04 %></span> <span><%= @jibsa.j_string_05 %></span> </p>
+          </div>
+        </div>
 
+        <div class="collapse-section">
+          <input class="collapse-toggle" type="checkbox" id="check-where-do"/>
+          <label class="collapse-heading" for="check-where-do" aria-controls="where-do" id="control-where-do"><span class="title">알러지 유발 가능 성분</span>
+            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+              <path d="M22,18.414l-10-10l-10,10L0.586,17L11.293,6.293c0.391-0.391,1.023-0.391,1.414,0L23.414,17L22,18.414z">  </path>
+            </svg>
+          </label>
+          <div class="collapse-content" id="where-do">
+            <p>asperiores possimus voluptatibus! Ipsum consectetur a non? Tempore excepturi veritatis aliquid vel odio. Unde qui eum nam veritatis. </p>
+          </div>
+        </div>
 
+        <div class="collapse-section">
+          <input class="collapse-toggle" type="checkbox" id="check-where-go"/>
+          <label class="collapse-heading" for="check-where-go" aria-controls="where-go" id="control-where-go"><span class="title">의심 성분</span>
+            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+              <path d="M22,18.414l-10-10l-10,10L0.586,17L11.293,6.293c0.391-0.391,1.023-0.391,1.414,0L23.414,17L22,18.414z">  </path>
+            </svg>
+          </label>
+          <div class="collapse-content" id="where-go">
+            <p>asperiores possimus voluptatibus! Ipsum consectetur a non? Tempore excepturi veritatis aliquid vel odio. Unde qui eum nam veritatis. </p>
+          </div>
+        </div>
 
+        <div class="collapse-section">
+          <input class="collapse-toggle" type="checkbox" id="check-where-so"/>
+          <label class="collapse-heading" for="check-where-so" aria-controls="where-do" id="control-where-so"><span class="title">주의 성분</span>
+            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24">
+              <path d="M22,18.414l-10-10l-10,10L0.586,17L11.293,6.293c0.391-0.391,1.023-0.391,1.414,0L23.414,17L22,18.414z">  </path>
+            </svg>
+          </label>
+          <div class="collapse-content" id="where-so">
+            <p>asperiores possimus voluptatibus! Ipsum consectetur a non? Tempore excepturi veritatis aliquid vel odio. Unde qui eum nam veritatis. </p>
+          </div>
+        </div>
 
+      </div>
+    </div><!-- container-md -->
 
+  
     <br /><br />
 
-    <div class="description">
-      <ul>
-        <li>첫번째 주 원료가 동물성 단백질이 아닌 곡물인 글루텐.</li>
-      </ul>
+
+     <div id="profile-description">
+        <div class="text show-more-height">
+             <div class="indre_description">
+                <ul>
+                  <% if @jibsa.j_text_01.present? %>
+                    <li><%= @jibsa.j_text_01 %></li>
+                  <% end %>
+                  <% if @jibsa.j_text_02.present? %>
+                    <li><%= @jibsa.j_text_02 %></li>
+                  <% end %>
+                  <% if @jibsa.j_text_03.present? %>
+                    <li><%= @jibsa.j_text_03 %></li>
+                  <% end %>
+                  <% if @jibsa.j_text_04.present? %>
+                    <li><%= @jibsa.j_text_04 %></li>
+                  <% end %>
+                  <% if @jibsa.j_text_05.present? %>
+                    <li><%= @jibsa.j_text_05 %></li>
+                  <% end %>
+                  <% if @jibsa.j_text_06.present? %>
+                    <li><%= @jibsa.j_text_06 %></li>
+                  <% end %>
+                  <% if @jibsa.j_text_07.present? %>
+                    <li><%= @jibsa.j_text_07 %></li>
+                  <% end %>
+                </ul>
+              </div>
+        </div>
+        <div class="show-more">(Show More)</div>
     </div>
-
-
+      
+   
 
   </div><!--ingredient_box-->
 
@@ -825,16 +830,7 @@
 
 <!-- 주원료, 알러지 가능성 및 주의 성분 탭 메뉴 -->
 <script type="text/javascript">
-  $(document).ready(function() {
-    $("div.bhoechie-tab-menu>div.list-group>a").click(function(e) {
-        e.preventDefault();
-        $(this).siblings('a.active').removeClass("active");
-        $(this).addClass("active");
-        var index = $(this).index();
-        $("div.bhoechie-tab>div.bhoechie-tab-content").removeClass("active");
-        $("div.bhoechie-tab>div.bhoechie-tab-content").eq(index).addClass("active");
-    });
-  });
+   
 </script>
 
 <!-- 차트 -->
@@ -897,4 +893,16 @@
     $('.nutri_accordian li.active ul').slideDown().addClass('open');
   });
 
+</script>
+
+<script type="text/javascript">
+      $(".show-more").click(function () {
+        if($(".text").hasClass("show-more-height")) {
+            $(this).text("(Show Less)");
+        } else {
+            $(this).text("(Show More)");
+        }
+
+        $(".text").toggleClass("show-more-height");
+    });
 </script>

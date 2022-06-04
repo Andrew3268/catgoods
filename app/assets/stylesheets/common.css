@@ -45,6 +45,8 @@ body{margin:0;padding:0;font-size:15px;color:#000;line-height:1.5;font-weight:30
 .form_box .pricing label{float:left;}
 .form_box .pricing input{float:left;width:100px;margin-right:10px;}
 .form_box .pricing .star_rating input{width:50px;}
+.form_box .pricing .form_ingri_desc{}
+.form_box .pricing .form_ingri_desc textarea{height:100px;width:100%;}
 
 
 

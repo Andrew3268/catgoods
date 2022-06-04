@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_25_065417) do
+ActiveRecord::Schema.define(version: 2022_06_02_064419) do
 
   create_table "action_text_rich_texts", force: :cascade do |t|
     t.string "name", null: false
@@ -162,6 +162,41 @@ ActiveRecord::Schema.define(version: 2022_04_25_065417) do
     t.decimal "j_option_18"
     t.decimal "j_option_19"
     t.decimal "j_option_20"
+    t.string "j_string_01"
+    t.string "j_string_02"
+    t.string "j_string_03"
+    t.string "j_string_04"
+    t.string "j_string_05"
+    t.string "j_string_06"
+    t.string "j_string_07"
+    t.string "j_string_08"
+    t.string "j_string_09"
+    t.string "j_string_10"
+    t.string "j_string_11"
+    t.string "j_string_12"
+    t.string "j_string_13"
+    t.string "j_string_14"
+    t.string "j_string_15"
+    t.string "j_string_16"
+    t.string "j_string_17"
+    t.string "j_string_18"
+    t.string "j_string_19"
+    t.string "j_string_20"
+    t.text "j_text_01"
+    t.text "j_text_02"
+    t.text "j_text_03"
+    t.text "j_text_04"
+    t.text "j_text_05"
+    t.text "j_text_06"
+    t.text "j_text_07"
+    t.text "j_text_08"
+    t.text "j_text_09"
+    t.text "j_text_10"
+    t.text "j_text_11"
+    t.text "j_text_12"
+    t.text "j_text_13"
+    t.text "j_text_14"
+    t.text "j_text_15"
     t.index ["slug"], name: "index_jibsas_on_slug", unique: true
   end
 

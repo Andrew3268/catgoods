@@ -86,7 +86,8 @@ class JibsasController < ApplicationController
                                     :j_link, :j_is_price, :j_was_price, :j_pct, :j_friendly_id, :j_spare_56, :j_option_01, :j_option_02, :j_option_03,
                                     :j_option_04, :j_option_05, :j_option_06, :j_option_07, :j_spare_01, :j_spare_02, :j_spare_03, :j_spare_04, :j_spare_05,
                                     :j_spare_06, :j_spare_07, :j_spare_08, :j_spare_09, :j_spare_10, :j_spare_31, :j_spare_32, :j_option_11, :j_option_12 , :j_option_13,
-                                    :j_option_14, :j_option_15, :j_option_16, :j_option_17, :j_option_18, :j_option_19, :j_description)
+                                    :j_option_14, :j_option_15, :j_option_16, :j_option_17, :j_option_18, :j_option_19, :j_description, :j_string_01, :j_string_02, :j_string_03,
+                                    :j_string_04, :j_string_05, :j_text_01, :j_text_02, :j_text_03, :j_text_04, :j_text_05, :j_text_06, :j_text_07)
     end
 end
 

@@ -1,0 +1,39 @@
+class AddStringtextToJibsas < ActiveRecord::Migration[6.1]
+  def change
+    add_column :jibsas, :j_string_01, :string
+    add_column :jibsas, :j_string_02, :string
+    add_column :jibsas, :j_string_03, :string
+    add_column :jibsas, :j_string_04, :string
+    add_column :jibsas, :j_string_05, :string
+    add_column :jibsas, :j_string_06, :string
+    add_column :jibsas, :j_string_07, :string
+    add_column :jibsas, :j_string_08, :string
+    add_column :jibsas, :j_string_09, :string
+    add_column :jibsas, :j_string_10, :string
+    add_column :jibsas, :j_string_11, :string
+    add_column :jibsas, :j_string_12, :string
+    add_column :jibsas, :j_string_13, :string
+    add_column :jibsas, :j_string_14, :string
+    add_column :jibsas, :j_string_15, :string
+    add_column :jibsas, :j_string_16, :string
+    add_column :jibsas, :j_string_17, :string
+    add_column :jibsas, :j_string_18, :string
+    add_column :jibsas, :j_string_19, :string
+    add_column :jibsas, :j_string_20, :string
+    add_column :jibsas, :j_text_01, :text
+    add_column :jibsas, :j_text_02, :text
+    add_column :jibsas, :j_text_03, :text
+    add_column :jibsas, :j_text_04, :text
+    add_column :jibsas, :j_text_05, :text
+    add_column :jibsas, :j_text_06, :text
+    add_column :jibsas, :j_text_07, :text
+    add_column :jibsas, :j_text_08, :text
+    add_column :jibsas, :j_text_09, :text
+    add_column :jibsas, :j_text_10, :text
+    add_column :jibsas, :j_text_11, :text
+    add_column :jibsas, :j_text_12, :text
+    add_column :jibsas, :j_text_13, :text
+    add_column :jibsas, :j_text_14, :text
+    add_column :jibsas, :j_text_15, :text
+  end
+end
